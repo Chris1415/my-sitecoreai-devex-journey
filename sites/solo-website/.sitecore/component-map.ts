@@ -12,7 +12,6 @@ import * as button from 'src/components/ui/button';
 import * as badge from 'src/components/ui/badge';
 import * as avatar from 'src/components/ui/avatar';
 import * as accordion from 'src/components/ui/accordion';
-import * as themeprovider from 'src/components/theming/theme-provider';
 import * as Header from 'src/components/structural/header/Header';
 import * as Footer from 'src/components/structural/footer/Footer';
 import * as PartialDesignDynamicPlaceholder from 'src/components/partial-design-dynamic-placeholder/PartialDesignDynamicPlaceholder';
@@ -29,7 +28,6 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['badge', { ...badge }],
   ['avatar', { ...avatar, componentType: 'client' }],
   ['accordion', { ...accordion, componentType: 'client' }],
-  ['theme-provider', { ...themeprovider, componentType: 'client' }],
   ['Header', { ...Header, componentType: 'client' }],
   ['Footer', { ...Footer, componentType: 'client' }],
   ['PartialDesignDynamicPlaceholder', { ...PartialDesignDynamicPlaceholder }],

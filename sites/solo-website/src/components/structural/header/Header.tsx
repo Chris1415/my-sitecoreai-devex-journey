@@ -34,7 +34,7 @@ export function Default() {
           <Link href="/" className="flex items-center gap-3">
             <Image
               src={
-                theme === "dark"
+                theme !== "light"
                   ? "/images/hahn-solo-white.png"
                   : "/images/hahn-solo-black.png"
               }

@@ -7,7 +7,6 @@ import * as separator from 'src/components/ui/separator';
 import * as dialog from 'src/components/ui/dialog';
 import * as avatar from 'src/components/ui/avatar';
 import * as accordion from 'src/components/ui/accordion';
-import * as themeprovider from 'src/components/theming/theme-provider';
 import * as Header from 'src/components/structural/header/Header';
 import * as Footer from 'src/components/structural/footer/Footer';
 
@@ -19,7 +18,6 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['dialog', { ...dialog }],
   ['avatar', { ...avatar }],
   ['accordion', { ...accordion }],
-  ['theme-provider', { ...themeprovider }],
   ['Header', { ...Header }],
   ['Footer', { ...Footer }],
 ]);
