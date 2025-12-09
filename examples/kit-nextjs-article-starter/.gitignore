@@ -1,0 +1,35 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+
+# Lock files
+package-lock.json
+
+# testing
+/coverage
+
+# next.js
+/.next*/
+/out/
+
+!.env.example
+# misc
+.DS_Store
+
+# local env files
+.env.local
+.env.*.local
+.env
+
+# Log files
+*.log*
+
+# vercel
+.vercel
+
+# sitecore temp files
+.sitecore/*
+# except for component-map
+!.sitecore/component-map.ts
+!.sitecore/import-map.ts

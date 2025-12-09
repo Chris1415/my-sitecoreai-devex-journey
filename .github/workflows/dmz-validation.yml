@@ -1,0 +1,265 @@
+name: DMZ Branch Validation
+
+on:
+  push:
+    branches: [dmz]
+
+env:
+  NODE_VERSION: "22.11.0"
+
+jobs:
+  validate-dmz:
+    name: Validate DMZ Branch
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Install dependencies for all starters
+        run: |
+          echo "Installing dependencies for all enabled starters..."
+
+          # Install dependencies for each enabled starter
+          if [ -d "examples/kit-nextjs-skate-park" ]; then
+            echo "Installing dependencies for kit-nextjs-skate-park..."
+            cd examples/kit-nextjs-skate-park
+            npm install
+            cd ../..
+          fi
+
+          if [ -d "examples/kit-nextjs-article-starter" ]; then
+            echo "Installing dependencies for kit-nextjs-article-starter..."
+            cd examples/kit-nextjs-article-starter
+            npm install
+            cd ../..
+          fi
+
+          if [ -d "examples/kit-nextjs-location-finder" ]; then
+            echo "Installing dependencies for kit-nextjs-location-finder..."
+            cd examples/kit-nextjs-location-finder
+            npm install
+            cd ../..
+          fi
+
+          if [ -d "examples/kit-nextjs-product-listing" ]; then
+            echo "Installing dependencies for kit-nextjs-product-listing..."
+            cd examples/kit-nextjs-product-listing
+            npm install
+            cd ../..
+          fi
+
+      - name: Generate Sitecore files for all starters
+        run: |
+          echo "Generating Sitecore configuration files..."
+
+          # Generate files for each enabled starter
+          for starter in examples/kit-nextjs-skate-park examples/kit-nextjs-article-starter examples/kit-nextjs-location-finder examples/kit-nextjs-product-listing; do
+            if [ -d "$starter" ]; then
+              echo "Generating files for $starter..."
+              cd "$starter"
+              
+              # Try to generate files with Sitecore tools, fallback to minimal files if credentials are missing
+              if npm run sitecore-tools:generate-map 2>/dev/null; then
+                echo "✅ Sitecore files generated successfully for $starter"
+              else
+                echo "⚠️ Sitecore tools failed (likely missing credentials), creating minimal files for $starter"
+                
+                # Create minimal .sitecore directory and files
+                mkdir -p .sitecore
+                
+                # Create minimal sites.json
+                echo '[{"name":"basic","hostName":"*","language":"en"}]' > .sitecore/sites.json
+                
+                # Create minimal metadata.json
+                echo '{"packages":{"@sitecore-content-sdk/core":"1.1.0","@sitecore-content-sdk/nextjs":"1.1.0"}}' > .sitecore/metadata.json
+                
+                # Create minimal component-map.ts
+                echo 'export default new Map();' > .sitecore/component-map.ts
+                
+                # Create minimal import-map.ts
+                echo 'export default [];' > .sitecore/import-map.ts
+                
+                echo "✅ Minimal Sitecore files created for $starter"
+              fi
+              
+              cd ../..
+            fi
+          done
+
+      - name: Lint and format check
+        run: |
+          set -e  # Exit immediately if any command fails
+          echo "Running linting and formatting checks..."
+
+          # Check each enabled starter
+          for starter in examples/kit-nextjs-skate-park examples/kit-nextjs-article-starter examples/kit-nextjs-location-finder examples/kit-nextjs-product-listing; do
+            if [ -d "$starter" ]; then
+              echo "Checking $starter..."
+              cd "$starter"
+              
+              # Run linting
+              echo "Running lint for $starter..."
+              if ! npm run lint; then
+                echo "❌ Linting failed for $starter"
+                echo "::error::Linting failed for $starter"
+                exit 1
+              fi
+              echo "✅ Linting passed for $starter"
+              
+              # Check formatting
+              echo "Running format check for $starter..."
+              if ! npm run format:check; then
+                echo "❌ Formatting check failed for $starter"
+                echo "Run 'npm run prettier' to fix formatting issues"
+                echo "::error::Formatting check failed for $starter"
+                exit 1
+              fi
+              echo "✅ Formatting check passed for $starter"
+              
+              cd ../..
+            fi
+          done
+
+      - name: Type checking
+        run: |
+          echo "Running TypeScript type checking..."
+
+          # Check each enabled starter
+          for starter in examples/kit-nextjs-skate-park examples/kit-nextjs-article-starter examples/kit-nextjs-location-finder examples/kit-nextjs-product-listing; do
+            if [ -d "$starter" ]; then
+              echo "Type checking $starter..."
+              cd "$starter"
+              
+              if npm run type-check 2>/dev/null; then
+                echo "✅ Type checking passed for $starter"
+              else
+                echo "❌ Type checking failed for $starter"
+                exit 1
+              fi
+              
+              cd ../..
+            fi
+          done
+
+      - name: Build all starters
+        env:
+          # Sitecore Edge API Configuration
+          SITECORE_EDGE_URL: ${{ secrets.SITECORE_EDGE_URL }}
+          SITECORE_EDGE_CONTEXT_ID: ${{ secrets.SITECORE_EDGE_CONTEXT_ID }}
+          NEXT_PUBLIC_SITECORE_EDGE_CONTEXT_ID: ${{ secrets.NEXT_PUBLIC_SITECORE_EDGE_CONTEXT_ID }}
+
+          # Sitecore Configuration
+          NEXT_PUBLIC_DEFAULT_SITE_NAME: ${{ vars.NEXT_PUBLIC_DEFAULT_SITE_NAME || 'basic' }}
+          SITECORE_EDITING_SECRET: ${{ secrets.SITECORE_EDITING_SECRET }}
+
+          # Additional Sitecore Environment Variables
+          NEXT_PUBLIC_SITECORE_EDGE_URL: ${{ secrets.SITECORE_EDGE_URL }}
+          NEXT_PUBLIC_SITECORE_API_KEY: ${{ secrets.NEXT_PUBLIC_SITECORE_API_KEY }}
+          NEXT_PUBLIC_SITECORE_API_HOST: ${{ secrets.NEXT_PUBLIC_SITECORE_API_HOST }}
+          NEXT_PUBLIC_DEFAULT_LANGUAGE: ${{ vars.NEXT_PUBLIC_DEFAULT_LANGUAGE || 'en' }}
+          NEXT_PUBLIC_PERSONALIZE_SCOPE: ${{ vars.NEXT_PUBLIC_PERSONALIZE_SCOPE }}
+          PERSONALIZE_MIDDLEWARE_EDGE_TIMEOUT: ${{ vars.PERSONALIZE_MIDDLEWARE_EDGE_TIMEOUT || '1000' }}
+        run: |
+          set -e  # Exit immediately if any command fails
+          echo "Building all enabled starters..."
+          echo "Sitecore Environment Variables:"
+          echo "  SITECORE_EDGE_URL: ${SITECORE_EDGE_URL:+[SET]}"
+          echo "  SITECORE_EDGE_CONTEXT_ID: ${SITECORE_EDGE_CONTEXT_ID:+[SET]}"
+          echo "  NEXT_PUBLIC_SITECORE_EDGE_CONTEXT_ID: ${NEXT_PUBLIC_SITECORE_EDGE_CONTEXT_ID:+[SET]}"
+          echo "  NEXT_PUBLIC_DEFAULT_SITE_NAME: ${NEXT_PUBLIC_DEFAULT_SITE_NAME}"
+          echo "  SITECORE_EDITING_SECRET: ${SITECORE_EDITING_SECRET:+[SET]}"
+
+          # Build each enabled starter
+          for starter in examples/kit-nextjs-skate-park examples/kit-nextjs-article-starter examples/kit-nextjs-location-finder examples/kit-nextjs-product-listing; do
+            if [ -d "$starter" ]; then
+              echo "Building $starter..."
+              cd "$starter"
+              
+              echo "Running build for $starter..."
+              if ! npm run build; then
+                echo "❌ Build failed for $starter"
+                echo "::error::Build failed for $starter"
+                exit 1
+              fi
+              echo "✅ Build successful for $starter"
+              
+              cd ../..
+            fi
+          done
+
+      - name: Run tests
+        run: |
+          set -e  # Exit immediately if any command fails
+          echo "Running tests for all starters..."
+
+          # Test each enabled starter
+          for starter in examples/kit-nextjs-skate-park examples/kit-nextjs-article-starter examples/kit-nextjs-location-finder examples/kit-nextjs-product-listing; do
+            if [ -d "$starter" ]; then
+              echo "Testing $starter..."
+              cd "$starter"
+              
+              # Check if test script exists, if not fail the workflow
+              if grep -q '"test"' package.json; then
+                echo "Running tests for $starter..."
+                if ! npm test; then
+                  echo "❌ Tests failed for $starter"
+                  echo "::error::Tests failed for $starter"
+                  exit 1
+                fi
+                echo "✅ Tests passed for $starter"
+              else
+                echo "❌ No test script found for $starter - tests are mandatory"
+                echo "::error::No test script found for $starter"
+                exit 1
+              fi
+
+              cd ../..
+            fi
+          done
+
+      - name: Create success notification
+        if: success()
+        run: |
+          echo "## ✅ DMZ Validation Successful" >> $GITHUB_STEP_SUMMARY
+          echo "The dmz branch has passed all validation checks." >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Validation Results:**" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ All builds passed" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ All tests passed" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ Linting and formatting checks passed" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ Type checking passed" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Next Steps:**" >> $GITHUB_STEP_SUMMARY
+          echo "You can now merge dmz into main via GitHub web interface:" >> $GITHUB_STEP_SUMMARY
+          echo "1. Create a Pull Request from \`dmz\` to \`main\`" >> $GITHUB_STEP_SUMMARY
+          echo "2. Select **\"Create a merge commit\"** option (not Squash or Rebase)" >> $GITHUB_STEP_SUMMARY
+          echo "3. Confirm the merge" >> $GITHUB_STEP_SUMMARY
+
+  notify-failure:
+    name: Notify Build Failure
+    runs-on: ubuntu-latest
+    needs: validate-dmz
+    if: failure()
+
+    steps:
+      - name: Create failure notification
+        run: |
+          echo "## ❌ DMZ Validation Failed" >> $GITHUB_STEP_SUMMARY
+          echo "The dmz branch failed validation and should not be merged to main." >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Next Steps:**" >> $GITHUB_STEP_SUMMARY
+          echo "1. Review the failed checks above" >> $GITHUB_STEP_SUMMARY
+          echo "2. Fix the issues in the dmz branch" >> $GITHUB_STEP_SUMMARY
+          echo "3. Push the fixes to dmz branch" >> $GITHUB_STEP_SUMMARY
+          echo "4. The validation will run automatically" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Alternative:** Use the 'Rebase DMZ Branch' workflow to remove problematic commits." >> $GITHUB_STEP_SUMMARY
