@@ -3,14 +3,25 @@
 import { combineImportEntries, defaultImportEntries } from '@sitecore-content-sdk/nextjs/codegen';
 // end of built-in imports
 
-import { useEffect } from 'react';
-import React from 'react';
+import { useState, useEffect } from 'react';
+import React_c6c9d5c02e9182eb22f40bc4cf21fc656783d24a from 'react';
+import * as React from 'react';
+import * as SeparatorPrimitive from '@radix-ui/react-separator';
+import { cn } from 'lib/utils';
+import * as DialogPrimitive from '@radix-ui/react-dialog';
+import { XIcon, ChevronDownIcon, Menu, X, Search, Moon, Sun } from 'lucide-react';
+import { Slot } from '@radix-ui/react-slot';
+import { cva } from 'class-variance-authority';
+import * as AvatarPrimitive from '@radix-ui/react-avatar';
+import * as AccordionPrimitive from '@radix-ui/react-accordion';
+import { ThemeProvider, useTheme } from 'next-themes';
+import Link from 'next/link';
+import Image from 'next/image';
+import { usePathname } from 'next/navigation';
+import { Button } from 'components/ui/button';
 import componentMap from '.sitecore/component-map';
-import Placeholder from 'components/content-sdk/Placeholder';
-import Head from 'next/head';
-import client from 'lib/sitecore-client';
-import { Placeholder as Placeholder_8a80e63291fea86e0744df19113dc44bec187216, ServerPlaceholder, CdpHelper, useSitecore } from '@sitecore-content-sdk/nextjs';
-import { rsc } from 'rsc-env';
+import { AppPlaceholder, CdpHelper, useSitecore } from '@sitecore-content-sdk/nextjs';
+import client from 'src/lib/sitecore-client';
 import { pageView } from '@sitecore-cloudsdk/events/browser';
 import config from 'sitecore.config';
 
@@ -18,8 +29,95 @@ const importMap = [
   {
     module: 'react',
     exports: [
+      { name: 'useState', value: useState },
       { name: 'useEffect', value: useEffect },
-      { name: 'default', value: React },
+      { name: 'default', value: React_c6c9d5c02e9182eb22f40bc4cf21fc656783d24a },
+      { name: '*', value: React },
+    ]
+  },
+  {
+    module: '@radix-ui/react-separator',
+    exports: [
+      { name: '*', value: SeparatorPrimitive },
+    ]
+  },
+  {
+    module: 'lib/utils',
+    exports: [
+      { name: 'cn', value: cn },
+    ]
+  },
+  {
+    module: '@radix-ui/react-dialog',
+    exports: [
+      { name: '*', value: DialogPrimitive },
+    ]
+  },
+  {
+    module: 'lucide-react',
+    exports: [
+      { name: 'XIcon', value: XIcon },
+      { name: 'ChevronDownIcon', value: ChevronDownIcon },
+      { name: 'Menu', value: Menu },
+      { name: 'X', value: X },
+      { name: 'Search', value: Search },
+      { name: 'Moon', value: Moon },
+      { name: 'Sun', value: Sun },
+    ]
+  },
+  {
+    module: '@radix-ui/react-slot',
+    exports: [
+      { name: 'Slot', value: Slot },
+    ]
+  },
+  {
+    module: 'class-variance-authority',
+    exports: [
+      { name: 'cva', value: cva },
+    ]
+  },
+  {
+    module: '@radix-ui/react-avatar',
+    exports: [
+      { name: '*', value: AvatarPrimitive },
+    ]
+  },
+  {
+    module: '@radix-ui/react-accordion',
+    exports: [
+      { name: '*', value: AccordionPrimitive },
+    ]
+  },
+  {
+    module: 'next-themes',
+    exports: [
+      { name: 'ThemeProvider', value: ThemeProvider },
+      { name: 'useTheme', value: useTheme },
+    ]
+  },
+  {
+    module: 'next/link',
+    exports: [
+      { name: 'default', value: Link },
+    ]
+  },
+  {
+    module: 'next/image',
+    exports: [
+      { name: 'default', value: Image },
+    ]
+  },
+  {
+    module: 'next/navigation',
+    exports: [
+      { name: 'usePathname', value: usePathname },
+    ]
+  },
+  {
+    module: 'components/ui/button',
+    exports: [
+      { name: 'Button', value: Button },
     ]
   },
   {
@@ -29,36 +127,17 @@ const importMap = [
     ]
   },
   {
-    module: 'components/content-sdk/Placeholder',
-    exports: [
-      { name: 'default', value: Placeholder },
-    ]
-  },
-  {
-    module: 'next/head',
-    exports: [
-      { name: 'default', value: Head },
-    ]
-  },
-  {
-    module: 'lib/sitecore-client',
-    exports: [
-      { name: 'default', value: client },
-    ]
-  },
-  {
     module: '@sitecore-content-sdk/nextjs',
     exports: [
-      { name: 'Placeholder', value: Placeholder_8a80e63291fea86e0744df19113dc44bec187216 },
-      { name: 'ServerPlaceholder', value: ServerPlaceholder },
+      { name: 'AppPlaceholder', value: AppPlaceholder },
       { name: 'CdpHelper', value: CdpHelper },
       { name: 'useSitecore', value: useSitecore },
     ]
   },
   {
-    module: 'rsc-env',
+    module: 'src/lib/sitecore-client',
     exports: [
-      { name: 'rsc', value: rsc },
+      { name: 'default', value: client },
     ]
   },
   {
