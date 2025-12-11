@@ -47,7 +47,6 @@ export function Default() {
               width={120}
               height={32}
               className="h-10 w-auto"
-              style={{ height: "auto" }}
             />
           </Link>
 
@@ -58,7 +57,9 @@ export function Default() {
                 key={item.name}
                 href={item.href}
                 className={`text-sm font-medium transition-colors hover:text-primary ${
-                  mounted && pathname === item.href ? "text-primary" : "text-foreground/80"
+                  mounted && pathname === item.href
+                    ? "text-primary"
+                    : "text-foreground/80"
                 }`}
               >
                 {item.name}
