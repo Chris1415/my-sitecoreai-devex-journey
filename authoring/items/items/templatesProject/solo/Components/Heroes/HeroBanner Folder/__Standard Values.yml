@@ -1,0 +1,36 @@
+﻿---
+ID: "4df3eef8-6a1f-4739-adbe-1601b2544348"
+Parent: "0ec93631-8e84-4f68-bf21-418517c4d33e"
+Template: "0ec93631-8e84-4f68-bf21-418517c4d33e"
+Path: /sitecore/templates/Project/solo/Components/Heroes/HeroBanner Folder/__Standard Values
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Value: |
+    {269BB3EF-0D4A-4BE4-9AD2-F6F012F710DC}
+    {0EC93631-8E84-4F68-BF21-418517C4D33E}
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "e072299f-5585-42eb-9a1c-4a9651bd924a"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20120621T071605Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "63015713-0e45-42ee-b022-e50d66e710ee"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\christian.hahn@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20251210T121359Z

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "slug": "christian-hahn",
+    "name": "Christian Hahn",
+    "title": "4x Sitecore MVP & Technology MVP - Senior Solution Architect",
+    "bio": "Christian Hahn is a 4-time Sitecore MVP and Technology MVP with over 10 years of experience in digital experience platforms. As a Senior Solution Architect and former Pre-Sales Engineer of the Year at Sitecore, he specializes in Next.js, XM Cloud, and modern web development. Christian is passionate about sharing knowledge through blogging, speaking at conferences, and mentoring developers in the Sitecore community.",
+    "email": "info@hahn-solo.training",
+    "avatar": "/images/gemini-generated-image-a9gybka9gybka9gy.png",
+    "socialLinks": {
+      "linkedin": "https://www.linkedin.com/in/hahn-solo",
+      "twitter": "https://twitter.com/hahn_solo",
+      "github": "https://github.com/hahnicity"
+    },
+    "expertise": ["Sitecore", "Next.js", "XM Cloud", "Solution Architecture", "JSS", "Content SDK", "AI Integration"],
+    "articlesCount": 8,
+    "joined": "2020-01-01"
+  },
+  {
+    "id": "2",
+    "slug": "external-source",
+    "name": "External Source",
+    "title": "Community Contributor",
+    "bio": "Content sourced from external publications, partner blogs, and community contributions. These articles provide diverse perspectives and insights from across the broader Sitecore and DXP ecosystem.",
+    "email": "community@hahn-solo.training",
+    "avatar": "/images/authors/external-source.jpg",
+    "socialLinks": {},
+    "expertise": ["Industry News", "External Content", "Community Insights"],
+    "articlesCount": 0,
+    "joined": "2020-01-01"
+  }
+]

@@ -9,21 +9,37 @@ import * as React from 'react';
 import * as SeparatorPrimitive from '@radix-ui/react-separator';
 import { cn } from 'lib/utils';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
-import { XIcon, ChevronDownIcon, Menu, X, Search, Moon, Sun } from 'lucide-react';
+import { XIcon, ChevronDownIcon, Menu, X, Search, Moon, Sun, ShoppingCart, AlertCircle, Clock, ArrowRight, Calendar, MapPin } from 'lucide-react';
 import { Slot } from '@radix-ui/react-slot';
 import { cva } from 'class-variance-authority';
 import * as AvatarPrimitive from '@radix-ui/react-avatar';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
-import { ThemeProvider, useTheme } from 'next-themes';
+import componentMap from '.sitecore/component-map';
+import { AppPlaceholder, CdpHelper, useSitecore, Text, Link as Link_8a80e63291fea86e0744df19113dc44bec187216 } from '@sitecore-content-sdk/nextjs';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import { useTheme } from 'next-themes';
 import { Button } from 'components/ui/button';
-import componentMap from '.sitecore/component-map';
-import { AppPlaceholder, CdpHelper, useSitecore } from '@sitecore-content-sdk/nextjs';
 import client from 'src/lib/sitecore-client';
 import { pageView } from '@sitecore-cloudsdk/events/browser';
 import config from 'sitecore.config';
+import { Slider } from 'src/components/content/testimonials/list/Testimonials.Slider';
+import { Tiles } from 'src/components/content/stats/Stats.Tiles';
+import { Button as Button_84330b1bbe8a1bb4486fd11a1e9edfcb73dcb72a } from 'src/components/ui/button';
+import { Card, CardContent, CardFooter } from 'src/components/ui/card';
+import { Badge } from 'src/components/ui/badge';
+import { formatPrice, formatDate, getTopArticle } from 'src/lib/data';
+import { getFeaturedProducts, formatDate as formatDate_e48efc7333ac73f929d9b272a527b63e4cd08f90, getNextUpcomingEvent } from 'lib/data';
+import { ProductCard } from 'src/components/content/products/teaser/_productCard';
+import { Tiles as Tiles_49423b085a70264a020b434efb2a0fbe4b23f2fe } from 'src/components/content/products/list/Product.Tiles';
+import { Input } from 'src/components/ui/input';
+import { getLucideIcon } from 'lib/iconUtils';
+import { NewsGrid } from 'src/components/content/news/List/News.Grid';
+import { Tiles as Tiles_75b8429dc9a0bec3b78dcefc87eea854a8f31e72 } from 'src/components/content/highlight/Highlights.Tiles';
+import { Badge as Badge_f73c9e26e1b40f1c7b03de1aee0b79dcd8ca4493 } from 'components/ui/badge';
+import { Card as Card_ee5df0e436668ea77211f94aa8fc698e82699918, CardContent as CardContent_ee5df0e436668ea77211f94aa8fc698e82699918 } from 'components/ui/card';
+import { Slider as Slider_46091ec46945bf6a641b749ef0b0366a3b6b61c0 } from 'src/components/content/brands/Brands.Slider';
 
 const importMap = [
   {
@@ -63,6 +79,12 @@ const importMap = [
       { name: 'Search', value: Search },
       { name: 'Moon', value: Moon },
       { name: 'Sun', value: Sun },
+      { name: 'ShoppingCart', value: ShoppingCart },
+      { name: 'AlertCircle', value: AlertCircle },
+      { name: 'Clock', value: Clock },
+      { name: 'ArrowRight', value: ArrowRight },
+      { name: 'Calendar', value: Calendar },
+      { name: 'MapPin', value: MapPin },
     ]
   },
   {
@@ -90,10 +112,19 @@ const importMap = [
     ]
   },
   {
-    module: 'next-themes',
+    module: '.sitecore/component-map',
     exports: [
-      { name: 'ThemeProvider', value: ThemeProvider },
-      { name: 'useTheme', value: useTheme },
+      { name: 'default', value: componentMap },
+    ]
+  },
+  {
+    module: '@sitecore-content-sdk/nextjs',
+    exports: [
+      { name: 'AppPlaceholder', value: AppPlaceholder },
+      { name: 'CdpHelper', value: CdpHelper },
+      { name: 'useSitecore', value: useSitecore },
+      { name: 'Text', value: Text },
+      { name: 'Link', value: Link_8a80e63291fea86e0744df19113dc44bec187216 },
     ]
   },
   {
@@ -115,23 +146,15 @@ const importMap = [
     ]
   },
   {
+    module: 'next-themes',
+    exports: [
+      { name: 'useTheme', value: useTheme },
+    ]
+  },
+  {
     module: 'components/ui/button',
     exports: [
       { name: 'Button', value: Button },
-    ]
-  },
-  {
-    module: '.sitecore/component-map',
-    exports: [
-      { name: 'default', value: componentMap },
-    ]
-  },
-  {
-    module: '@sitecore-content-sdk/nextjs',
-    exports: [
-      { name: 'AppPlaceholder', value: AppPlaceholder },
-      { name: 'CdpHelper', value: CdpHelper },
-      { name: 'useSitecore', value: useSitecore },
     ]
   },
   {
@@ -150,6 +173,109 @@ const importMap = [
     module: 'sitecore.config',
     exports: [
       { name: 'default', value: config },
+    ]
+  },
+  {
+    module: 'src/components/content/testimonials/list/Testimonials.Slider',
+    exports: [
+      { name: 'Slider', value: Slider },
+    ]
+  },
+  {
+    module: 'src/components/content/stats/Stats.Tiles',
+    exports: [
+      { name: 'Tiles', value: Tiles },
+    ]
+  },
+  {
+    module: 'src/components/ui/button',
+    exports: [
+      { name: 'Button', value: Button_84330b1bbe8a1bb4486fd11a1e9edfcb73dcb72a },
+    ]
+  },
+  {
+    module: 'src/components/ui/card',
+    exports: [
+      { name: 'Card', value: Card },
+      { name: 'CardContent', value: CardContent },
+      { name: 'CardFooter', value: CardFooter },
+    ]
+  },
+  {
+    module: 'src/components/ui/badge',
+    exports: [
+      { name: 'Badge', value: Badge },
+    ]
+  },
+  {
+    module: 'src/lib/data',
+    exports: [
+      { name: 'formatPrice', value: formatPrice },
+      { name: 'formatDate', value: formatDate },
+      { name: 'getTopArticle', value: getTopArticle },
+    ]
+  },
+  {
+    module: 'lib/data',
+    exports: [
+      { name: 'getFeaturedProducts', value: getFeaturedProducts },
+      { name: 'formatDate', value: formatDate_e48efc7333ac73f929d9b272a527b63e4cd08f90 },
+      { name: 'getNextUpcomingEvent', value: getNextUpcomingEvent },
+    ]
+  },
+  {
+    module: 'src/components/content/products/teaser/_productCard',
+    exports: [
+      { name: 'ProductCard', value: ProductCard },
+    ]
+  },
+  {
+    module: 'src/components/content/products/list/Product.Tiles',
+    exports: [
+      { name: 'Tiles', value: Tiles_49423b085a70264a020b434efb2a0fbe4b23f2fe },
+    ]
+  },
+  {
+    module: 'src/components/ui/input',
+    exports: [
+      { name: 'Input', value: Input },
+    ]
+  },
+  {
+    module: 'lib/iconUtils',
+    exports: [
+      { name: 'getLucideIcon', value: getLucideIcon },
+    ]
+  },
+  {
+    module: 'src/components/content/news/List/News.Grid',
+    exports: [
+      { name: 'NewsGrid', value: NewsGrid },
+    ]
+  },
+  {
+    module: 'src/components/content/highlight/Highlights.Tiles',
+    exports: [
+      { name: 'Tiles', value: Tiles_75b8429dc9a0bec3b78dcefc87eea854a8f31e72 },
+    ]
+  },
+  {
+    module: 'components/ui/badge',
+    exports: [
+      { name: 'Badge', value: Badge_f73c9e26e1b40f1c7b03de1aee0b79dcd8ca4493 },
+    ]
+  },
+  {
+    module: 'components/ui/card',
+    exports: [
+      { name: 'Card', value: Card_ee5df0e436668ea77211f94aa8fc698e82699918 },
+      { name: 'CardContent', value: CardContent_ee5df0e436668ea77211f94aa8fc698e82699918 },
+    ]
+  },
+  {
+    module: 'src/components/content/brands/Brands.Slider',
+    exports: [
+      { name: 'Slider', value: Slider_46091ec46945bf6a641b749ef0b0366a3b6b61c0 },
     ]
   }
 ];

@@ -1,14 +1,14 @@
-import { type NextRequest, type NextFetchEvent } from 'next/server';
+import { type NextRequest, type NextFetchEvent } from "next/server";
 import {
   defineMiddleware,
   AppRouterMultisiteMiddleware,
   PersonalizeMiddleware,
   RedirectsMiddleware,
   LocaleMiddleware,
-} from '@sitecore-content-sdk/nextjs/middleware';
-import sites from '.sitecore/sites.json';
-import scConfig from 'sitecore.config';
-import { routing } from './i18n/routing';
+} from "@sitecore-content-sdk/nextjs/middleware";
+import sites from ".sitecore/sites.json";
+import scConfig from "sitecore.config";
+import { routing } from "./i18n/routing";
 
 const locale = new LocaleMiddleware({
   /**
@@ -68,7 +68,10 @@ const personalize = new PersonalizeMiddleware({
 });
 
 export function middleware(req: NextRequest, ev: NextFetchEvent) {
-  return defineMiddleware(locale, multisite, redirects, personalize).exec(req, ev);
+  return defineMiddleware(locale, multisite, redirects, personalize).exec(
+    req,
+    ev
+  );
 }
 
 export const config = {
@@ -76,13 +79,14 @@ export const config = {
    * Match all paths except for:
    * 1. API route handlers
    * 2. /_next (Next.js internals)
+   * 2.1 /images (Next.js images)
    * 3. /sitecore/api (Sitecore API routes)
    * 4. /- (Sitecore media)
    * 5. /healthz (Health check)
    * 7. all root files inside /public
    */
   matcher: [
-    '/',
-    '/((?!api/|sitemap|robots|_next/|healthz|sitecore/api/|-/|favicon.ico|sc_logo.svg).*)',
+    "/",
+    "/((?!api/|sitemap|robots|_next/|images|healthz|sitecore/api/|-/|favicon.ico|sc_logo.svg|placeholder.svg).*)",
   ],
 };

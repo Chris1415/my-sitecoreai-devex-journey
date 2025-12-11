@@ -1,0 +1,27 @@
+﻿---
+ID: "e9fabedf-8262-46ac-935f-8cd65991469b"
+Parent: "2c2135e5-a966-4740-9d2a-b9e03fcfc41a"
+Template: "2c2135e5-a966-4740-9d2a-b9e03fcfc41a"
+Path: /sitecore/templates/Project/solo/Components/Global/Rendering Parameters/Header Parameters/__Standard Values
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20211012T120926Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\JssImport
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "eb9fb69f-6683-4143-800c-1ed5f9157eea"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\christian.hahn@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20251209T154811Z

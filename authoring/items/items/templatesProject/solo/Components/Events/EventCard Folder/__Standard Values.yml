@@ -1,0 +1,36 @@
+﻿---
+ID: "5d28040a-c5e9-4470-b119-a99e681ac7a6"
+Parent: "d25531c3-78a6-46d1-bd05-a1496ac7dfb6"
+Template: "d25531c3-78a6-46d1-bd05-a1496ac7dfb6"
+Path: /sitecore/templates/Project/solo/Components/Events/EventCard Folder/__Standard Values
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Value: |
+    {9873AD9C-32A6-464F-A906-E31130612CF3}
+    {D25531C3-78A6-46D1-BD05-A1496AC7DFB6}
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "ddeae8cd-4fc6-40fe-b28e-0517d53d5170"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20120621T071605Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "1fbd5957-463e-41b1-a735-407864159de3"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\christian.hahn@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20251211T113540Z

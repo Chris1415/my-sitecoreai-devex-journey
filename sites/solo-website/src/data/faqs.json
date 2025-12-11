@@ -1,0 +1,164 @@
+[
+  {
+    "id": "faq-0",
+    "slug": "what-is-this-project",
+    "question": "What is this project about?",
+    "answer": "This is a comprehensive demonstration project that showcases an end-to-end modern web development workflow. It combines cutting-edge tools like V0 for rapid prototyping, Sitecore AI for content management, and Next.js App Router for optimal performance. The project serves as a practical guide for developers looking to build high-performance, enterprise-grade websites with perfect Lighthouse scores.",
+    "category": "About",
+    "tags": ["overview", "project", "demonstration", "introduction"],
+    "order": 0
+  },
+  {
+    "id": "faq-1",
+    "slug": "who-is-christian-hahn",
+    "question": "Who is Christian Hahn?",
+    "answer": "Christian Hahn is a highly skilled Sitecore developer and 4-time Sitecore MVP with over 10 years of experience in digital experience platforms and web development. He excels in Sitecore Experience Platform (XP) and Sitecore Experience Manager (XM), crafting innovative systems that integrate content management, personalization, and marketing automation. Christian actively contributes to the community through 100+ blog posts, talks, and mentoring.",
+    "category": "About",
+    "tags": ["christian hahn", "about", "sitecore", "mvp"],
+    "order": 1
+  },
+  {
+    "id": "faq-1a",
+    "slug": "why-create-this-project",
+    "question": "Why did Christian create this demonstration project?",
+    "answer": "Christian created this project to share knowledge and demonstrate best practices for modern web development with Sitecore AI. As a Sitecore MVP and community advocate, he wanted to provide developers with a real-world example that bridges the gap between traditional content management and modern development workflows, showcasing how tools like V0, Cursor, and Sitecore AI can work together seamlessly.",
+    "category": "About",
+    "tags": ["purpose", "motivation", "community", "education"],
+    "order": 2
+  },
+  {
+    "id": "faq-1b",
+    "slug": "what-can-i-learn",
+    "question": "What can I learn from this project?",
+    "answer": "You'll learn the complete journey from brand creation to production deployment, including V0-powered rapid prototyping, Sitecore AI integration, Content SDK implementation with Cursor, Next.js App Router best practices, performance optimization techniques, and modern content management workflows. The project demonstrates real-world patterns for client/server components, wildcard routing, third-party integrations, and advanced features like PPR and tag-based revalidation.",
+    "category": "About",
+    "tags": ["learning", "education", "skills", "knowledge"],
+    "order": 3
+  },
+  {
+    "id": "faq-2",
+    "slug": "what-is-demonstration-project",
+    "question": "What does this demonstration project showcase?",
+    "answer": "This project demonstrates an end-to-end developer experience flow, from brand creation and website development in V0 to setting up Sitecore AI projects and environments. It showcases the integration of Content SDK with V0 and Cursor, implementation of Next.js App Router best practices, and modern content management using Sitecore AI tools like Pages, Design Studio, and Agent Studio—all while maintaining perfect Lighthouse scores.",
+    "category": "Project",
+    "tags": ["demonstration", "v0", "sitecore ai", "developer experience"],
+    "order": 4
+  },
+  {
+    "id": "faq-3",
+    "slug": "how-v0-brand-creation",
+    "question": "How does V0 fit into the brand and website creation process?",
+    "answer": "V0 serves as the starting point for rapid brand creation and website development. It enables developers to quickly prototype and build production-ready websites with AI assistance. The project demonstrates how to leverage V0's capabilities to create a complete brand identity and website structure, which then seamlessly integrates with Sitecore AI for advanced content management and personalization.",
+    "category": "Development Workflow",
+    "tags": ["v0", "brand creation", "website development", "prototyping"],
+    "order": 5
+  },
+  {
+    "id": "faq-4",
+    "slug": "content-sdk-cursor-integration",
+    "question": "What role does Content SDK play with V0 and Cursor?",
+    "answer": "The Content SDK bridges the gap between your Next.js application and Sitecore AI. When combined with V0 and Cursor (which comes pre-equipped with proper Cursor rules), it provides an optimized development experience with intelligent code completion, type safety, and automated content fetching patterns. The SDK and Starter templates ensure developers follow best practices from the start.",
+    "category": "Development Workflow",
+    "tags": ["content sdk", "cursor", "v0", "development tools"],
+    "order": 6
+  },
+  {
+    "id": "faq-5",
+    "slug": "app-router-best-practices",
+    "question": "What App Router best practices are demonstrated?",
+    "answer": "The project showcases proper usage of client and server components, efficient third-party data retrieval patterns, wildcard route handling for dynamic content, and optimal routing strategies. It emphasizes the correct separation of concerns between client and server, leveraging React Server Components for performance, and implementing streaming and suspense for improved user experience—all contributing to perfect Lighthouse scores.",
+    "category": "Development Workflow",
+    "tags": ["app router", "next.js", "best practices", "performance"],
+    "order": 7
+  },
+  {
+    "id": "faq-6",
+    "slug": "lighthouse-score-optimization",
+    "question": "How does the project maintain perfect Lighthouse scores?",
+    "answer": "Perfect Lighthouse scores are achieved through careful implementation of Next.js best practices: using Server Components for data fetching, implementing proper image optimization, leveraging code splitting, minimizing client-side JavaScript, using streaming for faster perceived performance, and following accessibility standards. The combination of V0's optimized output and Sitecore AI's efficient content delivery ensures consistently high performance metrics.",
+    "category": "Performance",
+    "tags": ["lighthouse", "performance", "optimization", "best practices"],
+    "order": 8
+  },
+  {
+    "id": "faq-7",
+    "slug": "sitecore-ai-modern-tools",
+    "question": "What modern content management tools does Sitecore AI offer?",
+    "answer": "Sitecore AI provides three powerful tools for modern content management: Pages for intuitive content editing and page composition, Design Studio for creating and managing design systems and component libraries, and Agent Studio for building AI-powered content experiences. Together, these tools enable content teams to work efficiently while maintaining brand consistency and delivering personalized experiences.",
+    "category": "Sitecore AI",
+    "tags": ["sitecore ai", "pages", "design studio", "agent studio"],
+    "order": 9
+  },
+  {
+    "id": "faq-8",
+    "slug": "pages-design-studio-benefits",
+    "question": "How do Pages and Design Studio improve content workflow?",
+    "answer": "Pages provides content editors with a visual, drag-and-drop interface for creating and managing content without developer intervention. Design Studio allows teams to maintain consistent design systems, manage component libraries, and ensure brand guidelines are followed across all pages. This separation of concerns empowers content teams while ensuring technical excellence and design consistency.",
+    "category": "Sitecore AI",
+    "tags": ["pages", "design studio", "content workflow", "efficiency"],
+    "order": 10
+  },
+  {
+    "id": "faq-9",
+    "slug": "agent-studio-capabilities",
+    "question": "What is Agent Studio and how does it enhance content creation?",
+    "answer": "Agent Studio is Sitecore AI's tool for building AI-powered content experiences. It enables teams to create intelligent agents that can assist with content generation, personalization recommendations, and automated content workflows. These agents leverage machine learning to understand user intent and deliver contextually relevant content, making content management more intelligent and efficient.",
+    "category": "Sitecore AI",
+    "tags": ["agent studio", "ai", "content creation", "automation"],
+    "order": 11
+  },
+  {
+    "id": "faq-10",
+    "slug": "experimental-ppr-feature",
+    "question": "What is experimental PPR and why is it important?",
+    "answer": "Partial Prerendering (PPR) is an experimental Next.js feature that combines the benefits of static and dynamic rendering. It allows parts of a page to be statically generated while other parts remain dynamic, providing instant page loads while still delivering personalized content. This project demonstrates how to implement PPR with Sitecore AI to achieve optimal performance without sacrificing dynamic capabilities.",
+    "category": "Advanced Features",
+    "tags": ["ppr", "partial prerendering", "performance", "experimental"],
+    "order": 12
+  },
+  {
+    "id": "faq-11",
+    "slug": "tag-based-revalidation",
+    "question": "How does tag-based revalidation improve content freshness?",
+    "answer": "Tag-based revalidation allows you to invalidate specific cached content based on tags rather than entire routes or time intervals. When content is updated in Sitecore AI, only the pages tagged with that content are revalidated, ensuring fresh content delivery while maintaining cache efficiency. This granular approach significantly improves performance and reduces unnecessary regeneration.",
+    "category": "Advanced Features",
+    "tags": ["revalidation", "caching", "performance", "content freshness"],
+    "order": 13
+  },
+  {
+    "id": "faq-12",
+    "slug": "sitecore-ai-environment-setup",
+    "question": "How do you set up Sitecore AI projects and environments?",
+    "answer": "The demonstration shows the complete setup process: creating a Sitecore AI project, configuring development and production environments, integrating the Content SDK, and connecting it with your Next.js application built in V0. It covers environment variables, authentication setup, content model configuration, and deployment strategies to ensure a smooth development-to-production workflow.",
+    "category": "Development Workflow",
+    "tags": ["sitecore ai", "setup", "environments", "configuration"],
+    "order": 14
+  },
+  {
+    "id": "faq-13",
+    "slug": "wildcard-routing-handling",
+    "question": "How are wildcard routes handled in the project?",
+    "answer": "Wildcard routes are implemented using Next.js catch-all segments to handle dynamic content paths from Sitecore AI. The project demonstrates how to fetch content based on URL paths, implement proper 404 handling, manage redirects, and ensure SEO optimization for dynamically generated pages. This approach provides flexibility while maintaining performance and user experience.",
+    "category": "Development Workflow",
+    "tags": ["wildcard routes", "dynamic routing", "next.js", "content delivery"],
+    "order": 15
+  },
+  {
+    "id": "faq-14",
+    "slug": "third-party-data-integration",
+    "question": "What third-party data retrieval patterns are demonstrated?",
+    "answer": "The project showcases best practices for integrating third-party APIs and data sources, including proper server-side data fetching, error handling, caching strategies, and data transformation. It demonstrates how to combine Sitecore AI content with external data sources while maintaining performance, implementing proper loading states, and handling failures gracefully.",
+    "category": "Development Workflow",
+    "tags": ["third-party", "data fetching", "api integration", "best practices"],
+    "order": 16
+  },
+  {
+    "id": "faq-15",
+    "slug": "client-server-component-strategy",
+    "question": "How should client and server components be used effectively?",
+    "answer": "The project demonstrates the golden rule: use Server Components by default for data fetching and static content, and Client Components only when needed for interactivity, browser APIs, or state management. This approach minimizes JavaScript bundle size, improves initial page load, and leverages server-side rendering benefits while still providing rich interactive experiences where needed.",
+    "category": "Development Workflow",
+    "tags": ["server components", "client components", "react", "architecture"],
+    "order": 17
+  }
+]

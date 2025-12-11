@@ -1,11 +1,11 @@
-import { defineCliConfig } from '@sitecore-content-sdk/nextjs/config-cli';
+import { defineCliConfig } from "@sitecore-content-sdk/nextjs/config-cli";
 import {
   generateSites,
   generateMetadata,
   extractFiles,
   writeImportMap,
-} from '@sitecore-content-sdk/nextjs/tools';
-import scConfig from './sitecore.config';
+} from "@sitecore-content-sdk/nextjs/tools";
+import scConfig from "./sitecore.config";
 
 export default defineCliConfig({
   config: scConfig,
@@ -15,12 +15,17 @@ export default defineCliConfig({
       generateSites(),
       extractFiles(),
       writeImportMap({
-        paths: ['src/components'],
+        paths: ["src/components"],
       }),
     ],
   },
   componentMap: {
-    paths: ['src/components'],
-    exclude: ['src/components/content-sdk/*'],
+    paths: ["src/components"],
+    exclude: [
+      "src/components/content-sdk/*",
+      "src/components/ui/*",
+      "src/components/content/products/teaser/_productCard.tsx",
+      "src/components/content/news/list/_card.tsx",
+    ],
   },
 });

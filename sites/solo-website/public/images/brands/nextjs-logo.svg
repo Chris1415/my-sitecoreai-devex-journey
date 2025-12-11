@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" fill="white">
+  <!-- Changed logo and text to white -->
+  <path d="M30 10 L30 50 M20 30 L40 30 M40 30 L40 50 M45 10 L55 10 L70 30 L55 50 L45 50" stroke="white" stroke-width="3" fill="none"/>
+  <text x="80" y="38" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="white">Next.js</text>
+</svg>

@@ -1,0 +1,36 @@
+﻿---
+ID: "9201a479-1691-4b75-87a3-e6fc3946e90e"
+Parent: "c3d8de58-f89f-4f64-bc94-2d26b7b0ac8f"
+Template: "c3d8de58-f89f-4f64-bc94-2d26b7b0ac8f"
+Path: /sitecore/templates/Project/solo/Components/Stats/Stats Folder/__Standard Values
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Value: |
+    {F2059D93-4151-4B7F-803B-D78B075F6DF4}
+    {C3D8DE58-F89F-4F64-BC94-2D26B7B0AC8F}
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "426b29eb-9ddb-42ab-aa69-7e25fd3c66e2"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20120621T071605Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "16fdddab-ace5-473e-988e-a4e7ea2ba22a"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\christian.hahn@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20251211T111922Z

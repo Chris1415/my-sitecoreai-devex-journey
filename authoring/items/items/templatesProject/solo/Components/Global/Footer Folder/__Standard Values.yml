@@ -1,0 +1,36 @@
+﻿---
+ID: "0e85bcc0-62b3-4822-8a4d-31a94573203e"
+Parent: "f4989f53-21ab-43f4-a551-6be1aafa3a67"
+Template: "f4989f53-21ab-43f4-a551-6be1aafa3a67"
+Path: /sitecore/templates/Project/solo/Components/Global/Footer Folder/__Standard Values
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Value: |
+    {A2AD42B6-1B31-4979-B6E2-67AB3505FF91}
+    {F4989F53-21AB-43F4-A551-6BE1AAFA3A67}
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "b926c3f1-68c4-4bec-ab05-2adfe06de6dc"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20120621T071605Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "683ac219-f70f-45a1-8405-87fd44339249"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\christian.hahn@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20251209T155341Z

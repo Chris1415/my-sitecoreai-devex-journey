@@ -1,0 +1,36 @@
+﻿---
+ID: "8a98561e-d828-489e-a32c-7f0939e1f6a9"
+Parent: "beba4caf-f1d7-4384-9d03-489220dd22b4"
+Template: "beba4caf-f1d7-4384-9d03-489220dd22b4"
+Path: /sitecore/templates/Project/solo/Components/News/News Card Folder/__Standard Values
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Value: |
+    {E06EA328-2D7C-4BF9-B7ED-AB43A71FD197}
+    {BEBA4CAF-F1D7-4384-9D03-489220DD22B4}
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "52462aa0-347d-4035-85e6-af6b3a3aaf49"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20120621T071605Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "2377be06-3a76-417d-9986-9a2260a388c3"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\christian.hahn@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20251210T130715Z

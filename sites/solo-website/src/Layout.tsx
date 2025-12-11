@@ -1,10 +1,10 @@
-import React, { JSX } from 'react';
-import { Field, Page } from '@sitecore-content-sdk/nextjs';
-import Scripts from 'src/Scripts';
-import SitecoreStyles from 'components/content-sdk/SitecoreStyles';
-import { DesignLibraryLayout } from './DesignLibraryLayout';
+import React, { JSX } from "react";
+import { Field, Page } from "@sitecore-content-sdk/nextjs";
+import Scripts from "src/Scripts";
+import SitecoreStyles from "components/content-sdk/SitecoreStyles";
+import { DesignLibraryLayout } from "./DesignLibraryLayout";
 import { AppPlaceholder } from "@sitecore-content-sdk/nextjs";
-import componentMap from '.sitecore/component-map';
+import componentMap from ".sitecore/component-map";
 
 interface LayoutProps {
   page: Page;
@@ -18,7 +18,7 @@ export interface RouteFields {
 const Layout = ({ page }: LayoutProps): JSX.Element => {
   const { layout, mode } = page;
   const { route } = layout.sitecore;
-  const mainClassPageEditing = mode.isEditing ? 'editing-mode' : 'prod-mode';
+  const mainClassPageEditing = mode.isEditing ? "editing-mode" : "prod-mode";
 
   return (
     <>
@@ -30,7 +30,7 @@ const Layout = ({ page }: LayoutProps): JSX.Element => {
           <DesignLibraryLayout />
         ) : (
           <>
-            <header>
+            <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
               <div id="header">
                 {route && (
                   <AppPlaceholder

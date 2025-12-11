@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" fill="white">
+  <!-- Changed triangle and text to white -->
+  <path d="M30 10 L50 50 L10 50 Z" fill="white"/>
+  <text x="60" y="38" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="white">VERCEL</text>
+</svg>

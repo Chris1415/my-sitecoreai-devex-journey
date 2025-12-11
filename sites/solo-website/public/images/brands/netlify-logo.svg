@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" fill="white">
+  <!-- Changed logo and text to white -->
+  <path d="M20 20 L30 15 L40 20 L35 30 L40 40 L30 45 L20 40 L25 30 Z" fill="white"/>
+  <text x="50" y="38" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="white">netlify</text>
+</svg>

@@ -1,0 +1,36 @@
+﻿---
+ID: "097d3e64-40bd-4102-b3c0-db41fe449f00"
+Parent: "546d1d37-b88e-4d0b-96a9-3f771dc6b133"
+Template: "546d1d37-b88e-4d0b-96a9-3f771dc6b133"
+Path: /sitecore/templates/Project/solo/Components/News/News List Folder/__Standard Values
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Value: |
+    {745A7709-6723-4AEC-AF50-D293DF974DD4}
+    {546D1D37-B88E-4D0B-96A9-3F771DC6B133}
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "7259fcd2-2616-4141-87aa-91b4e1c6c898"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20120621T071605Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "549ee6dd-e8ab-4d6a-a5ac-d9b7a6522137"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\christian.hahn@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20251210T143438Z

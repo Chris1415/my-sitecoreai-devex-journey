@@ -1,0 +1,180 @@
+[
+  {
+    "id": "sugde-33-munich",
+    "title": "SUGDE 33 in Munich - Christmas Edition",
+    "description": "Speaking at SUGDE 33 about Sitecore AI's App Studio and Marketplace. Join us for talks, workshops, an interactive quiz, and a visit to Munich's Christmas market!",
+    "startDateTime": "2026-12-04T12:00:00Z",
+    "endDateTime": "2026-12-04T18:00:00Z",
+    "location": {
+      "name": "Ommax Office",
+      "street": "Kaulbachstraße 4",
+      "city": "Munich",
+      "postalCode": "80539",
+      "country": "Germany",
+      "mapUrl": "http://www.google.com/maps/place/48.1460419,11.5803603"
+    },
+    "agenda": [
+      {
+        "timeStart": "13:00",
+        "timeEnd": "13:15",
+        "title": "Welcome",
+        "description": "The board welcomes all participants and kicks off the event",
+        "speakers": [
+          { "name": "Andreas Kölle", "role": "Board Member, SUGDE", "avatar": "/images/speakers/andreas.jpg" },
+          { "name": "Katharina Luger", "role": "Board Member, SUGDE", "avatar": "/images/speakers/katharina.jpg" },
+          { "name": "Christian Hahn", "role": "Board Member, SUGDE", "avatar": "/images/speakers/christian.jpg" },
+          { "name": "Anna Bründel", "role": "Board Member, SUGDE", "avatar": "/images/speakers/anna.jpg" }
+        ]
+      },
+      {
+        "timeStart": "13:15",
+        "timeEnd": "14:15",
+        "title": "Sitecore Symposium Recap 2025",
+        "description": "Deep dive into Sitecore AI, Agentic Studio, and the 'Fans First' theme from this year's Symposium",
+        "speakers": [
+          { "name": "Anke Kiener", "role": "Sitecore", "avatar": "/images/speakers/anke.jpg" },
+          { "name": "Andreas Kölle", "role": "SUGDE", "avatar": "/images/speakers/andreas.jpg" },
+          { "name": "Katharina Luger", "role": "SUGDE", "avatar": "/images/speakers/katharina.jpg" },
+          { "name": "Sebastian Winter", "role": "SUGDE", "avatar": "/images/speakers/sebastian.jpg" }
+        ]
+      },
+      {
+        "timeStart": "14:15",
+        "timeEnd": "15:00",
+        "title": "Interactive Discussion and Q&A",
+        "description": "Ask community and Sitecore experts about Symposium, roadmaps, features, and more",
+        "speakers": []
+      },
+      {
+        "timeStart": "15:00",
+        "timeEnd": "16:00",
+        "title": "Lunch Break",
+        "description": "Network with fellow Sitecore enthusiasts over a delicious lunch",
+        "speakers": []
+      },
+      {
+        "timeStart": "16:00",
+        "timeEnd": "16:45",
+        "title": "Sitecore AI's App Studio and Marketplace",
+        "description": "Live coding: Building a full Marketplace App including the 'Orphaned Items Collector' with video coding demo",
+        "speakers": [
+          { "name": "Christian Hahn", "role": "Board Member, SUGDE", "avatar": "/images/speakers/christian.jpg" },
+          { "name": "Sebastian Winter", "role": "SUGDE", "avatar": "/images/speakers/sebastian.jpg" },
+          { "name": "Anna Bründel", "role": "Board Member, SUGDE", "avatar": "/images/speakers/anna.jpg" }
+        ]
+      },
+      {
+        "timeStart": "17:00",
+        "timeEnd": "18:00",
+        "title": "Interactive Quiz",
+        "description": "Sitecore/SUGDE themed quiz with great prizes!",
+        "speakers": [
+          { "name": "Christian Hahn", "role": "Quiz Master", "avatar": "/images/speakers/christian.jpg" },
+          { "name": "Anna Bründel", "role": "Co-Host", "avatar": "/images/speakers/anna.jpg" }
+        ]
+      }
+    ],
+    "heroImage": "/images/image.png",
+    "registrationUrl": "https://www.linkedin.com/events/sugde33inmunich7374731158728785920/"
+  },
+  {
+    "id": "sitecore-city-tour-london",
+    "title": "Sitecore City Tour Europe | Next is Now - London",
+    "description": "Attending the exclusive London City Tour at Ham Yard Hotel featuring Sitecore AI demos, customer success stories, and networking with industry leaders.",
+    "startDateTime": "2025-11-25T13:30:00Z",
+    "endDateTime": "2025-11-25T20:30:00Z",
+    "location": {
+      "name": "Ham Yard Hotel",
+      "street": "1 Ham Yard",
+      "city": "London",
+      "postalCode": "W1D 7DT",
+      "country": "United Kingdom",
+      "mapUrl": "https://maps.google.com/?q=Ham+Yard+Hotel+London"
+    },
+    "agenda": [
+      {
+        "timeStart": "13:30",
+        "timeEnd": "14:00",
+        "title": "Arrivals and Light Refreshments",
+        "description": "Registration and networking",
+        "speakers": []
+      },
+      {
+        "timeStart": "14:00",
+        "timeEnd": "14:15",
+        "title": "Welcome Address",
+        "description": "Opening remarks",
+        "speakers": [{ "name": "Dave Tilbury", "role": "COO, Sitecore", "avatar": "/images/speakers/dave.jpg" }]
+      },
+      {
+        "timeStart": "14:15",
+        "timeEnd": "14:45",
+        "title": "Post-Symposium Recap",
+        "description": "Hot off the press: what you missed at Symposium 2025",
+        "speakers": [{ "name": "Roger Connelly", "role": "CPO, Sitecore", "avatar": "/images/speakers/roger.jpg" }]
+      },
+      {
+        "timeStart": "14:45",
+        "timeEnd": "15:10",
+        "title": "AI-Powered Content Operations",
+        "description": "Orchestrating the future with Sitecore, Gradial, and EPAM",
+        "speakers": [
+          { "name": "Timothy Marsh", "role": "Technology Consultant, EPAM", "avatar": "/images/speakers/timothy.jpg" },
+          { "name": "Alexandra Jorge", "role": "Director, EPAM", "avatar": "/images/speakers/alexandra.jpg" }
+        ]
+      },
+      {
+        "timeStart": "15:10",
+        "timeEnd": "15:35",
+        "title": "Aston Martin Digital Transformation",
+        "description": "Intensity. Driven. The unfiltered look at world-class transformation",
+        "speakers": [
+          {
+            "name": "Ellie Akeroyd",
+            "role": "Digital Product Manager, Aston Martin",
+            "avatar": "/images/speakers/ellie.jpg"
+          }
+        ]
+      },
+      {
+        "timeStart": "16:00",
+        "timeEnd": "16:30",
+        "title": "Microsoft Partnership",
+        "description": "Microsoft and Sitecore - a future-forward partnership",
+        "speakers": [{ "name": "Richard Potter", "role": "Microsoft", "avatar": "/images/speakers/richard.jpg" }]
+      },
+      {
+        "timeStart": "16:30",
+        "timeEnd": "17:00",
+        "title": "Beyond Web - Bayer's Journey",
+        "description": "Bayer's journey to a new web experience with Sitecore",
+        "speakers": [{ "name": "Manuel Janzen", "role": "Unit Lead, Bayer", "avatar": "/images/speakers/manuel.jpg" }]
+      },
+      {
+        "timeStart": "17:00",
+        "timeEnd": "17:30",
+        "title": "Customer Panel Discussion",
+        "description": "Leaders from financial services, manufacturing, and insurance share their experiences",
+        "speakers": [
+          { "name": "Sean Broderick", "role": "Senior Director, Sitecore", "avatar": "/images/speakers/sean.jpg" }
+        ]
+      },
+      {
+        "timeStart": "17:30",
+        "timeEnd": "18:00",
+        "title": "Sitecore Excellence Awards",
+        "description": "Recognizing outstanding achievements",
+        "speakers": []
+      },
+      {
+        "timeStart": "18:15",
+        "timeEnd": "20:30",
+        "title": "Networking Reception",
+        "description": "Drinks and canapes",
+        "speakers": []
+      }
+    ],
+    "heroImage": "/images/events/london-city-tour.jpg",
+    "registrationUrl": "https://engage.sitecore.com/city-tour-london-november"
+  }
+]
