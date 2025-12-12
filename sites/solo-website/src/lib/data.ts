@@ -17,6 +17,7 @@ export interface Article {
   tags: string[];
   heroImage: string;
   isTop: boolean;
+  originalUrl: string;
 }
 
 export interface Speaker {

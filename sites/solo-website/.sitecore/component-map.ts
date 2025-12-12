@@ -21,6 +21,7 @@ import * as NewsCardTop from 'src/components/content/news/Teaser/NewsCard.Top';
 import * as NewsCard from 'src/components/content/news/Teaser/NewsCard';
 import * as NewsGrid from 'src/components/content/news/List/News.Grid';
 import * as News from 'src/components/content/news/List/News';
+import * as NewsDetails from 'src/components/content/news/Details/NewsDetails';
 import * as HighlightsTiles from 'src/components/content/highlight/Highlights.Tiles';
 import * as Highlights from 'src/components/content/highlight/Highlights';
 import * as HeroBannerBranded from 'src/components/content/hero/HeroBanner.Branded';
@@ -47,6 +48,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['NewsCardProps', { ...NewsCardProps }],
   ['NewsCard', { ...NewsCardTop, ...NewsCard }],
   ['News', { ...NewsGrid, ...News }],
+  ['NewsDetails', { ...NewsDetails }],
   ['Highlights', { ...HighlightsTiles, ...Highlights }],
   ['HeroBanner', { ...HeroBannerBranded, ...HeroBanner }],
   ['EventCard', { ...EventCardHighlight, ...EventCard }],

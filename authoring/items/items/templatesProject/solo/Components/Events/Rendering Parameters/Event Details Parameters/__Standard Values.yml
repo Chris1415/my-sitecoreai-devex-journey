@@ -1,0 +1,27 @@
+﻿---
+ID: "c868196a-fc80-4c44-ab6c-7ed97ab848fb"
+Parent: "ab306bd7-bad3-4f74-b9e3-6b27e11d002d"
+Template: "ab306bd7-bad3-4f74-b9e3-6b27e11d002d"
+Path: /sitecore/templates/Project/solo/Components/Events/Rendering Parameters/Event Details Parameters/__Standard Values
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20211012T120926Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\JssImport
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "74296e38-e5af-48aa-bc0d-4c79b714fb57"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\christian.hahn@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20251212T150729Z

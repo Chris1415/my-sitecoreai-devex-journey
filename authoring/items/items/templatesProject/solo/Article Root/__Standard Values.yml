@@ -1,0 +1,40 @@
+﻿---
+ID: "e315021b-9a96-4d0b-ac92-d349cff7df24"
+Parent: "44eadf66-53c0-4384-960b-81691d619c81"
+Template: "44eadf66-53c0-4384-960b-81691d619c81"
+Path: /sitecore/templates/Project/solo/Article Root/__Standard Values
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Value: |
+    {C14B6289-8AC2-439C-9E5B-40DE9F820C3F}
+    {19BA4928-23EB-4FE4-8D64-926B0DEAC834}
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "caab78fe-3c1d-4653-9c9c-612fd729caf1"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20251209T141004Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\christian.hahn@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\christian.hahn@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "67e9ef2f-521b-49a0-af0b-f099224f33c4"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\christian.hahn@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20251212T144130Z

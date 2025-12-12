@@ -6,10 +6,12 @@ Path: "/sitecore/content/solo/solo-website/Presentation/Available Renderings/Eve
 SharedFields:
 - ID: "715ae6c0-71c8-4744-ab4f-65362d20ad65"
   Hint: Renderings
-  Value: "{7E560DD8-7E1C-4843-AE1A-6571A04A2973}"
+  Value: |
+    {7E560DD8-7E1C-4843-AE1A-6571A04A2973}
+    {7B3A941E-9DCC-444E-925F-E0B295C27B95}
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "8f7ccd73-0491-4baf-9ce4-ae5c5190ec27"
+  Value: "34a521a9-930d-4794-91c6-59471c36905f"
 Languages:
 - Language: en
   Versions:
@@ -28,11 +30,11 @@ Languages:
         sitecore\christian.hahn@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "f5bb3540-7985-4a37-bb44-28dacdc8870b"
+      Value: "696cf67f-fc7d-4492-8355-bd21a727225f"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\christian.hahn@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20251211T114344Z
+      Value: 20251212T151027Z

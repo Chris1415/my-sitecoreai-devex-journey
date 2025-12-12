@@ -10,9 +10,12 @@ SharedFields:
 - ID: "12c33f3f-86c5-43a5-aeb4-5598cec45116"
   Hint: __Base template
   Value: "{79C9FA01-5F6A-48B2-B459-05BBAA826A9D}"
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 1300
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "776bf526-5853-408f-a52a-81fdc39f2c8f"
+  Value: "3fccb166-c496-48dd-a06b-452ed61794e3"
 - ID: "f7d48a55-2158-4f02-9356-756654404f73"
   Hint: __Standard values
   Value: "{7CA819B4-DE99-4D8A-A3E8-FC3BACC6239C}"
@@ -34,11 +37,11 @@ Languages:
         sitecore\christian.hahn@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "4ada2c25-44c8-42b7-b9ea-177e4c7ab3ea"
+      Value: "dc476ed0-71c1-4540-95c7-898186c89c8d"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\christian.hahn@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20251209T141004Z
+      Value: 20251212T151123Z

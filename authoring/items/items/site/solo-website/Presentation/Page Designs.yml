@@ -7,10 +7,10 @@ BranchID: "45cf9f42-b3ac-4412-aab9-f8441c7e448e"
 SharedFields:
 - ID: "ba1f60d6-3deb-40cc-bb61-eec772279ee1"
   Hint: TemplatesMapping
-  Value: "%7b6C515802-F43D-4F45-B4E5-A5AAFC5DBD76%7d%3d%257B14D5BDAF-04A9-45B6-936A-B53357B8D832%257D"
+  Value: "%7b6C515802-F43D-4F45-B4E5-A5AAFC5DBD76%7d%3d%257B14D5BDAF-04A9-45B6-936A-B53357B8D832%257D%26%7b19BA4928-23EB-4FE4-8D64-926B0DEAC834%7d%3d%257B53271024-95C1-4C08-AACB-10AFDE08F7D1%257D%26%7b44EADF66-53C0-4384-960B-81691D619C81%7d%3d%257B14D5BDAF-04A9-45B6-936A-B53357B8D832%257D"
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "8b62b897-8a7a-4766-969d-da7bd9ddd5c6"
+  Value: "9d0f1722-6c19-4ee7-a92c-1963f7364a3a"
 - ID: "f6d8a61c-2f84-4401-bd24-52d2068172bc"
   Hint: __Originator
   Value: "{2EA756FA-AED6-4599-83B7-36FEFE229B31}"
@@ -64,11 +64,11 @@ Languages:
         sitecore\christian.hahn@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "16e2a707-c2da-4890-95b4-e2245a996a05"
+      Value: "731c1b5c-fb98-4c0b-8b90-2186bf13e9ed"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\christian.hahn@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20251209T160930Z
+      Value: 20251212T144113Z

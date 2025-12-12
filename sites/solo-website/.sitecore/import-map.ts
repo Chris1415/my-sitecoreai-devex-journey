@@ -9,7 +9,7 @@ import * as React from 'react';
 import * as SeparatorPrimitive from '@radix-ui/react-separator';
 import { cn } from 'lib/utils';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
-import { XIcon, ChevronDownIcon, Menu, X, Search, Moon, Sun, ShoppingCart, AlertCircle, Clock, ArrowRight, Calendar, MapPin } from 'lucide-react';
+import { XIcon, Sparkles, ChevronDownIcon, Menu, X, Search, Moon, Sun, ShoppingCart, AlertCircle, Clock, ArrowLeft, Share2, Download, ExternalLink, Activity, Award, Brain, Globe, Layers, Lightbulb, Rocket, Target, TrendingUp, Users, Zap, ArrowRight, Calendar, MapPin } from 'lucide-react';
 import { Slot } from '@radix-ui/react-slot';
 import { cva } from 'class-variance-authority';
 import * as AvatarPrimitive from '@radix-ui/react-avatar';
@@ -29,16 +29,19 @@ import { Tiles } from 'src/components/content/stats/Stats.Tiles';
 import { Button as Button_84330b1bbe8a1bb4486fd11a1e9edfcb73dcb72a } from 'src/components/ui/button';
 import { Card, CardContent, CardFooter } from 'src/components/ui/card';
 import { Badge } from 'src/components/ui/badge';
-import { formatPrice, formatDate, getTopArticle } from 'src/lib/data';
+import { formatPrice, formatDate, getTopArticle, getArticleBySlug, getRelatedArticles, getAuthorBySlug } from 'src/lib/data';
 import { getFeaturedProducts, formatDate as formatDate_e48efc7333ac73f929d9b272a527b63e4cd08f90, getNextUpcomingEvent } from 'lib/data';
 import { ProductCard } from 'src/components/content/products/teaser/_productCard';
 import { Tiles as Tiles_49423b085a70264a020b434efb2a0fbe4b23f2fe } from 'src/components/content/products/list/Product.Tiles';
 import { Input } from 'src/components/ui/input';
 import { getLucideIcon } from 'lib/iconUtils';
 import { NewsGrid } from 'src/components/content/news/List/News.Grid';
+import { Separator } from 'src/components/ui/separator';
+import { AIGeneratedBadge } from 'components/ui/ai-generated-badge';
+import { NewsCard } from 'src/components/content/news/List/_card';
+import { Card as Card_ee5df0e436668ea77211f94aa8fc698e82699918, CardContent as CardContent_ee5df0e436668ea77211f94aa8fc698e82699918 } from 'components/ui/card';
 import { Tiles as Tiles_75b8429dc9a0bec3b78dcefc87eea854a8f31e72 } from 'src/components/content/highlight/Highlights.Tiles';
 import { Badge as Badge_f73c9e26e1b40f1c7b03de1aee0b79dcd8ca4493 } from 'components/ui/badge';
-import { Card as Card_ee5df0e436668ea77211f94aa8fc698e82699918, CardContent as CardContent_ee5df0e436668ea77211f94aa8fc698e82699918 } from 'components/ui/card';
 import { Slider as Slider_46091ec46945bf6a641b749ef0b0366a3b6b61c0 } from 'src/components/content/brands/Brands.Slider';
 
 const importMap = [
@@ -73,6 +76,7 @@ const importMap = [
     module: 'lucide-react',
     exports: [
       { name: 'XIcon', value: XIcon },
+      { name: 'Sparkles', value: Sparkles },
       { name: 'ChevronDownIcon', value: ChevronDownIcon },
       { name: 'Menu', value: Menu },
       { name: 'X', value: X },
@@ -82,6 +86,21 @@ const importMap = [
       { name: 'ShoppingCart', value: ShoppingCart },
       { name: 'AlertCircle', value: AlertCircle },
       { name: 'Clock', value: Clock },
+      { name: 'ArrowLeft', value: ArrowLeft },
+      { name: 'Share2', value: Share2 },
+      { name: 'Download', value: Download },
+      { name: 'ExternalLink', value: ExternalLink },
+      { name: 'Activity', value: Activity },
+      { name: 'Award', value: Award },
+      { name: 'Brain', value: Brain },
+      { name: 'Globe', value: Globe },
+      { name: 'Layers', value: Layers },
+      { name: 'Lightbulb', value: Lightbulb },
+      { name: 'Rocket', value: Rocket },
+      { name: 'Target', value: Target },
+      { name: 'TrendingUp', value: TrendingUp },
+      { name: 'Users', value: Users },
+      { name: 'Zap', value: Zap },
       { name: 'ArrowRight', value: ArrowRight },
       { name: 'Calendar', value: Calendar },
       { name: 'MapPin', value: MapPin },
@@ -213,6 +232,9 @@ const importMap = [
       { name: 'formatPrice', value: formatPrice },
       { name: 'formatDate', value: formatDate },
       { name: 'getTopArticle', value: getTopArticle },
+      { name: 'getArticleBySlug', value: getArticleBySlug },
+      { name: 'getRelatedArticles', value: getRelatedArticles },
+      { name: 'getAuthorBySlug', value: getAuthorBySlug },
     ]
   },
   {
@@ -254,6 +276,31 @@ const importMap = [
     ]
   },
   {
+    module: 'src/components/ui/separator',
+    exports: [
+      { name: 'Separator', value: Separator },
+    ]
+  },
+  {
+    module: 'components/ui/ai-generated-badge',
+    exports: [
+      { name: 'AIGeneratedBadge', value: AIGeneratedBadge },
+    ]
+  },
+  {
+    module: 'src/components/content/news/List/_card',
+    exports: [
+      { name: 'NewsCard', value: NewsCard },
+    ]
+  },
+  {
+    module: 'components/ui/card',
+    exports: [
+      { name: 'Card', value: Card_ee5df0e436668ea77211f94aa8fc698e82699918 },
+      { name: 'CardContent', value: CardContent_ee5df0e436668ea77211f94aa8fc698e82699918 },
+    ]
+  },
+  {
     module: 'src/components/content/highlight/Highlights.Tiles',
     exports: [
       { name: 'Tiles', value: Tiles_75b8429dc9a0bec3b78dcefc87eea854a8f31e72 },
@@ -263,13 +310,6 @@ const importMap = [
     module: 'components/ui/badge',
     exports: [
       { name: 'Badge', value: Badge_f73c9e26e1b40f1c7b03de1aee0b79dcd8ca4493 },
-    ]
-  },
-  {
-    module: 'components/ui/card',
-    exports: [
-      { name: 'Card', value: Card_ee5df0e436668ea77211f94aa8fc698e82699918 },
-      { name: 'CardContent', value: CardContent_ee5df0e436668ea77211f94aa8fc698e82699918 },
     ]
   },
   {
