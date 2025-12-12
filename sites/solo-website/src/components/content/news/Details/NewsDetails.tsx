@@ -28,11 +28,21 @@ import {
   Users,
   Zap,
 } from "lucide-react";
-import { TextField, ImageField, Field } from "@sitecore-content-sdk/nextjs";
+import {
+  TextField,
+  ImageField,
+  Field,
+  DateField,
+} from "@sitecore-content-sdk/nextjs";
 import { AIGeneratedBadge } from "components/ui/ai-generated-badge";
 import { ComponentProps } from "lib/component-props";
 import { NewsCard } from "../List/_card";
 import { Card, CardContent } from "components/ui/card";
+import {
+  Text,
+  Link as SdkLink,
+  Image as SdkImage,
+} from "@sitecore-content-sdk/nextjs";
 
 interface Tags {
   fields: {
@@ -49,18 +59,28 @@ interface Author {
 }
 
 interface NewsData {
-  fields: {
-    Title: TextField;
-    Excerpt: TextField;
-    Author: Author;
-    PublishDate: Field<string>;
-    Tags: Tags[];
-    HeroImage: ImageField;
-    ExternalUrl: TextField;
-  };
+  Title: TextField;
+  Excerpt: TextField;
+  Author: Author;
+  PublishDate: Field<string>;
+  Tags: Tags[];
+  HeroImage: ImageField;
+  ExternalUrl: TextField;
+  ReadTime: Field<number>;
 }
 
 export default async function ArticleDetailPage({ page }: ComponentProps) {
+  const {
+    Title,
+    Excerpt,
+    Author,
+    PublishDate,
+    Tags,
+    HeroImage,
+    ExternalUrl,
+    ReadTime,
+  } = page.layout.sitecore.route?.fields as unknown as NewsData;
+
   const article = getArticleBySlug(page.layout.sitecore.route?.name || "");
 
   if (!article) {
@@ -321,24 +341,24 @@ export default async function ArticleDetailPage({ page }: ComponentProps) {
             {/* Content Section - 1/3 width on left */}
             <div className="flex flex-col justify-center p-8 lg:p-12 bg-background lg:border-r border-border">
               <div className="mb-6 flex flex-wrap gap-2">
-                {article.tags.map((tag) => (
+                {Tags.map((tag) => (
                   <Badge
-                    key={tag}
+                    key={tag?.fields?.Title?.value}
                     variant="secondary"
                     className="text-sm py-1 px-3"
                   >
-                    {tag}
+                    <Text field={tag?.fields?.Title} />
                   </Badge>
                 ))}
               </div>
 
               <h1 className="mb-6 text-balance text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
-                {article.title}
+                <Text field={Title} />
               </h1>
 
               {article.subtitle && (
                 <p className="mb-8 text-balance text-lg text-muted-foreground leading-relaxed">
-                  {article.subtitle}
+                  <Text field={Excerpt} />
                 </p>
               )}
 
@@ -350,7 +370,10 @@ export default async function ArticleDetailPage({ page }: ComponentProps) {
                     <span className="text-sm font-medium text-muted-foreground">
                       Author
                     </span>
-                    <span className="font-medium">{article.author}</span>
+                    <span className="font-medium">
+                      {Author?.fields?.FirstName?.value}{" "}
+                      {Author?.fields?.LastName?.value}
+                    </span>
                   </div>
 
                   <div className="flex items-center justify-between">
@@ -359,9 +382,18 @@ export default async function ArticleDetailPage({ page }: ComponentProps) {
                     </span>
                     <div className="flex items-center gap-2">
                       <Clock className="h-4 w-4 text-muted-foreground" />
-                      <time dateTime={article.date} className="font-medium">
-                        {formatDate(article.date)}
-                      </time>
+                      <DateField
+                        field={PublishDate}
+                        className="font-medium"
+                        render={(date) => (
+                          <time
+                            dateTime={date?.toISOString()}
+                            className="font-medium"
+                          >
+                            {formatDate(date?.toISOString() || "")}
+                          </time>
+                        )}
+                      />
                     </div>
                   </div>
 
@@ -369,7 +401,9 @@ export default async function ArticleDetailPage({ page }: ComponentProps) {
                     <span className="text-sm font-medium text-muted-foreground">
                       Reading Time
                     </span>
-                    <span className="font-medium">5 min read</span>
+                    <span className="font-medium">
+                      <Text field={ReadTime} /> min read
+                    </span>
                   </div>
                 </div>
 
@@ -387,7 +421,7 @@ export default async function ArticleDetailPage({ page }: ComponentProps) {
                   </Button>
                 </div>
 
-                {article.originalUrl && (
+                {(ExternalUrl?.value || page?.mode?.isEditing) && (
                   <>
                     <Separator />
                     <Button
@@ -397,7 +431,7 @@ export default async function ArticleDetailPage({ page }: ComponentProps) {
                       size="lg"
                     >
                       <a
-                        href={article.originalUrl}
+                        href={(ExternalUrl?.value as string) || ""}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -405,19 +439,23 @@ export default async function ArticleDetailPage({ page }: ComponentProps) {
                         Read Original Article
                       </a>
                     </Button>
+                    {page?.mode?.isEditing && (
+                      <div className="mt-1">
+                        <Text field={ExternalUrl} />
+                      </div>
+                    )}
                   </>
                 )}
               </div>
             </div>
 
             <div className="relative lg:col-span-2 min-h-[300px] lg:min-h-full bg-muted">
-              {article.heroImage ? (
+              {HeroImage.value?.src ? (
                 <>
-                  <Image
-                    src={article.heroImage || "/placeholder.svg"}
-                    alt={article.title}
+                  <SdkImage
+                    field={HeroImage}
                     fill
-                    className="object-cover"
+                    className="w-full h-full object-cover"
                     priority
                   />
                   <AIGeneratedBadge />
