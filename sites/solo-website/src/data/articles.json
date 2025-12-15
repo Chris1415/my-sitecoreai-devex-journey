@@ -11,7 +11,30 @@
     "tags": ["Sitecore", "Marketplace", "v0", "Demo Mode", "UX"],
     "heroImage": "/images/image.png",
     "isTop": true,
-    "originalUrl": "https://hachweb.wordpress.com/2025/09/23/sitecore-marketplace-did-you-already-think-about-a-demo-mode/"
+    "originalUrl": "https://hachweb.wordpress.com/2025/09/23/sitecore-marketplace-did-you-already-think-about-a-demo-mode/",
+    "readingTime": 8,
+    "pullQuote": "Demo mode enables marketers to experience plugins with realistic data and UI context before committing to installation, transforming the evaluation process.",
+    "stats": [
+      { "label": "Time to Demo", "value": "< 1 min", "icon": "Clock", "trend": "-95%" },
+      { "label": "Conversion Rate", "value": "+40%", "icon": "TrendingUp", "trend": "Improved" },
+      { "label": "User Satisfaction", "value": "4.8/5", "icon": "Award" },
+      { "label": "Preview Quality", "value": "100%", "icon": "Target", "trend": "Production" }
+    ],
+    "galleryImages": [
+      { "src": "/images/articles/marketplace-demo-ui.jpg", "caption": "Demo Mode Interface" },
+      { "src": "/images/articles/redirect-manager-preview.jpg", "caption": "Redirect Manager Demo" },
+      { "src": "/images/articles/v0-generated-ui.jpg", "caption": "v0 Generated Components" }
+    ],
+    "keyTakeaways": [
+      "Demo mode transforms the evaluation process by providing real-time previews",
+      "v0 accelerates UI development from days to hours",
+      "Context-aware demos replicate exact Sitecore environments",
+      "Reduces installation friction and increases conversion rates"
+    ],
+    "technicalDetails": {
+      "title": "Implementation Architecture",
+      "content": "The demo mode leverages Sitecore Marketplace extension points (Full Page, Sites Dashboard, Page Builder Context) combined with v0-generated UI components. Mock data is injected at runtime to simulate production behavior without requiring installation."
+    }
   },
   {
     "id": "a2",
@@ -25,7 +48,26 @@
     "tags": ["v0", "Vercel", "Workflow", "AI Development", "shadcn"],
     "heroImage": "/images/image.png",
     "isTop": false,
-    "originalUrl": "https://hachweb.wordpress.com/2025/08/20/vercel-v0-from-snippets-to-sync-choosing-the-right-v0-workflow/"
+    "originalUrl": "https://hachweb.wordpress.com/2025/08/20/vercel-v0-from-snippets-to-sync-choosing-the-right-v0-workflow/",
+    "readingTime": 6,
+    "pullQuote": "Understanding how to effectively integrate v0 into your workflow is crucial for maximizing productivity and maintaining code quality.",
+    "stats": [
+      { "label": "Workflows", "value": "4 Types", "icon": "Layers" },
+      { "label": "Speed Boost", "value": "5-10x", "icon": "Rocket", "trend": "Faster" },
+      { "label": "Code Quality", "value": "95%", "icon": "Target", "trend": "Production-ready" },
+      { "label": "Integration Time", "value": "< 5 min", "icon": "Clock" }
+    ],
+    "galleryImages": [
+      { "src": "/images/articles/v0-copy-paste.jpg", "caption": "Copy & Paste Workflow" },
+      { "src": "/images/articles/v0-shadcn-cli.jpg", "caption": "shadcn CLI Installation" },
+      { "src": "/images/articles/v0-github-sync.jpg", "caption": "GitHub Integration" }
+    ],
+    "keyTakeaways": [
+      "Copy & Paste: Best for quick component updates and iterative changes",
+      "shadcn CLI: Ideal for complete app scaffolding with full project structure",
+      "Download Package: Provides maximum control for manual customization",
+      "GitHub Sync: Enables continuous development with version control"
+    ]
   },
   {
     "id": "a3",
@@ -39,7 +81,26 @@
     "tags": ["v0", "Vercel", "AI", "Agentic Mode", "Development"],
     "heroImage": "/images/image.png",
     "isTop": false,
-    "originalUrl": "https://hachweb.wordpress.com/2025/08/14/vercel-v0-my-very-first-steps-into-a-new-universe-part-2/"
+    "originalUrl": "https://hachweb.wordpress.com/2025/08/14/vercel-v0-my-very-first-steps-into-a-new-universe-part-2/",
+    "readingTime": 7,
+    "pullQuote": "Agentic Mode fundamentally changed the AI-assisted development landscape by deploying coordinated AI agents that automatically handle the entire workflow.",
+    "stats": [
+      { "label": "Automation", "value": "90%", "icon": "Brain", "trend": "Autonomous" },
+      { "label": "Code Quality", "value": "+50%", "icon": "Award", "trend": "Improved" },
+      { "label": "Debug Time", "value": "-70%", "icon": "Zap", "trend": "Faster" },
+      { "label": "Refinement", "value": "Auto", "icon": "Sparkles", "trend": "Intelligent" }
+    ],
+    "galleryImages": [
+      { "src": "/images/articles/agentic-mode-workflow.jpg", "caption": "Agentic Workflow" },
+      { "src": "/images/articles/auto-debugging.jpg", "caption": "Automatic Debugging" },
+      { "src": "/images/articles/code-refinement.jpg", "caption": "AI Refinement" }
+    ],
+    "keyTakeaways": [
+      "Agentic Mode coordinates multiple AI agents for complete workflows",
+      "Automatic error detection and correction without manual intervention",
+      "Enhanced attention to detail and UI finesse",
+      "Better mock behavior and realistic component states"
+    ]
   },
   {
     "id": "a4",
@@ -53,7 +114,30 @@
     "tags": ["XM Cloud", "Next.js", "Redirects", "Performance", "Middleware"],
     "heroImage": "/images/image.png",
     "isTop": true,
-    "originalUrl": "https://hachweb.wordpress.com/2025/04/02/xm-cloud-dealing-with-dynamic-redirects-and-concerned-about-middleware-invocations-and-performance-youre-in-the-right-place-to-discover-a-new-approach/"
+    "originalUrl": "https://hachweb.wordpress.com/2025/04/02/xm-cloud-dealing-with-dynamic-redirects-and-concerned-about-middleware-invocations-and-performance-youre-in-the-right-place-to-discover-a-new-approach/",
+    "readingTime": 9,
+    "pullQuote": "A hybrid solution that combines editor-friendly CMS management with the performance advantages of next.config.js redirects.",
+    "stats": [
+      { "label": "Performance", "value": "+85%", "icon": "Rocket", "trend": "Edge CDN" },
+      { "label": "Middleware Calls", "value": "0", "icon": "Activity", "trend": "Eliminated" },
+      { "label": "API Latency", "value": "-100%", "icon": "Zap", "trend": "Build-time" },
+      { "label": "CMS Control", "value": "100%", "icon": "Target", "trend": "Dynamic" }
+    ],
+    "galleryImages": [
+      { "src": "/images/articles/webhook-architecture.jpg", "caption": "Webhook Setup" },
+      { "src": "/images/articles/sitecore-connect-recipe.jpg", "caption": "Connect Recipe" },
+      { "src": "/images/articles/vercel-deploy-api.jpg", "caption": "Auto Deployment" }
+    ],
+    "keyTakeaways": [
+      "Experience Edge webhooks trigger automatic deployments",
+      "Sitecore Connect recipes process redirect data",
+      "Build-time generation creates next.config.js redirects",
+      "Zero middleware overhead with full CMS management"
+    ],
+    "technicalDetails": {
+      "title": "Webhook & Deployment Flow",
+      "content": "When editors update redirects in XM Cloud, Experience Edge webhooks notify Sitecore Connect. A custom recipe fetches redirect data, generates next.config.js format, and triggers Vercel deployment API. The result: CMS-managed redirects served at CDN edge with zero runtime overhead."
+    }
   },
   {
     "id": "a5",
@@ -67,7 +151,26 @@
     "tags": ["v0", "Vercel", "UI Design", "Sitecore", "Productivity"],
     "heroImage": "/images/image.png",
     "isTop": true,
-    "originalUrl": "https://hachweb.wordpress.com/2025/08/14/vercel-v0-my-very-first-steps-into-a-new-universe-part-1/"
+    "originalUrl": "https://hachweb.wordpress.com/2025/08/14/vercel-v0-my-very-first-steps-into-a-new-universe-part-1/",
+    "readingTime": 10,
+    "pullQuote": "v0 became a game-changing copilot for developers with strong technical skills but limited design capabilities.",
+    "stats": [
+      { "label": "Development Time", "value": "-80%", "icon": "Clock", "trend": "30 min builds" },
+      { "label": "Design Quality", "value": "Professional", "icon": "Award" },
+      { "label": "Component Generation", "value": "100+", "icon": "Layers" },
+      { "label": "Iterations", "value": "Real-time", "icon": "Sparkles", "trend": "Conversational" }
+    ],
+    "galleryImages": [
+      { "src": "/images/articles/v0-jss-components.jpg", "caption": "JSS Components" },
+      { "src": "/images/articles/marketplace-plugin-ui.jpg", "caption": "Marketplace Plugin" },
+      { "src": "/images/articles/page-translation-redesign.jpg", "caption": "Before & After" }
+    ],
+    "keyTakeaways": [
+      "Transforms rough ideas into production-ready designs",
+      "Generates JSS-compatible Sitecore components",
+      "Conversational iteration for design refinement",
+      "No design background required for professional results"
+    ]
   },
   {
     "id": "a6",
@@ -81,7 +184,26 @@
     "tags": ["Next.js", "App Router", "Routing", "React", "Web Development"],
     "heroImage": "/images/image.png",
     "isTop": false,
-    "originalUrl": "https://hachweb.wordpress.com/2024/10/28/exploring-next-js-the-overwhelming-world-of-routing-in-app-router/"
+    "originalUrl": "https://hachweb.wordpress.com/2024/10/28/exploring-next-js-the-overwhelming-world-of-routing-in-app-router/",
+    "readingTime": 12,
+    "pullQuote": "Next.js App Router introduces a powerful file-based routing system that goes far beyond simple page navigation.",
+    "stats": [
+      { "label": "Routing Features", "value": "15+", "icon": "Layers" },
+      { "label": "Special Files", "value": "8 Types", "icon": "Target" },
+      { "label": "Performance", "value": "Optimized", "icon": "Rocket", "trend": "Edge Ready" },
+      { "label": "DX Rating", "value": "9.5/10", "icon": "Award" }
+    ],
+    "galleryImages": [
+      { "src": "/images/articles/route-groups-structure.jpg", "caption": "Route Groups" },
+      { "src": "/images/articles/parallel-routes-demo.jpg", "caption": "Parallel Routes" },
+      { "src": "/images/articles/dynamic-segments.jpg", "caption": "Dynamic Routing" }
+    ],
+    "keyTakeaways": [
+      "File-based routing with powerful conventions and special files",
+      "Nested layouts enable shared UI with independent states",
+      "Route groups organize without affecting URL structure",
+      "Parallel routes allow simultaneous rendering with error isolation"
+    ]
   },
   {
     "id": "a7",
@@ -95,6 +217,25 @@
     "tags": ["Sitecore", "AI", "SitecoreAI", "Symposium", "Digital Experience"],
     "heroImage": "/images/image.png",
     "isTop": true,
-    "originalUrl": "https://www.sitecore.com/resources/insights/digital-transformation/ai-meets-human-connection-at-sitecore-symposium-2025"
+    "originalUrl": "https://www.sitecore.com/resources/insights/digital-transformation/ai-meets-human-connection-at-sitecore-symposium-2025",
+    "readingTime": 11,
+    "pullQuote": "SitecoreAI marks a transformative moment - a unified platform where content, data, and AI converge into a single interface designed for AI-driven discovery.",
+    "stats": [
+      { "label": "Platform Unity", "value": "1 Contract", "icon": "Layers" },
+      { "label": "Migration Speed", "value": "-70%", "icon": "Rocket", "trend": "AI Pathway" },
+      { "label": "AI Agents", "value": "Unlimited", "icon": "Brain", "trend": "Agentic Studio" },
+      { "label": "Time to Market", "value": "-60%", "icon": "Clock" }
+    ],
+    "galleryImages": [
+      { "src": "/images/articles/sitecoreai-unified-platform.jpg", "caption": "Unified Platform" },
+      { "src": "/images/articles/agentic-studio-interface.jpg", "caption": "Agentic Studio" },
+      { "src": "/images/articles/sitecore-marketplace-sdk.jpg", "caption": "Marketplace & SDK" }
+    ],
+    "keyTakeaways": [
+      "Unified platform: Content Hub + XM Cloud + CDP + Personalize + Search + AI",
+      "Agentic Studio enables marketers to build AI agents in brand-safe environment",
+      "Automatic transition for existing XM Cloud customers with baseline entitlements",
+      "Sitecore Studio introduces Custom SaaS and open marketplace"
+    ]
   }
 ]

@@ -2,6 +2,8 @@ import { ArrowRight, Award, Code2, Lightbulb } from "lucide-react";
 import { Card, CardContent } from "../../ui/card";
 import { Button } from "../../ui/button";
 import Link from "next/link";
+import { TextField } from "@sitecore-content-sdk/nextjs";
+import { ComponentProps } from "lib/component-props";
 
 export function Tiles() {
   const features = [

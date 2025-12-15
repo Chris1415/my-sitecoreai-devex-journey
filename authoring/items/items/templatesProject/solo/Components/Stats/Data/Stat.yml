@@ -1,29 +1,15 @@
 ﻿---
-ID: "19ba4928-23eb-4fe4-8d64-926b0deac834"
-Parent: "cd225f02-203e-4052-91c5-ce4b81bda4b1"
+ID: "eff9db70-b72d-4712-9456-90039553e8d6"
+Parent: "2806db75-d7e5-459b-ad6d-657e02c1bb16"
 Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
-Path: /sitecore/templates/Project/solo/Article Page
+Path: /sitecore/templates/Project/solo/Components/Stats/Data/Stat
 SharedFields:
-- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
-  Hint: __Icon
-  Value: Office/32x32/document_text.png
 - ID: "12c33f3f-86c5-43a5-aeb4-5598cec45116"
   Hint: __Base template
-  Value: |
-    {47151711-26CA-434E-8132-D3E0B7D26683}
-    {371D5FBB-5498-4D94-AB2B-E3B70EEBE78C}
-    {4414A1F9-826A-4647-8DF4-ED6A95E64C43}
-    {6650FB34-7EA1-4245-A919-5CC0F002A6D7}
-    {F39A594A-7BC9-4DB0-BAA1-88543409C1F9}
-- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
-  Hint: __Sortorder
-  Value: 575
+  Value: "{1930BBEB-7805-471A-A3BE-4858AC7CF696}"
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "bbe00317-91f1-4bc6-91e0-4fd522c9d105"
-- ID: "f7d48a55-2158-4f02-9356-756654404f73"
-  Hint: __Standard values
-  Value: "{F8DECC29-69F7-4CAB-9C6D-C63D1D2C4B7D}"
+  Value: "3eeaa474-a52d-4cef-a28e-9da78c97272b"
 Languages:
 - Language: en
   Versions:
@@ -31,7 +17,7 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20251209T141004Z
+      Value: 20251215T160204Z
     - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
       Hint: __Owner
       Value: |
@@ -42,11 +28,11 @@ Languages:
         sitecore\christian.hahn@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "d1eb7e2c-4497-49ca-9e80-83f01b1d6216"
+      Value: "436b5ad9-9f65-4c5a-836e-37acea84ae04"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\christian.hahn@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20251212T155539Z
+      Value: 20251215T161657Z

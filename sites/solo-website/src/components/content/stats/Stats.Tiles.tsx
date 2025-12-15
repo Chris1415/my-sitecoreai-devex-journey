@@ -1,9 +1,12 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Award, Code2, Calendar, FileText } from "lucide-react";
+import { TrendingUp, LucideIcon } from "lucide-react";
 import { Card, CardContent } from "../../../components/ui/card";
-import { getStats } from "../../../lib/data";
+import { Page, Text, TextField } from "@sitecore-content-sdk/nextjs";
+import { ComponentProps } from "lib/component-props";
+import { getLucideIcon } from "lib/iconUtils";
+import { Badge } from "components/ui/badge";
 
 function useCountUp(end: number, duration = 2000) {
   const [count, setCount] = useState(0);
@@ -11,6 +14,7 @@ function useCountUp(end: number, duration = 2000) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const currentRef = ref.current;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -20,13 +24,13 @@ function useCountUp(end: number, duration = 2000) {
       { threshold: 0.1 }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);
@@ -64,89 +68,165 @@ function useCountUp(end: number, duration = 2000) {
   return { count, ref };
 }
 
-export function Tiles() {
-  const stats = getStats();
-  const years = useCountUp(stats.yearsExperience);
-  const mvps = useCountUp(stats.mvpTitles);
-  const posts = useCountUp(stats.blogPostsWritten);
+interface StatElement {
+  fields: {
+    Icon: TextField;
+    Title: TextField;
+    Subtitle: TextField;
+    Tag: TextField;
+  };
+}
+
+export interface StatsProps extends ComponentProps {
+  fields: {
+    Title: TextField;
+    Subtitle: TextField;
+    Elements: StatElement[];
+  };
+}
+
+// Parse a stat value into its components
+// Handles: "15+", "100%", "$50", "€100K", "5x", "Sitecore" (pure text)
+interface ParsedValue {
+  isNumeric: boolean;
+  number: number;
+  prefix: string;
+  suffix: string;
+  originalValue: string;
+}
+
+function parseStatValue(value: string): ParsedValue {
+  const trimmed = value.trim();
+
+  // Pattern: optional prefix (non-digits), number, optional suffix (non-digits)
+  // Examples: "$100" → prefix="$", number=100, suffix=""
+  //           "15+"  → prefix="", number=15, suffix="+"
+  //           "100%" → prefix="", number=100, suffix="%"
+  //           "5x"   → prefix="", number=5, suffix="x"
+  //           "€50K" → prefix="€", number=50, suffix="K"
+  const match = trimmed.match(/^([^\d]*?)([\d,.]+)([^\d]*)$/);
+
+  if (match) {
+    const prefix = match[1] || "";
+    const numberStr = match[2].replace(/,/g, ""); // Remove commas from numbers like "1,000"
+    const suffix = match[3] || "";
+    const number = parseFloat(numberStr);
+
+    if (!isNaN(number)) {
+      return {
+        isNumeric: true,
+        number,
+        prefix,
+        suffix,
+        originalValue: trimmed,
+      };
+    }
+  }
+
+  // Pure text (no number found or invalid number)
+  return {
+    isNumeric: false,
+    number: 0,
+    prefix: "",
+    suffix: "",
+    originalValue: trimmed,
+  };
+}
+
+// Individual stat card component to use the hook properly
+function StatCard({
+  element,
+  index,
+  page,
+}: {
+  element: StatElement;
+  index: number;
+  page: Page;
+}) {
+  const titleValue = String(element.fields.Title?.value || "");
+  const parsed = parseStatValue(titleValue);
+
+  const countUp = useCountUp(parsed.isNumeric ? parsed.number : 0);
+  const [IconComponent, setIconComponent] = useState<LucideIcon | null>(null);
+  const iconValue = String(element.fields.Icon?.value || "");
+
+  useEffect(() => {
+    const icon = getLucideIcon(iconValue);
+    setIconComponent(() => icon);
+  }, [iconValue]);
+
+  const FallbackIcon = TrendingUp;
+  const Icon = IconComponent || FallbackIcon;
 
   return (
-    <section className="py-6 md:py-8">
+    <Card
+      key={index}
+      className="group relative overflow-hidden transition-shadow hover:shadow-lg"
+    >
+      <CardContent className="pt-6">
+        {/* Decorative background circle */}
+        <div className="absolute -mr-10 -mt-10 right-0 top-0 h-20 w-20 rounded-full bg-primary/5 transition-transform group-hover:scale-150" />
+
+        {/* Icon */}
+        <Icon
+          className="relative z-10 mb-4 h-10 w-10 text-primary"
+          aria-hidden="true"
+        />
+
+        {/* Value with count-up animation for numbers */}
+        <div
+          ref={parsed.isNumeric ? countUp.ref : undefined}
+          className="relative z-10 mb-2 bg-linear-to-br from-foreground to-foreground/70 bg-clip-text text-4xl font-bold text-transparent tabular-nums"
+        >
+          {page.mode.isEditing ? (
+            <Text field={element.fields.Title} />
+          ) : parsed.isNumeric ? (
+            `${parsed.prefix}${countUp.count}${parsed.suffix}`
+          ) : (
+            parsed.originalValue
+          )}
+        </div>
+
+        {/* Subtitle */}
+        <div className="relative z-10 mb-2 text-sm text-muted-foreground">
+          <Text field={element.fields.Subtitle} />
+        </div>
+
+        {/* Tag/Badge */}
+        {element.fields.Tag?.value && (
+          <Badge variant="secondary" className="text-xs">
+            <Text field={element.fields.Tag} />
+          </Badge>
+        )}
+      </CardContent>
+    </Card>
+  );
+}
+
+export function Tiles({ fields, page }: StatsProps) {
+  // Return null if no elements
+  if (!fields?.Elements || fields.Elements.length === 0) {
+    return null;
+  }
+
+  return (
+    <section className="border-b border-border bg-linear-to-br from-muted/30 to-muted/10 py-16">
       <div className="px-4 md:px-8 lg:px-12">
-        <div className="mb-8 text-center">
-          <h2 className="mb-3 text-2xl font-bold tracking-tight md:text-3xl">
-            Experience & Impact
+        {/* Header */}
+        <div className="mb-12 text-center">
+          <h2 className="mb-3 text-3xl font-bold">
+            <Text field={fields.Title} />
           </h2>
           <p className="text-muted-foreground">
-            A decade of Sitecore expertise and community contributions
+            <Text field={fields.Subtitle} />
           </p>
         </div>
 
+        {/* Stats Grid */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          <Card className="group cursor-default transition-all hover:shadow-lg">
-            <CardContent className="flex flex-col items-center p-6 text-center">
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-colors group-hover:bg-primary/20">
-                <Calendar className="h-6 w-6 text-primary" aria-hidden="true" />
-              </div>
-              <div
-                ref={years.ref}
-                className="mb-2 text-4xl font-bold tabular-nums"
-              >
-                {years.count}+
-              </div>
-              <p className="text-sm font-medium text-muted-foreground">
-                Years Experience
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="group cursor-default transition-all hover:shadow-lg">
-            <CardContent className="flex flex-col items-center p-6 text-center">
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-colors group-hover:bg-primary/20">
-                <Award className="h-6 w-6 text-primary" aria-hidden="true" />
-              </div>
-              <div
-                ref={mvps.ref}
-                className="mb-2 text-4xl font-bold tabular-nums"
-              >
-                {mvps.count}
-              </div>
-              <p className="text-sm font-medium text-muted-foreground">
-                MVP Titles
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="group cursor-default transition-all hover:shadow-lg">
-            <CardContent className="flex flex-col items-center p-6 text-center">
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-colors group-hover:bg-primary/20">
-                <Code2 className="h-6 w-6 text-primary" aria-hidden="true" />
-              </div>
-              <div className="mb-2 text-4xl font-bold">
-                {stats.mainTechnology}
-              </div>
-              <p className="text-sm font-medium text-muted-foreground">
-                Major Technology
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="group cursor-default transition-all hover:shadow-lg">
-            <CardContent className="flex flex-col items-center p-6 text-center">
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-colors group-hover:bg-primary/20">
-                <FileText className="h-6 w-6 text-primary" aria-hidden="true" />
-              </div>
-              <div
-                ref={posts.ref}
-                className="mb-2 text-4xl font-bold tabular-nums"
-              >
-                {posts.count}+
-              </div>
-              <p className="text-sm font-medium text-muted-foreground">
-                Blog Posts Written
-              </p>
-            </CardContent>
-          </Card>
+          {fields.Elements.map((element, index) => (
+            <StatCard key={index} element={element} index={index} page={page} />
+          ))}
         </div>
       </div>
     </section>

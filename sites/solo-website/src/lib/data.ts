@@ -17,7 +17,24 @@ export interface Article {
   tags: string[];
   heroImage: string;
   isTop: boolean;
-  originalUrl: string;
+  originalUrl?: string;
+  readingTime?: number;
+  pullQuote?: string;
+  stats?: {
+    label: string;
+    value: string;
+    icon: string;
+    trend?: string;
+  }[];
+  galleryImages?: {
+    src: string;
+    caption: string;
+  }[];
+  keyTakeaways?: string[];
+  technicalDetails?: {
+    title: string;
+    content: string;
+  };
 }
 
 export interface Speaker {
