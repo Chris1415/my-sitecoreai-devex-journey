@@ -1,0 +1,27 @@
+﻿---
+ID: "1f7f286b-6f7e-4c02-bb79-8192df2efb64"
+Parent: "1c1b64f1-29d4-4751-9504-1fa322f7f8cf"
+Template: "1c1b64f1-29d4-4751-9504-1fa322f7f8cf"
+Path: /sitecore/templates/Project/solo/Components/Media/Rendering Parameters/Image List Parameters/__Standard Values
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20211012T120926Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\JssImport
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "c0578ed2-3f28-4b94-872f-7ab6387ec28f"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\christian.hahn@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20251216T142026Z

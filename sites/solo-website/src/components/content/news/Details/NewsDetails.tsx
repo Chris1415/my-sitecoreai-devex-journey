@@ -1,33 +1,15 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "../../../../components/ui/badge";
 import { Button } from "../../../../components/ui/button";
 import { Separator } from "../../../../components/ui/separator";
-import {
-  getArticleBySlug,
-  getRelatedArticles,
-  formatDate,
-  getAuthorBySlug,
-} from "../../../../lib/data";
+import { formatDate } from "../../../../lib/data";
 import {
   ArrowLeft,
   Clock,
   Share2,
   Download,
   ExternalLink,
-  Activity,
-  Award,
-  Brain,
-  Globe,
-  Layers,
-  Lightbulb,
   Quote,
-  Rocket,
-  Sparkles,
-  Target,
-  TrendingUp,
-  Users,
-  Zap,
 } from "lucide-react";
 import {
   TextField,
@@ -40,21 +22,20 @@ import {
 import { AIGeneratedBadge } from "components/ui/ai-generated-badge";
 import { ComponentProps } from "lib/component-props";
 import { NewsCard } from "../List/_card";
-import { Card, CardContent } from "components/ui/card";
-import {
-  Text,
-  Link as SdkLink,
-  Image as SdkImage,
-} from "@sitecore-content-sdk/nextjs";
+import { Text, Image as SdkImage } from "@sitecore-content-sdk/nextjs";
 import { StatsProps, Tiles } from "components/content/stats/Stats.Tiles";
+import Default, {
+  ImageListProps,
+} from "components/content/media/images/ImageList";
+import client from "lib/sitecore-client";
 
-interface Tags {
+export interface Tags {
   fields: {
     Title: TextField;
   };
 }
 
-interface Author {
+export interface Author {
   fields: {
     FirstName: TextField;
     LastName: TextField;
@@ -63,19 +44,96 @@ interface Author {
   };
 }
 
-interface NewsData {
+export interface NewsData {
   Title: TextField;
   Excerpt: TextField;
   Author: Author;
   PublishDate: Field<string>;
-  Tags: Tags[];
-  HeroImage: ImageField;
+  Tags: Tags[] & { jsonValue: Tags[] };
+  HeroImage: ImageField & { jsonValue: ImageField };
   ExternalUrl: TextField;
   ReadTime: Field<number>;
   Quote: TextField;
   Content: RichTextField;
   Stats: StatsProps;
+  ImageList: ImageListProps;
+  Id: Field<string>;
 }
+
+interface AllArticlesResponse {
+  allArticles: {
+    children: {
+      results: NewsData[];
+    };
+  };
+}
+
+// Get related articles by matching tags and excluding current article
+function getRelatedArticlesByTags(
+  allArticles: NewsData[],
+  currentTitle: string | number | undefined,
+  currentTags: Tags[],
+  limit: number = 3
+): NewsData[] {
+  // Extract current article's tag titles for comparison
+  const currentTagTitles = currentTags.map((tag) =>
+    tag.fields?.Title?.value?.toString().toLowerCase()
+  );
+
+  return allArticles
+    .filter((article) => {
+      // Exclude current article by title
+      if (article.Title?.value === currentTitle) {
+        return false;
+      }
+
+      // Get this article's tag titles
+      const articleTagTitles =
+        article.Tags?.jsonValue?.map((tag) =>
+          tag.fields?.Title?.value?.toString().toLowerCase()
+        ) || [];
+
+      // Check if any tags match
+      return articleTagTitles.some((tagTitle) =>
+        currentTagTitles.includes(tagTitle)
+      );
+    })
+    .slice(0, limit);
+}
+
+const query = `
+    query GetArticles($language: String!, $path: String!) {
+    allArticles:item(language: $language, path: $path) {
+        children {
+            results {
+                Tags:field(name:"Tags"){
+                    jsonValue
+                }
+                Title:field(name:"Title"){
+                    value
+                }
+                Excerpt:field(name:"Excerpt"){
+                    value
+                }
+                Author:field(name:"Author"){
+                    value
+                }
+                PublishDate:field(name:"PublishDate"){
+                    value
+                }
+                HeroImage:field(name:"HeroImage"){
+                    jsonValue
+                }
+                ReadTime:field(name:"ReadTime"){
+                    value
+                }
+                Id: field(name:"Id"){
+                    value
+                }            
+            }
+        }
+    }
+}`;
 
 export default async function ArticleDetailPage({
   page,
@@ -94,32 +152,30 @@ export default async function ArticleDetailPage({
     Quote: QuoteField,
     Content,
     Stats,
+    ImageList,
   } = page.layout.sitecore.route?.fields as unknown as NewsData;
 
-  const article = getArticleBySlug(page.layout.sitecore.route?.name || "");
-
-  if (!article) {
-    return <div>Article not found</div>;
+  const articleResponse = await client.getData<{
+    item: { path: string };
+  }>(
+    `query GetArticlePath($language: String!, $path: String!) {
+  item(language: $language, path: $path) {
+   path
   }
+}`,
+    { language: page.locale, path: page.layout.sitecore.route?.itemId || "" }
+  );
+  const allArticles = await client.getData<AllArticlesResponse>(query, {
+    language: page.locale,
+    path: articleResponse.item.path.split("/").slice(0, -1).join("/"),
+  });
 
-  const relatedArticles = getRelatedArticles(article.slug, article.tags, 3);
-  const authorSlug = article.author
-    .toLowerCase()
-    .replace(/\s+/g, "-")
-    .replace(/[^a-z0-9-]/g, "");
-  const author = getAuthorBySlug(authorSlug);
-
-  const galleryImages = article.galleryImages || [
-    {
-      src: "/images/articles/generic-feature-1.jpg",
-      caption: "Feature Overview",
-    },
-    {
-      src: "/images/articles/generic-dashboard.jpg",
-      caption: "User Experience",
-    },
-    { src: "/images/articles/generic-analytics.jpg", caption: "Analytics" },
-  ];
+  const filteredArticles = getRelatedArticlesByTags(
+    allArticles?.allArticles?.children?.results || [],
+    Title.value,
+    Tags,
+    3
+  );
 
   return (
     <>
@@ -157,7 +213,7 @@ export default async function ArticleDetailPage({
                 <Text field={Title} />
               </h1>
 
-              {article.subtitle && (
+              {Excerpt && (
                 <p className="mb-8 text-balance text-lg leading-relaxed text-muted-foreground">
                   <Text field={Excerpt} />
                 </p>
@@ -183,7 +239,10 @@ export default async function ArticleDetailPage({
                     </span>
                     <div className="flex items-center gap-2">
                       <Clock className="h-4 w-4 text-muted-foreground" />
-                      <time dateTime={article.date} className="font-medium">
+                      <time
+                        dateTime={PublishDate.value}
+                        className="font-medium"
+                      >
                         {PublishDate && (
                           <DateField
                             field={PublishDate}
@@ -230,7 +289,7 @@ export default async function ArticleDetailPage({
                       size="lg"
                     >
                       <a
-                        href={article.originalUrl}
+                        href={(ExternalUrl.value as string) || ""}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -323,43 +382,17 @@ export default async function ArticleDetailPage({
             </div>
           </section>
 
-          {/* Visual Insights Gallery */}
-          <section className="mt-16 border-t border-border bg-linear-to-br from-muted/20 to-muted/5 py-16">
-            <div className="px-4 md:px-8 lg:px-12">
-              <div className="mb-6">
-                <h3 className="mb-2 text-2xl font-bold">Visual Insights</h3>
-                <p className="text-muted-foreground">
-                  Explore key features and interfaces in detail
-                </p>
-              </div>
-              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                {galleryImages.map((img, index) => (
-                  <Card
-                    key={index}
-                    className="group cursor-pointer overflow-hidden transition-all hover:shadow-xl"
-                  >
-                    <CardContent className="p-0">
-                      <div className="relative aspect-video bg-muted">
-                        <Image
-                          src={img.src || "/placeholder.svg"}
-                          alt={img.caption}
-                          fill
-                          className="object-cover transition-transform duration-500 group-hover:scale-110"
-                        />
-                        <AIGeneratedBadge />
-                        <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-                      </div>
-                      <div className="bg-background p-4">
-                        <p className="text-sm font-medium">{img.caption}</p>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
-          </section>
+          {ImageList && (
+            <Default
+              id={ImageList.id}
+              fields={ImageList.fields}
+              page={page}
+              rendering={rendering}
+              params={params}
+            />
+          )}
 
-          {article.keyTakeaways && article.keyTakeaways.length > 0 && (
+          {/* {article.keyTakeaways && article.keyTakeaways.length > 0 && (
             <section className="mt-16 px-4 md:px-8 lg:px-12">
               <Card className="bg-linear-to-br from-primary/5 to-background">
                 <CardContent className="p-8">
@@ -379,22 +412,7 @@ export default async function ArticleDetailPage({
                 </CardContent>
               </Card>
             </section>
-          )}
-
-          {article.technicalDetails && (
-            <section className="mt-12 px-4 md:px-8 lg:px-12">
-              <Card>
-                <CardContent className="p-8">
-                  <h3 className="mb-4 text-2xl font-bold">
-                    {article.technicalDetails.title}
-                  </h3>
-                  <p className="leading-relaxed text-muted-foreground">
-                    {article.technicalDetails.content}
-                  </p>
-                </CardContent>
-              </Card>
-            </section>
-          )}
+          )} */}
 
           {/* Author Bio */}
           <div className="mt-12 px-4 md:px-8 lg:px-12">
@@ -408,9 +426,9 @@ export default async function ArticleDetailPage({
                 {Author.fields.AboutMe.value}
               </p>
               <div className="mt-4 flex gap-2">
-                {author && (
+                {Author && (
                   <Button variant="outline" size="sm" asChild>
-                    <Link href={`/authors/${author.slug}`}>View Profile</Link>
+                    <Link href="#">View Profile (Coming Soon)</Link>
                   </Button>
                 )}
                 <Button variant="ghost" size="sm">
@@ -423,15 +441,15 @@ export default async function ArticleDetailPage({
       </article>
 
       {/* Related Articles */}
-      {relatedArticles.length > 0 && (
+      {filteredArticles.length > 0 && (
         <section className="border-t border-border bg-muted/30 py-12 md:py-16">
           <div className="px-4 md:px-8 lg:px-12">
             <h2 className="mb-8 text-2xl font-bold tracking-tight">
               Related Articles
             </h2>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {relatedArticles.map((relatedArticle) => (
-                <NewsCard key={relatedArticle.id} article={relatedArticle} />
+              {filteredArticles.map((relatedArticle) => (
+                <NewsCard key={relatedArticle.Id.value} news={relatedArticle} />
               ))}
             </div>
           </div>

@@ -1,8 +1,8 @@
 ﻿---
-ID: "659a0167-26cb-43b5-be6c-9ea9d7767521"
+ID: "ecddc268-f416-442a-9699-375f2cfd1481"
 Parent: "0068214f-38fb-4fa1-8d9c-82ef9a449af9"
 Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
-Path: /sitecore/templates/Project/solo/Components/News/Rendering Parameters/News Card Parameters
+Path: /sitecore/templates/Project/solo/Components/News/Rendering Parameters/News Details Parameters
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
   Hint: __Icon
@@ -19,13 +19,13 @@ SharedFields:
   Value: 0
 - ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
   Hint: __Sortorder
-  Value: 100
+  Value: 150
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "ec0ebab7-7533-40fb-ab6c-6daaeb5d2776"
+  Value: "90aaf109-ad14-4c05-846a-dbe77c75392f"
 - ID: "f7d48a55-2158-4f02-9356-756654404f73"
   Hint: __Standard values
-  Value: "{FBFCF620-4082-463E-A306-8416C8C6510F}"
+  Value: "{24592E8E-696F-48D2-ACAF-C9884C083BA4}"
 Languages:
 - Language: "de-DE"
   Fields:
@@ -40,7 +40,7 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20251209T163747Z
+      Value: 20251211T155522Z
     - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
       Hint: __Owner
       Value: |
@@ -58,7 +58,7 @@ Languages:
         sitecore\Admin
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20251209T163747Z
+      Value: 20251211T155522Z
 - Language: en
   Versions:
   - Version: 1
@@ -72,14 +72,14 @@ Languages:
         sitecore\JssImport
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "54391f6b-b56b-4e84-a4ca-e976d0c3add3"
+      Value: "f5b510cf-4636-4f30-b51b-ad817548f15f"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\christian.hahn@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20251216T142523Z
+      Value: 20251216T142530Z
 - Language: "ja-JP"
   Fields:
   - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
@@ -93,7 +93,7 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20251209T163747Z
+      Value: 20251211T155522Z
     - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
       Hint: __Owner
       Value: |
@@ -111,7 +111,7 @@ Languages:
         sitecore\Admin
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20251209T163747Z
+      Value: 20251211T155522Z
 - Language: "zh-CN"
   Fields:
   - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
@@ -125,7 +125,7 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20251209T163747Z
+      Value: 20251211T155522Z
     - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
       Hint: __Owner
       Value: |
@@ -143,4 +143,4 @@ Languages:
         sitecore\Admin
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20251209T163747Z
+      Value: 20251211T155522Z

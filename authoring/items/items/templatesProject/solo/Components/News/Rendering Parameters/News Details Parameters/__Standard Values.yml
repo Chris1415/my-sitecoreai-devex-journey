@@ -1,0 +1,27 @@
+﻿---
+ID: "24592e8e-696f-48d2-acaf-c9884c083ba4"
+Parent: "ecddc268-f416-442a-9699-375f2cfd1481"
+Template: "ecddc268-f416-442a-9699-375f2cfd1481"
+Path: /sitecore/templates/Project/solo/Components/News/Rendering Parameters/News Details Parameters/__Standard Values
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20211012T120926Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\JssImport
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "f540eb99-3cf5-4914-b330-c1e73d11ca68"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\christian.hahn@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20251212T150952Z

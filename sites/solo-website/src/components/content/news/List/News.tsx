@@ -1,5 +1,12 @@
-import { NewsGrid } from "./News.Grid";
+import { NewsGrid, NewsListProps } from "./News.Grid";
 
-export function Default() {
-  return <NewsGrid />;
+export function Default({ fields, rendering, params, page }: NewsListProps) {
+  return (
+    <NewsGrid
+      fields={fields}
+      rendering={rendering}
+      params={params}
+      page={page}
+    />
+  );
 }

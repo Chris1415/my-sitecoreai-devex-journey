@@ -168,10 +168,12 @@ function StatCard({
         <div className="absolute -mr-10 -mt-10 right-0 top-0 h-20 w-20 rounded-full bg-primary/5 transition-transform group-hover:scale-150" />
 
         {/* Icon */}
+
         <Icon
           className="relative z-10 mb-4 h-10 w-10 text-primary"
           aria-hidden="true"
         />
+        {page.mode.isEditing && <Text field={element.fields.Icon} />}
 
         {/* Value with count-up animation for numbers */}
         <div
@@ -210,7 +212,7 @@ export function Tiles({ fields, page }: StatsProps) {
   }
 
   return (
-    <section className="border-b border-border bg-linear-to-br from-muted/30 to-muted/10 py-16">
+    <div className="border-b border-border bg-linear-to-br from-muted/30 to-muted/10 py-16">
       <div className="px-4 md:px-8 lg:px-12">
         {/* Header */}
         <div className="mb-12 text-center">
@@ -229,6 +231,6 @@ export function Tiles({ fields, page }: StatsProps) {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 }
