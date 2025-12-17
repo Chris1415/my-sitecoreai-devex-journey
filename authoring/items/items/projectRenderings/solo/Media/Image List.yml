@@ -6,31 +6,40 @@ Path: /sitecore/layout/Renderings/Project/solo/Media/Image List
 SharedFields:
 - ID: "037fe404-dd19-4bf7-8e30-4dadf68b27b0"
   Hint: componentName
-  Value: Image List
+  Value: ImageList
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
   Hint: __Icon
   Value: "SXA_MDI/16x16/Link-List.png"
 - ID: "17bb046a-a32a-41b3-8315-81217947611b"
   Hint: ComponentQuery
   Value: |
-    query LinkListQuery($datasource: String!, $language: String!) {
+    query GertImages($datasource: String!, $language: String!) {
       datasource: item(path: $datasource, language: $language) {
         children(first: 90) {
           results {
-            field(name: "Link") {
-              link: jsonValue
+            Image: field(name: "Image") {
+              jsonValue
+            }
+            Generated: field(name:"Generated"){
+              value
+            }
+            Caption: field(name:"Caption"){
+              value
             }
           }
         }
-        field(name: "Title") {
-          title: jsonValue
+        Title: field(name: "Title") {
+          jsonValue
+        }
+        Subtitle: field(name: "Title") {
+          jsonValue
         }
       }
     }
     
 - ID: "1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f"
   Hint: Datasource Template
-  Value: /sitecore/templates/Project/solo/Link List_2
+  Value: /sitecore/templates/Project/solo/Components/Media/Image List
 - ID: "7d8ae35f-9ed1-43b5-96a2-0a5f040d4e4e"
   Hint: Open Properties after Add
   Value: 0
@@ -42,6 +51,9 @@ SharedFields:
   Value: |
     {31A3A929-C599-4DD3-91A6-F4A9487CC8B7}
     {587F8FBD-E38F-4E2B-8DE4-1F474D9DDD00}
+- ID: "a3411ff6-c978-40aa-b059-a49b9ca2209b"
+  Hint: Can select Page as a data source
+  Value: 1
 - ID: "a77e8568-1ab3-44f1-a664-b7c37ec7810d"
   Hint: Parameters Template
   Value: "{1C1B64F1-29D4-4751-9504-1FA322F7F8CF}"
@@ -50,10 +62,10 @@ SharedFields:
   Value: "query:$site/*[@@name='Data']/*[@@templatename='Image List Folder']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Image List Folder']"
 - ID: "c39a90ce-0035-41bb-90f6-3c8a6ea87797"
   Hint: AddFieldEditorButton
-  Value: 0
+  Value: 
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "0fe47d17-a9ea-4799-8ff9-4de416a3e6e7"
+  Value: "04c71744-c767-476f-9c16-3444613027df"
 - ID: "e829c217-5e94-4306-9c48-2634b094fdc2"
   Hint: OtherProperties
   Value: IsRenderingsWithDynamicPlaceholders=true
@@ -110,14 +122,14 @@ Languages:
         sitecore\Admin
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "9ad5a7a6-100b-4bd8-94d4-03cf1cb08c59"
+      Value: "5948a241-d967-4a00-a79f-fd02a104ac5d"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\christian.hahn@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20251216T142118Z
+      Value: 20251217T140550Z
 - Language: "ja-JP"
   Fields:
   - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"

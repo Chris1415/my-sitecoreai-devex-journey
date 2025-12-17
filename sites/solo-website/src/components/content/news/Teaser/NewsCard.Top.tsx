@@ -1,36 +1,45 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Badge } from "components/ui/badge";
 import { Card, CardContent } from "components/ui/card";
 import { ArrowRight, TrendingUp } from "lucide-react";
 import { formatDate } from "lib/data";
-import { getTopArticle } from "lib/data";
 import { NewsCardProps } from "./NewsCardProps";
+import {
+  DateField,
+  Image as SdkImage,
+  Text,
+} from "@sitecore-content-sdk/nextjs";
 
-export function Top({ params }: NewsCardProps) {
-  const article = getTopArticle();
+export function Top({ fields, params, page }: NewsCardProps) {
+  const article = fields?.News?.fields;
 
   // If no top article is found, return null
-  if (!article) {
-    return <></>;
+  if (page.mode.isEditing && !article) {
+    return <div>Please choose a news item</div>;
   }
 
   return (
-    <section className={`py-6 md:py-8 ${params.styles}`}>
+    <div className={`py-6 md:py-8 ${params.styles}`}>
       <div className="px-2">
         <div className="mb-6 flex items-center gap-2">
           <TrendingUp className="h-5 w-5 text-primary" />
-          <h2 className="text-2xl font-bold tracking-tight">Top News</h2>
+          {page.mode.isEditing && (
+            <>
+              (<Text field={fields.Icon} />)
+            </>
+          )}
+          <h2 className="text-2xl font-bold tracking-tight">
+            <Text field={fields.Title} />
+          </h2>
         </div>
 
-        <Link href={`/articles/${article.slug}`} className="group block">
+        <Link href={`/articles/${article.Id?.value}`} className="group block">
           <Card className="overflow-hidden border-2 border-primary/20 transition-all hover:border-primary/40 hover:shadow-lg">
             <div className="grid gap-6 md:grid-cols-2">
-              <div className="relative aspect-[16/9] overflow-hidden md:aspect-auto">
-                <Image
-                  src={article.heroImage || "/placeholder.svg"}
-                  alt={article.title}
-                  fill
+              <div className="relative aspect-video overflow-hidden md:aspect-auto">
+                <SdkImage
+                  field={article.HeroImage}
+                  fill={"true"}
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
                 <Badge className="absolute left-4 top-4 bg-primary">
@@ -41,32 +50,32 @@ export function Top({ params }: NewsCardProps) {
 
               <CardContent className="flex flex-col justify-center p-6 md:p-8">
                 <div className="mb-3 flex flex-wrap gap-2">
-                  {article.tags.map((tag) => (
-                    <Badge key={tag} variant="secondary">
-                      {tag}
+                  {article.Tags.map((tag) => (
+                    <Badge key={tag.fields.Title.value} variant="secondary">
+                      <Text field={tag.fields.Title} />
                     </Badge>
                   ))}
                 </div>
 
                 <h3 className="mb-2 text-balance text-2xl font-bold tracking-tight group-hover:text-primary md:text-3xl">
-                  {article.title}
+                  <Text field={article.Title} />
                 </h3>
 
                 <p className="mb-4 text-balance text-lg text-muted-foreground">
-                  {article.subtitle}
-                </p>
-
-                <p className="mb-4 line-clamp-2 text-muted-foreground">
-                  {article.excerpt}
+                  <Text field={article.Excerpt} />
                 </p>
 
                 <div className="flex items-center justify-between">
                   <div className="text-sm text-muted-foreground">
-                    <span>{article.author}</span>
+                    <span>
+                      {article.Author.fields.FirstName.value}{" "}
+                      {article.Author.fields.LastName.value}
+                    </span>
                     <span className="mx-2">•</span>
-                    <time dateTime={article.date}>
-                      {formatDate(article.date)}
-                    </time>
+                    <DateField
+                      field={article.PublishDate}
+                      render={(value) => value && formatDate(value.toString())}
+                    />
                   </div>
 
                   <ArrowRight className="h-5 w-5 text-primary transition-transform group-hover:translate-x-1" />
@@ -76,6 +85,6 @@ export function Top({ params }: NewsCardProps) {
           </Card>
         </Link>
       </div>
-    </section>
+    </div>
   );
 }

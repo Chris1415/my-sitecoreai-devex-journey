@@ -15,7 +15,7 @@ interface HeroBannerProps extends ComponentProps {
 
 export function Default({ fields, page }: HeroBannerProps) {
   return (
-    <section className="relative overflow-hidden bg-linear-to-b from-background to-muted/30 py-20 md:py-28">
+    <div className="relative overflow-hidden bg-linear-to-b from-background to-muted/30 py-20 md:py-28">
       <div className="px-4 md:px-8 lg:px-12">
         <div className="mx-auto max-w-5xl text-center">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-background/50 px-4 py-1.5 text-sm backdrop-blur">
@@ -57,6 +57,6 @@ export function Default({ fields, page }: HeroBannerProps) {
       {!page?.mode?.isEditing && (
         <div className="absolute -bottom-24 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-primary/5 blur-3xl" />
       )}
-    </section>
+    </div>
   );
 }

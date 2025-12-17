@@ -37,7 +37,7 @@ export function Tiles() {
   ];
 
   return (
-    <section className="relative overflow-hidden py-8 md:py-12">
+    <div className="relative overflow-hidden py-8 md:py-12">
       <div className="px-4 md:px-6">
         <div className="mx-auto mb-12 max-w-3xl text-center">
           <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
@@ -83,6 +83,6 @@ export function Tiles() {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 }

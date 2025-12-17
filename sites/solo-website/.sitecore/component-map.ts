@@ -12,15 +12,20 @@ import * as TestimonialsSlider from 'src/components/content/testimonials/list/Te
 import * as Testimonials from 'src/components/content/testimonials/list/Testimonials';
 import * as StatsTiles from 'src/components/content/stats/Stats.Tiles';
 import * as Stats from 'src/components/content/stats/Stats';
+import * as Quote from 'src/components/content/quote/Quote';
 import * as ProductCard from 'src/components/content/products/teaser/ProductCard';
 import * as Products from 'src/components/content/products/list/Products';
 import * as ProductTiles from 'src/components/content/products/list/Product.Tiles';
 import * as Signup from 'src/components/content/newsletter/Signup';
+import * as _card from 'src/components/content/news/Teaser/_card';
 import * as NewsCardProps from 'src/components/content/news/Teaser/NewsCardProps';
 import * as NewsCardTop from 'src/components/content/news/Teaser/NewsCard.Top';
 import * as NewsCard from 'src/components/content/news/Teaser/NewsCard';
 import * as NewsGrid from 'src/components/content/news/List/News.Grid';
 import * as News from 'src/components/content/news/List/News';
+import * as NewsRelatedNews from 'src/components/content/news/Details/NewsRelatedNews';
+import * as NewsKeyTakeaways from 'src/components/content/news/Details/NewsKeyTakeaways';
+import * as NewsDetailsContent from 'src/components/content/news/Details/NewsDetailsContent';
 import * as NewsDetails from 'src/components/content/news/Details/NewsDetails';
 import * as ImageList from 'src/components/content/media/images/ImageList';
 import * as HighlightsTiles from 'src/components/content/highlight/Highlights.Tiles';
@@ -31,6 +36,7 @@ import * as EventCardHighlight from 'src/components/content/events/teaser/EventC
 import * as EventCard from 'src/components/content/events/teaser/EventCard';
 import * as BrandsSlider from 'src/components/content/brands/Brands.Slider';
 import * as Brands from 'src/components/content/brands/Brands';
+import * as AuthorTeaser from 'src/components/content/author/teaser/AuthorTeaser';
 
 export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['BYOCWrapper', BYOCServerWrapper],
@@ -42,19 +48,25 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['Footer', { ...Footer, componentType: 'client' }],
   ['Testimonials', { ...TestimonialsSlider, ...Testimonials }],
   ['Stats', { ...StatsTiles, ...Stats, componentType: 'client' }],
+  ['Quote', { ...Quote }],
   ['ProductCard', { ...ProductCard }],
   ['Products', { ...Products }],
   ['Product', { ...ProductTiles }],
   ['Signup', { ...Signup, componentType: 'client' }],
+  ['_card', { ..._card }],
   ['NewsCardProps', { ...NewsCardProps }],
   ['NewsCard', { ...NewsCardTop, ...NewsCard }],
   ['News', { ...NewsGrid, ...News }],
+  ['NewsRelatedNews', { ...NewsRelatedNews }],
+  ['NewsKeyTakeaways', { ...NewsKeyTakeaways }],
+  ['NewsDetailsContent', { ...NewsDetailsContent }],
   ['NewsDetails', { ...NewsDetails }],
   ['ImageList', { ...ImageList }],
   ['Highlights', { ...HighlightsTiles, ...Highlights }],
   ['HeroBanner', { ...HeroBannerBranded, ...HeroBanner }],
   ['EventCard', { ...EventCardHighlight, ...EventCard }],
   ['Brands', { ...BrandsSlider, ...Brands }],
+  ['AuthorTeaser', { ...AuthorTeaser }],
 ]);
 
 export default componentMap;

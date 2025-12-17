@@ -31,9 +31,62 @@ Languages:
             id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
             <r
               uid="{0822662F-D1B6-4530-AD06-AD339E245EA1}"
+              p:before="*"
               s:id="{5487D597-A32D-4EEB-90A3-0D687C39C5C5}"
               s:par="GridParameters=%7BF61E01E9-711A-4C99-AE30-4E28463E1DF7%7D&amp;FieldNames&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=1"
               s:ph="headless-main" />
+            <r
+              uid="{8D62FEAC-08DB-4F33-9602-70506A48FD86}"
+              p:after="r[@uid='{0822662F-D1B6-4530-AD06-AD339E245EA1}']"
+              s:ds="6f41a2a3-97b6-4c44-aa5f-d4a268fa8438"
+              s:id="{515269B9-A578-4A42-87DA-ABCC38669016}"
+              s:par="GridParameters=%7BF61E01E9-711A-4C99-AE30-4E28463E1DF7%7D&amp;FieldNames=%7B310ADC05-3AFD-42D5-8217-14413430EEF6%7D&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=6"
+              s:ph="headless-main" />
+            <r
+              uid="{AA9916ED-BBE1-4546-93EF-233951BFF0A7}"
+              p:after="r[@uid='{8D62FEAC-08DB-4F33-9602-70506A48FD86}']"
+              s:id="{D122365F-25EE-4DE4-87CA-F3C5DCE5FDEB}"
+              s:par="GridParameters=%7BF61E01E9-711A-4C99-AE30-4E28463E1DF7%7D&amp;FieldNames&amp;BackgroundImage&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=2"
+              s:ph="headless-main" />
+            <r
+              uid="{C92633F7-AB7F-4EA1-8B08-8F2A1A7067A1}"
+              p:after="r[@uid='{AA9916ED-BBE1-4546-93EF-233951BFF0A7}']"
+              s:id="{42881F86-259F-48C9-94ED-4E5A9670F979}"
+              s:par="GridParameters=%7BF61E01E9-711A-4C99-AE30-4E28463E1DF7%7D&amp;FieldNames&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=3"
+              s:ph="/headless-main/container-2" />
+            <r
+              uid="{2B1CD5E1-B20C-4AE1-AA4A-F19F3BB97149}"
+              p:after="r[@uid='{C92633F7-AB7F-4EA1-8B08-8F2A1A7067A1}']"
+              s:ds="eb33a180-83ed-40a5-a6f3-a300f509c542"
+              s:id="{2D15A5A2-298F-4369-B4C6-C91F0732F9A1}"
+              s:par="GridParameters=%7BF61E01E9-711A-4C99-AE30-4E28463E1DF7%7D&amp;FieldNames&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=4"
+              s:ph="/headless-main/container-2" />
+            <r
+              uid="{DF477EF8-A1F8-4422-869B-91547C923D60}"
+              p:after="r[@uid='{2B1CD5E1-B20C-4AE1-AA4A-F19F3BB97149}']"
+              s:ds="8371c2eb-3fb5-422e-aa0c-88b277413c66"
+              s:id="{8600B9AE-2E94-4344-B24B-E8CDAA213161}"
+              s:par="GridParameters=%7BF61E01E9-711A-4C99-AE30-4E28463E1DF7%7D&amp;FieldNames&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles"
+              s:ph="/headless-main/container-2" />
+            <r
+              uid="{9AA393A0-59BF-4CD9-93F4-8F710050F011}"
+              p:after="r[@uid='{DF477EF8-A1F8-4422-869B-91547C923D60}']"
+              s:id="{5DCAEAF3-8C13-41D6-9ACA-C77C4538C37B}"
+              s:par="GridParameters=%7BF61E01E9-711A-4C99-AE30-4E28463E1DF7%7D&amp;FieldNames&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=7"
+              s:ph="/headless-main/container-2" />
+            <r
+              uid="{768EA159-3F35-4D25-A135-1E4C02B58E43}"
+              p:after="r[@uid='{9AA393A0-59BF-4CD9-93F4-8F710050F011}']"
+              s:ds="e12c14d1-a0c7-41ad-b219-a82b6879a6df"
+              s:id="{4320E5AE-BAC8-46BF-AA53-6DB2824C0304}"
+              s:par="GridParameters=%7BF61E01E9-711A-4C99-AE30-4E28463E1DF7%7D&amp;FieldNames&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=5"
+              s:ph="/headless-main/container-2" />
+            <r
+              uid="{F1E8246E-656B-41B5-BEFE-48B7A1386851}"
+              p:after="*[1=2]"
+              s:id="{ADB7D16B-BB36-4DCD-9185-AEFB3BDC5304}"
+              s:par="GridParameters=%7BF61E01E9-711A-4C99-AE30-4E28463E1DF7%7D&amp;FieldNames&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=8"
+              s:ph="/headless-main/container-2" />
           </d>
         </r>
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
@@ -49,11 +102,11 @@ Languages:
         sitecore\christian.hahn@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "0ba6aa6c-32ec-40ee-95e6-fc8304251ec7"
+      Value: "8e37c42f-2b00-4fed-8244-6181516b89bb"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\christian.hahn@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20251212T152116Z
+      Value: 20251217T145924Z

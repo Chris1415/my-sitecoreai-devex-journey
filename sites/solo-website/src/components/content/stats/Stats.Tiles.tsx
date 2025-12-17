@@ -7,6 +7,7 @@ import { Page, Text, TextField } from "@sitecore-content-sdk/nextjs";
 import { ComponentProps } from "lib/component-props";
 import { getLucideIcon } from "lib/iconUtils";
 import { Badge } from "components/ui/badge";
+import { NewsData } from "../news/Details/NewsDetails";
 
 function useCountUp(end: number, duration = 2000) {
   const [count, setCount] = useState(0);
@@ -206,8 +207,16 @@ function StatCard({
 }
 
 export function Tiles({ fields, page }: StatsProps) {
+  const stats =
+    (page.layout.sitecore.route?.fields as unknown as NewsData)?.Stats
+      ?.fields || fields;
+
+  if (!stats) {
+    return <div>Stats not found</div>;
+  }
+
   // Return null if no elements
-  if (!fields?.Elements || fields.Elements.length === 0) {
+  if (!stats?.Elements || stats.Elements.length === 0) {
     return null;
   }
 
@@ -217,16 +226,16 @@ export function Tiles({ fields, page }: StatsProps) {
         {/* Header */}
         <div className="mb-12 text-center">
           <h2 className="mb-3 text-3xl font-bold">
-            <Text field={fields.Title} />
+            <Text field={stats.Title} />
           </h2>
           <p className="text-muted-foreground">
-            <Text field={fields.Subtitle} />
+            <Text field={stats.Subtitle} />
           </p>
         </div>
 
         {/* Stats Grid */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {fields.Elements.map((element, index) => (
+          {stats.Elements.map((element, index) => (
             <StatCard key={index} element={element} index={index} page={page} />
           ))}
         </div>

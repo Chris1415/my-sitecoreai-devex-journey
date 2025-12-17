@@ -74,7 +74,7 @@ export function Slider() {
   const { resolvedTheme } = useTheme();
 
   return (
-    <section className="bg-background py-16 md:py-20 overflow-hidden border-y">
+    <div className="bg-background py-16 md:py-20 overflow-hidden border-y">
       <div className="container mx-auto px-4 mb-10">
         <h2 className="text-2xl md:text-3xl font-bold text-center">
           Using Industry Leaders
@@ -86,7 +86,7 @@ export function Slider() {
           {brands.map((brand, index) => (
             <div
               key={`first-${index}`}
-              className="flex-shrink-0 w-64 md:w-80 px-12 flex items-center justify-center"
+              className="shrink-0 w-64 md:w-80 px-12 flex items-center justify-center"
             >
               <BrandTooltip brand={brand}>
                 <Image
@@ -105,7 +105,7 @@ export function Slider() {
           {brands.map((brand, index) => (
             <div
               key={`second-${index}`}
-              className="flex-shrink-0 w-64 md:w-80 px-12 flex items-center justify-center"
+              className="shrink-0 w-64 md:w-80 px-12 flex items-center justify-center"
             >
               <BrandTooltip brand={brand}>
                 <Image
@@ -122,6 +122,6 @@ export function Slider() {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 }
