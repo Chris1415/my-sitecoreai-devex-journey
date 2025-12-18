@@ -78,7 +78,7 @@ export default async function ArticleDetailPage({ page }: ComponentProps) {
       {/* Article Header & Hero - Split Layout */}
       <div>
         <div className="border-b border-border">
-          <div className="grid min-h-[60vh] grid-cols-1 lg:grid-cols-3">
+          <div className="grid min-h-[60vh] grid-cols-1 xl:grid-cols-3">
             {/* Content Section - 1/3 width on left */}
             <div className="flex flex-col justify-center bg-background p-8 lg:border-r lg:p-12 border-border">
               <div className="mb-6 flex flex-wrap gap-2">

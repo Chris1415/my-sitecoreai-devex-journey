@@ -10,6 +10,30 @@ SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
   Hint: __Icon
   Value: SXA_MDI/16x16/Promo.png
+- ID: "17bb046a-a32a-41b3-8315-81217947611b"
+  Hint: ComponentQuery
+  Value: |
+    query GetBrands($datasource: String!, $language: String!) {
+      datasource: item(path: $datasource, language: $language) {
+        children {
+          results {
+            Logo: field(name: "Logo") {
+               jsonValue
+            }
+            Description: field(name:"Description"){
+               jsonValue
+            }
+            Name: field(name:"Name"){
+               jsonValue
+            }
+          }
+        }
+        Title: field(name: "Title") {
+          jsonValue
+        }
+      }
+    }
+    
 - ID: "1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f"
   Hint: Datasource Template
   Value: /sitecore/templates/Project/solo/Components/Brands/Brand List
@@ -30,7 +54,7 @@ SharedFields:
   Value: 
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "91a8449c-b961-403a-aa5e-68e98f8451e4"
+  Value: "7f1c0b4e-b453-4482-9ffe-3f8acd68cd94"
 - ID: "e829c217-5e94-4306-9c48-2634b094fdc2"
   Hint: OtherProperties
   Value: IsRenderingsWithDynamicPlaceholders=true
@@ -84,14 +108,14 @@ Languages:
         sitecore\JssImport
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "057862f0-e8c4-4214-9da9-0c716fa2f713"
+      Value: "5d6e83db-7fa9-4a94-9462-b9fd8b6a4244"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\christian.hahn@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20251210T125101Z
+      Value: 20251218T152310Z
 - Language: "ja-JP"
   Fields:
   - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"

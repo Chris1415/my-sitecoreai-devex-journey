@@ -1,0 +1,38 @@
+﻿---
+ID: "e6e9732b-6c7f-4fb4-a2e9-09105fad778d"
+Parent: "4dcaac4e-56a1-4125-bc9f-66dd3aefc908"
+Template: "4dcaac4e-56a1-4125-bc9f-66dd3aefc908"
+Path: /sitecore/templates/Project/solo/Components/Brands/Brand List/__Standard Values
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Value: "{4FAE7D9B-C098-47A2-830E-0869DB467FB5}"
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "14d8b35d-f12c-4d1d-b1f2-be1ca2025118"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20251218T151032Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\christian.hahn@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\christian.hahn@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "4425fd85-7eea-45db-aa79-7d13b101cf2c"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\christian.hahn@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20251218T151048Z

@@ -65,7 +65,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['Highlights', { ...HighlightsTiles, ...Highlights }],
   ['HeroBanner', { ...HeroBannerBranded, ...HeroBanner }],
   ['EventCard', { ...EventCardHighlight, ...EventCard }],
-  ['Brands', { ...BrandsSlider, ...Brands }],
+  ['Brands', { ...BrandsSlider, ...Brands, componentType: 'client' }],
   ['AuthorTeaser', { ...AuthorTeaser }],
 ]);
 
