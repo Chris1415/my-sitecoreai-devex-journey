@@ -214,7 +214,17 @@ function StatCard({
 }
 
 export function Tiles({ fields, page }: StatsProps) {
-  const { Title, Subtitle, children } = fields?.data?.datasource;
+  const datasource = fields?.data?.datasource;
+
+  // Return early if no datasource
+  if (!datasource) {
+    if (page?.mode?.isEditing) {
+      return <div>Please configure Stats datasource</div>;
+    }
+    return null;
+  }
+
+  const { Title, Subtitle, children } = datasource;
   const Elements = children?.results;
 
   // Return null if no elements
