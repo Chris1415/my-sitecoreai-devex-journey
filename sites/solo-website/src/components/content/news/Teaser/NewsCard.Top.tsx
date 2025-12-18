@@ -53,7 +53,7 @@ export function Top({ fields, params, page }: NewsCardProps) {
 
               <CardContent className="flex flex-col justify-center p-6 md:p-8">
                 <div className="mb-3 flex flex-wrap gap-2">
-                  {article.Tags.map((tag) => (
+                  {article.Tags?.map((tag) => (
                     <Badge key={tag.fields.Title.value} variant="secondary">
                       <Text field={tag.fields.Title} />
                     </Badge>

@@ -82,7 +82,7 @@ export default async function ArticleDetailPage({ page }: ComponentProps) {
             {/* Content Section - 1/3 width on left */}
             <div className="flex flex-col justify-center bg-background p-8 lg:border-r lg:p-12 border-border">
               <div className="mb-6 flex flex-wrap gap-2">
-                {Tags.map((tag) => {
+                {Tags?.map((tag) => {
                   return (
                     <Badge
                       key={tag.fields.Title.value}

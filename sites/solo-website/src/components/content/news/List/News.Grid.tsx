@@ -32,7 +32,7 @@ export function NewsGrid({ fields, page, rendering, params }: NewsListProps) {
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {News.map((article) => (
+          {News?.map((article) => (
             <NewsCard
               key={article?.fields?.Id?.value}
               fields={{

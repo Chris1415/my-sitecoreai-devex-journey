@@ -15,13 +15,14 @@ interface AllArticlesResponse {
 function getRelatedArticlesByTags(
   allArticles: NewsData[],
   currentTitle: string | number | undefined,
-  currentTags: Tags[],
+  currentTags: Tags[] | undefined,
   limit: number = 3
 ): NewsData[] {
   // Extract current article's tag titles for comparison
-  const currentTagTitles = currentTags.map((tag) =>
-    tag.fields?.Title?.value?.toString().toLowerCase()
-  );
+  const currentTagTitles =
+    currentTags?.map((tag) =>
+      tag.fields?.Title?.value?.toString().toLowerCase()
+    ) || [];
 
   return allArticles
     .filter((article) => {
