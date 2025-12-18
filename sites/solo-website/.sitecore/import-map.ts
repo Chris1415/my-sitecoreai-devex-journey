@@ -9,13 +9,13 @@ import * as React from 'react';
 import * as SeparatorPrimitive from '@radix-ui/react-separator';
 import { cn } from 'lib/utils';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
-import { XIcon, Sparkles, ChevronDownIcon, Menu, X, Search, Moon, Sun, QuoteIcon, ShoppingCart, AlertCircle, Clock, Calendar, ArrowLeft, Share2, Download, ExternalLink, ArrowRight, MapPin } from 'lucide-react';
+import { XIcon, Sparkles, ChevronDownIcon, Menu, X, Search, Moon, Sun, QuoteIcon, ShoppingCart, AlertCircle, Clock, ArrowLeft, Share2, Download, ExternalLink, ArrowRight, Calendar, MapPin } from 'lucide-react';
 import { Slot } from '@radix-ui/react-slot';
 import { cva } from 'class-variance-authority';
 import * as AvatarPrimitive from '@radix-ui/react-avatar';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
 import componentMap from '.sitecore/component-map';
-import { AppPlaceholder, CdpHelper, useSitecore, Text, Image as Image_8a80e63291fea86e0744df19113dc44bec187216, DateField, RichText, Link as Link_8a80e63291fea86e0744df19113dc44bec187216 } from '@sitecore-content-sdk/nextjs';
+import { AppPlaceholder, CdpHelper, useSitecore, Text, DateField, Image as Image_8a80e63291fea86e0744df19113dc44bec187216, RichText, Link as Link_8a80e63291fea86e0744df19113dc44bec187216 } from '@sitecore-content-sdk/nextjs';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
@@ -29,8 +29,8 @@ import { Tiles } from 'src/components/content/stats/Stats.Tiles';
 import { Button as Button_84330b1bbe8a1bb4486fd11a1e9edfcb73dcb72a } from 'src/components/ui/button';
 import { Card, CardContent, CardFooter } from 'src/components/ui/card';
 import { Badge } from 'src/components/ui/badge';
-import { formatPrice, formatDate as formatDate_03449b6ab28f37f82c1cb584196b575db3afeac2 } from 'src/lib/data';
-import { getFeaturedProducts, formatDate, getNextUpcomingEvent } from 'lib/data';
+import { formatPrice, formatDate } from 'src/lib/data';
+import { getFeaturedProducts, formatDate as formatDate_e48efc7333ac73f929d9b272a527b63e4cd08f90, getNextUpcomingEvent } from 'lib/data';
 import { ProductCard } from 'src/components/content/products/teaser/_productCard';
 import { Tiles as Tiles_49423b085a70264a020b434efb2a0fbe4b23f2fe } from 'src/components/content/products/list/Product.Tiles';
 import { Input } from 'src/components/ui/input';
@@ -89,12 +89,12 @@ const importMap = [
       { name: 'ShoppingCart', value: ShoppingCart },
       { name: 'AlertCircle', value: AlertCircle },
       { name: 'Clock', value: Clock },
-      { name: 'Calendar', value: Calendar },
       { name: 'ArrowLeft', value: ArrowLeft },
       { name: 'Share2', value: Share2 },
       { name: 'Download', value: Download },
       { name: 'ExternalLink', value: ExternalLink },
       { name: 'ArrowRight', value: ArrowRight },
+      { name: 'Calendar', value: Calendar },
       { name: 'MapPin', value: MapPin },
     ]
   },
@@ -135,8 +135,8 @@ const importMap = [
       { name: 'CdpHelper', value: CdpHelper },
       { name: 'useSitecore', value: useSitecore },
       { name: 'Text', value: Text },
-      { name: 'Image', value: Image_8a80e63291fea86e0744df19113dc44bec187216 },
       { name: 'DateField', value: DateField },
+      { name: 'Image', value: Image_8a80e63291fea86e0744df19113dc44bec187216 },
       { name: 'RichText', value: RichText },
       { name: 'Link', value: Link_8a80e63291fea86e0744df19113dc44bec187216 },
     ]
@@ -225,14 +225,14 @@ const importMap = [
     module: 'src/lib/data',
     exports: [
       { name: 'formatPrice', value: formatPrice },
-      { name: 'formatDate', value: formatDate_03449b6ab28f37f82c1cb584196b575db3afeac2 },
+      { name: 'formatDate', value: formatDate },
     ]
   },
   {
     module: 'lib/data',
     exports: [
       { name: 'getFeaturedProducts', value: getFeaturedProducts },
-      { name: 'formatDate', value: formatDate },
+      { name: 'formatDate', value: formatDate_e48efc7333ac73f929d9b272a527b63e4cd08f90 },
       { name: 'getNextUpcomingEvent', value: getNextUpcomingEvent },
     ]
   },

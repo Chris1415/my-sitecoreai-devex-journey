@@ -29,7 +29,7 @@ export function Default({ fields, params }: NewsCardProps) {
       <Card
         className={`h-full overflow-hidden transition-all hover:shadow-lg `}
       >
-        <Link href={`/articles/${article.Id.value}`} className={`group block`}>
+        <Link href={`/articles/${article?.Id?.value}`} className={`group block`}>
           <div className="relative aspect-video overflow-hidden">
             <SdkImage
               field={heroImage}
@@ -42,7 +42,7 @@ export function Default({ fields, params }: NewsCardProps) {
             <div className="mb-3 flex flex-wrap gap-2">
               {tags.map((tag) => (
                 <Badge
-                  key={tag.fields.Title.value}
+                  key={tag?.fields?.Title?.value}
                   variant="secondary"
                   className="text-xs"
                 >

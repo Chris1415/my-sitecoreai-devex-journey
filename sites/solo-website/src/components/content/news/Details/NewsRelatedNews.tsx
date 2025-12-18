@@ -124,7 +124,7 @@ export default async function Default({
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {filteredArticles.map((relatedArticle) => (
                 <NewsCard
-                  key={relatedArticle.Id.value}
+                  key={relatedArticle?.Id?.value}
                   fields={{
                     Icon: { value: "" },
                     Title: { value: "" },

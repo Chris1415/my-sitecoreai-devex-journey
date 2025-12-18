@@ -17,7 +17,6 @@ import * as ProductCard from 'src/components/content/products/teaser/ProductCard
 import * as Products from 'src/components/content/products/list/Products';
 import * as ProductTiles from 'src/components/content/products/list/Product.Tiles';
 import * as Signup from 'src/components/content/newsletter/Signup';
-import * as _card from 'src/components/content/news/Teaser/_card';
 import * as NewsCardProps from 'src/components/content/news/Teaser/NewsCardProps';
 import * as NewsCardTop from 'src/components/content/news/Teaser/NewsCard.Top';
 import * as NewsCard from 'src/components/content/news/Teaser/NewsCard';
@@ -54,7 +53,6 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['Products', { ...Products }],
   ['Product', { ...ProductTiles }],
   ['Signup', { ...Signup, componentType: 'client' }],
-  ['_card', { ..._card }],
   ['NewsCardProps', { ...NewsCardProps }],
   ['NewsCard', { ...NewsCardTop, ...NewsCard }],
   ['News', { ...NewsGrid, ...News }],
