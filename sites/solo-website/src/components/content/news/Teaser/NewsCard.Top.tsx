@@ -13,9 +13,12 @@ import {
 export function Top({ fields, params, page }: NewsCardProps) {
   const article = fields?.News?.fields;
 
-  // If no top article is found, return null
-  if (page.mode.isEditing && !article) {
-    return <div>Please choose a news item</div>;
+  // If no top article is found, return null or placeholder in editing mode
+  if (!article) {
+    if (page?.mode?.isEditing) {
+      return <div>Please choose a news item</div>;
+    }
+    return null;
   }
 
   return (
