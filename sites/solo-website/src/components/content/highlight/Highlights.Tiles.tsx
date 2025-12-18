@@ -2,8 +2,6 @@ import { ArrowRight, Award, Code2, Lightbulb } from "lucide-react";
 import { Card, CardContent } from "../../ui/card";
 import { Button } from "../../ui/button";
 import Link from "next/link";
-import { TextField } from "@sitecore-content-sdk/nextjs";
-import { ComponentProps } from "lib/component-props";
 
 export function Tiles() {
   const features = [
@@ -57,7 +55,7 @@ export function Tiles() {
             >
               <CardContent className="p-6">
                 <div
-                  className={`mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br ${feature.color} shadow-lg`}
+                  className={`mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-linear-to-br ${feature.color} shadow-lg`}
                 >
                   <feature.icon className="h-6 w-6 text-white" />
                 </div>
@@ -77,7 +75,7 @@ export function Tiles() {
               </CardContent>
               {/* Animated gradient overlay on hover */}
               <div
-                className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 transition-opacity duration-300 group-hover:opacity-5`}
+                className={`absolute inset-0 bg-linear-to-br ${feature.color} opacity-0 transition-opacity duration-300 group-hover:opacity-5`}
               />
             </Card>
           ))}

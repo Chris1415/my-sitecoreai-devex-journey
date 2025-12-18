@@ -15,24 +15,24 @@ SharedFields:
   Value: |
     query GertImages($datasource: String!, $language: String!) {
       datasource: item(path: $datasource, language: $language) {
-        children(first: 90) {
+        children {
           results {
             Image: field(name: "Image") {
-              jsonValue
+               jsonValue
             }
             Generated: field(name:"Generated"){
-              value
+               jsonValue
             }
             Caption: field(name:"Caption"){
-              value
+               jsonValue
             }
           }
         }
         Title: field(name: "Title") {
           jsonValue
         }
-        Subtitle: field(name: "Title") {
-          jsonValue
+         Subtitle: field(name: "Subtitle") { 
+           jsonValue
         }
       }
     }
@@ -53,7 +53,7 @@ SharedFields:
     {587F8FBD-E38F-4E2B-8DE4-1F474D9DDD00}
 - ID: "a3411ff6-c978-40aa-b059-a49b9ca2209b"
   Hint: Can select Page as a data source
-  Value: 1
+  Value: 
 - ID: "a77e8568-1ab3-44f1-a664-b7c37ec7810d"
   Hint: Parameters Template
   Value: "{1C1B64F1-29D4-4751-9504-1FA322F7F8CF}"
@@ -65,7 +65,7 @@ SharedFields:
   Value: 
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "04c71744-c767-476f-9c16-3444613027df"
+  Value: "5da980a7-d337-4865-af2c-9f11f0755fe1"
 - ID: "e829c217-5e94-4306-9c48-2634b094fdc2"
   Hint: OtherProperties
   Value: IsRenderingsWithDynamicPlaceholders=true
@@ -122,14 +122,14 @@ Languages:
         sitecore\Admin
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "5948a241-d967-4a00-a79f-fd02a104ac5d"
+      Value: "e7bdccdd-1a43-44cc-b671-78713de32c2f"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\christian.hahn@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20251217T140550Z
+      Value: 20251218T083525Z
 - Language: "ja-JP"
   Fields:
   - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"

@@ -28,7 +28,7 @@
             "allowedPushOperations": "CreateOnly"
           },
           {
-            "path": "/<SITE_NAME>",
+            "path": "/solo-website",
             "scope": "SingleItem",
             "allowedPushOperations": "CreateOnly"
           }

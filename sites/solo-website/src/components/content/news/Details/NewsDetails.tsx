@@ -15,7 +15,6 @@ import { AIGeneratedBadge } from "components/ui/ai-generated-badge";
 import { ComponentProps } from "lib/component-props";
 import { Text, Image as SdkImage } from "@sitecore-content-sdk/nextjs";
 import { StatsProps } from "components/content/stats/Stats.Tiles";
-import { ImageListProps } from "components/content/media/images/ImageList";
 import { Author } from "components/content/author/teaser/AuthorTeaser";
 
 export interface Tags {
@@ -38,7 +37,6 @@ export interface NewsData {
   Quote: TextField;
   Content: RichTextField;
   Stats: StatsProps;
-  ImageList: ImageListProps;
   Id: Field<string>;
   KeyTakeaway1: TextField;
   KeyTakeaway2: TextField;
@@ -57,11 +55,10 @@ export default async function ArticleDetailPage({ page }: ComponentProps) {
     HeroImage,
     ExternalUrl,
     ReadTime,
-    Id,
   } = page.layout.sitecore.route?.fields as unknown as NewsData;
 
-  if (!Id?.value) {
-    return <div>Article not found</div>;
+  if (page?.layout?.sitecore?.context?.itemPath?.includes("Partial-Designs")) {
+    return <div>News Intro not found</div>;
   }
 
   return (
@@ -79,21 +76,23 @@ export default async function ArticleDetailPage({ page }: ComponentProps) {
       </div>
 
       {/* Article Header & Hero - Split Layout */}
-      <article>
+      <div>
         <div className="border-b border-border">
           <div className="grid min-h-[60vh] grid-cols-1 lg:grid-cols-3">
             {/* Content Section - 1/3 width on left */}
             <div className="flex flex-col justify-center bg-background p-8 lg:border-r lg:p-12 border-border">
               <div className="mb-6 flex flex-wrap gap-2">
-                {Tags.map((tag) => (
-                  <Badge
-                    key={tag.fields.Title.value}
-                    variant="secondary"
-                    className="px-3 py-1 text-sm"
-                  >
-                    <Text field={tag.fields.Title} />
-                  </Badge>
-                ))}
+                {Tags.map((tag) => {
+                  return (
+                    <Badge
+                      key={tag.fields.Title.value}
+                      variant="secondary"
+                      className="px-3 py-1 text-sm"
+                    >
+                      <Text field={tag.fields.Title} />
+                    </Badge>
+                  );
+                })}
               </div>
 
               <h1 className="mb-6 text-balance text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
@@ -101,24 +100,26 @@ export default async function ArticleDetailPage({ page }: ComponentProps) {
               </h1>
 
               {Excerpt && (
-                <p className="mb-8 text-balance text-lg leading-relaxed text-muted-foreground">
+                <div className="mb-8 text-balance text-lg leading-relaxed text-muted-foreground">
                   <Text field={Excerpt} />
-                </p>
+                </div>
               )}
 
               <div className="mt-auto space-y-6">
                 <Separator />
 
                 <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-medium text-muted-foreground">
-                      Author
-                    </span>
-                    <span className="font-medium">
-                      {Author.fields.FirstName.value}{" "}
-                      {Author.fields.LastName.value}
-                    </span>
-                  </div>
+                  {Author?.fields?.FirstName && Author?.fields?.LastName && (
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium text-muted-foreground">
+                        Author
+                      </span>
+                      <span className="font-medium">
+                        {Author.fields.FirstName.value}{" "}
+                        {Author.fields.LastName.value}
+                      </span>
+                    </div>
+                  )}
 
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-medium text-muted-foreground">
@@ -126,19 +127,17 @@ export default async function ArticleDetailPage({ page }: ComponentProps) {
                     </span>
                     <div className="flex items-center gap-2">
                       <Clock className="h-4 w-4 text-muted-foreground" />
-                      <time
-                        dateTime={PublishDate.value}
-                        className="font-medium"
-                      >
-                        {PublishDate && (
-                          <DateField
-                            field={PublishDate}
-                            render={(value) =>
-                              value && formatDate(value.toString())
-                            }
-                          />
-                        )}
-                      </time>
+
+                      {PublishDate && page.mode.isEditing ? (
+                        <DateField field={PublishDate} />
+                      ) : (
+                        <DateField
+                          field={PublishDate}
+                          render={(value) =>
+                            value && formatDate(value.toString())
+                          }
+                        />
+                      )}
                     </div>
                   </div>
 
@@ -147,7 +146,7 @@ export default async function ArticleDetailPage({ page }: ComponentProps) {
                       Reading Time
                     </span>
                     <span className="font-medium">
-                      <Text field={ReadTime} /> min read
+                      <Text as="span" field={ReadTime} /> min read
                     </span>
                   </div>
                 </div>
@@ -214,7 +213,7 @@ export default async function ArticleDetailPage({ page }: ComponentProps) {
             </div>
           </div>
         </div>
-      </article>
+      </div>
     </>
   );
 }

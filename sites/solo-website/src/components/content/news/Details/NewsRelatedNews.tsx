@@ -113,7 +113,7 @@ export default async function Default({
   );
 
   return (
-    <>
+    <div>
       {/* Related Articles */}
       {filteredArticles.length > 0 && (
         <div className="border-t border-border bg-muted/30 py-12 md:py-16">
@@ -139,6 +139,6 @@ export default async function Default({
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }

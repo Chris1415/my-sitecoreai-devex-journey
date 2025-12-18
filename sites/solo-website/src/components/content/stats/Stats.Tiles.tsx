@@ -225,12 +225,15 @@ export function Tiles({ fields, page }: StatsProps) {
       <div className="px-4 md:px-8 lg:px-12">
         {/* Header */}
         <div className="mb-12 text-center">
-          <h2 className="mb-3 text-3xl font-bold">
-            <Text field={stats.Title} />
-          </h2>
-          <p className="text-muted-foreground">
+          <Text
+            as="h2"
+            className="mb-3 text-3xl font-bold"
+            field={stats.Title}
+          />
+
+          <div className="text-muted-foreground">
             <Text field={stats.Subtitle} />
-          </p>
+          </div>
         </div>
 
         {/* Stats Grid */}

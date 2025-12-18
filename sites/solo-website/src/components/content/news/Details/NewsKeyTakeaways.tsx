@@ -25,7 +25,7 @@ export function Default({ page }: ComponentProps) {
   }
 
   return (
-    <>
+    <div>
       {keyTakeaways && keyTakeaways.length > 0 && (
         <div className="mt-16 px-4 md:px-8 lg:px-12">
           <Card className="bg-linear-to-br from-primary/5 to-background">
@@ -41,9 +41,9 @@ export function Default({ page }: ComponentProps) {
                       <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">
                         {index + 1}
                       </span>
-                      <span className="text-muted-foreground">
+                      <div className="text-muted-foreground">
                         <Text field={takeaway} />
-                      </span>
+                      </div>
                     </li>
                   );
                 })}
@@ -52,6 +52,6 @@ export function Default({ page }: ComponentProps) {
           </Card>
         </div>
       )}
-    </>
+    </div>
   );
 }

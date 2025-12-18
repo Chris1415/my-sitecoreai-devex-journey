@@ -15,9 +15,9 @@ export default function Default({ fields, page }: QuoteProps) {
   const quote =
     (page.layout.sitecore.route?.fields as unknown as NewsData)?.Quote || Quote;
 
-    if (page?.layout?.sitecore?.context?.itemPath?.includes("Partial-Designs")) {
-        return <div>Quote not found</div>;
-      } 
+  if (page?.layout?.sitecore?.context?.itemPath?.includes("Partial-Designs")) {
+    return <div>Quote not found</div>;
+  }
 
   return (
     <>
@@ -50,9 +50,9 @@ export default function Default({ fields, page }: QuoteProps) {
             </div>
 
             {/* Quote text */}
-            <p className="text-balance text-2xl font-medium italic leading-relaxed text-stone-800 transition-colors duration-300 group-hover/quote:text-stone-900 dark:text-white/90 dark:group-hover/quote:text-white md:text-3xl lg:text-4xl">
-              <Text as="span" field={quote} />
-            </p>
+            <div className="text-balance text-2xl font-medium italic leading-relaxed text-stone-800 transition-colors duration-300 group-hover/quote:text-stone-900 dark:text-white/90 dark:group-hover/quote:text-white md:text-3xl lg:text-4xl">
+              <Text field={quote} />
+            </div>
 
             {/* Decorative line */}
             <div className="mx-auto mt-8 h-px w-32 bg-linear-to-r from-transparent via-red-400/50 to-transparent transition-all duration-500 group-hover/quote:w-48 group-hover/quote:via-red-500/70 dark:via-red-500/50 dark:group-hover/quote:via-red-400/70" />

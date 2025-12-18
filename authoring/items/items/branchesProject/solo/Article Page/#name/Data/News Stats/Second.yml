@@ -1,0 +1,43 @@
+﻿---
+ID: "9c2925a2-c60f-4d23-bed0-b9ffffd8b94c"
+Parent: "540b821d-45be-460c-a6dd-df52cd527e94"
+Template: "eff9db70-b72d-4712-9456-90039553e8d6"
+Path: /sitecore/templates/Branches/Project/solo/Article Page/$name/Data/News Stats/Second
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "17026f82-67d9-489e-9c84-fd8a3664eeb6"
+      Hint: Icon
+      Value: TrendingUp
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20251215T160411Z
+    - ID: "4fc3b487-98fc-4bf7-a9c3-0609e6a2e1a8"
+      Hint: Title
+      Value: Second
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\christian.hahn@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\christian.hahn@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "9415df58-ea95-4c77-9f15-2d9620ca2ace"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\christian.hahn@sitecore.com
+    - ID: "caf3b9b4-7543-4cab-a1b2-667765a3ff96"
+      Hint: Subtitle
+      Value: Stat
+    - ID: "d2553bc2-55c2-419a-8fbc-42646c961ac3"
+      Hint: Tag
+      Value: Second
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20251218T063606Z
