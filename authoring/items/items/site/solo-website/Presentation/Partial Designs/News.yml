@@ -36,15 +36,14 @@ Languages:
               s:par="FieldNames&amp;RenderingIdentifier&amp;Styles&amp;CSSStyles&amp;GridParameters=%7BF61E01E9-711A-4C99-AE30-4E28463E1DF7%7D&amp;DynamicPlaceholderId=1"
               s:ph="headless-main" />
             <r
-              uid="{8D62FEAC-08DB-4F33-9602-70506A48FD86}"
+              uid="{0D375930-2F16-45FB-917F-72D72E685487}"
               p:after="r[@uid='{0822662F-D1B6-4530-AD06-AD339E245EA1}']"
-              s:ds="6f41a2a3-97b6-4c44-aa5f-d4a268fa8438"
-              s:id="{515269B9-A578-4A42-87DA-ABCC38669016}"
-              s:par="FieldNames=%7B310ADC05-3AFD-42D5-8217-14413430EEF6%7D&amp;RenderingIdentifier&amp;Styles&amp;CSSStyles&amp;GridParameters=%7BF61E01E9-711A-4C99-AE30-4E28463E1DF7%7D&amp;DynamicPlaceholderId=6"
+              s:id="{F9DA858C-CB16-4796-9BF2-7C8A783BBA02}"
+              s:par="GridParameters=%7BF61E01E9-711A-4C99-AE30-4E28463E1DF7%7D&amp;FieldNames&amp;BackgroundImage&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=9"
               s:ph="headless-main" />
             <r
               uid="{AA9916ED-BBE1-4546-93EF-233951BFF0A7}"
-              p:after="r[@uid='{8D62FEAC-08DB-4F33-9602-70506A48FD86}']"
+              p:after="r[@uid='{0D375930-2F16-45FB-917F-72D72E685487}']"
               s:id="{D122365F-25EE-4DE4-87CA-F3C5DCE5FDEB}"
               s:par="FieldNames&amp;RenderingIdentifier&amp;Styles&amp;CSSStyles&amp;BackgroundImage&amp;GridParameters=%7BF61E01E9-711A-4C99-AE30-4E28463E1DF7%7D&amp;DynamicPlaceholderId=2"
               s:ph="headless-main" />
@@ -62,20 +61,20 @@ Languages:
               s:par="FieldNames&amp;RenderingIdentifier&amp;Styles&amp;CSSStyles&amp;GridParameters=%7BF61E01E9-711A-4C99-AE30-4E28463E1DF7%7D&amp;DynamicPlaceholderId=4"
               s:ph="/headless-main/container-2" />
             <r
-              uid="{D03305A3-9CB7-4532-96B3-EDEB4B2B12F0}"
-              p:after="r[@uid='{2B1CD5E1-B20C-4AE1-AA4A-F19F3BB97149}']"
-              s:id="{3796208F-A7C8-4AC8-AECB-D6549279A2BD}"
-              s:par="GridParameters=%7BF61E01E9-711A-4C99-AE30-4E28463E1DF7%7D&amp;FieldNames&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=9"
-              s:ph="/headless-main/container-2" />
-            <r
               uid="{9AA393A0-59BF-4CD9-93F4-8F710050F011}"
-              p:after="r[@uid='{D03305A3-9CB7-4532-96B3-EDEB4B2B12F0}']"
+              p:after="r[@uid='{2B1CD5E1-B20C-4AE1-AA4A-F19F3BB97149}']"
               s:id="{5DCAEAF3-8C13-41D6-9ACA-C77C4538C37B}"
               s:par="FieldNames&amp;RenderingIdentifier&amp;Styles&amp;CSSStyles&amp;GridParameters=%7BF61E01E9-711A-4C99-AE30-4E28463E1DF7%7D&amp;DynamicPlaceholderId=7"
               s:ph="/headless-main/container-2" />
             <r
-              uid="{768EA159-3F35-4D25-A135-1E4C02B58E43}"
+              uid="{7AE2A118-C9FB-4FD8-87CC-9E5BBB81B151}"
               p:after="r[@uid='{9AA393A0-59BF-4CD9-93F4-8F710050F011}']"
+              s:id="{F9DA858C-CB16-4796-9BF2-7C8A783BBA02}"
+              s:par="GridParameters=%7BF61E01E9-711A-4C99-AE30-4E28463E1DF7%7D&amp;FieldNames&amp;BackgroundImage&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=10"
+              s:ph="/headless-main/container-2" />
+            <r
+              uid="{768EA159-3F35-4D25-A135-1E4C02B58E43}"
+              p:after="r[@uid='{7AE2A118-C9FB-4FD8-87CC-9E5BBB81B151}']"
               s:ds="e12c14d1-a0c7-41ad-b219-a82b6879a6df"
               s:id="{4320E5AE-BAC8-46BF-AA53-6DB2824C0304}"
               s:par="FieldNames&amp;RenderingIdentifier&amp;Styles&amp;CSSStyles&amp;GridParameters=%7BF61E01E9-711A-4C99-AE30-4E28463E1DF7%7D&amp;DynamicPlaceholderId=5"
@@ -101,11 +100,11 @@ Languages:
         sitecore\christian.hahn@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "486a4209-e6a5-4a9e-bba8-0d92c587193b"
+      Value: "6f716445-0736-40da-9dd0-233e4ae9db30"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\christian.hahn@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20251218T083626Z
+      Value: 20251218T113744Z

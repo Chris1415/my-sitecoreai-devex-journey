@@ -1,0 +1,23 @@
+﻿---
+ID: "3b4fd879-fa50-45aa-a86c-24fe8f750b42"
+Parent: "4e1c8ccb-a032-42c3-b365-3ff7ebf465fb"
+Template: "8bd15f11-a799-4edb-b970-4e8bda3c3699"
+Path: "/sitecore/content/solo/solo-website/Presentation/Partial Designs/News/Data/test"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20251218T101950Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "c127ee68-b74f-40c6-9271-f13d1de3ecf5"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\christian.hahn@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20251218T101950Z

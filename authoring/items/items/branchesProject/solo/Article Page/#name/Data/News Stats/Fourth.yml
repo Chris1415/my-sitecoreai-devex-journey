@@ -23,7 +23,7 @@ Languages:
       Value: 20251215T160411Z
     - ID: "4fc3b487-98fc-4bf7-a9c3-0609e6a2e1a8"
       Hint: Title
-      Value: Forurth
+      Value: Fourth
     - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
       Hint: __Owner
       Value: |
@@ -34,7 +34,7 @@ Languages:
         sitecore\christian.hahn@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "5304ea7d-6b25-4393-8598-0911499791c6"
+      Value: "12367c96-ce6d-484d-8394-9cef512b5d73"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
@@ -47,4 +47,4 @@ Languages:
       Value: Fourth
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20251218T063625Z
+      Value: 20251218T101431Z

@@ -1,32 +1,12 @@
 ﻿---
-ID: "d122365f-25ee-4de4-87ca-f3c5dce5fdeb"
-Parent: "74803908-08aa-4126-abf6-592b198ca409"
-Template: "04646a89-996f-4ee7-878a-ffdbf1f0ef0d"
-Path: /sitecore/layout/Renderings/Project/solo/Structual/Container
+ID: "864fa2d2-0111-4b69-a7d8-866518ff80b7"
+Parent: "f2627e31-2dfb-446b-9528-fad54cd6c59b"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/Project/solo/Rendering Parameters/News Container Parameters/Styling
 SharedFields:
-- ID: "037fe404-dd19-4bf7-8e30-4dadf68b27b0"
-  Hint: componentName
-  Value: Container
-- ID: "069a8361-b1cd-437c-8c32-a3be78941446"
-  Hint: Placeholders
-  Value: |
-    {97CBC3BC-B376-47AA-9238-240672E912A5}
-    {EBD6078E-4066-4A68-BDAB-ADFCA031A8F3}
-- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
-  Hint: __Icon
-  Value: SXA_MDI/16x16/Container.png
-- ID: "7d8ae35f-9ed1-43b5-96a2-0a5f040d4e4e"
-  Hint: Open Properties after Add
-  Value: 0
-- ID: "a77e8568-1ab3-44f1-a664-b7c37ec7810d"
-  Hint: Parameters Template
-  Value: "{CCC5745C-6391-4F01-9AF6-C4A19E2DC5FD}"
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "51dc0337-3f13-42d8-bf57-f69ecbc65719"
-- ID: "e829c217-5e94-4306-9c48-2634b094fdc2"
-  Hint: OtherProperties
-  Value: IsRenderingsWithDynamicPlaceholders=true&UsePlaceholderDatasourceContext=true
+  Value: "{C9CC37EC-C8D3-44BF-967C-C80E28FB4FD8}"
 Languages:
 - Language: "de-DE"
   Fields:
@@ -35,13 +15,13 @@ Languages:
     Value: "{383844E7-4E28-4D45-AE48-640380EF63D8}"
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
-    Value: Container
+    Value: Styling
   Versions:
   - Version: 1
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20251209T163747Z
+      Value: 20251218T090631Z
     - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
       Hint: __Owner
       Value: |
@@ -59,28 +39,28 @@ Languages:
         sitecore\Admin
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20251209T163747Z
+      Value: 20251218T090631Z
 - Language: en
   Versions:
   - Version: 1
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20220202T150344Z
+      Value: 20150717T102015Z
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
-        sitecore\Admin
+        sitecore\admin
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "75dc4739-7f38-4005-aeb0-a0b3daae5018"
+      Value: "eef71c2f-4aec-4f30-9af7-d8edde8cf544"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\christian.hahn@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20251218T113625Z
+      Value: 20251218T113154Z
 - Language: "ja-JP"
   Fields:
   - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
@@ -88,13 +68,13 @@ Languages:
     Value: "{383844E7-4E28-4D45-AE48-640380EF63D8}"
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
-    Value: コンテナー
+    Value: スタイリング
   Versions:
   - Version: 1
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20251209T163747Z
+      Value: 20251218T090631Z
     - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
       Hint: __Owner
       Value: |
@@ -112,7 +92,7 @@ Languages:
         sitecore\Admin
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20251209T163747Z
+      Value: 20251218T090631Z
 - Language: "zh-CN"
   Fields:
   - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
@@ -120,13 +100,13 @@ Languages:
     Value: "{383844E7-4E28-4D45-AE48-640380EF63D8}"
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
-    Value: 容器
+    Value: 造型
   Versions:
   - Version: 1
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20251209T163747Z
+      Value: 20251218T090631Z
     - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
       Hint: __Owner
       Value: |
@@ -144,4 +124,4 @@ Languages:
         sitecore\Admin
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20251209T163747Z
+      Value: 20251218T090631Z

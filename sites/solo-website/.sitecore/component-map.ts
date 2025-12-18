@@ -26,8 +26,8 @@ import * as NewsRelatedNews from 'src/components/content/news/Details/NewsRelate
 import * as NewsKeyTakeaways from 'src/components/content/news/Details/NewsKeyTakeaways';
 import * as NewsDetailsContent from 'src/components/content/news/Details/NewsDetailsContent';
 import * as NewsDetails from 'src/components/content/news/Details/NewsDetails';
+import * as NewsContainer from 'src/components/content/news/Conainer/NewsContainer';
 import * as ImageList from 'src/components/content/media/images/ImageList';
-import * as ContextBasedImageList from 'src/components/content/media/images/ContextBasedImageList';
 import * as HighlightsTiles from 'src/components/content/highlight/Highlights.Tiles';
 import * as Highlights from 'src/components/content/highlight/Highlights';
 import * as HeroBannerBranded from 'src/components/content/hero/HeroBanner.Branded';
@@ -60,8 +60,8 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['NewsKeyTakeaways', { ...NewsKeyTakeaways }],
   ['NewsDetailsContent', { ...NewsDetailsContent }],
   ['NewsDetails', { ...NewsDetails }],
+  ['NewsContainer', { ...NewsContainer }],
   ['ImageList', { ...ImageList, componentType: 'client' }],
-  ['ContextBasedImageList', { ...ContextBasedImageList, componentType: 'client' }],
   ['Highlights', { ...HighlightsTiles, ...Highlights }],
   ['HeroBanner', { ...HeroBannerBranded, ...HeroBanner }],
   ['EventCard', { ...EventCardHighlight, ...EventCard }],

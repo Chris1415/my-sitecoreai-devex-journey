@@ -10,16 +10,13 @@ Languages:
     Fields:
     - ID: "0e2aaf10-30ad-4764-91cb-9b169ef145a9"
       Hint: Images
-      Value: |
-        {3057C24A-3694-427D-B388-E33344764BB5}
-        {000D4A0D-9A9B-4207-94FA-C7255D8C104C}
-        {83972A65-0BB0-4029-98DE-6321386598F3}
+      Value: 
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20251216T142844Z
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "91e31ac8-3dbd-4754-a73a-1ccafa252b80"
+      Value: "12f81cf2-6bd9-41e6-96f1-62d7bc6c8e1f"
     - ID: "996afb27-7994-4b9b-b779-0f4ec79d42ce"
       Hint: Title
       Value: Visual Insights
@@ -32,4 +29,4 @@ Languages:
       Value: Explore key features and interfaces in detail
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20251217T151412Z
+      Value: 20251218T120329Z

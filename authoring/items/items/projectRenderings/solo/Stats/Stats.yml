@@ -10,6 +10,37 @@ SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
   Hint: __Icon
   Value: SXA_MDI/16x16/Promo.png
+- ID: "17bb046a-a32a-41b3-8315-81217947611b"
+  Hint: ComponentQuery
+  Value: |
+    query GetStats($datasource: String!, $language: String!) {
+      datasource: item(path: $datasource, language: $language) {
+     Title: field(name: "Title") {
+          jsonValue
+        }
+         Subtitle: field(name: "Subtitle") { 
+           jsonValue
+        }
+        children {
+          results {
+            Icon: field(name: "Icon") {
+               jsonValue
+            }
+            Title: field(name:"Title"){
+               jsonValue
+            }
+            Subtitle: field(name:"Subtitle"){
+               jsonValue
+            }
+            Tag: field(name:"Tag"){
+               jsonValue
+            }
+          }
+        }
+       
+      }
+    }
+    
 - ID: "1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f"
   Hint: Datasource Template
   Value: /sitecore/templates/Project/solo/Components/Stats/Stats
@@ -33,7 +64,7 @@ SharedFields:
   Value: 
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "a24321ec-27ab-40dd-8f28-7291159c2a5f"
+  Value: "7e4ea5d5-7250-4851-aea4-4f9547c2e7d1"
 - ID: "e829c217-5e94-4306-9c48-2634b094fdc2"
   Hint: OtherProperties
   Value: IsRenderingsWithDynamicPlaceholders=true
@@ -87,14 +118,14 @@ Languages:
         sitecore\JssImport
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "aec97ff3-df0b-4c26-b952-1d7fc754e0f0"
+      Value: "44ab4388-985c-4138-bd7e-f859fb7d64d9"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\christian.hahn@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20251217T142429Z
+      Value: 20251218T115152Z
 - Language: "ja-JP"
   Fields:
   - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"

@@ -1,21 +1,20 @@
 ﻿---
-ID: "129d6f4f-537a-4388-8e8e-a7210521af09"
-Parent: "812bf08d-567e-40bb-a65a-1ef970f39e94"
-Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
-Path: /sitecore/templates/Project/solo/Article Page/Additional Article Data/Stats
+ID: "ebd6078e-4066-4a68-bdab-adfca031a8f3"
+Parent: "8075d86e-2dbb-4e64-99d9-66e8b1d94112"
+Template: "5c547d4e-7111-4995-95b0-6b561751bf2e"
+Path: /sitecore/layout/Placeholder Settings/Project/solo/News Container
 SharedFields:
-- ID: "1eb8ae32-e190-44a6-968d-ed904c794ebf"
-  Hint: Source
-  Value: "query:$site/*[@@name='Data']/*[@@templatename='Stats Folder']/*|./Data//*[@@templateid='{F2059D93-4151-4B7F-803B-D78B075F6DF4}']"
-- ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
-  Hint: Type
-  Value: Droplink
-- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
-  Hint: __Sortorder
-  Value: 600
+- ID: "7256bdab-1fd2-49dd-b205-cb4873d2917c"
+  Hint: Placeholder Key
+  Value: "news-container-{*}"
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "aea26647-fa71-46cc-8e63-15daab40ac2b"
+  Value: "a4874366-320b-4b49-ae1d-f5e4469f6980"
+- ID: "e391b526-d0c5-439d-803e-17512eae6222"
+  Hint: Allowed Controls
+  Value: |
+    {515269B9-A578-4A42-87DA-ABCC38669016}
+    {8600B9AE-2E94-4344-B24B-E8CDAA213161}
 Languages:
 - Language: en
   Versions:
@@ -23,7 +22,7 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20251215T155845Z
+      Value: 20251218T113258Z
     - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
       Hint: __Owner
       Value: |
@@ -34,11 +33,11 @@ Languages:
         sitecore\christian.hahn@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "c13a7ac2-51c5-45ac-91b3-5c6e90dc64f3"
+      Value: "730c364b-9cca-4cc3-a88f-bbe50ae0e48d"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\christian.hahn@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20251217T142937Z
+      Value: 20251218T113732Z

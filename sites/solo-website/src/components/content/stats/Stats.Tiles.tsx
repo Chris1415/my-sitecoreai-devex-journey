@@ -7,7 +7,6 @@ import { Page, Text, TextField } from "@sitecore-content-sdk/nextjs";
 import { ComponentProps } from "lib/component-props";
 import { getLucideIcon } from "lib/iconUtils";
 import { Badge } from "components/ui/badge";
-import { NewsData } from "../news/Details/NewsDetails";
 
 function useCountUp(end: number, duration = 2000) {
   const [count, setCount] = useState(0);
@@ -70,19 +69,27 @@ function useCountUp(end: number, duration = 2000) {
 }
 
 interface StatElement {
-  fields: {
-    Icon: TextField;
-    Title: TextField;
-    Subtitle: TextField;
-    Tag: TextField;
-  };
+  Icon: { jsonValue: TextField };
+  Title: { jsonValue: TextField };
+  Subtitle: { jsonValue: TextField };
+  Tag: { jsonValue: TextField };
 }
 
 export interface StatsProps extends ComponentProps {
   fields: {
-    Title: TextField;
-    Subtitle: TextField;
-    Elements: StatElement[];
+    data: {
+      datasource: {
+        Title: {
+          jsonValue: TextField;
+        };
+        Subtitle: {
+          jsonValue: TextField;
+        };
+        children: {
+          results: StatElement[];
+        };
+      };
+    };
   };
 }
 
@@ -144,12 +151,12 @@ function StatCard({
   index: number;
   page: Page;
 }) {
-  const titleValue = String(element.fields.Title?.value || "");
+  const titleValue = String(element.Title?.jsonValue?.value || "");
   const parsed = parseStatValue(titleValue);
 
   const countUp = useCountUp(parsed.isNumeric ? parsed.number : 0);
   const [IconComponent, setIconComponent] = useState<LucideIcon | null>(null);
-  const iconValue = String(element.fields.Icon?.value || "");
+  const iconValue = String(element.Icon?.jsonValue.value || "");
 
   useEffect(() => {
     const icon = getLucideIcon(iconValue);
@@ -174,15 +181,15 @@ function StatCard({
           className="relative z-10 mb-4 h-10 w-10 text-primary"
           aria-hidden="true"
         />
-        {page.mode.isEditing && <Text field={element.fields.Icon} />}
+        {page.mode.isEditing && <Text field={element.Icon.jsonValue} />}
 
         {/* Value with count-up animation for numbers */}
         <div
           ref={parsed.isNumeric ? countUp.ref : undefined}
-          className="relative z-10 mb-2 bg-linear-to-br from-foreground to-foreground/70 bg-clip-text text-4xl font-bold text-transparent tabular-nums"
+          className="relative z-10 mb-2 bg-linear-to-br from-foreground to-foreground/70 bg-clip-text text-4xl font-bold text-transparent tabular-nums md:text-xl lg:text-2xl xm:text-3xl xl:text-4xl"
         >
           {page.mode.isEditing ? (
-            <Text field={element.fields.Title} />
+            <Text field={element?.Title?.jsonValue} />
           ) : parsed.isNumeric ? (
             `${parsed.prefix}${countUp.count}${parsed.suffix}`
           ) : (
@@ -192,13 +199,13 @@ function StatCard({
 
         {/* Subtitle */}
         <div className="relative z-10 mb-2 text-sm text-muted-foreground">
-          <Text field={element.fields.Subtitle} />
+          <Text field={element?.Subtitle?.jsonValue} />
         </div>
 
         {/* Tag/Badge */}
-        {element.fields.Tag?.value && (
+        {element.Tag?.jsonValue.value && (
           <Badge variant="secondary" className="text-xs">
-            <Text field={element.fields.Tag} />
+            <Text field={element.Tag.jsonValue} />
           </Badge>
         )}
       </CardContent>
@@ -207,17 +214,12 @@ function StatCard({
 }
 
 export function Tiles({ fields, page }: StatsProps) {
-  const stats =
-    (page.layout.sitecore.route?.fields as unknown as NewsData)?.Stats
-      ?.fields || fields;
-
-  if (!stats) {
-    return <div>Stats not found</div>;
-  }
+  const { Title, Subtitle, children } = fields?.data?.datasource;
+  const Elements = children?.results;
 
   // Return null if no elements
-  if (!stats?.Elements || stats.Elements.length === 0) {
-    return null;
+  if (!Elements || Elements.length === 0) {
+    return <div>No Stat Elements</div>;
   }
 
   return (
@@ -228,17 +230,17 @@ export function Tiles({ fields, page }: StatsProps) {
           <Text
             as="h2"
             className="mb-3 text-3xl font-bold"
-            field={stats.Title}
+            field={Title.jsonValue}
           />
 
           <div className="text-muted-foreground">
-            <Text field={stats.Subtitle} />
+            <Text field={Subtitle.jsonValue} />
           </div>
         </div>
 
         {/* Stats Grid */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {stats.Elements.map((element, index) => (
+          {Elements.map((element, index) => (
             <StatCard key={index} element={element} index={index} page={page} />
           ))}
         </div>

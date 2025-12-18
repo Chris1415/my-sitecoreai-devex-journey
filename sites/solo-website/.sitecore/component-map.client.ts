@@ -10,7 +10,6 @@ import * as StatsTiles from 'src/components/content/stats/Stats.Tiles';
 import * as Stats from 'src/components/content/stats/Stats';
 import * as Signup from 'src/components/content/newsletter/Signup';
 import * as ImageList from 'src/components/content/media/images/ImageList';
-import * as ContextBasedImageList from 'src/components/content/media/images/ContextBasedImageList';
 import * as BrandsSlider from 'src/components/content/brands/Brands.Slider';
 
 export const componentMap = new Map<string, NextjsContentSdkComponent>([
@@ -23,7 +22,6 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['Stats', { ...StatsTiles, ...Stats }],
   ['Signup', { ...Signup }],
   ['ImageList', { ...ImageList }],
-  ['ContextBasedImageList', { ...ContextBasedImageList }],
   ['Brands', { ...BrandsSlider }],
 ]);
 

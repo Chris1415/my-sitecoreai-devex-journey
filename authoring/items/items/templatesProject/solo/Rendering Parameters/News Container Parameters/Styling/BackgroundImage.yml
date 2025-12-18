@@ -1,73 +1,42 @@
 ﻿---
-ID: "3796208f-a7c8-4ac8-aecb-d6549279a2bd"
-Parent: "fdd016ab-0d68-48e0-bf4a-856bdabaac0d"
-Template: "04646a89-996f-4ee7-878a-ffdbf1f0ef0d"
-Path: /sitecore/layout/Renderings/Project/solo/Media/ContextBasedImageList
+ID: "34b1226f-9abb-4134-aca4-412552cd1e18"
+Parent: "864fa2d2-0111-4b69-a7d8-866518ff80b7"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/Project/solo/Rendering Parameters/News Container Parameters/Styling/BackgroundImage
 SharedFields:
-- ID: "037fe404-dd19-4bf7-8e30-4dadf68b27b0"
-  Hint: componentName
-  Value: ContextBasedImageList
-- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
-  Hint: __Icon
-  Value: "SXA_MDI/16x16/Link-List.png"
-- ID: "17bb046a-a32a-41b3-8315-81217947611b"
-  Hint: ComponentQuery
-  Value: |
-    query GertImages($contextItem: String!, $language: String!) {
-      contextItem: item(path: $contextItem, language: $language) {
-        imageList: field(name: "ImageList") {
-          jsonValue
-        }
-      }
-    }
-    
-- ID: "1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f"
-  Hint: Datasource Template
-  Value: 
-- ID: "7d8ae35f-9ed1-43b5-96a2-0a5f040d4e4e"
-  Hint: Open Properties after Add
-  Value: 0
-- ID: "9c6106ea-7a5a-48e2-8cad-f0f693b1e2d4"
-  Hint: __Read Only
-  Value: 0
-- ID: "a2f5d9df-8cba-4a1d-99eb-51acb94cb057"
-  Hint: Page Editor Buttons
-  Value: |
-    {31A3A929-C599-4DD3-91A6-F4A9487CC8B7}
-    {587F8FBD-E38F-4E2B-8DE4-1F474D9DDD00}
-- ID: "a3411ff6-c978-40aa-b059-a49b9ca2209b"
-  Hint: Can select Page as a data source
+- ID: "1eb8ae32-e190-44a6-968d-ed904c794ebf"
+  Hint: Source
+  Value: "query:$siteMedia"
+- ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
+  Hint: Type
+  Value: Image
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 100
+- ID: "be351a73-fcb0-4213-93fa-c302d8ab4f51"
+  Hint: Shared
   Value: 1
-- ID: "a77e8568-1ab3-44f1-a664-b7c37ec7810d"
-  Hint: Parameters Template
-  Value: "{1C1B64F1-29D4-4751-9504-1FA322F7F8CF}"
-- ID: "b5b27af1-25ef-405c-87ce-369b3a004016"
-  Hint: Datasource Location
-  Value: 
-- ID: "c39a90ce-0035-41bb-90f6-3c8a6ea87797"
-  Hint: AddFieldEditorButton
-  Value: 
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "c250f693-cf4f-423d-97d6-cea4ea406337"
-- ID: "e829c217-5e94-4306-9c48-2634b094fdc2"
-  Hint: OtherProperties
-  Value: IsRenderingsWithDynamicPlaceholders=true
+  Value: "{C9CC37EC-C8D3-44BF-967C-C80E28FB4FD8}"
 Languages:
 - Language: "de-DE"
   Fields:
+  - ID: "19a69332-a23e-4e70-8d16-b2640cb24cc8"
+    Hint: Title
+    Value: Hintergrundbild
   - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
     Hint: __Unversioned revision
     Value: "{383844E7-4E28-4D45-AE48-640380EF63D8}"
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
-    Value: Link Liste
+    Value: Hintergrundbild
   Versions:
   - Version: 1
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20251215T165312Z
+      Value: 20251218T090631Z
     - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
       Hint: __Owner
       Value: |
@@ -85,49 +54,48 @@ Languages:
         sitecore\Admin
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20251215T165312Z
+      Value: 20251218T090631Z
 - Language: en
   Fields:
-  - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
-    Hint: __Unversioned revision
-    Value: "3a743297-a6de-407e-97ef-7255eda4c19e"
+  - ID: "19a69332-a23e-4e70-8d16-b2640cb24cc8"
+    Hint: Title
+    Value: Background image
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
-    Value: 
+    Value: Background Image
   Versions:
   - Version: 1
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20211125T141804Z
-    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
-      Hint: __Created by
-      Value: |
-        sitecore\Admin
+      Value: 20150717T102015Z
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "d208913b-638c-4635-8d9b-f5a01dc8cf07"
+      Value: "cb20816c-0d4a-44a7-a13b-91703589537a"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\christian.hahn@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20251218T084400Z
+      Value: 20251218T113155Z
 - Language: "ja-JP"
   Fields:
+  - ID: "19a69332-a23e-4e70-8d16-b2640cb24cc8"
+    Hint: Title
+    Value: 背景画像
   - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
     Hint: __Unversioned revision
     Value: "{383844E7-4E28-4D45-AE48-640380EF63D8}"
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
-    Value: リンク リスト
+    Value: 背景の画像
   Versions:
   - Version: 1
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20251215T165312Z
+      Value: 20251218T090631Z
     - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
       Hint: __Owner
       Value: |
@@ -145,21 +113,24 @@ Languages:
         sitecore\Admin
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20251215T165312Z
+      Value: 20251218T090631Z
 - Language: "zh-CN"
   Fields:
+  - ID: "19a69332-a23e-4e70-8d16-b2640cb24cc8"
+    Hint: Title
+    Value: 背景图片
   - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
     Hint: __Unversioned revision
     Value: "{383844E7-4E28-4D45-AE48-640380EF63D8}"
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
-    Value: 链接列表
+    Value: 背景图
   Versions:
   - Version: 1
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20251215T165312Z
+      Value: 20251218T090631Z
     - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
       Hint: __Owner
       Value: |
@@ -177,4 +148,4 @@ Languages:
         sitecore\Admin
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20251215T165312Z
+      Value: 20251218T090631Z
