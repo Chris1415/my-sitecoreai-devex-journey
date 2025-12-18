@@ -19,6 +19,9 @@
           "/sitecore/client/Applications/Launchpad"
         ]
       },
+      "scsModules": {
+      "modules": ["Project.solo"]
+    },
       "populateSchema": {
         "indexNames": []
       },
