@@ -2,6 +2,7 @@ import { Text as SdkText, RichText } from "@sitecore-content-sdk/nextjs";
 import { TextProps } from "./Text.Props";
 
 export async function Divider({ fields }: TextProps) {
+  if (!fields) return null;
   const { Title, Text } = fields;
   return (
     <div className="mx-auto my-8 md:my-10 max-w-3xl text-center">

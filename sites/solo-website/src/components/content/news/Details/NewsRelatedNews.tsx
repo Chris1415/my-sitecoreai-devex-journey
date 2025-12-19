@@ -84,12 +84,18 @@ export default async function Default({
   rendering,
   params,
 }: ComponentProps) {
-  const { Title, Tags } = page.layout.sitecore.route
-    ?.fields as unknown as NewsData;
+  const routeFields = page.layout.sitecore.route?.fields as
+    | NewsData
+    | undefined;
 
-  if (page?.layout?.sitecore?.context?.itemPath?.includes("Partial-Designs")) {
-    return <div>Related News not found</div>;
+  if (
+    !routeFields ||
+    page?.layout?.sitecore?.context?.itemPath?.includes("Partial-Designs")
+  ) {
+    return null;
   }
+
+  const { Title, Tags } = routeFields;
 
   const articleResponse = await client.getData<{
     item: { path: string };

@@ -3,11 +3,18 @@ import { ComponentProps } from "lib/component-props";
 import { NewsData } from "./NewsDetails";
 
 export default async function Default({ page }: ComponentProps) {
-  const { Content } = page.layout.sitecore.route?.fields as unknown as NewsData;
+  const routeFields = page.layout.sitecore.route?.fields as
+    | NewsData
+    | undefined;
 
-  if (page?.layout?.sitecore?.context?.itemPath?.includes("Partial-Designs")) {
-    return <div>News Content not found</div>;
+  if (
+    !routeFields ||
+    page?.layout?.sitecore?.context?.itemPath?.includes("Partial-Designs")
+  ) {
+    return null;
   }
+
+  const { Content } = routeFields;
 
   return (
     <div>

@@ -43,8 +43,14 @@ interface Image {
   };
 }
 
-export function Default({ fields }: ImageListProps) {
-  const { Title, Subtitle, children } = fields?.data?.datasource;
+export function Default({ fields, page }: ImageListProps) {
+  const datasource = fields?.data?.datasource;
+
+  if (!datasource) {
+    return null;
+  }
+
+  const { Title, Subtitle, children } = datasource;
   return (
     <div className="mt-16 border-t border-border bg-linear-to-br from-muted/20 to-muted/5 py-16">
       <div className="px-4 md:px-8 lg:px-12">

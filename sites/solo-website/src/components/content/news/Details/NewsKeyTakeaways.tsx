@@ -4,13 +4,24 @@ import { ComponentProps } from "lib/component-props";
 import { Text } from "@sitecore-content-sdk/nextjs";
 
 export function Default({ page }: ComponentProps) {
+  const routeFields = page.layout.sitecore.route?.fields as
+    | NewsData
+    | undefined;
+
+  if (
+    !routeFields ||
+    page?.layout?.sitecore?.context?.itemPath?.includes("Partial-Designs")
+  ) {
+    return null;
+  }
+
   const {
     KeyTakeaway1,
     KeyTakeaway2,
     KeyTakeaway3,
     KeyTakeaway4,
     KeyTakeaway5,
-  } = page.layout.sitecore.route?.fields as unknown as NewsData;
+  } = routeFields;
 
   const keyTakeaways = [
     KeyTakeaway1,
@@ -19,10 +30,6 @@ export function Default({ page }: ComponentProps) {
     KeyTakeaway4,
     KeyTakeaway5,
   ];
-
-  if (page?.layout?.sitecore?.context?.itemPath?.includes("Partial-Designs")) {
-    return <div>Key Takeaways not found</div>;
-  }
 
   return (
     <div className="basis-full">

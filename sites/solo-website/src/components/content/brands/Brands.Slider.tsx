@@ -72,7 +72,16 @@ interface Brand {
 }
 
 export function Slider({ fields, page }: BrandsProps) {
-  const { Title, children } = fields?.data?.datasource;
+  const datasource = fields?.data?.datasource;
+
+  if (!datasource) {
+    if (page?.mode?.isEditing) {
+      return <div>Please configure Brands datasource</div>;
+    }
+    return null;
+  }
+
+  const { Title, children } = datasource;
   const Elements = children?.results;
 
   return (

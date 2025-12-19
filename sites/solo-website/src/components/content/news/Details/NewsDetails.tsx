@@ -46,6 +46,17 @@ export interface NewsData {
 }
 
 export default async function ArticleDetailPage({ page }: ComponentProps) {
+  const routeFields = page.layout.sitecore.route?.fields as
+    | NewsData
+    | undefined;
+
+  if (
+    !routeFields ||
+    page?.layout?.sitecore?.context?.itemPath?.includes("Partial-Designs")
+  ) {
+    return null;
+  }
+
   const {
     Title,
     Excerpt,
@@ -55,11 +66,7 @@ export default async function ArticleDetailPage({ page }: ComponentProps) {
     HeroImage,
     ExternalUrl,
     ReadTime,
-  } = page.layout.sitecore.route?.fields as unknown as NewsData;
-
-  if (page?.layout?.sitecore?.context?.itemPath?.includes("Partial-Designs")) {
-    return <div>News Intro not found</div>;
-  }
+  } = routeFields;
 
   return (
     <>
