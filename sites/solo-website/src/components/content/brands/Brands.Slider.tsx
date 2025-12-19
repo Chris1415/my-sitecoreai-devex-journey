@@ -101,7 +101,7 @@ function BrandsEditing({ Elements }: { Elements: Brand[] }) {
   const { resolvedTheme } = useTheme();
   return (
     <>
-      <div className="grid grid-cols-3">
+      <div className="g:mx-24 md:mx-12 mx-4 grid grid-cols-1 sm:grid-cols-2 md-grid-cols-2 lg:grid-cols-3">
         {Elements.map((brand, index) => (
           <div key={`first-${index}`} className="p-2">
             <SdkImage
