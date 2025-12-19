@@ -3,10 +3,16 @@
 import { useEffect, useRef, useState } from "react";
 import { TrendingUp, LucideIcon } from "lucide-react";
 import { Card, CardContent } from "../../../components/ui/card";
-import { Page, Text, TextField } from "@sitecore-content-sdk/nextjs";
+import {
+  Page,
+  RichTextField,
+  Text,
+  TextField,
+} from "@sitecore-content-sdk/nextjs";
 import { ComponentProps } from "lib/component-props";
 import { getLucideIcon } from "lib/iconUtils";
 import { Badge } from "components/ui/badge";
+import { Divider } from "../text/Text.Divider";
 
 function useCountUp(end: number, duration = 2000) {
   const [count, setCount] = useState(0);
@@ -213,7 +219,7 @@ function StatCard({
   );
 }
 
-export function Tiles({ fields, page }: StatsProps) {
+export function Tiles({ fields, page, params }: StatsProps) {
   const datasource = fields?.data?.datasource;
 
   // Return early if no datasource
@@ -233,20 +239,14 @@ export function Tiles({ fields, page }: StatsProps) {
   }
 
   return (
-    <div className="border-b border-border bg-linear-to-br from-muted/30 to-muted/10 py-16">
+    <div className={`border-b border-border py-8 ${params?.styles}`}>
       <div className="px-4 md:px-8 lg:px-12">
-        {/* Header */}
-        <div className="mb-12 text-center">
-          <Text
-            as="h2"
-            className="mb-3 text-3xl font-bold"
-            field={Title.jsonValue}
-          />
-
-          <div className="text-muted-foreground">
-            <Text field={Subtitle.jsonValue} />
-          </div>
-        </div>
+        <Divider
+          fields={{
+            Title: Title.jsonValue,
+            Text: Subtitle.jsonValue as RichTextField,
+          }}
+        />
 
         {/* Stats Grid */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

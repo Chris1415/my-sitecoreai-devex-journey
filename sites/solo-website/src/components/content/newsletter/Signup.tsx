@@ -19,7 +19,7 @@ interface SignupProps extends ComponentProps {
   };
 }
 
-export function Default({ fields }: SignupProps) {
+export function Default({ fields, params }: SignupProps) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "success">("idle");
   const [Icon, setIcon] = useState<LucideIcon | null>(null);
@@ -38,9 +38,9 @@ export function Default({ fields }: SignupProps) {
   };
 
   return (
-    <div className="border-y border-border bg-muted/30 py-12 z-50">
+    <div className={`border-y border-border py-12 z-50 ${params.styles}`}>
       <div className="px-4 md:px-8 lg:px-12">
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="mx-auto max-w-2xl text-center"> 
           <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
             {Icon && <Icon className="h-6 w-6 text-primary" />}
           </div>

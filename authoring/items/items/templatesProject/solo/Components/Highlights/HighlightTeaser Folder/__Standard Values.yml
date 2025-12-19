@@ -1,0 +1,36 @@
+﻿---
+ID: "1df8b3eb-88dc-4256-b01f-33bda6aa788e"
+Parent: "d4e25bad-7f71-41d9-b638-fe86950c99ba"
+Template: "d4e25bad-7f71-41d9-b638-fe86950c99ba"
+Path: /sitecore/templates/Project/solo/Components/Highlights/HighlightTeaser Folder/__Standard Values
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Value: |
+    {2EB62F95-B975-48F2-8B11-73D18E68A1C1}
+    {D4E25BAD-7F71-41D9-B638-FE86950C99BA}
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "ef3e00bd-cae0-4cb3-8358-f97307830e7e"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20120621T071605Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "b968595c-e7b6-425f-a9ae-a65937f43dcf"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\christian.hahn@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20251219T073138Z

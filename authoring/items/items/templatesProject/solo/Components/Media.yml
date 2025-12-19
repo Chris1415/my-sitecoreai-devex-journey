@@ -3,6 +3,13 @@ ID: "fe876c32-4f38-46f7-ad22-bfdcf7b7e0fd"
 Parent: "ae0b2654-2136-4f1d-bace-66fe0047f1c7"
 Template: "0437fee2-44c9-46a6-abe9-28858d9fee8c"
 Path: /sitecore/templates/Project/solo/Components/Media
+SharedFields:
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 600
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "2210146c-42ea-4ae7-bfd5-16d0f59a7747"
 Languages:
 - Language: en
   Versions:
@@ -21,11 +28,11 @@ Languages:
         sitecore\christian.hahn@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "ba2e1300-5fa0-4504-adf2-50812b42063d"
+      Value: "7fb49d34-1f65-48c1-87a3-db5d1e1d7949"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\christian.hahn@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20251216T142242Z
+      Value: 20251219T073312Z

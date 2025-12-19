@@ -9,13 +9,13 @@ import * as React from 'react';
 import * as SeparatorPrimitive from '@radix-ui/react-separator';
 import { cn } from 'lib/utils';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
-import { XIcon, Sparkles, ChevronDownIcon, Menu, X, Search, Moon, Sun, QuoteIcon, ShoppingCart, AlertCircle, Clock, ArrowLeft, Share2, Download, ExternalLink, ArrowRight, Calendar, MapPin } from 'lucide-react';
+import { XIcon, Sparkles, ChevronDownIcon, Menu, X, Search, Moon, Sun, QuoteIcon, ShoppingCart, AlertCircle, Clock, ArrowLeft, Share2, Download, ExternalLink, ArrowRight, Lightbulb, Calendar, MapPin } from 'lucide-react';
 import { Slot } from '@radix-ui/react-slot';
 import { cva } from 'class-variance-authority';
 import * as AvatarPrimitive from '@radix-ui/react-avatar';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
 import componentMap from '.sitecore/component-map';
-import { AppPlaceholder, CdpHelper, useSitecore, Text, DateField, Image as Image_8a80e63291fea86e0744df19113dc44bec187216, RichText, Link as Link_8a80e63291fea86e0744df19113dc44bec187216 } from '@sitecore-content-sdk/nextjs';
+import { AppPlaceholder, CdpHelper, useSitecore, RichText, Text, DateField, Image as Image_8a80e63291fea86e0744df19113dc44bec187216, Link as Link_8a80e63291fea86e0744df19113dc44bec187216 } from '@sitecore-content-sdk/nextjs';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
@@ -41,7 +41,8 @@ import { Default } from 'src/components/content/news/Teaser/NewsCard';
 import { Card as Card_ee5df0e436668ea77211f94aa8fc698e82699918, CardContent as CardContent_ee5df0e436668ea77211f94aa8fc698e82699918 } from 'components/ui/card';
 import { Separator } from 'src/components/ui/separator';
 import { AIGeneratedBadge } from 'components/ui/ai-generated-badge';
-import { Tiles as Tiles_75b8429dc9a0bec3b78dcefc87eea854a8f31e72 } from 'src/components/content/highlight/Highlights.Tiles';
+import { Default as Default_8df8e6cf104460826f9a1215cfab70bad2ccdef2 } from 'src/components/content/highlight/teaser/HighlightTeaser';
+import { Tiles as Tiles_2d2f52aec1ad0fb42654646675f88ac474927af0 } from 'src/components/content/highlight/list/Highlights.Tiles';
 import { Badge as Badge_f73c9e26e1b40f1c7b03de1aee0b79dcd8ca4493 } from 'components/ui/badge';
 import { Slider as Slider_46091ec46945bf6a641b749ef0b0366a3b6b61c0 } from 'src/components/content/brands/Brands.Slider';
 import { Separator as Separator_fdcdea374acd645ff8e33dd8c598ebe0a6a71fc0 } from 'components/ui/separator';
@@ -94,6 +95,7 @@ const importMap = [
       { name: 'Download', value: Download },
       { name: 'ExternalLink', value: ExternalLink },
       { name: 'ArrowRight', value: ArrowRight },
+      { name: 'Lightbulb', value: Lightbulb },
       { name: 'Calendar', value: Calendar },
       { name: 'MapPin', value: MapPin },
     ]
@@ -134,10 +136,10 @@ const importMap = [
       { name: 'AppPlaceholder', value: AppPlaceholder },
       { name: 'CdpHelper', value: CdpHelper },
       { name: 'useSitecore', value: useSitecore },
+      { name: 'RichText', value: RichText },
       { name: 'Text', value: Text },
       { name: 'DateField', value: DateField },
       { name: 'Image', value: Image_8a80e63291fea86e0744df19113dc44bec187216 },
-      { name: 'RichText', value: RichText },
       { name: 'Link', value: Link_8a80e63291fea86e0744df19113dc44bec187216 },
     ]
   },
@@ -298,9 +300,15 @@ const importMap = [
     ]
   },
   {
-    module: 'src/components/content/highlight/Highlights.Tiles',
+    module: 'src/components/content/highlight/teaser/HighlightTeaser',
     exports: [
-      { name: 'Tiles', value: Tiles_75b8429dc9a0bec3b78dcefc87eea854a8f31e72 },
+      { name: 'Default', value: Default_8df8e6cf104460826f9a1215cfab70bad2ccdef2 },
+    ]
+  },
+  {
+    module: 'src/components/content/highlight/list/Highlights.Tiles',
+    exports: [
+      { name: 'Tiles', value: Tiles_2d2f52aec1ad0fb42654646675f88ac474927af0 },
     ]
   },
   {

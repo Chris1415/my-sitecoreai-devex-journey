@@ -135,7 +135,7 @@ export function Slider() {
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <div className="relative overflow-hidden bg-linear-to-br from-primary/5 via-background to-accent/5 py-10 md:py-16">
+    <div className="mx-6 relative overflow-hidden  py-10 md:py-16 w-full">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -left-32 top-20 h-96 w-96 rounded-full bg-primary/5 blur-3xl" />
         <div className="absolute -right-32 bottom-20 h-96 w-96 rounded-full bg-accent/5 blur-3xl" />

@@ -8,6 +8,9 @@ import * as Container from 'src/components/structual/container/Container';
 import * as PartialDesignDynamicPlaceholder from 'src/components/partial-design-dynamic-placeholder/PartialDesignDynamicPlaceholder';
 import * as Header from 'src/components/global/header/Header';
 import * as Footer from 'src/components/global/footer/Footer';
+import * as TextProps from 'src/components/content/text/Text.Props';
+import * as TextDivider from 'src/components/content/text/Text.Divider';
+import * as Text from 'src/components/content/text/Text';
 import * as TestimonialsSlider from 'src/components/content/testimonials/list/Testimonials.Slider';
 import * as Testimonials from 'src/components/content/testimonials/list/Testimonials';
 import * as StatsTiles from 'src/components/content/stats/Stats.Tiles';
@@ -28,8 +31,10 @@ import * as NewsDetailsContent from 'src/components/content/news/Details/NewsDet
 import * as NewsDetails from 'src/components/content/news/Details/NewsDetails';
 import * as NewsContainer from 'src/components/content/news/Conainer/NewsContainer';
 import * as ImageList from 'src/components/content/media/images/ImageList';
-import * as HighlightsTiles from 'src/components/content/highlight/Highlights.Tiles';
-import * as Highlights from 'src/components/content/highlight/Highlights';
+import * as HighlightTeaserWrapper from 'src/components/content/highlight/teaser/HighlightTeaserWrapper';
+import * as HighlightTeaser from 'src/components/content/highlight/teaser/HighlightTeaser';
+import * as HighlightsTiles from 'src/components/content/highlight/list/Highlights.Tiles';
+import * as Highlights from 'src/components/content/highlight/list/Highlights';
 import * as HeroBannerBranded from 'src/components/content/hero/HeroBanner.Branded';
 import * as HeroBanner from 'src/components/content/hero/HeroBanner';
 import * as EventCardHighlight from 'src/components/content/events/teaser/EventCard.Highlight';
@@ -46,6 +51,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['PartialDesignDynamicPlaceholder', { ...PartialDesignDynamicPlaceholder }],
   ['Header', { ...Header, componentType: 'client' }],
   ['Footer', { ...Footer, componentType: 'client' }],
+  ['Text', { ...TextProps, ...TextDivider, ...Text }],
   ['Testimonials', { ...TestimonialsSlider, ...Testimonials }],
   ['Stats', { ...StatsTiles, ...Stats, componentType: 'client' }],
   ['Quote', { ...Quote }],
@@ -62,6 +68,8 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['NewsDetails', { ...NewsDetails }],
   ['NewsContainer', { ...NewsContainer }],
   ['ImageList', { ...ImageList, componentType: 'client' }],
+  ['HighlightTeaserWrapper', { ...HighlightTeaserWrapper }],
+  ['HighlightTeaser', { ...HighlightTeaser, componentType: 'client' }],
   ['Highlights', { ...HighlightsTiles, ...Highlights }],
   ['HeroBanner', { ...HeroBannerBranded, ...HeroBanner }],
   ['EventCard', { ...EventCardHighlight, ...EventCard }],

@@ -39,15 +39,13 @@ const Container = ({
   return (
     <div className={`component container-default ${styles}`} id={id}>
       <div className="component-content" style={backgroundStyle}>
-        <div className="flex flex-wrap">
-          <div className="basis-full">
-            <AppPlaceholder
-              name={phKey}
-              rendering={rendering}
-              page={page}
-              componentMap={componentMap}
-            />
-          </div>
+        <div className="flex flex-wrap items-stretch">
+          <AppPlaceholder
+            name={phKey}
+            rendering={rendering}
+            page={page}
+            componentMap={componentMap}
+          />
         </div>
       </div>
     </div>
@@ -62,7 +60,7 @@ export const Default = ({
   const styles = params?.styles?.split(" ");
 
   return styles?.includes("container") ? (
-    <div className="mx-auto max-w-7xl px-4 md:px-8 lg:px-12">
+    <div className="mx-auto max-w-7xl px-2 md:px-4 lg:px-6">
       <Container params={params} rendering={rendering} page={page} />
     </div>
   ) : (

@@ -1,8 +1,8 @@
 ﻿---
-ID: "4e4e64f4-6040-4b93-a4b0-392461dbc1aa"
-Parent: "cd225f02-203e-4052-91c5-ce4b81bda4b1"
-Template: "0437fee2-44c9-46a6-abe9-28858d9fee8c"
-Path: /sitecore/templates/Project/solo/Rendering Parameters
+ID: "0476e31f-5011-478e-950c-025827ffcdae"
+Parent: "b8a5182e-bdba-435f-a705-ab56c3054996"
+Template: "49c111d0-6867-4798-a724-1f103166e6e9"
+Path: "/sitecore/content/solo/solo-website/Presentation/Headless Variants/Text"
 Languages:
 - Language: en
   Versions:
@@ -10,7 +10,7 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20251217T143617Z
+      Value: 20251219T132958Z
     - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
       Hint: __Owner
       Value: |
@@ -21,11 +21,11 @@ Languages:
         sitecore\christian.hahn@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "93d26930-56ec-4769-9061-4e1013123f12"
+      Value: "0b4ee9b0-c804-448b-9264-cf1474e4ce13"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\christian.hahn@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20251217T143617Z
+      Value: 20251219T132958Z

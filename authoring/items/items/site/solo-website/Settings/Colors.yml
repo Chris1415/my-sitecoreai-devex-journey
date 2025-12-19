@@ -1,0 +1,23 @@
+﻿---
+ID: "305c0eda-a3dd-4ae8-912c-cf401cd40183"
+Parent: "fee72b01-570d-4274-874a-56d867a6f74e"
+Template: "54da5d88-7124-436c-aa3b-297433ef8443"
+Path: "/sitecore/content/solo/solo-website/Settings/Colors"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20251219T121957Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "c5ee8410-fae5-4cdc-85e5-99a079379c0d"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\christian.hahn@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20251219T121957Z

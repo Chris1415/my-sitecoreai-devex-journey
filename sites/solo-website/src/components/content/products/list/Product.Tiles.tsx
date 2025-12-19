@@ -10,8 +10,8 @@ export function Tiles() {
   if (products.length === 0) return null;
 
   return (
-    <section className="bg-muted/50 py-16 md:py-20">
-      <div className="px-4 md:px-8 lg:px-12">
+    <section className="bg-muted/50 py-16 md:py-20 mx-6">
+      <div className="px-4 md:px-4 lg:px-6">
         <div className="mb-10 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
           <div>
             <h2 className="mb-2 text-3xl font-bold tracking-tight md:text-4xl">

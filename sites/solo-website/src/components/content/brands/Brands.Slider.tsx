@@ -10,6 +10,7 @@ import {
   Text,
   Image as SdkImage,
 } from "@sitecore-content-sdk/nextjs";
+import { Divider } from "../text/Text.Divider";
 
 function BrandTooltip({
   brand,
@@ -75,12 +76,9 @@ export function Slider({ fields, page }: BrandsProps) {
   const Elements = children?.results;
 
   return (
-    <div className="bg-background py-16 md:py-20 overflow-hidden border-y">
-      <div className="container mx-auto px-4 mb-10">
-        <h2 className="text-2xl md:text-3xl font-bold text-center">
-          <Text field={Title.jsonValue} />
-        </h2>
-      </div>
+    <div className="bg-background py-8 md:py-10 overflow-hidden border-y">
+      <Divider fields={{ Title: Title.jsonValue, Text: null }} />
+
       {page?.mode?.isEditing ? (
         <BrandsEditing Elements={Elements} />
       ) : (
