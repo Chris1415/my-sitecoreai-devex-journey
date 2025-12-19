@@ -10,7 +10,7 @@ interface QuoteProps extends ComponentProps {
   };
 }
 
-export default function Default({ fields, page }: QuoteProps) {
+export default function Default({ fields, page, params }: QuoteProps) {
   const { Quote } = fields;
   const quote =
     (page.layout.sitecore.route?.fields as unknown as NewsData)?.Quote || Quote;
@@ -20,7 +20,7 @@ export default function Default({ fields, page }: QuoteProps) {
   }
 
   return (
-    <>
+    <div className={`${params.styles}`}>
       {/* Pull Quote Section */}
       <div className="group/quote relative my-10 cursor-default overflow-hidden transition-all duration-500 hover:scale-[1.01]">
         {/* Background with gradient - Light & Dark mode */}
@@ -59,6 +59,6 @@ export default function Default({ fields, page }: QuoteProps) {
           </blockquote>
         </div>
       </div>
-    </>
+    </div>
   );
 }

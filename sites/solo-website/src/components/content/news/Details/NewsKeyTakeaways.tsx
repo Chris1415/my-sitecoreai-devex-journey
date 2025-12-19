@@ -25,7 +25,7 @@ export function Default({ page }: ComponentProps) {
   }
 
   return (
-    <div>
+    <div className="basis-full">
       {keyTakeaways && keyTakeaways.length > 0 && (
         <div className="mt-16 px-4 md:px-8 lg:px-12">
           <Card className="bg-linear-to-br from-primary/5 to-background">
