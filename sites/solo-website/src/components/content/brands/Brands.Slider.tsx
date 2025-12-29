@@ -71,7 +71,7 @@ interface Brand {
   };
 }
 
-export function Slider({ fields, page }: BrandsProps) {
+export function Slider({ fields, page, rendering, params }: BrandsProps) {
   const datasource = fields?.data?.datasource;
 
   if (!datasource) {
@@ -86,7 +86,12 @@ export function Slider({ fields, page }: BrandsProps) {
 
   return (
     <div className="bg-background py-8 md:py-10 overflow-hidden border-y">
-      <Divider fields={{ Title: Title.jsonValue, Text: null }} />
+      <Divider
+        fields={{ Title: Title.jsonValue, Text: null }}
+        page={page}
+        rendering={rendering}
+        params={params}
+      />
 
       {page?.mode?.isEditing ? (
         <BrandsEditing Elements={Elements} />

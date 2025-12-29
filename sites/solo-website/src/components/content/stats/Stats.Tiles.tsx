@@ -219,7 +219,7 @@ function StatCard({
   );
 }
 
-export function Tiles({ fields, page, params }: StatsProps) {
+export function Tiles({ fields, page, rendering, params }: StatsProps) {
   const datasource = fields?.data?.datasource;
 
   // Return early if no datasource
@@ -246,6 +246,9 @@ export function Tiles({ fields, page, params }: StatsProps) {
             Title: Title.jsonValue,
             Text: Subtitle.jsonValue as RichTextField,
           }}
+          page={page}
+          rendering={rendering}
+          params={params}
         />
 
         {/* Stats Grid */}
