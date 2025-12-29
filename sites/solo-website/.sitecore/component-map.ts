@@ -9,11 +9,13 @@ import * as PartialDesignDynamicPlaceholder from 'src/components/partial-design-
 import * as Header from 'src/components/global/header/Header';
 import * as Footer from 'src/components/global/footer/Footer';
 import * as TextProps from 'src/components/content/text/Text.Props';
+import * as TextIntro from 'src/components/content/text/Text.Intro';
 import * as TextDivider from 'src/components/content/text/Text.Divider';
 import * as Text from 'src/components/content/text/Text';
 import * as TestimonialsSlider from 'src/components/content/testimonials/list/Testimonials.Slider';
 import * as Testimonials from 'src/components/content/testimonials/list/Testimonials';
 import * as StatsTiles from 'src/components/content/stats/Stats.Tiles';
+import * as StatsCards from 'src/components/content/stats/Stats.Cards';
 import * as Stats from 'src/components/content/stats/Stats';
 import * as Quote from 'src/components/content/quote/Quote';
 import * as ProductCard from 'src/components/content/products/teaser/ProductCard';
@@ -35,6 +37,7 @@ import * as HighlightTeaserWrapper from 'src/components/content/highlight/teaser
 import * as HighlightTeaser from 'src/components/content/highlight/teaser/HighlightTeaser';
 import * as HighlightsTiles from 'src/components/content/highlight/list/Highlights.Tiles';
 import * as Highlights from 'src/components/content/highlight/list/Highlights';
+import * as HeroBannerMinimal from 'src/components/content/hero/HeroBanner.Minimal';
 import * as HeroBannerBranded from 'src/components/content/hero/HeroBanner.Branded';
 import * as HeroBanner from 'src/components/content/hero/HeroBanner';
 import * as EventCardHighlight from 'src/components/content/events/teaser/EventCard.Highlight';
@@ -51,9 +54,9 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['PartialDesignDynamicPlaceholder', { ...PartialDesignDynamicPlaceholder }],
   ['Header', { ...Header, componentType: 'client' }],
   ['Footer', { ...Footer, componentType: 'client' }],
-  ['Text', { ...TextProps, ...TextDivider, ...Text }],
+  ['Text', { ...TextProps, ...TextIntro, ...TextDivider, ...Text }],
   ['Testimonials', { ...TestimonialsSlider, ...Testimonials }],
-  ['Stats', { ...StatsTiles, ...Stats, componentType: 'client' }],
+  ['Stats', { ...StatsTiles, ...StatsCards, ...Stats, componentType: 'client' }],
   ['Quote', { ...Quote }],
   ['ProductCard', { ...ProductCard }],
   ['Products', { ...Products }],
@@ -71,7 +74,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['HighlightTeaserWrapper', { ...HighlightTeaserWrapper }],
   ['HighlightTeaser', { ...HighlightTeaser, componentType: 'client' }],
   ['Highlights', { ...HighlightsTiles, ...Highlights }],
-  ['HeroBanner', { ...HeroBannerBranded, ...HeroBanner }],
+  ['HeroBanner', { ...HeroBannerMinimal, ...HeroBannerBranded, ...HeroBanner }],
   ['EventCard', { ...EventCardHighlight, ...EventCard }],
   ['Brands', { ...BrandsSlider, ...Brands, componentType: 'client' }],
   ['AuthorTeaser', { ...AuthorTeaser }],

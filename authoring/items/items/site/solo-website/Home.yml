@@ -234,7 +234,7 @@ Languages:
               p:after="r[@uid='{F22D5D01-2A21-4B0E-B769-21EFA8C30E79}']"
               s:ds="{A6BB4BEF-E598-4EA9-B31B-24B06F3104EA}"
               s:id="{BADF3139-49D9-4238-B226-09D4CC0923C8}"
-              s:par="GridParameters=%7BF61E01E9-711A-4C99-AE30-4E28463E1DF7%7D%7C%7BCC7B2D28-7CA7-434F-8894-BC24885E2F94%7D&amp;Color=%7B97360A6B-B74D-49A2-9DE3-BB55275A8C2C%7D&amp;FieldNames&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=18&amp;HoverBorder=hover%3Aborder-orange-500"
+              s:par="GridParameters=%7BF61E01E9-711A-4C99-AE30-4E28463E1DF7%7D%7C%7BCC7B2D28-7CA7-434F-8894-BC24885E2F94%7D&amp;Color=%7BED69C40B-E45B-4171-B713-18E9C686BDED%7D&amp;FieldNames&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=18&amp;HoverBorder=hover%3Aborder-orange-500"
               s:ph="/headless-main/container-10/container-21" />
             <r
               uid="{ED83C697-59F8-4010-AB22-4A99BF1D1E5C}"
@@ -271,11 +271,11 @@ Languages:
         sitecore\christian.hahn@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "62182ac1-3fd8-44e8-9a32-dbf0064b89fb"
+      Value: "36bf8c4b-189c-4349-bdf2-9ea821012392"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\christian.hahn@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20251219T134555Z
+      Value: 20251219T141721Z
