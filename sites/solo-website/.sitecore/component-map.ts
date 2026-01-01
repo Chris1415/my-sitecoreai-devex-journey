@@ -14,6 +14,7 @@ import * as TextDivider from 'src/components/content/text/Text.Divider';
 import * as Text from 'src/components/content/text/Text';
 import * as TestimonialsSlider from 'src/components/content/testimonials/list/Testimonials.Slider';
 import * as Testimonials from 'src/components/content/testimonials/list/Testimonials';
+import * as Tagcloud from 'src/components/content/tagcloud/Tagcloud';
 import * as StatsTiles from 'src/components/content/stats/Stats.Tiles';
 import * as StatsCards from 'src/components/content/stats/Stats.Cards';
 import * as Stats from 'src/components/content/stats/Stats';
@@ -36,6 +37,7 @@ import * as ImageList from 'src/components/content/media/images/ImageList';
 import * as HighlightTeaserWrapper from 'src/components/content/highlight/teaser/HighlightTeaserWrapper';
 import * as HighlightTeaser from 'src/components/content/highlight/teaser/HighlightTeaser';
 import * as HighlightsTiles from 'src/components/content/highlight/list/Highlights.Tiles';
+import * as HighlightsList from 'src/components/content/highlight/list/Highlights.List';
 import * as Highlights from 'src/components/content/highlight/list/Highlights';
 import * as HeroBannerMinimal from 'src/components/content/hero/HeroBanner.Minimal';
 import * as HeroBannerBranded from 'src/components/content/hero/HeroBanner.Branded';
@@ -56,6 +58,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['Footer', { ...Footer, componentType: 'client' }],
   ['Text', { ...TextProps, ...TextIntro, ...TextDivider, ...Text }],
   ['Testimonials', { ...TestimonialsSlider, ...Testimonials }],
+  ['Tagcloud', { ...Tagcloud }],
   ['Stats', { ...StatsTiles, ...StatsCards, ...Stats, componentType: 'client' }],
   ['Quote', { ...Quote }],
   ['ProductCard', { ...ProductCard }],
@@ -73,7 +76,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['ImageList', { ...ImageList, componentType: 'client' }],
   ['HighlightTeaserWrapper', { ...HighlightTeaserWrapper }],
   ['HighlightTeaser', { ...HighlightTeaser, componentType: 'client' }],
-  ['Highlights', { ...HighlightsTiles, ...Highlights }],
+  ['Highlights', { ...HighlightsTiles, ...HighlightsList, ...Highlights }],
   ['HeroBanner', { ...HeroBannerMinimal, ...HeroBannerBranded, ...HeroBanner }],
   ['EventCard', { ...EventCardHighlight, ...EventCard }],
   ['Brands', { ...BrandsSlider, ...Brands, componentType: 'client' }],

@@ -21,14 +21,16 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useTheme } from 'next-themes';
 import { Button } from 'components/ui/button';
+import { getThemeVariant } from 'lib/theme-config';
 import client from 'src/lib/sitecore-client';
 import { pageView } from '@sitecore-cloudsdk/events/browser';
 import config from 'sitecore.config';
 import { Slider } from 'src/components/content/testimonials/list/Testimonials.Slider';
+import { Badge } from 'components/ui/badge';
 import { Tiles } from 'src/components/content/stats/Stats.Tiles';
 import { Button as Button_84330b1bbe8a1bb4486fd11a1e9edfcb73dcb72a } from 'src/components/ui/button';
 import { Card, CardContent, CardFooter } from 'src/components/ui/card';
-import { Badge } from 'src/components/ui/badge';
+import { Badge as Badge_4993aa9339ae187afc55b9486739db65fa14e5ba } from 'src/components/ui/badge';
 import { formatPrice, formatDate } from 'src/lib/data';
 import { getFeaturedProducts, formatDate as formatDate_e48efc7333ac73f929d9b272a527b63e4cd08f90, getNextUpcomingEvent } from 'lib/data';
 import { ProductCard } from 'src/components/content/products/teaser/_productCard';
@@ -43,7 +45,6 @@ import { Separator } from 'src/components/ui/separator';
 import { AIGeneratedBadge } from 'components/ui/ai-generated-badge';
 import { Default as Default_8df8e6cf104460826f9a1215cfab70bad2ccdef2 } from 'src/components/content/highlight/teaser/HighlightTeaser';
 import { Tiles as Tiles_2d2f52aec1ad0fb42654646675f88ac474927af0 } from 'src/components/content/highlight/list/Highlights.Tiles';
-import { Badge as Badge_f73c9e26e1b40f1c7b03de1aee0b79dcd8ca4493 } from 'components/ui/badge';
 import { Slider as Slider_46091ec46945bf6a641b749ef0b0366a3b6b61c0 } from 'src/components/content/brands/Brands.Slider';
 import { Separator as Separator_fdcdea374acd645ff8e33dd8c598ebe0a6a71fc0 } from 'components/ui/separator';
 
@@ -174,6 +175,12 @@ const importMap = [
     ]
   },
   {
+    module: 'lib/theme-config',
+    exports: [
+      { name: 'getThemeVariant', value: getThemeVariant },
+    ]
+  },
+  {
     module: 'src/lib/sitecore-client',
     exports: [
       { name: 'default', value: client },
@@ -195,6 +202,12 @@ const importMap = [
     module: 'src/components/content/testimonials/list/Testimonials.Slider',
     exports: [
       { name: 'Slider', value: Slider },
+    ]
+  },
+  {
+    module: 'components/ui/badge',
+    exports: [
+      { name: 'Badge', value: Badge },
     ]
   },
   {
@@ -220,7 +233,7 @@ const importMap = [
   {
     module: 'src/components/ui/badge',
     exports: [
-      { name: 'Badge', value: Badge },
+      { name: 'Badge', value: Badge_4993aa9339ae187afc55b9486739db65fa14e5ba },
     ]
   },
   {
@@ -309,12 +322,6 @@ const importMap = [
     module: 'src/components/content/highlight/list/Highlights.Tiles',
     exports: [
       { name: 'Tiles', value: Tiles_2d2f52aec1ad0fb42654646675f88ac474927af0 },
-    ]
-  },
-  {
-    module: 'components/ui/badge',
-    exports: [
-      { name: 'Badge', value: Badge_f73c9e26e1b40f1c7b03de1aee0b79dcd8ca4493 },
     ]
   },
   {

@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import { ColorItem } from "./HighlightTeaserWrapper";
 
 export interface WrappedHighlightTeaserProps extends HighlightTeaserProps {
-  colorItem: ColorItem;
+  colorItem: ColorItem | undefined;
 }
 
 export interface HighlightTeaserProps extends ComponentProps {
@@ -30,7 +30,6 @@ export function Default({
   const [IconComponent, setIconComponent] = useState<LucideIcon | null>(null);
   const FallbackIcon = Lightbulb;
   const UsedIcon = IconComponent || FallbackIcon;
-  console.error(JSON.stringify(colorItem, null, 2));
   const iconValue = String(Icon?.value || "");
 
   useEffect(() => {
@@ -42,11 +41,11 @@ export function Default({
     <div className={`${params.styles} flex my-6`}>
       <div className="w-full px-2 h-full flex">
         <Card
-          className={`relative group border-2 transition-all duration-300 hover:border-${colorItem.item.Background.jsonValue.value} hover:shadow-xl w-full h-full`}
+          className={`relative group border-2 transition-all duration-300 hover:border-${colorItem?.item.Background.jsonValue.value} hover:shadow-xl w-full h-full`}
         >
           <CardContent className="p-6 flex-1">
             <div
-              className={`mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-linear-to-br ${colorItem.item.GradientBackground.jsonValue.value} shadow-lg`}
+              className={`mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-linear-to-br ${colorItem?.item.GradientBackground.jsonValue.value} shadow-lg`}
             >
               <UsedIcon className="h-6 w-6 text-white" />
             </div>
@@ -69,7 +68,7 @@ export function Default({
           </CardContent>
           {/* Animated gradient overlay on hover */}
           <div
-            className={`absolute inset-0 bg-linear-to-br ${colorItem.item.GradientBackground.jsonValue.value} opacity-0 transition-opacity duration-300 group-hover:opacity-5`}
+            className={`absolute inset-0 bg-linear-to-br ${colorItem?.item.GradientBackground.jsonValue.value} opacity-0 transition-opacity duration-300 group-hover:opacity-5`}
           />
         </Card>
       </div>

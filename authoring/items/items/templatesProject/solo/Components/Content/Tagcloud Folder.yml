@@ -1,78 +1,18 @@
 ﻿---
-ID: "82a5aa1e-093d-40f8-8059-f35e9387150d"
-Parent: "a034648e-159c-49e7-ba48-cd61ca36d081"
-Template: "04646a89-996f-4ee7-878a-ffdbf1f0ef0d"
-Path: /sitecore/layout/Renderings/Project/solo/Highlights/Highlights
+ID: "5d483633-0855-4648-8bba-dfcdcdaf2184"
+Parent: "bb58cdb5-f7c8-49f9-b7b7-ac3ed098c30d"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/Project/solo/Components/Content/Tagcloud Folder
 SharedFields:
-- ID: "037fe404-dd19-4bf7-8e30-4dadf68b27b0"
-  Hint: componentName
-  Value: Highlights
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
   Hint: __Icon
-  Value: SXA_MDI/16x16/Promo.png
-- ID: "17bb046a-a32a-41b3-8315-81217947611b"
-  Hint: ComponentQuery
-  Value: |
-    query GetHighlights($datasource: String!, $language: String!) {
-      datasource: item(path: $datasource, language: $language) {
-        children {
-          results { 
-            Icon: field(name:"Icon"){
-               jsonValue
-            }
-     Title: field(name:"Title"){
-               jsonValue
-            }
-     Description: field(name:"Description"){
-               jsonValue
-            }
-     Cta: field(name:"Cta"){
-               jsonValue
-            }
-          }
-        }
-        Title: field(name: "Title") {
-          jsonValue
-        }
-     Subtitle: field(name: "Subtitle") {
-          jsonValue
-        }
-      }
-    }
-    
-- ID: "1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f"
-  Hint: Datasource Template
-  Value: /sitecore/templates/Project/solo/Components/Highlights/Highlights
-- ID: "308e88f5-cd6e-4f8f-bafe-95a47dedefdc"
-  Hint: Editable
-  Value: 
-- ID: "7d8ae35f-9ed1-43b5-96a2-0a5f040d4e4e"
-  Hint: Open Properties after Add
-  Value: 
-- ID: "9c6106ea-7a5a-48e2-8cad-f0f693b1e2d4"
-  Hint: __Read Only
-  Value: 0
-- ID: "a6d4fc1d-0803-4e0a-9145-b8c6121d6f26"
-  Hint: CacheClearingBehavior
-  Value: 
-- ID: "a77e8568-1ab3-44f1-a664-b7c37ec7810d"
-  Hint: Parameters Template
-  Value: "{D1EE6600-CAD1-4C82-8C02-679564E5826E}"
-- ID: "b5b27af1-25ef-405c-87ce-369b3a004016"
-  Hint: Datasource Location
-  Value: "query:$site/*[@@name='Data']/*[@@templatename='Highlights Folder']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Highlights Folder']"
-- ID: "c39a90ce-0035-41bb-90f6-3c8a6ea87797"
-  Hint: AddFieldEditorButton
-  Value: 
+  Value: Office/32x32/folder_window.png
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "183b12a0-7f46-4a47-9c23-e717a60b0c7d"
-- ID: "e829c217-5e94-4306-9c48-2634b094fdc2"
-  Hint: OtherProperties
-  Value: 
-- ID: "f172b787-7b88-4bd5-ae4d-6308e102ef11"
-  Hint: Enable Datasource Query
-  Value: 
+  Value: "e1bcc9f3-4604-4be5-8a8e-521dde8a76a1"
+- ID: "f7d48a55-2158-4f02-9356-756654404f73"
+  Hint: __Standard values
+  Value: "{EACF62B6-7A7B-4D52-9A86-00E1EE74CDC9}"
 Languages:
 - Language: "de-DE"
   Fields:
@@ -81,13 +21,13 @@ Languages:
     Value: "{383844E7-4E28-4D45-AE48-640380EF63D8}"
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
-    Value: Promo
+    Value: Promo Ordner
   Versions:
   - Version: 1
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20251209T163747Z
+      Value: 20251229T164233Z
     - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
       Hint: __Owner
       Value: |
@@ -105,32 +45,28 @@ Languages:
         sitecore\Admin
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20251209T163747Z
+      Value: 20251229T164233Z
 - Language: en
-  Fields:
-  - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
-    Hint: __Unversioned revision
-    Value: "a671000e-abda-43f2-9160-8356d085bd58"
   Versions:
   - Version: 1
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20211012T120931Z
+      Value: 20120620T144015Z
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
-        sitecore\JssImport
+        sitecore\admin
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "3c7526b4-a242-473e-9809-4f0717a9a10b"
+      Value: "fc64c01e-fa95-4ec3-a6a7-09aaca8eacb8"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\christian.hahn@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260101T174146Z
+      Value: 20260101T162838Z
 - Language: "ja-JP"
   Fields:
   - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
@@ -138,13 +74,13 @@ Languages:
     Value: "{383844E7-4E28-4D45-AE48-640380EF63D8}"
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
-    Value: プロモ
+    Value: プロモ フォルダー
   Versions:
   - Version: 1
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20251209T163747Z
+      Value: 20251229T164233Z
     - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
       Hint: __Owner
       Value: |
@@ -162,7 +98,7 @@ Languages:
         sitecore\Admin
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20251209T163747Z
+      Value: 20251229T164233Z
 - Language: "zh-CN"
   Fields:
   - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
@@ -170,13 +106,13 @@ Languages:
     Value: "{383844E7-4E28-4D45-AE48-640380EF63D8}"
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
-    Value: 促销
+    Value: 促销文件夹
   Versions:
   - Version: 1
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20251209T163747Z
+      Value: 20251229T164233Z
     - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
       Hint: __Owner
       Value: |
@@ -194,4 +130,4 @@ Languages:
         sitecore\Admin
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20251209T163747Z
+      Value: 20251229T164233Z

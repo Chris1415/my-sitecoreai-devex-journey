@@ -1,15 +1,18 @@
 ﻿---
-ID: "fa001cd2-cf5b-4b51-9f0f-739b75e2f218"
-Parent: "8f6b5ab9-1134-43b0-a0c3-8c5b1d0dca6d"
-Template: "8f6b5ab9-1134-43b0-a0c3-8c5b1d0dca6d"
-Path: /sitecore/templates/Project/solo/Components/Highlights/Highlights/__Standard Values
+ID: "229c8752-3add-4e3e-bf15-1d8b97459a23"
+Parent: "249fccd6-9e5d-4e55-951a-65500144cc95"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/Project/solo/Components/Content/Tagcloud/Data/Title
 SharedFields:
-- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
-  Hint: __Masters
-  Value: "{2EB62F95-B975-48F2-8B11-73D18E68A1C1}"
+- ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
+  Hint: Type
+  Value: "Single-Line Text"
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 100
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "65d5cda5-d83c-4502-b393-cb9ea9dc23dc"
+  Value: "bd086d20-3ffc-41ca-b490-2e554750a465"
 Languages:
 - Language: en
   Versions:
@@ -17,7 +20,7 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20251215T160228Z
+      Value: 20260101T163251Z
     - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
       Hint: __Owner
       Value: |
@@ -28,11 +31,11 @@ Languages:
         sitecore\christian.hahn@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "76d6c8b0-f8d8-4fd8-a9d6-2b6d6fcb5013"
+      Value: "15a0cf81-4900-4182-a10b-141fb4a7e500"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\christian.hahn@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260101T170013Z
+      Value: 20260101T163844Z

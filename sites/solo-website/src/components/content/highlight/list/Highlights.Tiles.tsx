@@ -1,34 +1,14 @@
-import { ComponentProps } from "lib/component-props";
 import { Default } from "../teaser/HighlightTeaser";
-import { LinkField, TextField } from "@sitecore-content-sdk/nextjs";
+import { HighlightTeaserProps } from "./Highlights";
 
-export interface HightlightTeaserElement {
-  Icon: { jsonValue: TextField };
-  Title: { jsonValue: TextField };
-  Description: { jsonValue: TextField };
-  Link: { jsonValue: LinkField };
-}
-
-export interface HighlightTeaserProps extends ComponentProps {
-  fields: {
-    data: {
-      datasource: {
-        Title: {
-          jsonValue: TextField;
-        };
-        Subtitle: {
-          jsonValue: TextField;
-        };
-        children: {
-          results: HightlightTeaserElement[];
-        };
-      };
-    };
-  };
-}
-
-export function Tiles({ fields, page }: HighlightTeaserProps) {
+export function Tiles({
+  fields,
+  page,
+  rendering,
+  params,
+}: HighlightTeaserProps) {
   const datasource = fields?.data?.datasource;
+  const Elements = datasource?.children?.results;
 
   // Return early if no datasource
   if (!datasource) {
@@ -52,9 +32,21 @@ export function Tiles({ fields, page }: HighlightTeaserProps) {
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">
-          {/* {features.map((feature, index) => (
-            <Default {...feature} key={index} />
-          ))} */}
+          {Elements.map((feature, index: number) => (
+            <Default
+              fields={{
+                Cta: feature.Cta.jsonValue,
+                Description: feature.Description.jsonValue,
+                Icon: feature.Icon.jsonValue,
+                Title: feature.Title.jsonValue,
+              }}
+              colorItem={undefined}
+              key={index}
+              page={page}
+              rendering={rendering}
+              params={params}
+            />
+          ))}
         </div>
       </div>
     </div>

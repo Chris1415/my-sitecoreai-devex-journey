@@ -7,6 +7,7 @@ import { Menu, X, Search, Moon, Sun } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 import { Button } from "components/ui/button";
+import { getThemeVariant } from "lib/theme-config";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -14,7 +15,7 @@ const navigation = [
   { name: "Events", href: "/events" },
   { name: "Products", href: "/products" },
   { name: "FAQ", href: "/faq" },
-  { name: "About", href: "/about" },
+  { name: "Me", href: "/Me" },
   { name: "Impressum", href: "/impressum" },
 ];
 
@@ -22,14 +23,13 @@ export function Default() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_, setSearchOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
   const { theme, setTheme } = useTheme();
 
-  // Prevent hydration mismatch by only rendering client-specific values after mount
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const themeVariant = getThemeVariant();
+  const logoPath = `/images/logo/${themeVariant}/hahn-solo-${
+    theme === "light" ? "black" : "white"
+  }.png`;
 
   return (
     <>
@@ -38,11 +38,7 @@ export function Default() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
             <Image
-              src={
-                mounted && theme === "light"
-                  ? "/images/hahn-solo-black.png"
-                  : "/images/hahn-solo-white.png"
-              }
+              src={logoPath}
               alt="SOLO"
               width={120}
               height={32}
@@ -57,9 +53,7 @@ export function Default() {
                 key={item.name}
                 href={item.href}
                 className={`text-sm font-medium transition-colors hover:text-primary ${
-                  mounted && pathname === item.href
-                    ? "text-primary"
-                    : "text-foreground/80"
+                  pathname === item.href ? "text-primary" : "text-foreground/80"
                 }`}
               >
                 {item.name}
@@ -119,7 +113,7 @@ export function Default() {
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className={`text-base font-medium transition-colors hover:text-primary ${
-                    mounted && pathname === item.href
+                    pathname === item.href
                       ? "text-primary"
                       : "text-foreground/80"
                   }`}

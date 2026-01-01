@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
+import { getThemeVariant } from "lib/theme-config";
 
 const footerLinks = {
   community: [
@@ -26,6 +27,10 @@ const footerLinks = {
 
 export function Default() {
   const { theme } = useTheme();
+  const themeVariant = getThemeVariant();
+  const logoPath = `/images/logo/${themeVariant}/hahn-solo-${
+    theme === "light" ? "black" : "white"
+  }.png`;
   return (
     <footer className="border-t border-border bg-muted/30">
       <div className="px-4 py-12 md:px-8 md:py-16 lg:px-12">
@@ -96,11 +101,7 @@ export function Default() {
             </p>
             <div className="flex items-center gap-3">
               <Image
-                src={
-                  theme !== "light"
-                    ? "/images/hahn-solo-white.png"
-                    : "/images/hahn-solo-black.png"
-                }
+                src={logoPath}
                 alt="SOLO"
                 width={120}
                 height={32}
