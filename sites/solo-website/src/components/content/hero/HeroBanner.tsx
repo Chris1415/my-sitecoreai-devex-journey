@@ -1,17 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "components/ui/button";
-import { Text, Link, TextField, LinkField } from "@sitecore-content-sdk/nextjs";
-import { ComponentProps } from "lib/component-props";
-
-interface HeroBannerProps extends ComponentProps {
-  fields: {
-    Subtitle: TextField;
-    Title: TextField;
-    Description: TextField;
-    PrimaryCta: LinkField;
-    SecondaryCta: LinkField;
-  };
-}
+import { Text, Link } from "@sitecore-content-sdk/nextjs";
+import { HeroBannerProps } from "./HeroBannerProps";
 
 export function Default({ fields, page }: HeroBannerProps) {
   return (

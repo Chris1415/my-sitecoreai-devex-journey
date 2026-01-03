@@ -39,9 +39,13 @@ import * as HighlightTeaser from 'src/components/content/highlight/teaser/Highli
 import * as HighlightsTiles from 'src/components/content/highlight/list/Highlights.Tiles';
 import * as HighlightsList from 'src/components/content/highlight/list/Highlights.List';
 import * as Highlights from 'src/components/content/highlight/list/Highlights';
+import * as HeroBannerProps from 'src/components/content/hero/HeroBannerProps';
 import * as HeroBannerMinimal from 'src/components/content/hero/HeroBanner.Minimal';
+import * as HeroBannerIconed from 'src/components/content/hero/HeroBanner.Iconed';
 import * as HeroBannerBranded from 'src/components/content/hero/HeroBanner.Branded';
 import * as HeroBanner from 'src/components/content/hero/HeroBanner';
+import * as _HeroBannerIconed from 'src/components/content/hero/client/_HeroBanner.Iconed';
+import * as Faqs from 'src/components/content/faq/Faqs';
 import * as EventCardHighlight from 'src/components/content/events/teaser/EventCard.Highlight';
 import * as EventCard from 'src/components/content/events/teaser/EventCard';
 import * as BrandsSlider from 'src/components/content/brands/Brands.Slider';
@@ -77,7 +81,10 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['HighlightTeaserWrapper', { ...HighlightTeaserWrapper }],
   ['HighlightTeaser', { ...HighlightTeaser, componentType: 'client' }],
   ['Highlights', { ...HighlightsTiles, ...HighlightsList, ...Highlights }],
-  ['HeroBanner', { ...HeroBannerMinimal, ...HeroBannerBranded, ...HeroBanner }],
+  ['HeroBannerProps', { ...HeroBannerProps }],
+  ['HeroBanner', { ...HeroBannerMinimal, ...HeroBannerIconed, ...HeroBannerBranded, ...HeroBanner }],
+  ['_HeroBanner', { ..._HeroBannerIconed }],
+  ['Faqs', { ...Faqs }],
   ['EventCard', { ...EventCardHighlight, ...EventCard }],
   ['Brands', { ...BrandsSlider, ...Brands, componentType: 'client' }],
   ['AuthorTeaser', { ...AuthorTeaser }],

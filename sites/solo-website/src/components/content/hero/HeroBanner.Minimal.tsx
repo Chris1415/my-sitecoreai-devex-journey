@@ -1,17 +1,7 @@
-import { Text, TextField, LinkField } from "@sitecore-content-sdk/nextjs";
-import { ComponentProps } from "lib/component-props";
+import { Text } from "@sitecore-content-sdk/nextjs";
+import { HeroBannerProps } from "./HeroBannerProps";
 
-interface HeroBannerBrandedProps extends ComponentProps {
-  fields: {
-    Subtitle: TextField;
-    Title: TextField;
-    Description: TextField;
-    PrimaryCta: LinkField;
-    SecondaryCta: LinkField;
-  };
-}
-
-export function Minimal({ fields }: HeroBannerBrandedProps) {
+export function Minimal({ fields }: HeroBannerProps) {
   return (
     <div className="border-b border-border bg-linear-to-br from-primary/5 via-background to-background py-8 md:py-12">
       <div className="mx-auto max-w-4xl">
@@ -20,7 +10,6 @@ export function Minimal({ fields }: HeroBannerBrandedProps) {
         </h1>
         <p className="text-pretty text-xl text-muted-foreground md:text-2xl">
           <Text field={fields.Subtitle} />
-
         </p>
       </div>
     </div>

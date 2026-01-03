@@ -1,19 +1,9 @@
 import { Button } from "components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
-import { Text, Link, TextField, LinkField } from "@sitecore-content-sdk/nextjs";
-import { ComponentProps } from "lib/component-props";
+import { Text, Link } from "@sitecore-content-sdk/nextjs";
+import { HeroBannerProps } from "./HeroBannerProps";
 
-interface HeroBannerBrandedProps extends ComponentProps {
-  fields: {
-    Subtitle: TextField;
-    Title: TextField;
-    Description: TextField;
-    PrimaryCta: LinkField;
-    SecondaryCta: LinkField;
-  };
-}
-
-export function Branded({ fields, page }: HeroBannerBrandedProps) {
+export function Branded({ fields, page }: HeroBannerProps) {
   return (
     <div className="relative overflow-hidden bg-linear-to-br from-primary via-primary/90 to-primary/80 py-16 text-primary-foreground md:py-24">
       {/* Animated background elements */}

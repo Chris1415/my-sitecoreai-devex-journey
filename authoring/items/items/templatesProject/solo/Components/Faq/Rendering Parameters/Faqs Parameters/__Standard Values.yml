@@ -1,0 +1,27 @@
+﻿---
+ID: "2638e63f-4112-4e54-899d-3537cf57e9fd"
+Parent: "f6f562ad-3321-42ff-9d3e-d05b9eb1fe46"
+Template: "f6f562ad-3321-42ff-9d3e-d05b9eb1fe46"
+Path: /sitecore/templates/Project/solo/Components/Faq/Rendering Parameters/Faqs Parameters/__Standard Values
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20211012T120926Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\JssImport
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "8dc1096f-ea27-4ad9-bb26-2dbdf4d5d0b0"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\christian.hahn@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260103T173623Z
