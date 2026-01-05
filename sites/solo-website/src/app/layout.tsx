@@ -3,10 +3,11 @@ import "./globals.css";
 import { suppressResizeObserverErrors } from "lib/utils";
 import { getThemeVariant, themeMetaColors } from "lib/theme-config";
 import { Viewport } from "next/types";
-import { inter } from "lib/fonts";
+import { getThemeFonts } from "lib/fonts";
 
 const themeVariant = getThemeVariant();
 const metaColors = themeMetaColors[themeVariant];
+const fonts = getThemeFonts(themeVariant);
 
 export const viewport: Viewport = {
   themeColor: [
@@ -29,7 +30,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={inter.variable}
+      className={`${fonts.sans.variable} ${fonts.mono.variable}`}
       data-theme={themeVariant}
       suppressHydrationWarning
     >
