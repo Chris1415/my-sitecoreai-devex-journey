@@ -32,7 +32,7 @@ import { Button as Button_84330b1bbe8a1bb4486fd11a1e9edfcb73dcb72a } from 'src/c
 import { Card, CardContent, CardFooter } from 'src/components/ui/card';
 import { Badge as Badge_4993aa9339ae187afc55b9486739db65fa14e5ba } from 'src/components/ui/badge';
 import { formatPrice, formatDate } from 'src/lib/data';
-import { getFeaturedProducts, getAllFAQs, getFAQCategories, formatDate as formatDate_e48efc7333ac73f929d9b272a527b63e4cd08f90, getNextUpcomingEvent } from 'lib/data';
+import { getFeaturedProducts, formatDate as formatDate_e48efc7333ac73f929d9b272a527b63e4cd08f90, getNextUpcomingEvent } from 'lib/data';
 import { ProductCard } from 'src/components/content/products/teaser/_productCard';
 import { Tiles as Tiles_49423b085a70264a020b434efb2a0fbe4b23f2fe } from 'src/components/content/products/list/Product.Tiles';
 import { Input } from 'src/components/ui/input';
@@ -248,8 +248,6 @@ const importMap = [
     module: 'lib/data',
     exports: [
       { name: 'getFeaturedProducts', value: getFeaturedProducts },
-      { name: 'getAllFAQs', value: getAllFAQs },
-      { name: 'getFAQCategories', value: getFAQCategories },
       { name: 'formatDate', value: formatDate_e48efc7333ac73f929d9b272a527b63e4cd08f90 },
       { name: 'getNextUpcomingEvent', value: getNextUpcomingEvent },
     ]

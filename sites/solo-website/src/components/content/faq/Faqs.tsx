@@ -68,7 +68,6 @@ export async function Default({ fields }: FaqsProps) {
       cmsFaqs.push(faqs);
     })
   );
-  console.error(JSON.stringify(cmsFaqs, null, 2));
 
   return (
     <>
@@ -90,12 +89,12 @@ export async function Default({ fields }: FaqsProps) {
                         return (
                           <AccordionItem key={faq.id} value={faq.id}>
                             <AccordionTrigger className="text-left">
-                              <span className="font-semibold">
+                              <span className="font-semibold px-2 mx-1">
                                 {faq?.question?.jsonValue?.value}
                               </span>
                             </AccordionTrigger>
                             <AccordionContent>
-                              <p className="text-muted-foreground leading-relaxed">
+                              <p className="text-muted-foreground leading-relaxed mt-2">
                                 {faq?.answer?.jsonValue?.value}
                               </p>
                               {/* {faq.tags.length > 0 && (

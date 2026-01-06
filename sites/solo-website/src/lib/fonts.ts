@@ -1,5 +1,5 @@
-import { Space_Grotesk, JetBrains_Mono } from "next/font/google"
-import { Poppins, Source_Code_Pro } from "next/font/google"
+import { Space_Grotesk, JetBrains_Mono, Comic_Neue } from "next/font/google";
+import { Poppins, Source_Code_Pro } from "next/font/google";
 
 // Red theme fonts: Geometric, technical, modern
 export const spaceGrotesk = Space_Grotesk({
@@ -7,14 +7,14 @@ export const spaceGrotesk = Space_Grotesk({
   display: "swap",
   variable: "--font-sans",
   weight: ["400", "500", "600", "700"],
-})
+});
 
 export const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-mono",
   weight: ["400", "500", "600"],
-})
+});
 
 // Purple theme fonts: Friendly, rounded, approachable
 export const poppins = Poppins({
@@ -22,14 +22,28 @@ export const poppins = Poppins({
   display: "swap",
   variable: "--font-sans",
   weight: ["400", "500", "600", "700", "800"],
-})
+});
 
 export const sourceCodePro = Source_Code_Pro({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-mono",
   weight: ["400", "500", "600"],
-})
+});
+
+export const comicSans = Comic_Neue({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-sans",
+  weight: ["400"],
+});
+
+export const comicMono = Comic_Neue({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-mon",
+  weight: ["400"],
+});
 
 // Helper to get fonts based on theme
 export function getThemeFonts(theme: "red" | "purple") {
@@ -37,10 +51,10 @@ export function getThemeFonts(theme: "red" | "purple") {
     return {
       sans: poppins,
       mono: sourceCodePro,
-    }
+    };
   }
   return {
-    sans: spaceGrotesk,
-    mono: jetbrainsMono,
-  }
+    sans: comicSans,
+    mono: comicMono,
+  };
 }
