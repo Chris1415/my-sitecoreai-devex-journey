@@ -1,19 +1,15 @@
 "use client";
 
-import { FAQHeader, FAQEmptyState, FAQList, FAQDialogs } from "@/components/faq";
+import {
+  FAQHeader,
+  FAQEmptyState,
+  FAQList,
+  FAQDialogs,
+} from "@/components/faq";
 import { useFAQManager } from "@/hooks/use-faq-manager";
 import { useFAQDialogs } from "@/hooks/use-faq-dialogs";
-import { useSites } from "@/hooks/use-sites";
 
 export default function FAQManagement() {
-  // Site selection - fetched from Sitecore via Marketplace SDK
-  const {
-    sites,
-    selectedSite,
-    setSelectedSite,
-    loading: sitesLoading,
-  } = useSites();
-
   // FAQ data and operations
   const {
     groups,
@@ -94,10 +90,6 @@ export default function FAQManagement() {
         onImport={handleImport}
         onNewGroup={openNewGroupDialog}
         canExport={groups.length > 0}
-        sites={sites}
-        selectedSite={selectedSite}
-        onSiteChange={setSelectedSite}
-        sitesLoading={sitesLoading}
       />
 
       <main className="container max-w-6xl mx-auto px-4 sm:px-6 py-10">

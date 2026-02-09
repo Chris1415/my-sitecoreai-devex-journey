@@ -1,6 +1,8 @@
-import type { ClientSDK, ApplicationContext } from "@sitecore-marketplace-sdk/client";
+import type {
+  ClientSDK,
+  ApplicationContext,
+} from "@sitecore-marketplace-sdk/client";
 import { Agent } from "@sitecore-marketplace-sdk/xmc";
-
 
 /**
  * Fetches available sites from Sitecore using the Marketplace SDK
@@ -9,7 +11,8 @@ export async function fetchSites(
   client: ClientSDK,
   appContext: ApplicationContext
 ): Promise<{ sites: Agent.SiteBasicModel[]; error: string | null }> {
-  const previewContextId = appContext?.resourceAccess?.[0]?.context?.preview ?? "";
+  const previewContextId =
+    appContext?.resourceAccess?.[0]?.context?.preview ?? "";
 
   if (!previewContextId) {
     return {
@@ -28,7 +31,7 @@ export async function fetchSites(
     });
 
     const sites = response?.data?.data?.sites ?? [];
-    
+
     return {
       sites,
       error: null,

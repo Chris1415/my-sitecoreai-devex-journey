@@ -1,0 +1,36 @@
+﻿---
+ID: "88c95ad4-5094-44b6-aea1-e227eab0f3dc"
+Parent: "830d5734-d165-4c74-bbdb-7f722dfa0543"
+Template: "830d5734-d165-4c74-bbdb-7f722dfa0543"
+Path: /sitecore/templates/Project/solo/Components/Media/ImageHotspot Folder/__Standard Values
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Value: |
+    {4D83352C-D44B-4EF9-A2BD-6342E10DC4B7}
+    {830D5734-D165-4C74-BBDB-7F722DFA0543}
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "b45a2f87-9aac-4801-8cad-cc7881f1a507"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20120621T071605Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "aa060e5b-e4fc-49cd-9da5-e2b3cb825ad4"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\christian.hahn@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260206T163045Z

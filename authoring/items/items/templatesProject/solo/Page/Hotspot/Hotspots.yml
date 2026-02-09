@@ -1,21 +1,21 @@
 ﻿---
-ID: "821a93a2-b715-4cda-a650-7c47215ad91a"
-Parent: "3f1f21a1-03b2-46dd-8ab9-abf4a1f7b908"
+ID: "bbd3743a-5353-4dab-844b-153434498694"
+Parent: "8064eb6f-45bf-4cc9-ad16-92338f6fd5b4"
 Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
-Path: /sitecore/templates/Project/solo/Page/Content/Content
+Path: /sitecore/templates/Project/solo/Page/Hotspot/Hotspots
 SharedFields:
 - ID: "1eb8ae32-e190-44a6-968d-ed904c794ebf"
   Hint: Source
-  Value: "query:$xaRichTextProfile"
+  Value: "0f9f4c15-a5b0-44fe-86c1-effb70e0d4bf"
 - ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
   Hint: Type
-  Value: Rich Text
+  Value: Plugin
 - ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
   Hint: __Sortorder
-  Value: 2
+  Value: 200
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "f9d3f6c0-6690-428a-92cc-dee509c11eb0"
+  Value: "f7b3730b-bf86-4c69-8aa9-fd4174897aa0"
 Languages:
 - Language: en
   Versions:
@@ -23,7 +23,7 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20251209T141012Z
+      Value: 20260206T171128Z
     - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
       Hint: __Owner
       Value: |
@@ -34,7 +34,7 @@ Languages:
         sitecore\christian.hahn@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "88ec17f2-d644-4105-b583-2dab2c5bb7a0"
+      Value: "604a59db-7d24-4dba-96b6-fe6e79b3d28c"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |

@@ -11,6 +11,7 @@ import * as StatsCards from 'src/components/content/stats/Stats.Cards';
 import * as Stats from 'src/components/content/stats/Stats';
 import * as Signup from 'src/components/content/newsletter/Signup';
 import * as ImageList from 'src/components/content/media/images/ImageList';
+import * as ImageHotspot from 'src/components/content/media/images/ImageHotspot';
 import * as HighlightTeaser from 'src/components/content/highlight/teaser/HighlightTeaser';
 import * as _HeroBannerIconed from 'src/components/content/hero/client/_HeroBanner.Iconed';
 import * as BrandsSlider from 'src/components/content/brands/Brands.Slider';
@@ -26,6 +27,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['Stats', { ...StatsTiles, ...StatsCards, ...Stats }],
   ['Signup', { ...Signup }],
   ['ImageList', { ...ImageList }],
+  ['ImageHotspot', { ...ImageHotspot }],
   ['HighlightTeaser', { ...HighlightTeaser }],
   ['_HeroBanner', { ..._HeroBannerIconed }],
   ['Brands', { ...BrandsSlider, ...Brands }],

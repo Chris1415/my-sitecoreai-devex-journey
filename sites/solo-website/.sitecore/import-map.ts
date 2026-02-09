@@ -9,13 +9,13 @@ import * as React from 'react';
 import * as SeparatorPrimitive from '@radix-ui/react-separator';
 import { cn } from 'lib/utils';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
-import { XIcon, Sparkles, ChevronDownIcon, Menu, X, Search, Moon, Sun, QuoteIcon, ShoppingCart, AlertCircle, Clock, ArrowLeft, Share2, Download, ExternalLink, ArrowRight, Lightbulb, Calendar, MapPin } from 'lucide-react';
+import { XIcon, Sparkles, ChevronDownIcon, Menu, X, Search, Moon, Sun, QuoteIcon, ShoppingCart, AlertCircle, Clock, ArrowLeft, Share2, Download, ExternalLink, Plus, ArrowRight, Lightbulb, Calendar, MapPin } from 'lucide-react';
 import { Slot } from '@radix-ui/react-slot';
 import { cva } from 'class-variance-authority';
 import * as AvatarPrimitive from '@radix-ui/react-avatar';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
 import componentMap from '.sitecore/component-map';
-import { AppPlaceholder, CdpHelper, useSitecore, RichText, Text, DateField, Image as Image_8a80e63291fea86e0744df19113dc44bec187216, Link as Link_8a80e63291fea86e0744df19113dc44bec187216 } from '@sitecore-content-sdk/nextjs';
+import { AppPlaceholder, CdpHelper, useSitecore, RichText, Text, DateField, Image as Image_8a80e63291fea86e0744df19113dc44bec187216, NextImage, Link as Link_8a80e63291fea86e0744df19113dc44bec187216 } from '@sitecore-content-sdk/nextjs';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
@@ -96,6 +96,7 @@ const importMap = [
       { name: 'Share2', value: Share2 },
       { name: 'Download', value: Download },
       { name: 'ExternalLink', value: ExternalLink },
+      { name: 'Plus', value: Plus },
       { name: 'ArrowRight', value: ArrowRight },
       { name: 'Lightbulb', value: Lightbulb },
       { name: 'Calendar', value: Calendar },
@@ -142,6 +143,7 @@ const importMap = [
       { name: 'Text', value: Text },
       { name: 'DateField', value: DateField },
       { name: 'Image', value: Image_8a80e63291fea86e0744df19113dc44bec187216 },
+      { name: 'NextImage', value: NextImage },
       { name: 'Link', value: Link_8a80e63291fea86e0744df19113dc44bec187216 },
     ]
   },

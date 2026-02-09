@@ -28,7 +28,7 @@ export function Default() {
 
   const themeVariant = getThemeVariant();
   const logoPath = `/images/logo/${themeVariant}/hahn-solo-${
-    theme === "light" ? "black" : "white"
+    theme === "dark" ? "white" : "black"
   }.png`;
 
   return (

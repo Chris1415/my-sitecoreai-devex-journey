@@ -11,6 +11,7 @@ import {
 import { Skeleton } from "@/components/ui/skeleton";
 import { Plus, Download, HelpCircle, Globe } from "lucide-react";
 import { ImportDialog } from "@/components/import-dialog";
+import { useSites } from "@/hooks/use-sites";
 
 export interface SiteInfo {
   name: string;
@@ -21,10 +22,6 @@ interface FAQHeaderProps {
   onImport: (file: File) => void;
   onNewGroup: () => void;
   canExport: boolean;
-  sites: SiteInfo[];
-  selectedSite: string;
-  onSiteChange: (site: string) => void;
-  sitesLoading?: boolean;
 }
 
 export function FAQHeader({
@@ -32,11 +29,14 @@ export function FAQHeader({
   onImport,
   onNewGroup,
   canExport,
-  sites,
-  selectedSite,
-  onSiteChange,
-  sitesLoading = false,
 }: FAQHeaderProps) {
+  const {
+    sites,
+    selectedSite,
+    setSelectedSite,
+    loading: sitesLoading,
+  } = useSites();
+
   return (
     <header className="sticky top-0 z-10 border-b border-border/60 bg-background/95 backdrop-blur-xl supports-backdrop-filter:bg-background/80 shadow-sm">
       <div className="container max-w-6xl mx-auto px-4 sm:px-6 py-5 flex items-center justify-between">
@@ -57,8 +57,8 @@ export function FAQHeader({
           {sitesLoading ? (
             <Skeleton className="w-[160px] h-10 rounded-md" />
           ) : (
-            <Select value={selectedSite} onValueChange={onSiteChange}>
-              <SelectTrigger className="w-[160px] shadow-sm border-border/60">
+            <Select value={selectedSite} onValueChange={setSelectedSite}>
+              <SelectTrigger className="w-[180px] shadow-sm border-border/60">
                 <Globe className="w-4 h-4 mr-2 text-muted-foreground" />
                 <SelectValue placeholder="Select site" />
               </SelectTrigger>

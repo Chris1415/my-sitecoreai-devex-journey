@@ -1,21 +1,21 @@
 ﻿---
-ID: "821a93a2-b715-4cda-a650-7c47215ad91a"
-Parent: "3f1f21a1-03b2-46dd-8ab9-abf4a1f7b908"
-Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
-Path: /sitecore/templates/Project/solo/Page/Content/Content
+ID: "7a9df55d-ee4f-462b-b663-2caa8ae4021f"
+Parent: "11af1fdf-91a1-4752-9144-d78cf1de6568"
+Template: "3aea335c-d06d-45b1-841a-cbc8d2d1ce40"
+Path: /sitecore/system/Settings/Project/solo/solo /Add ImageHotspots Data Item
 SharedFields:
-- ID: "1eb8ae32-e190-44a6-968d-ed904c794ebf"
-  Hint: Source
-  Value: "query:$xaRichTextProfile"
-- ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
-  Hint: Type
-  Value: Rich Text
-- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
-  Hint: __Sortorder
-  Value: 2
+- ID: "52c91c75-6698-4701-a8a2-242ace59a8d6"
+  Hint: Location
+  Value: "{BA2F959D-A614-4C92-8B57-F1FC1A323ABE}"
+- ID: "7868e6bc-525c-4fce-ab8a-77da3e09b171"
+  Hint: Name
+  Value: ImageHotspot
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "f9d3f6c0-6690-428a-92cc-dee509c11eb0"
+  Value: "c1c64448-98a2-4d4e-8575-dcc7461cd13a"
+- ID: "e62c28f0-9d3b-46e2-8bec-a5e120542499"
+  Hint: Template
+  Value: "{830D5734-D165-4C74-BBDB-7F722DFA0543}"
 Languages:
 - Language: en
   Versions:
@@ -23,7 +23,7 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20251209T141012Z
+      Value: 20260206T163047Z
     - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
       Hint: __Owner
       Value: |
@@ -34,11 +34,11 @@ Languages:
         sitecore\christian.hahn@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "88ec17f2-d644-4105-b583-2dab2c5bb7a0"
+      Value: "430ad13a-1b24-426f-95c7-288d07e95a24"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\christian.hahn@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260209T120335Z
+      Value: 20260206T163047Z
