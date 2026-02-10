@@ -14,7 +14,7 @@ import {
   normalizeMarkerStyle,
   normalizeMarkerSize,
   HotspotPin,
-} from "./HotspotMarker";
+} from "./_hotspotMarker";
 
 interface Fields {
   Title: Field<string>;

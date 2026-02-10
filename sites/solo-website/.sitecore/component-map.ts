@@ -33,9 +33,9 @@ import * as NewsKeyTakeaways from 'src/components/content/news/Details/NewsKeyTa
 import * as NewsDetailsContent from 'src/components/content/news/Details/NewsDetailsContent';
 import * as NewsDetails from 'src/components/content/news/Details/NewsDetails';
 import * as NewsContainer from 'src/components/content/news/Conainer/NewsContainer';
+import * as _hotspotMarker from 'src/components/content/media/images/_hotspotMarker';
 import * as ImageList from 'src/components/content/media/images/ImageList';
 import * as ImageHotspot from 'src/components/content/media/images/ImageHotspot';
-import * as HotspotMarker from 'src/components/content/media/images/HotspotMarker';
 import * as HighlightTeaserWrapper from 'src/components/content/highlight/teaser/HighlightTeaserWrapper';
 import * as HighlightTeaser from 'src/components/content/highlight/teaser/HighlightTeaser';
 import * as HighlightsTiles from 'src/components/content/highlight/list/Highlights.Tiles';
@@ -79,9 +79,9 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['NewsDetailsContent', { ...NewsDetailsContent }],
   ['NewsDetails', { ...NewsDetails }],
   ['NewsContainer', { ...NewsContainer }],
+  ['_hotspotMarker', { ..._hotspotMarker, componentType: 'client' }],
   ['ImageList', { ...ImageList, componentType: 'client' }],
   ['ImageHotspot', { ...ImageHotspot, componentType: 'client' }],
-  ['HotspotMarker', { ...HotspotMarker, componentType: 'client' }],
   ['HighlightTeaserWrapper', { ...HighlightTeaserWrapper }],
   ['HighlightTeaser', { ...HighlightTeaser, componentType: 'client' }],
   ['Highlights', { ...HighlightsTiles, ...HighlightsList, ...Highlights }],
