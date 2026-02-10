@@ -83,12 +83,16 @@ export async function Default({ fields }: FaqsProps) {
                   <h2 className="mb-6 text-2xl font-bold tracking-tight md:text-3xl">
                     {category.item.name}
                   </h2>
-                  <Card className="p-6">
+                  <Card className="p-6 transition-all duration-300 hover:shadow-md">
                     <Accordion type="single" collapsible className="w-full">
                       {category?.item?.children?.results?.map((faq) => {
                         return (
-                          <AccordionItem key={faq.id} value={faq.id}>
-                            <AccordionTrigger className="text-left">
+                          <AccordionItem
+                            key={faq.id}
+                            value={faq.id}
+                            className="transition-colors duration-200"
+                          >
+                            <AccordionTrigger className="text-left rounded-lg px-3 py-4 hover:bg-muted/50 hover:no-underline data-[state=open]:bg-muted/30">
                               <span className="font-semibold px-2 mx-1">
                                 {faq?.question?.jsonValue?.value}
                               </span>

@@ -45,7 +45,7 @@ export function Default() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                    className="text-sm text-muted-foreground transition-colors duration-200 hover:text-primary hover:underline underline-offset-2"
                   >
                     {link.name}
                   </Link>
@@ -64,7 +64,7 @@ export function Default() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                    className="text-sm text-muted-foreground transition-colors duration-200 hover:text-primary hover:underline underline-offset-2"
                   >
                     {link.name}
                   </Link>
@@ -83,7 +83,7 @@ export function Default() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                    className="text-sm text-muted-foreground transition-colors duration-200 hover:text-primary hover:underline underline-offset-2"
                   >
                     {link.name}
                   </Link>

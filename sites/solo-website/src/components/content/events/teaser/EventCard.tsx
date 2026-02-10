@@ -16,7 +16,7 @@ export function Default() {
   return (
     <Link href={`/events/${event.id}`} className="group block">
       <Card
-        className={`h-full overflow-hidden transition-all hover:shadow-lg ${
+        className={`h-full overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${
           isPast ? "opacity-75" : ""
         }`}
       >
@@ -28,7 +28,7 @@ export function Default() {
             className="object-cover transition-transform duration-300 group-hover:scale-105"
           />
           <Badge
-            className={`absolute left-4 top-4 ${
+            className={`absolute left-4 top-4 transition-transform duration-200 group-hover:scale-105 ${
               isPast ? "bg-muted text-muted-foreground" : "bg-primary"
             }`}
           >

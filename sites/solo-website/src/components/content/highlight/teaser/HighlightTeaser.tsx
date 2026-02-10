@@ -45,9 +45,9 @@ export function Default({
         >
           <CardContent className="p-6 flex-1">
             <div
-              className={`mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-linear-to-br ${colorItem?.item.GradientBackground.jsonValue.value} shadow-lg`}
+              className={`mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-linear-to-br ${colorItem?.item.GradientBackground.jsonValue.value} shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3`}
             >
-              <UsedIcon className="h-6 w-6 text-white" />
+              <UsedIcon className="h-6 w-6 text-white transition-transform duration-300 group-hover:scale-110" />
             </div>
             <h3 className="mb-2 text-xl font-bold">
               <Text field={Title} />

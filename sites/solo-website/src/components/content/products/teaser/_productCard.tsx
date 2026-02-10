@@ -15,7 +15,7 @@ export function ProductCard({ product }: ProductCardProps) {
   const showLowStockWarning = product.inStock && product.stock <= 10;
 
   return (
-    <Card className="group overflow-hidden transition-all hover:shadow-lg">
+    <Card className="group overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
       <Link href={`/products/${product.slug}`}>
         <div className="relative aspect-square overflow-hidden bg-muted">
           <Image
@@ -52,8 +52,12 @@ export function ProductCard({ product }: ProductCardProps) {
           <span className="text-2xl font-bold text-primary">
             {formatPrice(product.price)}
           </span>
-          <Button size="sm" disabled={!product.inStock}>
-            <ShoppingCart className="mr-2 h-4 w-4" />
+          <Button
+            size="sm"
+            disabled={!product.inStock}
+            className="group/btn transition-transform duration-200 hover:scale-[1.02] [&:not(:disabled)]:active:scale-[0.98]"
+          >
+            <ShoppingCart className="mr-2 h-4 w-4 transition-transform duration-200 group-hover/btn:scale-110" />
             Add to Cart
           </Button>
         </div>

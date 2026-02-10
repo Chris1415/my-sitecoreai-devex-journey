@@ -46,10 +46,10 @@ function StatCard({ element, page }: { element: StatElement; page: Page }) {
   const Icon = IconComponent || FallbackIcon;
 
   return (
-    <Card>
+    <Card className="transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
       <CardContent className="flex flex-col items-center p-6 text-center">
-        <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-          <Icon className="h-6 w-6 text-primary" />
+        <div className="group/icon mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 transition-all duration-300 hover:bg-primary/20 hover:scale-110">
+          <Icon className="h-6 w-6 text-primary transition-transform duration-300 group-hover/icon:scale-110" />
         </div>
         {page.mode.isEditing && (
           <>

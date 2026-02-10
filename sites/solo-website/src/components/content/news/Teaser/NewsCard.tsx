@@ -27,9 +27,9 @@ export function Default({ fields, params }: NewsCardProps) {
   return (
     <div className={`${params.styles} px-2 py-2`}>
       <Card
-        className={`h-full overflow-hidden transition-all hover:shadow-lg `}
+        className="h-full overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
       >
-        <Link href={`/articles/${article?.Id?.value}`} className={`group block`}>
+        <Link href={`/articles/${article?.Id?.value}`} className="group block">
           <div className="relative aspect-video overflow-hidden">
             <SdkImage
               field={heroImage}
@@ -44,7 +44,7 @@ export function Default({ fields, params }: NewsCardProps) {
                 <Badge
                   key={tag?.fields?.Title?.value}
                   variant="secondary"
-                  className="text-xs"
+                  className="text-xs transition-all duration-200 hover:bg-primary/15 hover:text-primary"
                 >
                   <Text field={tag.fields.Title} />
                 </Badge>

@@ -486,3 +486,113 @@
 [data-theme="purple"] .tag {
   @apply normal-case text-sm font-medium;
 }
+
+/* Design goodies: reusable micro-animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 1s ease-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.35s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.3s ease-out forwards;
+}
+
+/* Hotspot dot: grow then gentle pulse on hover */
+@keyframes hotspot-dot-pulse {
+  0% {
+    transform: scale(1);
+  }
+  35% {
+    transform: scale(1.25);
+  }
+  65% {
+    transform: scale(1.35);
+  }
+  100% {
+    transform: scale(1.25);
+  }
+}
+
+.hover\:animate-hotspot-dot-pulse:hover {
+  animation: hotspot-dot-pulse 1.4s ease-in-out infinite;
+}
+
+/* Hotspot circle: spin + gentle scale pulse on hover */
+@keyframes hotspot-circle-spin-pulse {
+  0% {
+    transform: scale(1.1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(180deg);
+  }
+  100% {
+    transform: scale(1.1) rotate(360deg);
+  }
+}
+
+.hover\:animate-hotspot-circle-spin-pulse:hover {
+  animation: hotspot-circle-spin-pulse 1.2s ease-in-out infinite;
+}
+
+/* Reduced motion: respect user preference */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in-up,
+  .animate-scale-in,
+  .animate-float,
+  .animate-float-delay-1,
+  .animate-float-delay-2 {
+    animation: none;
+  }
+  .hover\:animate-hotspot-dot-pulse:hover,
+  .hover\:animate-hotspot-circle-spin-pulse:hover {
+    animation: none;
+  }
+  .animate-scroll:hover {
+    animation-play-state: running;
+  }
+}

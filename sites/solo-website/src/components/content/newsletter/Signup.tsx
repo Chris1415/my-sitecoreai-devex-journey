@@ -41,7 +41,7 @@ export function Default({ fields, params }: SignupProps) {
     <div className={`border-y border-border py-12 z-50 ${params.styles}`}>
       <div className="px-4 md:px-8 lg:px-12">
         <div className="mx-auto max-w-2xl text-center"> 
-          <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+          <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-transform duration-300 hover:scale-110 hover:bg-primary/20">
             {Icon && <Icon className="h-6 w-6 text-primary" />}
           </div>
           <h2 className="mb-3 text-2xl font-bold tracking-tight md:text-3xl">
@@ -52,7 +52,7 @@ export function Default({ fields, params }: SignupProps) {
           </p>
 
           {status === "success" ? (
-            <p className="text-sm font-medium text-primary">
+            <p className="animate-fade-in-up text-sm font-medium text-primary">
               <Text field={fields.SuccessMessage} />
             </p>
           ) : (
@@ -66,11 +66,14 @@ export function Default({ fields, params }: SignupProps) {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="flex-1"
+                className="flex-1 transition-all duration-200"
                 aria-label="Email address"
               />
 
-              <Button type="submit" className="whitespace-nowrap">
+              <Button
+                type="submit"
+                className="whitespace-nowrap transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98]"
+              >
                 <Text field={fields.ButtonText} />
               </Button>
             </form>

@@ -35,6 +35,7 @@ import * as NewsDetails from 'src/components/content/news/Details/NewsDetails';
 import * as NewsContainer from 'src/components/content/news/Conainer/NewsContainer';
 import * as ImageList from 'src/components/content/media/images/ImageList';
 import * as ImageHotspot from 'src/components/content/media/images/ImageHotspot';
+import * as HotspotMarker from 'src/components/content/media/images/HotspotMarker';
 import * as HighlightTeaserWrapper from 'src/components/content/highlight/teaser/HighlightTeaserWrapper';
 import * as HighlightTeaser from 'src/components/content/highlight/teaser/HighlightTeaser';
 import * as HighlightsTiles from 'src/components/content/highlight/list/Highlights.Tiles';
@@ -80,6 +81,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['NewsContainer', { ...NewsContainer }],
   ['ImageList', { ...ImageList, componentType: 'client' }],
   ['ImageHotspot', { ...ImageHotspot, componentType: 'client' }],
+  ['HotspotMarker', { ...HotspotMarker, componentType: 'client' }],
   ['HighlightTeaserWrapper', { ...HighlightTeaserWrapper }],
   ['HighlightTeaser', { ...HighlightTeaser, componentType: 'client' }],
   ['Highlights', { ...HighlightsTiles, ...HighlightsList, ...Highlights }],

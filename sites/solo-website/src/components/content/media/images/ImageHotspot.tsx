@@ -1,6 +1,6 @@
 "use client";
 
-import React, { JSX, useState } from "react";
+import { useState } from "react";
 import {
   Text,
   NextImage as ContentSdkImage,
@@ -8,20 +8,13 @@ import {
   ImageField,
 } from "@sitecore-content-sdk/nextjs";
 import { ComponentProps } from "lib/component-props";
-import { Plus } from "lucide-react";
-
-interface HotspotItem {
-  id: string;
-  x: number;
-  y: number;
-  tooltip: string;
-  color: string;
-}
-
-/** Parsed Hotspots value: keys match field names (e.g. "Image", "MobileImage"). */
-interface HotspotsByField {
-  hotspotsByField?: Record<string, HotspotItem[]>;
-}
+import {
+  type HotspotItem,
+  type HotspotsPayload,
+  normalizeMarkerStyle,
+  normalizeMarkerSize,
+  HotspotPin,
+} from "./HotspotMarker";
 
 interface Fields {
   Title: Field<string>;
@@ -31,32 +24,12 @@ interface Fields {
   Hotspots?: Field<string>;
 }
 
-interface ImageOverlayFeatureParams {
-  [key: string]: any; // eslint-disable-line
-}
-
 type ImageOverlayFeatureProps = ComponentProps & {
   fields: Fields;
-  params?: ImageOverlayFeatureParams;
+  params?: { styles?: string; RenderingIdentifier?: string; [key: string]: unknown };
 };
 
-/**
- * Image Overlay Feature component for displaying images with interactive hotspots
- * @param {ImageOverlayFeatureProps} props - Component props from XM Cloud datasource
- * @returns {JSX.Element} The rendered image overlay feature component
- */
-/** Y position threshold (0–100). When hotspot is at or below this %, tooltip is shown above. */
-const TOOLTIP_ABOVE_THRESHOLD_Y = 70;
-
-/** Validates and normalizes a CSS color string for safe use in inline styles */
-function parseHotspotColor(value: string | undefined): string {
-  if (!value || typeof value !== "string") return "#ffffff";
-  const trimmed = value.trim();
-  if (!trimmed) return "#ffffff";
-  return trimmed;
-}
-
-export const Default = (props: ImageOverlayFeatureProps): JSX.Element => {
+export function Default(props: ImageOverlayFeatureProps) {
   const { fields, params } = props;
   const { styles, RenderingIdentifier: id } = params || {};
   const [activeHotspot, setActiveHotspot] = useState<{
@@ -64,14 +37,15 @@ export const Default = (props: ImageOverlayFeatureProps): JSX.Element => {
     index: number;
   } | null>(null);
 
-  const parsedHotspots: HotspotsByField = fields?.Hotspots?.value
-    ? (JSON.parse(fields.Hotspots.value) as HotspotsByField)
+  const parsed: HotspotsPayload = fields?.Hotspots?.value
+    ? (JSON.parse(fields.Hotspots.value) as HotspotsPayload)
     : {};
 
-  const imageHotspots: HotspotItem[] =
-    parsedHotspots?.hotspotsByField?.["Image"] ?? [];
+  const markerStyle = normalizeMarkerStyle(parsed?.marker?.style);
+  const markerSize = normalizeMarkerSize(parsed?.marker?.size);
+  const imageHotspots: HotspotItem[] = parsed?.hotspotsByField?.["Image"] ?? [];
   const mobileHotspots: HotspotItem[] =
-    parsedHotspots?.hotspotsByField?.["MobileImage"] ?? [];
+    parsed?.hotspotsByField?.["MobileImage"] ?? [];
 
   if (!fields) {
     return (
@@ -90,55 +64,21 @@ export const Default = (props: ImageOverlayFeatureProps): JSX.Element => {
 
   const imageAlt = fields.ImageAlt?.value || fields.Title?.value || "Image";
 
-  const renderHotspots = (
-    hotspots: HotspotItem[],
-    fieldKey: string
-  ): JSX.Element[] =>
-    hotspots.map((hotspot: HotspotItem, index: number) => {
-      const x = hotspot?.x ?? 0;
-      const y = hotspot?.y ?? 0;
-      const label = hotspot?.tooltip ?? "";
-      const color = parseHotspotColor(hotspot?.color);
-      const showTooltipAbove = y >= TOOLTIP_ABOVE_THRESHOLD_Y;
+  const renderHotspots = (hotspots: HotspotItem[], fieldKey: string) =>
+    hotspots.map((hotspot, index) => {
       const isActive =
         activeHotspot?.fieldKey === fieldKey && activeHotspot?.index === index;
-
       return (
-        <div
+        <HotspotPin
           key={hotspot?.id ?? `${fieldKey}-${index}`}
-          className="absolute"
-          style={{ left: `${x}%`, top: `${y}%` }}
-        >
-          <button
-            type="button"
-            className="w-9 h-9 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-all transform -translate-x-1/2 -translate-y-1/2"
-            style={{ backgroundColor: color }}
-            onClick={() =>
-              setActiveHotspot(
-                isActive ? null : { fieldKey, index }
-              )
-            }
-            aria-label={label}
-          >
-            <Plus
-              className="w-4 h-4 opacity-90"
-              style={{ color: "#ffffff" }}
-            />
-          </button>
-
-          {isActive && label && (
-            <div
-              className={`absolute left-6 z-10 bg-white/95 backdrop-blur-sm rounded shadow-lg
-                px-2 py-1.5 min-w-[100px] max-w-[140px]
-                md:px-4 md:py-3 md:min-w-[220px] md:max-w-[280px]
-                ${showTooltipAbove ? "bottom-full mb-2" : "top-2"}`}
-            >
-              <p className="text-xs text-[#1A1F2B] leading-snug md:text-sm md:leading-relaxed">
-                {label}
-              </p>
-            </div>
-          )}
-        </div>
+          hotspot={hotspot}
+          isActive={isActive}
+          onClick={() =>
+            setActiveHotspot(isActive ? null : { fieldKey, index })
+          }
+          markerStyle={markerStyle}
+          markerSize={markerSize}
+        />
       );
     });
 
@@ -149,7 +89,6 @@ export const Default = (props: ImageOverlayFeatureProps): JSX.Element => {
     >
       <div className="max-w-[1840px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative aspect-16/10 md:aspect-16/7 overflow-hidden">
-          {/* Desktop: Image + Image hotspots (md and up) */}
           {fields.Image && (
             <div className="absolute inset-0 hidden md:block">
               <ContentSdkImage
@@ -162,7 +101,6 @@ export const Default = (props: ImageOverlayFeatureProps): JSX.Element => {
             </div>
           )}
 
-          {/* Mobile: MobileImage (or Image fallback) + corresponding hotspots */}
           {(fields.MobileImage ?? fields.Image) && (
             <div className="absolute inset-0 block md:hidden">
               <ContentSdkImage
@@ -178,7 +116,6 @@ export const Default = (props: ImageOverlayFeatureProps): JSX.Element => {
             </div>
           )}
 
-          {/* Title overlay - lower left (on top of both layers) */}
           {fields.Title && (
             <div className="absolute left-0 bottom-0 p-6 md:p-10 lg:p-16 xl:p-20 z-1">
               <Text
@@ -192,4 +129,4 @@ export const Default = (props: ImageOverlayFeatureProps): JSX.Element => {
       </div>
     </section>
   );
-};
+}

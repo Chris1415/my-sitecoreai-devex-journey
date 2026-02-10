@@ -36,7 +36,10 @@ export function Default() {
       <div className="">
         <div className="max-w-[1440px] mx-auto flex h-16 items-center justify-between px-4 md:px-8 lg:px-12">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3">
+          <Link
+            href="/"
+            className="flex items-center gap-3 transition-opacity duration-200 hover:opacity-80"
+          >
             <Image
               src={logoPath}
               alt="SOLO"
@@ -52,8 +55,10 @@ export function Default() {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
+                className={`relative text-sm font-medium transition-colors duration-200 hover:text-primary ${
                   pathname === item.href ? "text-primary" : "text-foreground/80"
+                } after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-200 hover:after:w-full ${
+                  pathname === item.href ? "after:w-full" : ""
                 }`}
               >
                 {item.name}
@@ -112,7 +117,7 @@ export function Default() {
                   key={item.name}
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`text-base font-medium transition-colors hover:text-primary ${
+                  className={`text-base font-medium transition-colors duration-200 hover:text-primary ${
                     pathname === item.href
                       ? "text-primary"
                       : "text-foreground/80"

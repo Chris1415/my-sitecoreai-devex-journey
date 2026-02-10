@@ -29,7 +29,7 @@ function BrandTooltip({
     >
       {children}
       {isHovered && (
-        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-4 py-3 bg-card border border-border rounded-lg shadow-lg z-50 w-64 pointer-events-none">
+        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-4 py-3 bg-card border border-border rounded-xl shadow-xl z-50 w-64 pointer-events-none animate-fade-in-up">
           <div className="text-sm font-semibold text-foreground mb-1">
             <Text field={brand.Name.jsonValue} />
           </div>
@@ -143,7 +143,7 @@ function BrandsLive({ Elements }: { Elements: Brand[] }) {
                   field={brand.Logo.jsonValue}
                   width={240}
                   height={120}
-                  className={`h-20 md:h-24 w-auto object-contain opacity-80 hover:opacity-100 transition-all cursor-pointer ${
+                  className={`h-20 md:h-24 w-auto object-contain opacity-80 hover:opacity-100 transition-all duration-300 cursor-pointer hover:scale-110 hover:-translate-y-1 ${
                     resolvedTheme === "light" ? "invert" : ""
                   }`}
                 />
@@ -161,7 +161,7 @@ function BrandsLive({ Elements }: { Elements: Brand[] }) {
                   field={brand.Logo.jsonValue}
                   width={240}
                   height={120}
-                  className={`h-20 md:h-24 w-auto object-contain opacity-80 hover:opacity-100 transition-all cursor-pointer ${
+                  className={`h-20 md:h-24 w-auto object-contain opacity-80 hover:opacity-100 transition-all duration-300 cursor-pointer hover:scale-110 hover:-translate-y-1 ${
                     resolvedTheme === "light" ? "invert" : ""
                   }`}
                 />

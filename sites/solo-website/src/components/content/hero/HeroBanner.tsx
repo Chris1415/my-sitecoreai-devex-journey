@@ -9,8 +9,8 @@ export function Default({ fields, page }: HeroBannerProps) {
       <div className="px-4 md:px-8 lg:px-12">
         <div className="mx-auto max-w-5xl text-center">
           {(page?.mode?.isEditing || fields.Subtitle?.value) && (
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-background/50 px-4 py-1.5 text-sm backdrop-blur">
-              <span className="h-2 w-2 rounded-full bg-primary" />
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-background/50 px-4 py-1.5 text-sm backdrop-blur transition-all duration-300 hover:border-primary/30 hover:shadow-sm">
+              <span className="h-2 w-2 rounded-full bg-primary animate-pulse" />
               <span className="font-medium">
                 <Text field={fields.Subtitle} />
               </span>
@@ -35,9 +35,9 @@ export function Default({ fields, page }: HeroBannerProps) {
 
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             {(page?.mode?.isEditing || fields.PrimaryCta?.value?.text) && (
-              <Button size="lg" className="w-full sm:w-auto">
+              <Button size="lg" className="group/cta w-full sm:w-auto">
                 <Link field={fields.PrimaryCta} />
-                <ArrowRight className="ml-2 h-4 w-4" />
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-200 group-hover/cta:translate-x-1" />
               </Button>
             )}
             {(page?.mode?.isEditing || fields.SecondaryCta?.value?.text) && (
