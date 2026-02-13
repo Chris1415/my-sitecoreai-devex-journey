@@ -43,6 +43,7 @@ import { Default } from 'src/components/content/news/Teaser/NewsCard';
 import { Card as Card_ee5df0e436668ea77211f94aa8fc698e82699918, CardContent as CardContent_ee5df0e436668ea77211f94aa8fc698e82699918 } from 'components/ui/card';
 import { Separator } from 'src/components/ui/separator';
 import { AIGeneratedBadge } from 'components/ui/ai-generated-badge';
+import { normalizeMarkerStyle, normalizeMarkerSize, HotspotPin } from 'src/components/content/media/images/_hotspotMarker';
 import { Default as Default_8df8e6cf104460826f9a1215cfab70bad2ccdef2 } from 'src/components/content/highlight/teaser/HighlightTeaser';
 import { Tiles as Tiles_2d2f52aec1ad0fb42654646675f88ac474927af0 } from 'src/components/content/highlight/list/Highlights.Tiles';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from 'components/ui/accordion';
@@ -313,6 +314,14 @@ const importMap = [
     module: 'components/ui/ai-generated-badge',
     exports: [
       { name: 'AIGeneratedBadge', value: AIGeneratedBadge },
+    ]
+  },
+  {
+    module: 'src/components/content/media/images/_hotspotMarker',
+    exports: [
+      { name: 'normalizeMarkerStyle', value: normalizeMarkerStyle },
+      { name: 'normalizeMarkerSize', value: normalizeMarkerSize },
+      { name: 'HotspotPin', value: HotspotPin },
     ]
   },
   {
