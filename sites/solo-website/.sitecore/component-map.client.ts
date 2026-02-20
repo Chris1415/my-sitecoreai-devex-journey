@@ -9,6 +9,9 @@ import * as TestimonialsSlider from 'src/components/content/testimonials/list/Te
 import * as StatsTiles from 'src/components/content/stats/Stats.Tiles';
 import * as StatsCards from 'src/components/content/stats/Stats.Cards';
 import * as Stats from 'src/components/content/stats/Stats';
+import * as useSearchField from 'src/components/content/search/useSearchField';
+import * as useEvent from 'src/components/content/search/useEvent';
+import * as GlobalSearch from 'src/components/content/search/GlobalSearch';
 import * as Signup from 'src/components/content/newsletter/Signup';
 import * as _hotspotMarker from 'src/components/content/media/images/_hotspotMarker';
 import * as ImageList from 'src/components/content/media/images/ImageList';
@@ -26,6 +29,9 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['Footer', { ...Footer }],
   ['Testimonials', { ...TestimonialsSlider }],
   ['Stats', { ...StatsTiles, ...StatsCards, ...Stats }],
+  ['useSearchField', { ...useSearchField }],
+  ['useEvent', { ...useEvent }],
+  ['GlobalSearch', { ...GlobalSearch }],
   ['Signup', { ...Signup }],
   ['_hotspotMarker', { ..._hotspotMarker }],
   ['ImageList', { ...ImageList }],

@@ -9,7 +9,7 @@ import * as React from 'react';
 import * as SeparatorPrimitive from '@radix-ui/react-separator';
 import { cn } from 'lib/utils';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
-import { XIcon, Sparkles, ChevronDownIcon, Menu, X, Search, Moon, Sun, QuoteIcon, ShoppingCart, AlertCircle, Clock, ArrowLeft, Share2, Download, ExternalLink, Plus, ArrowRight, Lightbulb, Calendar, MapPin } from 'lucide-react';
+import { XIcon, Sparkles, ChevronDownIcon, Menu, X, Search, Moon, Sun, FileText, ShoppingBag, User, HelpCircle, QuoteIcon, ShoppingCart, AlertCircle, Clock, ArrowLeft, Share2, Download, ExternalLink, Plus, ArrowRight, Lightbulb, Calendar, MapPin } from 'lucide-react';
 import { Slot } from '@radix-ui/react-slot';
 import { cva } from 'class-variance-authority';
 import * as AvatarPrimitive from '@radix-ui/react-avatar';
@@ -28,14 +28,16 @@ import config from 'sitecore.config';
 import { Slider } from 'src/components/content/testimonials/list/Testimonials.Slider';
 import { Badge } from 'components/ui/badge';
 import { Tiles } from 'src/components/content/stats/Stats.Tiles';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from 'components/ui/dialog';
+import { Input } from 'components/ui/input';
+import { getAllArticles, getAllProducts, getAllAuthors, getAllFAQs, getFeaturedProducts, formatDate as formatDate_e48efc7333ac73f929d9b272a527b63e4cd08f90, getNextUpcomingEvent } from 'lib/data';
 import { Button as Button_84330b1bbe8a1bb4486fd11a1e9edfcb73dcb72a } from 'src/components/ui/button';
 import { Card, CardContent, CardFooter } from 'src/components/ui/card';
 import { Badge as Badge_4993aa9339ae187afc55b9486739db65fa14e5ba } from 'src/components/ui/badge';
 import { formatPrice, formatDate } from 'src/lib/data';
-import { getFeaturedProducts, formatDate as formatDate_e48efc7333ac73f929d9b272a527b63e4cd08f90, getNextUpcomingEvent } from 'lib/data';
 import { ProductCard } from 'src/components/content/products/teaser/_productCard';
 import { Tiles as Tiles_49423b085a70264a020b434efb2a0fbe4b23f2fe } from 'src/components/content/products/list/Product.Tiles';
-import { Input } from 'src/components/ui/input';
+import { Input as Input_8fb801067357a5f2d15d1b82de435f63535674f2 } from 'src/components/ui/input';
 import { getLucideIcon } from 'lib/iconUtils';
 import { NewsGrid } from 'src/components/content/news/List/News.Grid';
 import client_e836c8c83336161d23b12b70a0f420d5d397b9fe from 'lib/sitecore-client';
@@ -89,6 +91,10 @@ const importMap = [
       { name: 'Search', value: Search },
       { name: 'Moon', value: Moon },
       { name: 'Sun', value: Sun },
+      { name: 'FileText', value: FileText },
+      { name: 'ShoppingBag', value: ShoppingBag },
+      { name: 'User', value: User },
+      { name: 'HelpCircle', value: HelpCircle },
       { name: 'QuoteIcon', value: QuoteIcon },
       { name: 'ShoppingCart', value: ShoppingCart },
       { name: 'AlertCircle', value: AlertCircle },
@@ -221,6 +227,33 @@ const importMap = [
     ]
   },
   {
+    module: 'components/ui/dialog',
+    exports: [
+      { name: 'Dialog', value: Dialog },
+      { name: 'DialogContent', value: DialogContent },
+      { name: 'DialogHeader', value: DialogHeader },
+      { name: 'DialogTitle', value: DialogTitle },
+    ]
+  },
+  {
+    module: 'components/ui/input',
+    exports: [
+      { name: 'Input', value: Input },
+    ]
+  },
+  {
+    module: 'lib/data',
+    exports: [
+      { name: 'getAllArticles', value: getAllArticles },
+      { name: 'getAllProducts', value: getAllProducts },
+      { name: 'getAllAuthors', value: getAllAuthors },
+      { name: 'getAllFAQs', value: getAllFAQs },
+      { name: 'getFeaturedProducts', value: getFeaturedProducts },
+      { name: 'formatDate', value: formatDate_e48efc7333ac73f929d9b272a527b63e4cd08f90 },
+      { name: 'getNextUpcomingEvent', value: getNextUpcomingEvent },
+    ]
+  },
+  {
     module: 'src/components/ui/button',
     exports: [
       { name: 'Button', value: Button_84330b1bbe8a1bb4486fd11a1e9edfcb73dcb72a },
@@ -248,14 +281,6 @@ const importMap = [
     ]
   },
   {
-    module: 'lib/data',
-    exports: [
-      { name: 'getFeaturedProducts', value: getFeaturedProducts },
-      { name: 'formatDate', value: formatDate_e48efc7333ac73f929d9b272a527b63e4cd08f90 },
-      { name: 'getNextUpcomingEvent', value: getNextUpcomingEvent },
-    ]
-  },
-  {
     module: 'src/components/content/products/teaser/_productCard',
     exports: [
       { name: 'ProductCard', value: ProductCard },
@@ -270,7 +295,7 @@ const importMap = [
   {
     module: 'src/components/ui/input',
     exports: [
-      { name: 'Input', value: Input },
+      { name: 'Input', value: Input_8fb801067357a5f2d15d1b82de435f63535674f2 },
     ]
   },
   {

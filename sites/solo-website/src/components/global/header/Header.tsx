@@ -8,6 +8,8 @@ import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 import { Button } from "components/ui/button";
 import { getThemeVariant } from "lib/theme-config";
+import { Default as GlobalSearch } from "components/content/search/GlobalSearch";
+import { ComponentProps } from "lib/component-props";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -19,10 +21,9 @@ const navigation = [
   { name: "Impressum", href: "/impressum" },
 ];
 
-export function Default() {
+export function Default({page, rendering} : ComponentProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [_, setSearchOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
   const pathname = usePathname();
   const { theme, setTheme } = useTheme();
 
@@ -140,7 +141,7 @@ export function Default() {
       </div>
 
       {/* Placeholder for Search Dialog */}
-      {/* <SearchDialog open={searchOpen} onOpenChange={setSearchOpen} /> */}
+      <GlobalSearch open={searchOpen} onOpenChange={setSearchOpen} page={page} rendering={rendering} />
     </>
   );
 }

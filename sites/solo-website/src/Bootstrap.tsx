@@ -12,10 +12,10 @@ const Bootstrap = ({
   isPreviewMode: boolean;
 }): JSX.Element | null => {
   useEffect(() => {
-    if (process.env.NODE_ENV === 'development') {
+    /*if (process.env.NODE_ENV === 'development') {
       console.debug('Browser Events SDK is not initialized in development environment');
       return;
-    }
+    }*/
 
     if (isPreviewMode) {
       console.debug('Browser Events SDK is not initialized in edit and preview modes');

@@ -1,7 +1,7 @@
 import { Text as SdkText, RichText } from "@sitecore-content-sdk/nextjs";
 import { TextProps } from "./Text.Props";
 
-export async function Divider({ fields }: TextProps) {
+export function Divider({ fields }: TextProps) {
   if (!fields) return null;
   const { Title, Text } = fields;
   return (

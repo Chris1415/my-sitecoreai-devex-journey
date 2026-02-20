@@ -18,6 +18,11 @@ import * as Tagcloud from 'src/components/content/tagcloud/Tagcloud';
 import * as StatsTiles from 'src/components/content/stats/Stats.Tiles';
 import * as StatsCards from 'src/components/content/stats/Stats.Cards';
 import * as Stats from 'src/components/content/stats/Stats';
+import * as useSearchField from 'src/components/content/search/useSearchField';
+import * as useEvent from 'src/components/content/search/useEvent';
+import * as models from 'src/components/content/search/models';
+import * as GlobalSearch from 'src/components/content/search/GlobalSearch';
+import * as consts from 'src/components/content/search/consts';
 import * as Quote from 'src/components/content/quote/Quote';
 import * as ProductCard from 'src/components/content/products/teaser/ProductCard';
 import * as Products from 'src/components/content/products/list/Products';
@@ -57,7 +62,7 @@ import * as AuthorTeaser from 'src/components/content/author/teaser/AuthorTeaser
 export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['BYOCWrapper', BYOCServerWrapper],
   ['FEaaSWrapper', FEaaSServerWrapper],
-  ['Form', Form],
+  ['Form', { ...Form, componentType: 'client' }],
   ['Container', { ...Container }],
   ['PartialDesignDynamicPlaceholder', { ...PartialDesignDynamicPlaceholder }],
   ['Header', { ...Header, componentType: 'client' }],
@@ -66,6 +71,11 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['Testimonials', { ...TestimonialsSlider, ...Testimonials }],
   ['Tagcloud', { ...Tagcloud }],
   ['Stats', { ...StatsTiles, ...StatsCards, ...Stats, componentType: 'client' }],
+  ['useSearchField', { ...useSearchField, componentType: 'client' }],
+  ['useEvent', { ...useEvent, componentType: 'client' }],
+  ['models', { ...models }],
+  ['GlobalSearch', { ...GlobalSearch, componentType: 'client' }],
+  ['consts', { ...consts }],
   ['Quote', { ...Quote }],
   ['ProductCard', { ...ProductCard }],
   ['Products', { ...Products }],
