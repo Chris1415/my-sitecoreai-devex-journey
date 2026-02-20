@@ -54,9 +54,7 @@ export function Default({ fields, page }: HeroBannerProps) {
       </div>
 
       {/* Decorative element */}
-      {!page?.mode?.isEditing && (
-        <div className="absolute -bottom-24 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-primary/5 blur-3xl" />
-      )}
+      <div className="absolute -bottom-24 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-primary/5 blur-3xl" />
     </div>
   );
 }

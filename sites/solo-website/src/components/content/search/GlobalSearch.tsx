@@ -104,6 +104,7 @@ export function Default({
     if (allSettled && !viewedEventSentRef.current) {
       viewedEventSentRef.current = true;
       sendEvent("viewed");
+
     }
   }, [allSettled, sendEvent]);
 
