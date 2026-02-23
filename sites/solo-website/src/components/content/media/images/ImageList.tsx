@@ -63,18 +63,20 @@ export function Default({ fields }: ImageListProps) {
           </p>
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {children?.results?.map((img, index) => (
+          {(children?.results ?? []).map((img, index) => (
             <Card
               key={index}
               className="group cursor-pointer overflow-hidden transition-all hover:shadow-xl"
             >
               <CardContent className="p-0">
                 <div className="relative aspect-video bg-muted">
-                  <SdkImage
-                    field={img.Image.jsonValue}
-                    fill={"true"}
+                  {img?.Image?.jsonValue && (
+                    <SdkImage
+                      field={img.Image.jsonValue}
+                      fill={"true"}
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
+                    />
+                  )}
                   {img.Generated?.jsonValue && <AIGeneratedBadge />}
                   <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
                 </div>

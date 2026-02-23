@@ -82,7 +82,7 @@ export function Slider({ fields, page, rendering, params }: BrandsProps) {
   }
 
   const { Title, children } = datasource;
-  const Elements = children?.results;
+  const Elements = children?.results ?? [];
 
   return (
     <div className="bg-background py-8 md:py-10 overflow-hidden border-y">

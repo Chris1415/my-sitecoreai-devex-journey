@@ -23,25 +23,33 @@ export interface TagElement {
   };
 }
 
-export function Default({ fields }: TagcloudProps) {
-  const { Title } = fields?.data?.datasource;
-  const Elements = fields?.data?.datasource?.children?.results;
+export function Default({ fields, page }: TagcloudProps) {
+  const datasource = fields?.data?.datasource;
+  if (!datasource) {
+    if (page?.mode?.isEditing) {
+      return <div>Please configure Tagcloud datasource</div>;
+    }
+    return null;
+  }
+
+  const Title = datasource.Title;
+  const Elements = datasource?.children?.results ?? [];
 
   return (
     <div className="border-y border-border bg-muted/30 py-8 md:py-12 my-8">
       <div className="mx-auto px-4 md:px-8 lg:px-12">
         <div className="mx-auto">
           <h2 className="mb-8 text-3xl font-bold tracking-tight">
-            <Text field={Title.jsonValue} />
+            <Text field={Title?.jsonValue} />
           </h2>
           <div className="flex flex-wrap gap-3">
-            {Elements.map((element) => (
+            {Elements.map((element, index) => (
               <Badge
-                key={element.Name.jsonValue.value}
+                key={element?.Name?.jsonValue?.value ?? `tag-${index}`}
                 variant="secondary"
                 className="px-4 py-2"
               >
-                <Text field={element.Name.jsonValue} />
+                <Text field={element?.Name?.jsonValue} />
               </Badge>
             ))}
           </div>

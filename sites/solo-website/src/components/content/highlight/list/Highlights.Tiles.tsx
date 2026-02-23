@@ -8,7 +8,7 @@ export function Tiles({
   params,
 }: HighlightTeaserProps) {
   const datasource = fields?.data?.datasource;
-  const Elements = datasource?.children?.results;
+  const Elements = datasource?.children?.results ?? [];
 
   // Return early if no datasource
   if (!datasource) {
