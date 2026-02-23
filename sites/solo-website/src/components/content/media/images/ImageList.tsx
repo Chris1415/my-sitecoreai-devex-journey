@@ -43,7 +43,7 @@ interface Image {
   };
 }
 
-export function Default({ fields, page }: ImageListProps) {
+export function Default({ fields }: ImageListProps) {
   const datasource = fields?.data?.datasource;
 
   if (!datasource) {

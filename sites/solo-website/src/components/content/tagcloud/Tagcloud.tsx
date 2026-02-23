@@ -23,7 +23,7 @@ export interface TagElement {
   };
 }
 
-export function Default({ fields, page, rendering, params }: TagcloudProps) {
+export function Default({ fields }: TagcloudProps) {
   const { Title } = fields?.data?.datasource;
   const Elements = fields?.data?.datasource?.children?.results;
 

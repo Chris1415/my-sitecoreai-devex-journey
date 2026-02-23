@@ -2,7 +2,7 @@ import { Text } from "@sitecore-content-sdk/nextjs";
 import { Card, CardContent } from "components/ui/card";
 import { HighlightTeaserProps } from "./Highlights";
 
-export function List({ fields, page }: HighlightTeaserProps) {
+export function List({ fields }: HighlightTeaserProps) {
   const datasource = fields?.data?.datasource;
   const Elements = datasource?.children?.results;
 

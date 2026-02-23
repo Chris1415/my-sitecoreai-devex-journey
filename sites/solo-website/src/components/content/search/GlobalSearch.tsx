@@ -37,7 +37,7 @@ export function Default({
 }: SearchDialogProps) {
   void page; // required by SearchDialogProps; reserved for future use (e.g. editing mode)
   const [query, setQuery] = useState("");
-  const [products, setProducts] = useState<Product[]>([]);
+  const [products] = useState<Product[]>([]);
 
   /* Search Stuff */
   const pageSize = 10;
