@@ -7,7 +7,7 @@ import { routing } from 'src/i18n/routing';
 import scConfig from 'sitecore.config';
 import client from 'src/lib/sitecore-client';
 import Layout, { RouteFields } from 'src/Layout';
-import components from '.sitecore/component-map';
+import components from 'src/component-map';
 import Providers from 'src/Providers';
 import { NextIntlClientProvider } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';

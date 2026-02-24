@@ -1,19 +1,20 @@
 ﻿---
-ID: "53271024-95c1-4c08-aacb-10afde08f7d1"
-Parent: "869e4470-e55a-499e-9b91-d08ae3790b2e"
-Template: "1105b8f8-1e00-426b-bf1f-c840742d827b"
-Path: "/sitecore/content/solo/solo-website/Presentation/Page Designs/Article Page"
+ID: "66daea5c-e264-4704-a220-81af42d21cdd"
+Parent: "8075d86e-2dbb-4e64-99d9-66e8b1d94112"
+Template: "5c547d4e-7111-4995-95b0-6b561751bf2e"
+Path: /sitecore/layout/Placeholder Settings/Project/solo/MediaText
 SharedFields:
-- ID: "0966b999-0d0e-4278-acc9-9da69d461fe6"
-  Hint: PartialDesigns
-  Value: "de1f0e1b-d3da-4c8e-aba1-82349e092912|6dd20267-d064-4a2a-a48b-0461b64ad5b1|8076abf8-b02b-480c-baca-2e4218551f8c"
-- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
-  Hint: __Thumbnail
-  Value: |
-    <image mediaid="{BE0BD912-E8BB-434D-9E31-CDE2569B9CFD}" />
+- ID: "7256bdab-1fd2-49dd-b205-cb4873d2917c"
+  Hint: Placeholder Key
+  Value: "media-text-{*}"
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "b70072c7-4496-467d-b0a3-4415164833c0"
+  Value: "ee3930d6-a3d6-42bc-85b7-75ffd52846bb"
+- ID: "e391b526-d0c5-439d-803e-17512eae6222"
+  Hint: Allowed Controls
+  Value: |
+    {9CFD5091-7C21-45A1-BC1B-3116F0F004B6}
+    {98F90C1F-F0DB-420D-8F70-1B9FAE226B45}
 Languages:
 - Language: en
   Versions:
@@ -21,7 +22,7 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20251212T143930Z
+      Value: 20251218T113258Z
     - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
       Hint: __Owner
       Value: |
@@ -32,11 +33,11 @@ Languages:
         sitecore\christian.hahn@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "200b1b35-1358-425b-8a8b-b7a49ce12b23"
+      Value: "e36ab77d-7bb5-4361-8f31-2c392ec1b485"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\christian.hahn@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260223T152455Z
+      Value: 20260224T104934Z

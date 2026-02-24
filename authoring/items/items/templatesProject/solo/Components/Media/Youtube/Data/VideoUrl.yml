@@ -1,19 +1,18 @@
 ﻿---
-ID: "53271024-95c1-4c08-aacb-10afde08f7d1"
-Parent: "869e4470-e55a-499e-9b91-d08ae3790b2e"
-Template: "1105b8f8-1e00-426b-bf1f-c840742d827b"
-Path: "/sitecore/content/solo/solo-website/Presentation/Page Designs/Article Page"
+ID: "c0e3cd48-06ae-462e-a88b-0538e35b9798"
+Parent: "e04c1e07-a078-4f94-a258-62a3ee8738c9"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/Project/solo/Components/Media/Youtube/Data/VideoUrl
 SharedFields:
-- ID: "0966b999-0d0e-4278-acc9-9da69d461fe6"
-  Hint: PartialDesigns
-  Value: "de1f0e1b-d3da-4c8e-aba1-82349e092912|6dd20267-d064-4a2a-a48b-0461b64ad5b1|8076abf8-b02b-480c-baca-2e4218551f8c"
-- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
-  Hint: __Thumbnail
-  Value: |
-    <image mediaid="{BE0BD912-E8BB-434D-9E31-CDE2569B9CFD}" />
+- ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
+  Hint: Type
+  Value: "Single-Line Text"
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 100
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "b70072c7-4496-467d-b0a3-4415164833c0"
+  Value: "877dc1c3-040c-4567-a441-69ea9cf4ec1d"
 Languages:
 - Language: en
   Versions:
@@ -21,7 +20,7 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20251212T143930Z
+      Value: 20260224T104842Z
     - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
       Hint: __Owner
       Value: |
@@ -32,11 +31,11 @@ Languages:
         sitecore\christian.hahn@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "200b1b35-1358-425b-8a8b-b7a49ce12b23"
+      Value: "5cbe07c3-f875-4a2d-add9-d31f29922b72"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\christian.hahn@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260223T152455Z
+      Value: 20260224T104843Z

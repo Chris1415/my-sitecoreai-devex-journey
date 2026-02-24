@@ -38,6 +38,12 @@ import * as NewsKeyTakeaways from 'src/components/content/news/Details/NewsKeyTa
 import * as NewsDetailsContent from 'src/components/content/news/Details/NewsDetailsContent';
 import * as NewsDetails from 'src/components/content/news/Details/NewsDetails';
 import * as NewsContainer from 'src/components/content/news/Conainer/NewsContainer';
+import * as Youtube from 'src/components/content/media/Youtube';
+import * as ReadMore from 'src/components/content/media/ReadMore';
+import * as MediaTextProps from 'src/components/content/media/MediaTextProps';
+import * as MediaTextMediaLeft from 'src/components/content/media/MediaText.MediaLeft';
+import * as MediaText from 'src/components/content/media/MediaText';
+import * as Image from 'src/components/content/media/Image';
 import * as _hotspotMarker from 'src/components/content/media/images/_hotspotMarker';
 import * as ImageList from 'src/components/content/media/images/ImageList';
 import * as ImageHotspot from 'src/components/content/media/images/ImageHotspot';
@@ -89,6 +95,11 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['NewsDetailsContent', { ...NewsDetailsContent }],
   ['NewsDetails', { ...NewsDetails }],
   ['NewsContainer', { ...NewsContainer }],
+  ['Youtube', { ...Youtube }],
+  ['ReadMore', { ...ReadMore, componentType: 'client' }],
+  ['MediaTextProps', { ...MediaTextProps }],
+  ['MediaText', { ...MediaTextMediaLeft, ...MediaText }],
+  ['Image', { ...Image }],
   ['_hotspotMarker', { ..._hotspotMarker, componentType: 'client' }],
   ['ImageList', { ...ImageList, componentType: 'client' }],
   ['ImageHotspot', { ...ImageHotspot, componentType: 'client' }],

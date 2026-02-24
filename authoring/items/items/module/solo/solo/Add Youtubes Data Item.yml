@@ -1,19 +1,21 @@
 ﻿---
-ID: "53271024-95c1-4c08-aacb-10afde08f7d1"
-Parent: "869e4470-e55a-499e-9b91-d08ae3790b2e"
-Template: "1105b8f8-1e00-426b-bf1f-c840742d827b"
-Path: "/sitecore/content/solo/solo-website/Presentation/Page Designs/Article Page"
+ID: "145454f9-407e-4e91-a126-14e14a161a2d"
+Parent: "11af1fdf-91a1-4752-9144-d78cf1de6568"
+Template: "3aea335c-d06d-45b1-841a-cbc8d2d1ce40"
+Path: /sitecore/system/Settings/Project/solo/solo /Add Youtubes Data Item
 SharedFields:
-- ID: "0966b999-0d0e-4278-acc9-9da69d461fe6"
-  Hint: PartialDesigns
-  Value: "de1f0e1b-d3da-4c8e-aba1-82349e092912|6dd20267-d064-4a2a-a48b-0461b64ad5b1|8076abf8-b02b-480c-baca-2e4218551f8c"
-- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
-  Hint: __Thumbnail
-  Value: |
-    <image mediaid="{BE0BD912-E8BB-434D-9E31-CDE2569B9CFD}" />
+- ID: "52c91c75-6698-4701-a8a2-242ace59a8d6"
+  Hint: Location
+  Value: "{BA2F959D-A614-4C92-8B57-F1FC1A323ABE}"
+- ID: "7868e6bc-525c-4fce-ab8a-77da3e09b171"
+  Hint: Name
+  Value: Youtube
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "b70072c7-4496-467d-b0a3-4415164833c0"
+  Value: "91ded1b5-bf94-4d12-aaf4-5bb3d6b9e4fd"
+- ID: "e62c28f0-9d3b-46e2-8bec-a5e120542499"
+  Hint: Template
+  Value: "{FBC8A89C-AD32-4ADB-B3CA-3F200D3F99C8}"
 Languages:
 - Language: en
   Versions:
@@ -21,7 +23,7 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20251212T143930Z
+      Value: 20260224T104719Z
     - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
       Hint: __Owner
       Value: |
@@ -32,11 +34,11 @@ Languages:
         sitecore\christian.hahn@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "200b1b35-1358-425b-8a8b-b7a49ce12b23"
+      Value: "6dafd5e8-4957-4d6e-af7f-4ba95fe9d986"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\christian.hahn@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260223T152455Z
+      Value: 20260224T104719Z

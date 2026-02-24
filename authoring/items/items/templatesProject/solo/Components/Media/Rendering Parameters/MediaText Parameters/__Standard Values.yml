@@ -1,0 +1,27 @@
+﻿---
+ID: "7e8ca542-1fd5-47b8-8406-1c003718b062"
+Parent: "7785ebf9-758f-43f8-ac7b-96c65fec0274"
+Template: "7785ebf9-758f-43f8-ac7b-96c65fec0274"
+Path: /sitecore/templates/Project/solo/Components/Media/Rendering Parameters/MediaText Parameters/__Standard Values
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20211012T120926Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\JssImport
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "144527cc-b6fd-4b12-9fcc-5f9cfca23cd6"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\christian.hahn@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260224T103458Z

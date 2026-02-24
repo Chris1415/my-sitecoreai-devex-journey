@@ -43,22 +43,6 @@ function BrandTooltip({
   );
 }
 
-export interface BrandsProps extends ComponentProps {
-  id: string;
-  fields: {
-    data: {
-      datasource: {
-        Title: {
-          jsonValue: TextField;
-        };
-        children: {
-          results: Brand[];
-        };
-      };
-    };
-  };
-}
-
 interface Brand {
   Logo: {
     jsonValue: ImageField;
@@ -68,6 +52,22 @@ interface Brand {
   };
   Description: {
     jsonValue: Field<string>;
+  };
+}
+
+export interface BrandsProps extends ComponentProps {
+  id: string;
+  fields: {
+    data: {
+      datasource: {
+        children: {
+          results: Brand[];
+        };
+        Title: {
+          jsonValue: TextField;
+        };
+      };
+    };
   };
 }
 

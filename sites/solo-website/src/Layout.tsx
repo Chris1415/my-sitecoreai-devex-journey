@@ -4,7 +4,7 @@ import Scripts from "src/Scripts";
 import SitecoreStyles from "components/content-sdk/SitecoreStyles";
 import { DesignLibraryLayout } from "./DesignLibraryLayout";
 import { AppPlaceholder } from "@sitecore-content-sdk/nextjs";
-import componentMap from ".sitecore/component-map";
+import componentMap from "src/component-map";
 
 interface LayoutProps {
   page: Page;

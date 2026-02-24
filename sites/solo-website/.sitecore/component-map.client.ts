@@ -13,6 +13,7 @@ import * as useSearchField from 'src/components/content/search/useSearchField';
 import * as useEvent from 'src/components/content/search/useEvent';
 import * as GlobalSearch from 'src/components/content/search/GlobalSearch';
 import * as Signup from 'src/components/content/newsletter/Signup';
+import * as ReadMore from 'src/components/content/media/ReadMore';
 import * as _hotspotMarker from 'src/components/content/media/images/_hotspotMarker';
 import * as ImageList from 'src/components/content/media/images/ImageList';
 import * as ImageHotspot from 'src/components/content/media/images/ImageHotspot';
@@ -33,6 +34,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['useEvent', { ...useEvent }],
   ['GlobalSearch', { ...GlobalSearch }],
   ['Signup', { ...Signup }],
+  ['ReadMore', { ...ReadMore }],
   ['_hotspotMarker', { ..._hotspotMarker }],
   ['ImageList', { ...ImageList }],
   ['ImageHotspot', { ...ImageHotspot }],

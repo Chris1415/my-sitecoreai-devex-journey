@@ -10,10 +10,10 @@ SharedFields:
 - ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
   Hint: __Thumbnail
   Value: |
-    <image mediaid="{FF58B75F-E957-43BB-96D7-EE56231E66CB}" />
+    <image mediaid="{4BB2CD94-F327-4B9A-8D11-EF1A89FCFDB5}" />
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "60b87e16-5766-4210-b9c3-1bac36c6686c"
+  Value: "ad799007-5c32-46c1-819c-d1c108a681c5"
 Languages:
 - Language: "de-DE"
   Versions:
@@ -75,11 +75,11 @@ Languages:
         sitecore\christian.hahn@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "59b225b7-4c87-447b-a000-cf6fded4530a"
+      Value: "1bb0a53f-4c6c-4fa1-bd3f-a5a12a49f89b"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\christian.hahn@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20251209T160836Z
+      Value: 20260223T152422Z
