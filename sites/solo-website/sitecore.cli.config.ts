@@ -26,6 +26,7 @@ export default defineCliConfig({
       "src/components/ui/*",
       "src/components/content/products/teaser/_productCard.tsx",
       "src/components/content/news/list/_card.tsx",
+      "src/components/content/media/helper/*",
     ],
   },
 });

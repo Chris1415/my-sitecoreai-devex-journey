@@ -39,7 +39,6 @@ import * as NewsDetailsContent from 'src/components/content/news/Details/NewsDet
 import * as NewsDetails from 'src/components/content/news/Details/NewsDetails';
 import * as NewsContainer from 'src/components/content/news/Conainer/NewsContainer';
 import * as Youtube from 'src/components/content/media/Youtube';
-import * as ReadMore from 'src/components/content/media/ReadMore';
 import * as MediaTextProps from 'src/components/content/media/MediaTextProps';
 import * as MediaTextMediaLeft from 'src/components/content/media/MediaText.MediaLeft';
 import * as MediaText from 'src/components/content/media/MediaText';
@@ -96,7 +95,6 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['NewsDetails', { ...NewsDetails }],
   ['NewsContainer', { ...NewsContainer }],
   ['Youtube', { ...Youtube }],
-  ['ReadMore', { ...ReadMore, componentType: 'client' }],
   ['MediaTextProps', { ...MediaTextProps }],
   ['MediaText', { ...MediaTextMediaLeft, ...MediaText }],
   ['Image', { ...Image }],
