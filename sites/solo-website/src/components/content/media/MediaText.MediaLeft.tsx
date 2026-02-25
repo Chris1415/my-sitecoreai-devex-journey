@@ -2,6 +2,7 @@ import React, { JSX } from "react";
 import {
   AppPlaceholder,
   Link,
+  LinkField,
   RichText,
   Text,
 } from "@sitecore-content-sdk/nextjs";
@@ -54,7 +55,10 @@ function DesignViewFallback({ styles }: { styles?: string }) {
 }
 
 function linkHasValue(
-  f: { value?: { text?: string }; jsonValue?: { value?: { text?: string } } } | null | undefined
+  f:
+    | { value?: { text?: string }; jsonValue?: { value?: { text?: string } } }
+    | null
+    | undefined,
 ): boolean {
   return Boolean(f && (f.value?.text || f.jsonValue?.value?.text));
 }
@@ -80,21 +84,27 @@ export function MediaLeft({
     return null;
   }
 
-  const dynamicId =
-    params?.DynamicPlaceholderId ||
-    params?.RenderingIdentifier ||
-    rendering?.uid ||
-    "0";
-  const phKey = `media-text-${dynamicId}`;
+  const phKey = `media-text-${params?.DynamicPlaceholderId}`;
 
+  const isEditing = Boolean(page?.mode?.isEditing);
+  const ds = fields.data?.datasource;
+  const primaryCta = (ds?.PrimaryCta ?? fields.PrimaryCta) as
+    | LinkField
+    | null
+    | undefined;
+  const secondaryCta = (ds?.SecondaryCta ?? fields.SecondaryCta) as
+    | LinkField
+    | null
+    | undefined;
+
+  const tagField = fields.Tag ?? ds?.Tag;
   const hasTag =
-    (page?.mode?.isEditing || fields.Tag?.value) && fields.Tag;
+    (isEditing || (tagField && "value" in tagField && tagField.value)) &&
+    tagField;
   const hasPrimaryCta =
-    (page?.mode?.isEditing || linkHasValue(fields.PrimaryCta)) &&
-    fields.PrimaryCta;
+    primaryCta != null && (isEditing || linkHasValue(primaryCta));
   const hasSecondaryCta =
-    (page?.mode?.isEditing || linkHasValue(fields.SecondaryCta)) &&
-    fields.SecondaryCta;
+    secondaryCta != null && (isEditing || linkHasValue(secondaryCta));
 
   const ctaButtons = (
     <div className="flex shrink-0 flex-nowrap items-center gap-2 sm:gap-3">
@@ -104,7 +114,7 @@ export function MediaLeft({
           className="group/primary relative overflow-hidden rounded-full border-0 px-3 py-1.5 text-xs font-semibold shadow-md shadow-primary/20 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-primary/25 active:scale-[0.98]"
         >
           <span className="relative z-10 flex items-center gap-1.5">
-            <Link field={fields.PrimaryCta!} />
+            <Link field={primaryCta!} />
             <ExternalLink className="h-3.5 w-3.5 transition-transform duration-200 group-hover/primary:translate-x-0.5 group-hover/primary:-translate-y-0.5" />
           </span>
         </Button>
@@ -125,27 +135,35 @@ export function MediaLeft({
   );
 
   return (
-    <section className={cn("relative mt-3 overflow-hidden sm:my-3", params?.styles)}>
-      <div className="pointer-events-none absolute -top-24 -left-24 h-64 w-64 rounded-full bg-primary/5 blur-3xl" aria-hidden />
+    <div
+      className={cn("relative my-6 overflow-hidden", params?.styles)}
+    >
+      <div
+        className="pointer-events-none absolute -top-24 -left-24 h-64 w-64 rounded-full bg-primary/5 blur-3xl"
+        aria-hidden
+      />
       <div className="relative px-4 md:px-8 lg:px-12">
         <div className="rounded-2xl border bg-linear-to-br from-muted/25 to-background p-5 sm:p-6 md:p-10 shadow-sm">
-          {hasTag && (
-            <div className="mb-5 sm:mb-6">
-              <span
-                className={cn(
-                  "inline-flex w-fit items-center gap-2 rounded-full px-4 py-2 text-xs font-bold uppercase tracking-widest animate-fade-in-up",
-                  "border border-primary/30 bg-linear-to-r from-primary/10 via-primary/20 to-primary/10",
-                  "text-primary shadow-sm ring-2 ring-primary/5",
-                  "transition-all duration-300 hover:scale-[1.02] hover:border-primary/50 hover:shadow-md hover:shadow-primary/20 hover:ring-primary/10"
-                )}
-              >
-                <Sparkles className="h-4 w-4 shrink-0 text-primary" />
-                <Text field={fields.Tag!} />
-              </span>
-            </div>
-          )}
-          <div className="grid gap-6 md:gap-8 lg:grid-cols-12 lg:items-stretch">
-            <div className="order-1 lg:order-1 lg:col-span-7 lg:min-h-0">
+          <div className="grid grid-cols-1 gap-6 md:gap-8 lg:grid-cols-12 lg:grid-rows-[auto_1fr] lg:items-stretch">
+            {/* Tag: row 1, right column only — media aligns with title, not tag */}
+            {hasTag && (
+              <div className="order-2 lg:col-span-5 lg:col-start-8 lg:row-start-1">
+                <span
+                  className={cn(
+                    "inline-flex w-fit items-center gap-2 rounded-full px-4 py-2 text-xs font-bold uppercase tracking-widest animate-fade-in-up",
+                    "border border-primary/30 bg-linear-to-r from-primary/10 via-primary/20 to-primary/10",
+                    "text-primary shadow-sm ring-2 ring-primary/5",
+                    "transition-all duration-300 hover:scale-[1.02] hover:border-primary/50 hover:shadow-md hover:shadow-primary/20 hover:ring-primary/10",
+                  )}
+                >
+                  <Sparkles className="h-4 w-4 shrink-0 text-primary" />
+                  <Text field={tagField!} />
+                </span>
+              </div>
+            )}
+
+            {/* Media: row 2, left column — aligns with title */}
+            <div className="order-1 lg:col-span-7 lg:col-start-1 lg:row-start-2 lg:min-h-0">
               <div className="group relative w-full aspect-video overflow-hidden rounded-2xl border bg-linear-to-br from-muted/40 via-muted/30 to-muted/20 shadow-xl ring-1 ring-black/5 transition-all duration-500 hover:shadow-2xl hover:ring-primary/10 [&>*]:h-full [&>*]:w-full">
                 <AppPlaceholder
                   name={phKey}
@@ -153,15 +171,11 @@ export function MediaLeft({
                   page={page}
                   componentMap={componentMap}
                 />
-                {page?.mode?.isEditing && (
-                  <div className="absolute inset-x-0 bottom-0 border-t bg-background/90 px-4 py-3 text-xs text-muted-foreground backdrop-blur">
-                    Placeholder key: <span className="font-mono">{phKey}</span>
-                  </div>
-                )}
               </div>
             </div>
 
-            <div className="order-2 lg:order-2 lg:col-span-5 lg:flex lg:min-h-0 lg:flex-col">
+            {/* Title + Text: row 2, right column — same row as media */}
+            <div className="order-2 lg:col-span-5 lg:col-start-8 lg:row-start-2 lg:flex lg:min-h-0 lg:flex-col">
               <div className="flex flex-col gap-5 sm:gap-6">
                 <h2 className="text-balance text-2xl font-bold tracking-tight md:text-3xl">
                   <Text field={fields.Title} />
@@ -173,7 +187,10 @@ export function MediaLeft({
                       <RichText field={fields.Text} />
                     </div>
                   ) : (
-                    <ReadMore className="lg:flex-1 lg:min-h-0" actions={ctaButtons}>
+                    <ReadMore
+                      className="lg:flex-1 lg:min-h-0"
+                      actions={ctaButtons}
+                    >
                       <RichText field={fields.Text} />
                     </ReadMore>
                   )
@@ -184,7 +201,7 @@ export function MediaLeft({
                     </p>
                   )
                 )}
-                {!fields.Text && (hasPrimaryCta || hasSecondaryCta) && (
+                {page?.mode?.isEditing && (
                   <div className="pt-2">{ctaButtons}</div>
                 )}
               </div>
@@ -192,6 +209,6 @@ export function MediaLeft({
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

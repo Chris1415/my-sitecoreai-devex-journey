@@ -12,6 +12,13 @@ export interface MediaTextProps extends ComponentProps {
     Tag?: TextField | null;
     PrimaryCta?: LinkField | null;
     SecondaryCta?: LinkField | null;
+    data?: {
+      datasource?: {
+        Tag?: TextField | null;
+        PrimaryCta?: LinkField | null;
+        SecondaryCta?: LinkField | null;
+      };
+    };
   };
   params: ComponentProps["params"] & {
     DynamicPlaceholderId?: string;
