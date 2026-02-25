@@ -19,17 +19,14 @@ const navigation = [
   { name: "Me", href: "/Me" },
 ];
 
-export function Default({page, rendering} : ComponentProps) {
+export function Default({ page, rendering }: ComponentProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const pathname = usePathname();
-  const { theme, setTheme } = useTheme();
-
+  const { resolvedTheme, setTheme } = useTheme();
   const themeVariant = getThemeVariant();
-  const logoPath = `/images/logo/${themeVariant}/hahn-solo-${
-    theme === "dark" ? "white" : "black"
-  }.png`;
-
+  // Use CSS dark: variant instead of theme - next-themes returns undefined on initial render
+  const logoBase = `/images/logo/${themeVariant}/hahn-solo`;
   return (
     <>
       <div className="">
@@ -40,11 +37,18 @@ export function Default({page, rendering} : ComponentProps) {
             className="flex items-center gap-3 transition-opacity duration-200 hover:opacity-80"
           >
             <Image
-              src={logoPath}
+              src={`${logoBase}-black.png`}
               alt="SOLO"
               width={120}
               height={32}
-              className="h-10 w-auto"
+              className="h-10 w-auto dark:hidden"
+            />
+            <Image
+              src={`${logoBase}-white.png`}
+              alt="SOLO"
+              width={120}
+              height={32}
+              className="h-10 w-auto hidden dark:block"
             />
           </Link>
 
@@ -71,7 +75,7 @@ export function Default({page, rendering} : ComponentProps) {
             <Button
               variant="ghost"
               size="icon"
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
               aria-label="Toggle theme"
             >
               <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
@@ -139,7 +143,12 @@ export function Default({page, rendering} : ComponentProps) {
       </div>
 
       {/* Placeholder for Search Dialog */}
-      <GlobalSearch open={searchOpen} onOpenChange={setSearchOpen} page={page} rendering={rendering} />
+      <GlobalSearch
+        open={searchOpen}
+        onOpenChange={setSearchOpen}
+        page={page}
+        rendering={rendering}
+      />
     </>
   );
 }

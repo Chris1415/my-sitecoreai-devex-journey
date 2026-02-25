@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { useTheme } from "next-themes";
 import { getThemeVariant } from "lib/theme-config";
 
 const footerLinks = {
@@ -26,11 +25,8 @@ const footerLinks = {
 };
 
 export function Default() {
-  const { theme } = useTheme();
   const themeVariant = getThemeVariant();
-  const logoPath = `/images/logo/${themeVariant}/hahn-solo-${
-    theme === "light" ? "black" : "white"
-  }.png`;
+  const logoBase = `/images/logo/${themeVariant}/hahn-solo`;
   return (
     <footer className="border-t border-border bg-muted/30">
       <div className="px-4 py-12 md:px-8 md:py-16 lg:px-12">
@@ -101,11 +97,18 @@ export function Default() {
             </p>
             <div className="flex items-center gap-3">
               <Image
-                src={logoPath}
+                src={`${logoBase}-black.png`}
                 alt="SOLO"
                 width={120}
                 height={32}
-                className="h-8 w-auto"
+                className="h-8 w-auto dark:hidden"
+              />
+              <Image
+                src={`${logoBase}-white.png`}
+                alt="SOLO"
+                width={120}
+                height={32}
+                className="h-8 w-auto hidden dark:block"
               />
             </div>
           </div>
