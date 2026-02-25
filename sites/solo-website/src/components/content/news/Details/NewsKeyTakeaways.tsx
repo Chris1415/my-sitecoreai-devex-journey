@@ -72,7 +72,7 @@ export function Default({ page }: ComponentProps) {
   return (
     <div className="basis-full">
       {keyTakeaways && keyTakeaways.length > 0 && (
-        <div className="mt-16 px-4 md:px-8 lg:px-12">
+        <div className="mt-8">
           <Card className="bg-linear-to-br from-primary/5 to-background">
             <CardContent className="p-8">
               <h3 className="mb-6 text-2xl font-bold">Key Takeaways</h3>

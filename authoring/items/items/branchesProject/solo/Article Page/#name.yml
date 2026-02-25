@@ -29,14 +29,14 @@ Languages:
               s:ds="local:/Data/News Stats"
               s:id="{515269B9-A578-4A42-87DA-ABCC38669016}"
               s:par="GridParameters&amp;FieldNames&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=1"
-              s:ph="/headless-main/sxa-news/news-container-9" />
+              s:ph="/headless-main/sxa-news/container-11/news-container-9" />
             <r
               uid="{90D6068D-719A-465B-A450-A7AEE8FD0F94}"
               p:after="*[1=2]"
               s:ds="local:/Data/News Images"
               s:id="{8600B9AE-2E94-4344-B24B-E8CDAA213161}"
               s:par="GridParameters&amp;FieldNames&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=2"
-              s:ph="/headless-main/sxa-news/container-2/news-container-10" />
+              s:ph="/headless-main/sxa-news/container-2/container-12/news-container-10" />
           </d>
         </r>
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
@@ -44,11 +44,11 @@ Languages:
       Value: 20251218T063510Z
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "5b61b67e-c44c-4e74-bc44-e2c8ac2c5626"
+      Value: "1082ddcf-773f-42e2-bc66-639a19c97769"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\christian.hahn@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20251218T120230Z
+      Value: 20260225T161954Z

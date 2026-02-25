@@ -223,7 +223,7 @@ export default async function Default({
     <div>
       {/* Related Articles */}
       {filteredArticles.length > 0 && (
-        <div className="border-t border-border bg-muted/30 py-12 md:py-16">
+        <div className="border-t border-border bg-muted/30 py-12 md:py-16 my-4">
           <div className="px-4 md:px-8 lg:px-12">
             <h2 className="mb-8 text-2xl font-bold tracking-tight">
               Related Articles
