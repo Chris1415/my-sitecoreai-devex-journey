@@ -4,6 +4,7 @@ import { suppressResizeObserverErrors } from "lib/utils";
 import { getThemeVariant, themeMetaColors } from "lib/theme-config";
 import { Viewport } from "next/types";
 import { getThemeFonts } from "lib/fonts";
+import { Analytics } from "@vercel/analytics/next";
 
 const themeVariant = getThemeVariant();
 const metaColors = themeMetaColors[themeVariant];
@@ -44,6 +45,7 @@ export default function RootLayout({
           {children}
         </ThemeProvider>
       </body>
+      <Analytics />
     </html>
   );
 }
