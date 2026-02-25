@@ -14,11 +14,8 @@ import { ComponentProps } from "lib/component-props";
 const navigation = [
   { name: "Home", href: "/" },
   { name: "Articles", href: "/articles" },
-  { name: "Events", href: "/events" },
-  { name: "Products", href: "/products" },
   { name: "FAQ", href: "/faq" },
   { name: "Me", href: "/Me" },
-  { name: "Impressum", href: "/impressum" },
 ];
 
 export function Default({page, rendering} : ComponentProps) {
