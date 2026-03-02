@@ -142,7 +142,7 @@ export function MediaLeft({
         className="pointer-events-none absolute -top-24 -left-24 h-64 w-64 rounded-full bg-primary/5 blur-3xl"
         aria-hidden
       />
-      <div className="relative px-4 md:px-8 lg:px-12">
+      <div className="relative mx-auto max-w-6xl px-4 md:px-8 lg:px-12">
         <div className="rounded-2xl border bg-linear-to-br from-muted/25 to-background p-5 sm:p-6 md:p-10 shadow-sm">
           <div className="grid grid-cols-1 gap-6 md:gap-8 lg:grid-cols-12 lg:grid-rows-[auto_1fr] lg:items-stretch">
             {/* Tag: row 1, right column only — media aligns with title, not tag */}
