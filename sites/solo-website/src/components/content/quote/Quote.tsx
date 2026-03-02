@@ -103,7 +103,7 @@ export default function Default({ fields, page, params }: QuoteProps) {
 
             {/* Quote text */}
             <div className="text-balance text-2xl font-medium italic leading-relaxed text-stone-800 transition-colors duration-300 group-hover/quote:text-stone-900 dark:text-white/90 dark:group-hover/quote:text-white md:text-3xl lg:text-4xl">
-              <Text field={quote} />
+              {page.mode.isEditing ? <Text field={quote} /> : <div dangerouslySetInnerHTML={{__html: quote.value as string}}/>}
             </div>
 
             {/* Decorative line */}

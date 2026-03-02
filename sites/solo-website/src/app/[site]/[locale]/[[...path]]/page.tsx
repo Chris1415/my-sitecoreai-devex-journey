@@ -1,30 +1,44 @@
-import { isDesignLibraryPreviewData } from '@sitecore-content-sdk/nextjs/editing';
-import { notFound } from 'next/navigation';
-import { draftMode } from 'next/headers';
-import { SiteInfo } from '@sitecore-content-sdk/nextjs';
-import sites from '.sitecore/sites.json';
-import { routing } from 'src/i18n/routing';
-import scConfig from 'sitecore.config';
-import client from 'src/lib/sitecore-client';
-import Layout, { RouteFields } from 'src/Layout';
-import components from 'src/component-map';
-import Providers from 'src/Providers';
-import { NextIntlClientProvider } from 'next-intl';
-import { setRequestLocale } from 'next-intl/server';
+import { isDesignLibraryPreviewData } from "@sitecore-content-sdk/nextjs/editing";
+import { notFound } from "next/navigation";
+import { draftMode } from "next/headers";
+import { SiteInfo } from "@sitecore-content-sdk/nextjs";
+import sites from ".sitecore/sites.json";
+import { routing } from "src/i18n/routing";
+import scConfig from "sitecore.config";
+import client from "src/lib/sitecore-client";
+import Layout, { RouteFields } from "src/Layout";
+import components from "src/component-map";
+import Providers from "src/Providers";
+import { NextIntlClientProvider } from "next-intl";
+import { setRequestLocale } from "next-intl/server";
 
 type PageProps = {
-  params: Promise<{ site: string; locale: string; path?: string[]; [key: string]: string | string[] | undefined }>;
+  params: Promise<{
+    site: string;
+    locale: string;
+    path?: string[];
+    [key: string]: string | string[] | undefined;
+  }>;
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
+
+export const revalidate = 600;
+
+const LOG_PREFIX = "[page]";
 
 export default async function Page({ params, searchParams }: PageProps) {
   const { site, locale, path } = await params;
   const draft = await draftMode();
 
-  // Set site and locale to be available in src/i18n/request.ts for fetching the dictionary
+  // SSG validation: log every time this component runs.
+  // - Build time: logs for each static path. Runtime: no log on repeat visits = SSG cache hit.
+  // - Runtime: log on every visit = dynamic rendering.
+  console.log(
+    `${LOG_PREFIX} Render | path: /${(path ?? []).join("/")} | site: ${site} | locale: ${locale} | draft: ${draft.isEnabled} | at: ${new Date().toISOString()}`,
+  );
+
   setRequestLocale(`${site}_${locale}`);
 
-  // Fetch the page data from Sitecore
   let page;
   if (draft.isEnabled) {
     const editingParams = await searchParams;
@@ -39,11 +53,16 @@ export default async function Page({ params, searchParams }: PageProps) {
 
   // If the page is not found, return a 404
   if (!page) {
+    console.log("Erro Page for path", path);
     notFound();
   }
 
   // Fetch the component data from Sitecore (Likely will be deprecated)
-  const componentProps = await client.getComponentData(page.layout, {}, components);
+  const componentProps = await client.getComponentData(
+    page.layout,
+    {},
+    components,
+  );
 
   return (
     <NextIntlClientProvider>
@@ -57,10 +76,10 @@ export default async function Page({ params, searchParams }: PageProps) {
 // This function gets called at build and export time to determine
 // pages for SSG ("paths", as tokenized array).
 export const generateStaticParams = async () => {
-  if (process.env.NODE_ENV !== 'development' && scConfig.generateStaticPaths) {
+  if (process.env.NODE_ENV !== "development" && scConfig.generateStaticPaths) {
     return await client.getAppRouterStaticParams(
       sites.map((site: SiteInfo) => site.name),
-      routing.locales.slice()
+      routing.locales.slice(),
     );
   }
   return [];
@@ -73,6 +92,9 @@ export const generateMetadata = async ({ params }: PageProps) => {
   // The same call as for rendering the page. Should be cached by default react behavior
   const page = await client.getPage(path ?? [], { site, locale });
   return {
-    title: (page?.layout.sitecore.route?.fields as RouteFields)?.Title?.value?.toString() || 'Page',
+    title:
+      (
+        page?.layout.sitecore.route?.fields as RouteFields
+      )?.Title?.value?.toString() || "Page",
   };
 };

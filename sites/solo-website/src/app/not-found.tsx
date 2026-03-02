@@ -1,12 +1,12 @@
 import Link from 'next/link';
-import { ErrorPage } from '@sitecore-content-sdk/nextjs';
+/*import { ErrorPage } from '@sitecore-content-sdk/nextjs';
 import client from 'lib/sitecore-client';
 import scConfig from 'sitecore.config';
 import Layout from 'src/Layout';
-import Providers from 'src/Providers';
+import Providers from 'src/Providers';*/
 
 export default async function NotFound() {
-  if (scConfig.defaultSite) {
+  /*if (scConfig.defaultSite) {
     const page = await client.getErrorPage(ErrorPage.NotFound, {
       site: scConfig.defaultSite,
       locale: scConfig.defaultLanguage,
@@ -19,7 +19,7 @@ export default async function NotFound() {
         </Providers>
       );
     }
-  }
+  }*/
 
   return (
     <div style={{ padding: 10 }}>
