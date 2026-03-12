@@ -3,7 +3,7 @@ import components from 'src/component-map';
 import metadata from '.sitecore/metadata.json';
 
 /**
- * This API route is used by Sitecore Editor in XM Cloud
+ * This API route is used by Sitecore Editor in SitecoreAI
  * to determine feature compatibility and configuration.
  */
 

@@ -1,5 +1,5 @@
 ---
-description: Code style, vibe-coding principles, and quality standards for XM Cloud starters
+description: Code style, vibe-coding principles, and quality standards for SitecoreAI starters
 alwaysApply: true
 globs: []
 ---
@@ -13,7 +13,7 @@ Core Philosophy:
 - Prefer declarative over imperative patterns
 - Make code readable and self-documenting
 - TypeScript-first development approach
-- Component-driven architecture with XM Cloud integration
+- Component-driven architecture with SitecoreAI integration
 
 Code Organization:
 - Use modern JavaScript/TypeScript features
@@ -29,7 +29,7 @@ TypeScript Usage:
 - Prefer explicit types over `any`
 - Use discriminated unions for complex state
 - Export types at module boundaries for reusability
-- Define proper interfaces for XM Cloud data structures
+- Define proper interfaces for SitecoreAI data structures
 
 Functional Programming:
 - Prefer pure functions where possible
@@ -54,7 +54,7 @@ React Best Practices:
 - Use React.memo for performance optimization when needed
 - Follow React 18+ patterns and concurrent features
 
-XM Cloud Component Patterns:
+SitecoreAI Component Patterns:
 - Always validate field existence before rendering
 - Provide meaningful fallbacks for missing content
 - Use Sitecore field components for proper rendering
@@ -132,14 +132,14 @@ Error Strategy:
 - Handle edge cases explicitly with guard clauses
 - Log errors appropriately for debugging
 
-XM Cloud Error Patterns:
+SitecoreAI Error Patterns:
 - Handle missing datasource gracefully
 - Provide fallback content for failed API calls
 - Implement proper error boundaries for component failures
 - Handle both connected and disconnected mode errors
 
 Security:
-- Sanitize user inputs and XM Cloud content
+- Sanitize user inputs and SitecoreAI content
 - Validate data at boundaries
 - Never log sensitive information
 - Use environment variables for all configuration
@@ -156,9 +156,9 @@ Styling:
 
 Testing:
 - Write tests for component behavior, not implementation
-- Mock XM Cloud services in unit tests
+- Mock SitecoreAI services in unit tests
 - Test error scenarios and edge cases
-- Use proper test data that matches XM Cloud structures
+- Use proper test data that matches SitecoreAI structures
 - Implement integration tests for critical paths
 
 Imports:
@@ -179,7 +179,7 @@ Lint and Format:
 
 Next.js Optimization:
 - Use Next.js Image component for optimized images
-- Implement proper ISR patterns for XM Cloud content
+- Implement proper ISR patterns for SitecoreAI content
 - Use dynamic imports for code splitting
 - Optimize bundle size with tree shaking
 - Implement proper caching strategies
@@ -191,8 +191,8 @@ React Performance:
 - Use React.lazy for component lazy loading
 - Profile performance in development mode
 
-XM Cloud Performance:
-- Cache XM Cloud API responses appropriately
+SitecoreAI Performance:
+- Cache SitecoreAI API responses appropriately
 - Use proper loading states for content fetching
 - Implement error boundaries to prevent cascade failures
 - Consider content freshness vs. performance trade-offs

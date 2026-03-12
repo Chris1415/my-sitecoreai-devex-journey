@@ -1,5 +1,5 @@
-# XM Cloud Next.js Starter Kit - Disconnected offline mode
-Below are the instructions for how to mock a small subset of the XM Cloud Application elements in offline mode using Docker. This can allow for a disconnected development, however it is recommend to work in the default connected mode for the best experience.
+# SitecoreAI Next.js Starter Kit - Disconnected offline mode
+Below are the instructions for how to mock a small subset of the SitecoreAI Application elements in offline mode using Docker. This can allow for a disconnected development, however it is recommend to work in the default connected mode for the best experience.
 
 ## Prerequisites
 - DotNet 8.0 (https://dotnet.microsoft.com/en-us/download)

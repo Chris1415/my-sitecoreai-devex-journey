@@ -8,6 +8,11 @@ const nextConfig: NextConfig = {
   // Enable React Strict Mode
   reactStrictMode: true,
 
+  // Required for the "use cache" directive in Next.js 15.
+  experimental: {
+    useCache: true,
+  },
+
   // Disable the X-Powered-By header. Follows security best practices.
   poweredByHeader: false,
 

@@ -105,13 +105,13 @@
   {
     "id": "a4",
     "slug": "xm-cloud-dynamic-redirects-middleware",
-    "title": "XM Cloud – Dynamic redirects without middleware overhead",
+    "title": "SitecoreAI – Dynamic redirects without middleware overhead",
     "subtitle": "A hybrid approach combining CMS management with next.config performance",
     "excerpt": "Learn how to leverage CMS-managed redirects with the performance benefits of next.config.js by using Experience Edge webhooks and automated Vercel deployments.",
-    "bodyHtml": "<p class='text-lg mb-6'>Traditional redirect approaches force you to choose between editor-friendly CMS management (via middleware) or developer-optimized static configuration (next.config.js). This article introduces a hybrid solution that combines the best of both worlds. By utilizing Experience Edge webhooks, Sitecore Connect, and Vercel's deployment API, you can enable marketers to manage redirects in the familiar XM Cloud interface while serving them with the performance advantages of next.config.js redirects. The approach eliminates middleware invocations on every request, reduces external API calls, and processes redirects at the CDN edge - all while maintaining dynamic CMS control. Includes implementation details for webhook configuration, Sitecore Connect recipes, and custom build-time redirect generation.</p>",
+    "bodyHtml": "<p class='text-lg mb-6'>Traditional redirect approaches force you to choose between editor-friendly CMS management (via middleware) or developer-optimized static configuration (next.config.js). This article introduces a hybrid solution that combines the best of both worlds. By utilizing Experience Edge webhooks, Sitecore Connect, and Vercel's deployment API, you can enable marketers to manage redirects in the familiar SitecoreAI interface while serving them with the performance advantages of next.config.js redirects. The approach eliminates middleware invocations on every request, reduces external API calls, and processes redirects at the CDN edge - all while maintaining dynamic CMS control. Includes implementation details for webhook configuration, Sitecore Connect recipes, and custom build-time redirect generation.</p>",
     "author": "Christian Hahn",
     "date": "2025-04-02T00:00:00Z",
-    "tags": ["XM Cloud", "Next.js", "Redirects", "Performance", "Middleware"],
+    "tags": ["SitecoreAI", "Next.js", "Redirects", "Performance", "Middleware"],
     "heroImage": "/images/image.png",
     "isTop": true,
     "originalUrl": "https://hachweb.wordpress.com/2025/04/02/xm-cloud-dealing-with-dynamic-redirects-and-concerned-about-middleware-invocations-and-performance-youre-in-the-right-place-to-discover-a-new-approach/",
@@ -136,7 +136,7 @@
     ],
     "technicalDetails": {
       "title": "Webhook & Deployment Flow",
-      "content": "When editors update redirects in XM Cloud, Experience Edge webhooks notify Sitecore Connect. A custom recipe fetches redirect data, generates next.config.js format, and triggers Vercel deployment API. The result: CMS-managed redirects served at CDN edge with zero runtime overhead."
+      "content": "When editors update redirects in SitecoreAI, Experience Edge webhooks notify Sitecore Connect. A custom recipe fetches redirect data, generates next.config.js format, and triggers Vercel deployment API. The result: CMS-managed redirects served at CDN edge with zero runtime overhead."
     }
   },
   {
@@ -211,7 +211,7 @@
     "title": "AI meets human connection at Sitecore Symposium 2025",
     "subtitle": "How SitecoreAI is reshaping digital experiences for the AI era",
     "excerpt": "Sitecore Symposium 2025 unveiled SitecoreAI, a next-generation platform that unifies content, data, and AI capabilities into a single interface designed for the age of AI-driven discovery.",
-    "bodyHtml": "<p class='text-lg mb-6'>Sitecore Symposium 2025 marked a transformative moment for digital experience platforms with the announcement of SitecoreAI. This unified platform integrates Content Hub, XM Cloud, CDP, Personalize, Search, and agentic AI capabilities into a single contract with one workflow and one data model. The keynotes revealed Agentic Studio, where marketers can build and deploy AI agents within a brand-safe environment, and demonstrated live campaign creation powered by real-time insights. The event showcased how existing XM Cloud customers will automatically transition to SitecoreAI with baseline entitlements, while new features like SitecoreAI Pathway reduce migration timelines by 70%. With Sitecore Studio introducing Custom SaaS capabilities and an open marketplace for extensions, the platform empowers businesses to customize without sacrificing cloud agility. The message was clear: AI isn't replacing marketers - it's amplifying them.</p>",
+    "bodyHtml": "<p class='text-lg mb-6'>Sitecore Symposium 2025 marked a transformative moment for digital experience platforms with the announcement of SitecoreAI. This unified platform integrates Content Hub, SitecoreAI, CDP, Personalize, Search, and agentic AI capabilities into a single contract with one workflow and one data model. The keynotes revealed Agentic Studio, where marketers can build and deploy AI agents within a brand-safe environment, and demonstrated live campaign creation powered by real-time insights. The event showcased how existing SitecoreAI customers will automatically transition to SitecoreAI with baseline entitlements, while new features like SitecoreAI Pathway reduce migration timelines by 70%. With Sitecore Studio introducing Custom SaaS capabilities and an open marketplace for extensions, the platform empowers businesses to customize without sacrificing cloud agility. The message was clear: AI isn't replacing marketers - it's amplifying them.</p>",
     "author": "External Source",
     "date": "2025-11-06T00:00:00Z",
     "tags": ["Sitecore", "AI", "SitecoreAI", "Symposium", "Digital Experience"],
@@ -232,9 +232,9 @@
       { "src": "/images/articles/sitecore-marketplace-sdk.jpg", "caption": "Marketplace & SDK" }
     ],
     "keyTakeaways": [
-      "Unified platform: Content Hub + XM Cloud + CDP + Personalize + Search + AI",
+      "Unified platform: Content Hub + SitecoreAI + CDP + Personalize + Search + AI",
       "Agentic Studio enables marketers to build AI agents in brand-safe environment",
-      "Automatic transition for existing XM Cloud customers with baseline entitlements",
+      "Automatic transition for existing SitecoreAI customers with baseline entitlements",
       "Sitecore Studio introduces Custom SaaS and open marketplace"
     ]
   }

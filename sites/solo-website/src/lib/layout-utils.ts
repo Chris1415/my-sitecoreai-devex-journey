@@ -2,12 +2,10 @@
  * Extracts all Sitecore item IDs from a layout model.
  * Traverses the layout recursively, collecting:
  * - itemId fields
- * - datasource / dataSource fields (GUID, {GUID}, or object with itemId/id)
- * - layoutId, templateId, deviceId
+ * - datasource / dataSource fields (GUID, {GUID}, or object with itemId)
  * - Supports nested structure: data.layout.item.rendered.sitecore.route
  */
 
-const ID_KEYS = ['itemId', 'id', 'layoutId', 'templateId', 'deviceId'] as const;
 const DATASOURCE_KEYS = ['datasource', 'dataSource'] as const;
 
 /** Extract and normalize GUID from string (handles {GUID} and plain GUID). */
@@ -32,11 +30,6 @@ function addId(ids: Set<string>, value: unknown): void {
 function traverse(obj: unknown, ids: Set<string>, seen: WeakSet<object>): void {
   if (obj === null || obj === undefined) return;
 
-  if (typeof obj === 'string') {
-    addId(ids, obj);
-    return;
-  }
-
   if (typeof obj !== 'object') return;
 
   // Avoid cycles
@@ -45,12 +38,10 @@ function traverse(obj: unknown, ids: Set<string>, seen: WeakSet<object>): void {
 
   const o = obj as Record<string, unknown>;
 
-  // Collect itemId / id
-  for (const key of ID_KEYS) {
-    if (key in o) addId(ids, o[key]);
-  }
+  // Collect itemId only
+  if ('itemId' in o) addId(ids, o.itemId);
 
-  // Collect datasource (string or object with itemId/id)
+  // Collect datasource (string or object with itemId)
   for (const key of DATASOURCE_KEYS) {
     const ds = o[key];
     if (typeof ds === 'string') {
@@ -58,7 +49,6 @@ function traverse(obj: unknown, ids: Set<string>, seen: WeakSet<object>): void {
     } else if (ds && typeof ds === 'object' && !Array.isArray(ds)) {
       const d = ds as Record<string, unknown>;
       if ('itemId' in d) addId(ids, d.itemId);
-      if ('id' in d) addId(ids, d.id);
     }
   }
 

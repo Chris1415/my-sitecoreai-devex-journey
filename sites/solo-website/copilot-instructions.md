@@ -2,13 +2,13 @@
 
 ## Project Purpose and Tech Stack
 
-This is a **Sitecore Content SDK** application built with **Next.js App Router** and **TypeScript**. The project follows Sitecore best practices for XM Cloud development and leverages the latest Next.js App Router features for improved performance and developer experience.
+This is a **Sitecore Content SDK** application built with **Next.js App Router** and **TypeScript**. The project follows Sitecore best practices for SitecoreAI development and leverages the latest Next.js App Router features for improved performance and developer experience.
 
 ### Key Technologies
 - **Next.js App Router** - React framework with Server Components and modern routing
-- **Sitecore Content SDK** - Official SDK for Sitecore XM Cloud integration
+- **Sitecore Content SDK** - Official SDK for Sitecore SitecoreAI integration
 - **TypeScript** - Type-safe JavaScript development
-- **Sitecore XM Cloud** - Headless CMS platform
+- **Sitecore SitecoreAI** - Headless CMS platform
 - **React Server Components** - Server-side rendering for better performance
 - **next-intl** - Internationalization support
 

@@ -78,11 +78,6 @@ export async function POST(request: NextRequest) {
       if (id) contentIds.add(id);
     }
 
-    // Add 'layout' when webhook updates exist (invalidates page caches tagged with layout)
-    if (updates.length > 0) {
-      contentIds.add('layout');
-    }
-
     if (contentIds.size === 0) {
       console.warn(`${LOG_PREFIX} Bad request | no tags to revalidate`);
       return Response.json(

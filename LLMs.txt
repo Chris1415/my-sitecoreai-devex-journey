@@ -1,12 +1,12 @@
-# LLM Guidance for XM Cloud Starter Applications
+# LLM Guidance for SitecoreAI Starter Applications
 
 ## Project Context
-XM Cloud Front End Application Starter Kits repository with multiple Next.js and SPA examples for Sitecore XM Cloud development. Each starter demonstrates headless CMS patterns with modern React/TypeScript architecture.
+SitecoreAI Front End Application Starter Kits repository with multiple Next.js and SPA examples for Sitecore SitecoreAI development. Each starter demonstrates headless CMS patterns with modern React/TypeScript architecture.
 
 ## Core Technologies
 - Next.js 14+ (App Router/Pages Router)
 - TypeScript (strict mode)
-- Sitecore XM Cloud (headless CMS)
+- Sitecore SitecoreAI (headless CMS)
 - Sitecore Content SDK (@sitecore-content-sdk/nextjs)
 - Tailwind CSS (utility-first, container queries)
 - Shadcn/ui (accessible component library)
@@ -58,7 +58,7 @@ XM Cloud Front End Application Starter Kits repository with multiple Next.js and
 - Explicit types over 'any'
 - Discriminated unions for complex state
 - Export types at module boundaries
-- Proper interfaces for XM Cloud data
+- Proper interfaces for SitecoreAI data
 
 ### Naming Conventions
 - Components: PascalCase (Hero, ProductListing)
@@ -109,7 +109,7 @@ const { data: { datasource } = {} } = fields || {};
 - Test component behavior, not implementation
 - Mock Sitecore services in unit tests
 - Test error scenarios and edge cases
-- Use proper test data matching XM Cloud structures
+- Use proper test data matching SitecoreAI structures
 - Implement integration tests for critical paths
 
 ## Styling Guidelines
@@ -136,7 +136,7 @@ const { data: { datasource } = {} } = fields || {};
 
 ## Multi-Starter Context
 Repository contains 6 starter applications:
-- basic-nextjs: Simple XM Cloud integration
+- basic-nextjs: Simple SitecoreAI integration
 - kit-nextjs-article-starter: Editorial template (Solterra & Co.)
 - kit-nextjs-location-finder: Car brand template (Alaris)
 - kit-nextjs-product-listing: Product template (SYNC)
@@ -154,7 +154,7 @@ Required variables:
 
 ## Performance Optimization
 - Next.js Image component for optimized images
-- ISR patterns for XM Cloud content
+- ISR patterns for SitecoreAI content
 - Dynamic imports for code splitting
 - Proper caching strategies
 - Bundle size optimization with tree shaking

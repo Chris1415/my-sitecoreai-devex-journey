@@ -1,6 +1,6 @@
-# Cursor Rules for XM Cloud Starter Applications
+# Cursor Rules for SitecoreAI Starter Applications
 
-This directory contains AI coding agent guidance files to help maintain consistent code quality and follow Sitecore XM Cloud best practices across all starter applications in this repository.
+This directory contains AI coding agent guidance files to help maintain consistent code quality and follow Sitecore SitecoreAI best practices across all starter applications in this repository.
 
 ## Rules Overview
 
@@ -12,9 +12,9 @@ This directory contains AI coding agent guidance files to help maintain consiste
 
 ### Scoped Rules (Applied to Specific Files)
 - **`javascript.mdc`** - JavaScript/TypeScript naming conventions, performance, JSDoc standards
-- **`sitecore.mdc`** - Sitecore XM Cloud development patterns and component guidelines
+- **`sitecore.mdc`** - Sitecore SitecoreAI development patterns and component guidelines
 - **`nextjs.mdc`** - Next.js specific patterns, routing, and API development
-- **`testing.mdc`** - Testing strategies for XM Cloud components and integrations
+- **`testing.mdc`** - Testing strategies for SitecoreAI components and integrations
 
 ## Usage
 
@@ -24,10 +24,10 @@ When using AI coding assistants like Cursor:
 3. Refer to specific rules when uncertain about implementation approaches
 4. All starter applications inherit these rules for consistent development
 
-## XM Cloud Starter Context
+## SitecoreAI Starter Context
 
 This repository contains multiple starter applications:
-- **basic-nextjs** - Simple Next.js starter with basic XM Cloud integration
+- **basic-nextjs** - Simple Next.js starter with basic SitecoreAI integration
 - **kit-nextjs-article-starter** - Editorial-style template (Solterra & Co.)
 - **kit-nextjs-location-finder** - Car brand template with location finder (Alaris)
 - **kit-nextjs-product-listing** - Product-focused template (SYNC)
@@ -51,8 +51,8 @@ For more details, see the [Contributing Guide](../CONTRIBUTING.md#ai-assisted-de
 
 When working on any starter application:
 - The AI assistant will automatically apply relevant rules based on file types
-- XM Cloud-specific patterns will be suggested for component development
+- SitecoreAI-specific patterns will be suggested for component development
 - Next.js best practices will be enforced for routing and API development
 - Consistent naming and code organization will be maintained across all starters
 
-These rules ensure that all starter applications maintain high code quality and follow established XM Cloud development patterns.
+These rules ensure that all starter applications maintain high code quality and follow established SitecoreAI development patterns.

@@ -1,13 +1,13 @@
-# Windsurf IDE Rules - XM Cloud Front End Starter Kits
+# Windsurf IDE Rules - SitecoreAI Front End Starter Kits
 
 ## Project Overview
 
 ### Repository Structure
-This is the **XM Cloud Front End Application Starter Kits** repository containing multiple Next.js starter applications and SPA examples for Sitecore XM Cloud development.
+This is the **SitecoreAI Front End Application Starter Kits** repository containing multiple Next.js starter applications and SPA examples for Sitecore SitecoreAI development.
 
 **Key Directories:**
 - `/examples/` - Starter front-end applications (Next.js and SPA)
-  - `basic-nextjs` - Simple Next.js starter with basic XM Cloud integration
+  - `basic-nextjs` - Simple Next.js starter with basic SitecoreAI integration
   - `kit-nextjs-article-starter` - **Solterra & Co.** - Editorial-style template for lifestyle brands
   - `kit-nextjs-location-finder` - **Alaris** - Car brand template with location finder functionality
   - `kit-nextjs-product-listing` - **SYNC** - Product-focused template for audio gear companies
@@ -15,15 +15,15 @@ This is the **XM Cloud Front End Application Starter Kits** repository containin
   - `basic-spa` - SPA starter kit with Angular and Node proxy
 - `/authoring/` - Sitecore content items, templates, and deployment configurations
 - `/local-containers/` - Docker setup for local development environments
-- `xmcloud.build.json` - Primary configuration for XM Cloud deployment
+- `xmcloud.build.json` - Primary configuration for SitecoreAI deployment
 
 ### Technology Stack
 
 **Core Technologies:**
 - **Next.js 14+** - React framework with App Router and Pages Router support
 - **TypeScript** - Strict type safety throughout all components
-- **Sitecore XM Cloud** - Headless content management and delivery
-- **Sitecore Content SDK** (`@sitecore-content-sdk/nextjs`) - Modern SDK for XM Cloud integration
+- **Sitecore SitecoreAI** - Headless content management and delivery
+- **Sitecore Content SDK** (`@sitecore-content-sdk/nextjs`) - Modern SDK for SitecoreAI integration
 - **Tailwind CSS** - Utility-first CSS with container queries (@container)
 - **Shadcn/ui** - Modern component library with accessibility features
 
@@ -43,7 +43,7 @@ This is the **XM Cloud Front End Application Starter Kits** repository containin
 **Multi-Starter Architecture:**
 - Each example is a standalone application with independent deployment
 - Shared patterns and conventions across all starters (no monorepo linking)
-- Common XM Cloud integration patterns
+- Common SitecoreAI integration patterns
 - Content-first development with field-driven rendering
 
 **Development Workflow:**
@@ -77,13 +77,13 @@ DMZ git flow will be implemented in the future to support better development pra
 - Prefer explicit types over `any`
 - Use discriminated unions for complex state
 - Export types at module boundaries for reusability
-- Define proper interfaces for XM Cloud data structures
+- Define proper interfaces for SitecoreAI data structures
 
 **Type Usage:**
 - Use `type` imports for TypeScript types: `import type React from 'react'`
 - Prefer type assertions over any: `value as LayoutData`
 - Use discriminated unions for complex state management
-- Define interfaces for all component props and XM Cloud data structures
+- Define interfaces for all component props and SitecoreAI data structures
 
 ### Naming Conventions
 
@@ -124,7 +124,7 @@ DMZ git flow will be implemented in the future to support better development pra
 - Import as alias for reusable components: `import { Default as ImageWrapper } from '@/components/image/ImageWrapper.dev'`
 
 ```typescript
-// Standard import pattern for XM Cloud components
+// Standard import pattern for SitecoreAI components
 'use client'; // When client-side features needed
 
 import type React from 'react';
@@ -147,8 +147,8 @@ import { ButtonBase } from '@/components/button-component/ButtonComponent';
 
 ```typescript
 /**
- * Hero component for displaying prominent content on XM Cloud pages
- * @param {HeroProps} props - Component props from XM Cloud datasource
+ * Hero component for displaying prominent content on SitecoreAI pages
+ * @param {HeroProps} props - Component props from SitecoreAI datasource
  * @returns {JSX.Element} The rendered hero component with variants support
  */
 export const HeroDefault: React.FC<HeroProps> = (props) => {
@@ -190,7 +190,7 @@ examples/[starter-name]/
 │   ├── variables/          # Constants and dictionary keys
 │   ├── pages/              # Next.js pages (Pages Router)
 │   │   ├── api/           # API routes
-│   │   └── [...path].tsx  # Catch-all route for XM Cloud
+│   │   └── [...path].tsx  # Catch-all route for SitecoreAI
 │   ├── app/                # Next.js App Router (if using)
 │   ├── styles/             # Styling files (global CSS)
 │   └── middleware.ts       # Next.js middleware
@@ -227,7 +227,7 @@ examples/[starter-name]/
 - Prefer declarative over imperative patterns
 - Make code readable and self-documenting
 - TypeScript-first development approach
-- Component-driven architecture with XM Cloud integration
+- Component-driven architecture with SitecoreAI integration
 
 **Code Organization:**
 - Use modern JavaScript/TypeScript features
@@ -261,7 +261,7 @@ examples/[starter-name]/
 - Use React.memo for performance optimization when needed
 - Follow React 18+ patterns and concurrent features
 
-**XM Cloud Component Patterns:**
+**SitecoreAI Component Patterns:**
 - Always validate field existence before rendering
 - Provide meaningful fallbacks for missing content
 - Use Sitecore field components for proper rendering
@@ -354,7 +354,7 @@ async function fetchLayoutData(path: string): Promise<LayoutData> {
 }
 ```
 
-**XM Cloud Error Patterns:**
+**SitecoreAI Error Patterns:**
 - Handle missing datasource gracefully
 - Provide fallback content for failed API calls
 - Implement proper error boundaries for component failures
@@ -392,7 +392,7 @@ requiredEnvVars.forEach(envVar => {
 ### Performance
 
 **Optimization Patterns:**
-- Cache XM Cloud API responses using React Query or similar caching solutions
+- Cache SitecoreAI API responses using React Query or similar caching solutions
 - Use React.memo for expensive components
 - Lazy-load non-critical modules: `const Component = lazy(() => import('./Component'))`
 - Use useCallback and useMemo for expensive operations
@@ -406,7 +406,7 @@ requiredEnvVars.forEach(envVar => {
 
 ---
 
-## XM Cloud Component Development
+## SitecoreAI Component Development
 
 ### Component Architecture - Locality of Behavior Pattern
 
@@ -683,9 +683,9 @@ import { Button } from '@/components/ui/button';
 ### Configuration
 
 **Next.js Config:**
-- Configure i18n for multi-language XM Cloud sites
-- Set up proper image domains for XM Cloud media
-- Implement rewrites for XM Cloud API routes
+- Configure i18n for multi-language SitecoreAI sites
+- Set up proper image domains for SitecoreAI media
+- Implement rewrites for SitecoreAI API routes
 - Configure webpack for SCSS and other assets
 - Set up proper build optimization
 
@@ -732,7 +732,7 @@ const nextConfig = {
 ### Pages and Routing
 
 **Catch-All Routes:**
-- Use `[...path].tsx` for XM Cloud page routing
+- Use `[...path].tsx` for SitecoreAI page routing
 - Handle both single and multi-segment paths
 - Implement proper 404 handling for non-existent items
 - Support preview mode for content authors
@@ -767,15 +767,15 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 ```
 
 **Static Generation:**
-- Use ISR (Incremental Static Regeneration) for XM Cloud content
+- Use ISR (Incremental Static Regeneration) for SitecoreAI content
 - Implement proper revalidation strategies
 - Handle dynamic paths with getStaticPaths
 - Consider build time vs. runtime performance trade-offs
 
 ### API Routes
 
-**XM Cloud Integration:**
-- Create API routes for XM Cloud services
+**SitecoreAI Integration:**
+- Create API routes for SitecoreAI services
 - Handle authentication and authorization properly
 - Implement proper error handling and logging
 - Cache responses when appropriate
@@ -800,9 +800,9 @@ export default async function handler(
 
 ### Middleware
 
-**XM Cloud Editing:**
+**SitecoreAI Editing:**
 - Handle editing mode detection
-- Implement proper cookie handling for XM Cloud
+- Implement proper cookie handling for SitecoreAI
 - Set up redirects for content authors
 - Support preview mode functionality
 
@@ -811,7 +811,7 @@ export default async function handler(
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   
-  // Handle XM Cloud editing mode
+  // Handle SitecoreAI editing mode
   if (request.cookies.get('sc_mode')?.value === 'edit') {
     // Redirect to editing host
     const editingUrl = new URL(pathname, process.env.EDITING_HOST_URL);
@@ -825,10 +825,10 @@ export function middleware(request: NextRequest) {
 ### Performance Optimization
 
 **Image Optimization:**
-- Always use NextImage component from ContentSDK for XM Cloud media as it supports inline editing in editor mode and uses Image component from next internally
+- Always use NextImage component from ContentSDK for SitecoreAI media as it supports inline editing in editor mode and uses Image component from next internally
 - Configure proper image domains and sizes
 - Implement lazy loading for below-fold images
-- Use proper alt text from XM Cloud fields
+- Use proper alt text from SitecoreAI fields
 
 **Code Splitting:**
 - Use dynamic imports for large components
@@ -837,7 +837,7 @@ export function middleware(request: NextRequest) {
 - Optimize bundle size with proper imports
 
 **Caching:**
-- Implement proper caching headers for XM Cloud content
+- Implement proper caching headers for SitecoreAI content
 - Use ISR for frequently updated content
 - Cache API responses appropriately
 - Consider CDN caching strategies
@@ -845,28 +845,28 @@ export function middleware(request: NextRequest) {
 ### App Router (Next.js 13+)
 
 **Server Components:**
-- Use Server Components for XM Cloud data fetching
+- Use Server Components for SitecoreAI data fetching
 - Implement proper loading and error handling
 - Handle streaming for better user experience
 - Use Client Components only when necessary
 
 **Layout Files:**
 - Create proper layout hierarchy
-- Handle XM Cloud navigation and footer
+- Handle SitecoreAI navigation and footer
 - Implement proper SEO meta tags
 - Support multi-language layouts
 
 ### Deployment
 
 **Build Optimization:**
-- Optimize for XM Cloud deployment environment
+- Optimize for SitecoreAI deployment environment
 - Handle environment-specific configurations
 - Implement proper health checks
 - Monitor build performance and size
 
-**XM Cloud Integration:**
+**SitecoreAI Integration:**
 - Configure proper rendering host settings
-- Handle XM Cloud deployment pipelines
+- Handle SitecoreAI deployment pipelines
 - Implement proper monitoring and logging
 - Support blue-green deployment patterns
 
@@ -877,16 +877,16 @@ export function middleware(request: NextRequest) {
 ### Testing Strategy
 
 **Component Testing:**
-- Test component rendering with various XM Cloud field configurations
-- Mock XM Cloud services and API calls
+- Test component rendering with various SitecoreAI field configurations
+- Mock SitecoreAI services and API calls
 - Test error scenarios (missing fields, API failures)
 - Verify proper handling of editing vs. preview modes
 - Test responsive behavior and accessibility
 
 **Integration Testing:**
-- Test complete page rendering with XM Cloud data
+- Test complete page rendering with SitecoreAI data
 - Verify API route functionality
-- Test middleware behavior for XM Cloud integration
+- Test middleware behavior for SitecoreAI integration
 - Validate environment variable handling
 - Test deployment and build processes
 
@@ -899,14 +899,14 @@ export function middleware(request: NextRequest) {
 - **Playwright** or **Cypress** for E2E testing
 - **Storybook** for component documentation and testing
 
-**XM Cloud Mocking:**
-- Create mock data that matches XM Cloud field structures
+**SitecoreAI Mocking:**
+- Create mock data that matches SitecoreAI field structures
 - Mock layout service responses
 - Simulate both connected and disconnected modes
 - Test with various content scenarios
 
 ```typescript
-// Mock XM Cloud field data
+// Mock SitecoreAI field data
 const mockHeroFields = {
   title: { value: 'Test Hero Title', editable: false },
   subtitle: { value: 'Test Hero Subtitle', editable: false },
@@ -951,7 +951,7 @@ describe('Hero Component', () => {
 
 ### API Testing
 
-**XM Cloud API Mocking:**
+**SitecoreAI API Mocking:**
 - Mock layout service responses
 - Test error handling for API failures
 - Verify proper caching behavior
@@ -980,7 +980,7 @@ describe('/api/robots', () => {
 
 **Page Testing:**
 - Test complete user journeys
-- Verify XM Cloud content rendering
+- Verify SitecoreAI content rendering
 - Test navigation and routing
 - Validate responsive design
 - Test accessibility compliance
@@ -996,7 +996,7 @@ describe('/api/robots', () => {
 test('homepage loads and displays content', async ({ page }) => {
   await page.goto('/');
   
-  // Wait for XM Cloud content to load
+  // Wait for SitecoreAI content to load
   await page.waitForSelector('[data-testid="hero-component"]');
   
   // Verify content is displayed
@@ -1007,11 +1007,11 @@ test('homepage loads and displays content', async ({ page }) => {
 
 ### Test Data Management
 
-**XM Cloud Test Data:**
-- Create realistic test data that matches XM Cloud structures
+**SitecoreAI Test Data:**
+- Create realistic test data that matches SitecoreAI structures
 - Use factories for generating test data
 - Maintain test data consistency across tests
-- Update test data when XM Cloud schemas change
+- Update test data when SitecoreAI schemas change
 
 ```typescript
 // Test data factory
@@ -1095,7 +1095,7 @@ export const createMockLayoutData = (overrides = {}) => ({
 - Organize code into focused, cohesive components
 - Minimize coupling between modules
 - Use clear interfaces between layers
-- Follow established Next.js and XM Cloud patterns consistently
+- Follow established Next.js and SitecoreAI patterns consistently
 
 ### Data Flow
 
@@ -1117,7 +1117,7 @@ cd examples/kit-nextjs-article-starter
 # Copy environment template
 cp .env.remote.example .env.local
 
-# Edit .env.local with your XM Cloud values
+# Edit .env.local with your SitecoreAI values
 # Required variables:
 # - SITECORE_EDGE_CONTEXT_ID
 # - NEXT_PUBLIC_DEFAULT_SITE_NAME
@@ -1221,15 +1221,15 @@ If unsure whether to edit a file:
 
 ### Required Environment Variables
 
-**XM Cloud Integration:**
-- `SITECORE_EDGE_CONTEXT_ID` - XM Cloud Edge context identifier
+**SitecoreAI Integration:**
+- `SITECORE_EDGE_CONTEXT_ID` - SitecoreAI Edge context identifier
 - `NEXT_PUBLIC_DEFAULT_SITE_NAME` - Default site name for the application
 - `NEXT_PUBLIC_SITECORE_EDGE_CONTEXT_ID` - Public Edge context identifier
 - `SITECORE_EDITING_SECRET` - Secret for editing mode authentication
 
 **Setup Process:**
 - Copy `.env.remote.example` to `.env.local` for local development
-- Log into Sitecore XM Cloud Deploy Portal
+- Log into Sitecore SitecoreAI Deploy Portal
 - Locate your Environment and select `Developer Settings` tab
 - Ensure `Preview` toggle is enabled
 - Copy sample `.env` file contents from `Local Development` section
@@ -1237,9 +1237,9 @@ If unsure whether to edit a file:
 
 ### Deployment Configuration
 
-**XM Cloud Deployment:**
+**SitecoreAI Deployment:**
 - Uses `xmcloud.build.json` for rendering host configuration
 - Each starter can be enabled/disabled via `enabled` flag
 - Supports multiple rendering hosts in single repository
 - Automatic editing host creation when split deployment is disabled
-- Environment-specific configuration through XM Cloud Deploy Portal
+- Environment-specific configuration through SitecoreAI Deploy Portal

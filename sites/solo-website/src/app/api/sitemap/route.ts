@@ -8,7 +8,7 @@ export const dynamic = 'force-dynamic';
  * API route for generating sitemap.xml
  *
  * This Next.js API route handler dynamically generates and serves the sitemap XML for your site.
- * The sitemap configuration can be managed within XM Cloud.
+ * The sitemap configuration can be managed within SitecoreAI.
  */
 
 export const { GET } = createSitemapRouteHandler({

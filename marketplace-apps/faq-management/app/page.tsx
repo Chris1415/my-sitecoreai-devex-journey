@@ -24,7 +24,7 @@ export default function IntroPage() {
             FAQ Manager
           </h1>
           <p className="text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            The ultimate FAQ management solution for XM Cloud. Create, organize,
+            The ultimate FAQ management solution for SitecoreAI. Create, organize,
             and maintain your knowledge base without ever leaving your
             environment. No Content Editor needed—just intuitive, streamlined
             FAQ management that&apos;s ready to use across your entire instance.
@@ -122,7 +122,7 @@ export default function IntroPage() {
                 experience, and keep your knowledge base organized. Features
                 include collapsible groups, quick search, bulk operations,
                 import/export capabilities, and seamless integration with your
-                XM Cloud instance.
+                SitecoreAI instance.
               </CardDescription>
               <Link href="/full-screen" className="block">
                 <Button className="w-full h-14 text-lg font-semibold bg-linear-to-r from-violet-500 to-purple-600 hover:from-violet-600 hover:to-purple-700 text-white shadow-lg shadow-violet-500/20 hover:shadow-xl hover:shadow-violet-500/30 transition-all duration-300">

@@ -47,10 +47,10 @@ if (-not $envCheck) {
     throw "$envCheckVariable does not have a value. Did you run 'init.ps1 -InitEnv'?"
 }
 
-Write-Host "Keeping XM Cloud base image up to date" -ForegroundColor Green
+Write-Host "Keeping SitecoreAI base image up to date" -ForegroundColor Green
 docker pull "$($sitecoreDockerRegistry)sitecore-xmcloud-cm:$($sitecoreVersion)"
 
-Write-Host "Keeping XM Cloud Tools image up to date" -ForegroundColor Green
+Write-Host "Keeping SitecoreAI Tools image up to date" -ForegroundColor Green
 docker pull "$($xmcloudDockerToolsImage):$($sitecoreVersion)"
 
 # Moving into the Local Containers Folder

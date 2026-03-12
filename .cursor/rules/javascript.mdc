@@ -1,5 +1,5 @@
 ---
-description: JavaScript/TypeScript-specific rules, naming conventions, and layout for XM Cloud development
+description: JavaScript/TypeScript-specific rules, naming conventions, and layout for SitecoreAI development
 alwaysApply: false
 globs:
   - '**/*.js'
@@ -73,7 +73,7 @@ File Organization:
 ## Error Handling
 
 API Calls:
-- Always wrap XM Cloud API calls in try/catch blocks
+- Always wrap SitecoreAI API calls in try/catch blocks
 - Throw custom errors with context: `XMCloudFetchError`, `ComponentRenderError`
 - Handle edge cases with guard clauses
 
@@ -124,7 +124,7 @@ requiredEnvVars.forEach(envVar => {
 ## Performance
 
 Optimization Patterns:
-- Cache XM Cloud API responses using React Query or similar caching solutions
+- Cache SitecoreAI API responses using React Query or similar caching solutions
 - Use React.memo for expensive components
 - Lazy-load non-critical modules: `const Component = lazy(() => import('./Component'))`
 - Use useCallback and useMemo for expensive operations
@@ -140,7 +140,7 @@ TypeScript:
 - Enable strict mode in tsconfig.json
 - Prefer type assertions over any: `value as LayoutData`
 - Use discriminated unions for complex state management
-- Define proper interfaces for XM Cloud data structures
+- Define proper interfaces for SitecoreAI data structures
 
 ## Documentation
 
@@ -158,7 +158,7 @@ Import Patterns:
 - Import as alias for reusable components: `import { Default as ImageWrapper } from '@/components/image/ImageWrapper.dev'`
 
 ```typescript
-// Standard import pattern for XM Cloud components
+// Standard import pattern for SitecoreAI components
 'use client'; // When client-side features needed
 
 import type React from 'react';
@@ -171,8 +171,8 @@ import { Default as ImageWrapper } from '@/components/image/ImageWrapper.dev';
 import { ButtonBase } from '@/components/button-component/ButtonComponent';
 
 /**
- * Hero component for displaying prominent content on XM Cloud pages
- * @param {HeroProps} props - Component props from XM Cloud datasource
+ * Hero component for displaying prominent content on SitecoreAI pages
+ * @param {HeroProps} props - Component props from SitecoreAI datasource
  * @returns {JSX.Element} The rendered hero component with variants support
  */
 export const HeroDefault: React.FC<HeroProps> = (props) => {

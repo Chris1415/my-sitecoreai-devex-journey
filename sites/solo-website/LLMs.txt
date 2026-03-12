@@ -1,12 +1,12 @@
 # Claude/Windsurf Guidance for Sitecore Content SDK Next.js App Router Project
 
 ## Project Context
-This is a Sitecore Content SDK application built with Next.js App Router, TypeScript, and React Server Components. The project integrates with Sitecore XM Cloud for headless content management and follows modern web development best practices with the latest Next.js App Router features.
+This is a Sitecore Content SDK application built with Next.js App Router, TypeScript, and React Server Components. The project integrates with Sitecore SitecoreAI for headless content management and follows modern web development best practices with the latest Next.js App Router features.
 
 ## Architecture Overview
 - **Framework**: Next.js with App Router (Server Components by default)
 - **Language**: TypeScript with strict mode enabled
-- **CMS**: Sitecore XM Cloud (headless)
+- **CMS**: Sitecore SitecoreAI (headless)
 - **SDK**: @sitecore-content-sdk for API integration
 - **Styling**: CSS Modules or Tailwind CSS
 - **State Management**: React Query/SWR for server state

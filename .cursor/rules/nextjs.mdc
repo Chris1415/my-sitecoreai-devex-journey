@@ -1,5 +1,5 @@
 ---
-description: Next.js specific patterns and best practices for XM Cloud starter development
+description: Next.js specific patterns and best practices for SitecoreAI starter development
 alwaysApply: false
 globs:
   - "next.config.js"
@@ -15,9 +15,9 @@ globs:
 ## Configuration
 
 Next.js Config:
-- Configure i18n for multi-language XM Cloud sites
-- Set up proper image domains for XM Cloud media
-- Implement rewrites for XM Cloud API routes
+- Configure i18n for multi-language SitecoreAI sites
+- Set up proper image domains for SitecoreAI media
+- Implement rewrites for SitecoreAI API routes
 - Configure webpack for SCSS and other assets
 - Set up proper build optimization
 
@@ -64,7 +64,7 @@ Environment Variables:
 ## Pages and Routing
 
 Catch-All Routes:
-- Use `[...path].tsx` for XM Cloud page routing
+- Use `[...path].tsx` for SitecoreAI page routing
 - Handle both single and multi-segment paths
 - Implement proper 404 handling for non-existent items
 - Support preview mode for content authors
@@ -99,15 +99,15 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 ```
 
 Static Generation:
-- Use ISR (Incremental Static Regeneration) for XM Cloud content
+- Use ISR (Incremental Static Regeneration) for SitecoreAI content
 - Implement proper revalidation strategies
 - Handle dynamic paths with getStaticPaths
 - Consider build time vs. runtime performance trade-offs
 
 ## API Routes
 
-XM Cloud Integration:
-- Create API routes for XM Cloud services
+SitecoreAI Integration:
+- Create API routes for SitecoreAI services
 - Handle authentication and authorization properly
 - Implement proper error handling and logging
 - Cache responses when appropriate
@@ -132,9 +132,9 @@ export default async function handler(
 
 ## Middleware
 
-XM Cloud Editing:
+SitecoreAI Editing:
 - Handle editing mode detection
-- Implement proper cookie handling for XM Cloud
+- Implement proper cookie handling for SitecoreAI
 - Set up redirects for content authors
 - Support preview mode functionality
 
@@ -143,7 +143,7 @@ XM Cloud Editing:
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   
-  // Handle XM Cloud editing mode
+  // Handle SitecoreAI editing mode
   if (request.cookies.get('sc_mode')?.value === 'edit') {
     // Redirect to editing host
     const editingUrl = new URL(pathname, process.env.EDITING_HOST_URL);
@@ -157,10 +157,10 @@ export function middleware(request: NextRequest) {
 ## Performance Optimization
 
 Image Optimization:
-- Always use NextImage component from ContentSDK for XM Cloud media as it supports inline editing in editor mode and uses Image component from next internally
+- Always use NextImage component from ContentSDK for SitecoreAI media as it supports inline editing in editor mode and uses Image component from next internally
 - Configure proper image domains and sizes
 - Implement lazy loading for below-fold images
-- Use proper alt text from XM Cloud fields
+- Use proper alt text from SitecoreAI fields
 
 Code Splitting:
 - Use dynamic imports for large components
@@ -169,7 +169,7 @@ Code Splitting:
 - Optimize bundle size with proper imports
 
 Caching:
-- Implement proper caching headers for XM Cloud content
+- Implement proper caching headers for SitecoreAI content
 - Use ISR for frequently updated content
 - Cache API responses appropriately
 - Consider CDN caching strategies
@@ -178,47 +178,47 @@ Caching:
 
 TypeScript Integration:
 - Use proper TypeScript configuration
-- Define types for XM Cloud data structures
+- Define types for SitecoreAI data structures
 - Implement proper type guards for runtime validation
 - Use strict mode for better type safety
 
 Error Handling:
 - Implement proper error boundaries
-- Handle XM Cloud API errors gracefully
+- Handle SitecoreAI API errors gracefully
 - Provide meaningful error messages to users
 - Log errors appropriately for debugging
 
 Testing:
 - Write tests for page components and API routes
-- Mock XM Cloud services in tests
+- Mock SitecoreAI services in tests
 - Test error scenarios and edge cases
-- Use proper test data that matches XM Cloud structures
+- Use proper test data that matches SitecoreAI structures
 
 ## App Router (Next.js 13+)
 
 Server Components:
-- Use Server Components for XM Cloud data fetching
+- Use Server Components for SitecoreAI data fetching
 - Implement proper loading and error handling
 - Handle streaming for better user experience
 - Use Client Components only when necessary
 
 Layout Files:
 - Create proper layout hierarchy
-- Handle XM Cloud navigation and footer
+- Handle SitecoreAI navigation and footer
 - Implement proper SEO meta tags
 - Support multi-language layouts
 
 ## Deployment
 
 Build Optimization:
-- Optimize for XM Cloud deployment environment
+- Optimize for SitecoreAI deployment environment
 - Handle environment-specific configurations
 - Implement proper health checks
 - Monitor build performance and size
 
-XM Cloud Integration:
+SitecoreAI Integration:
 - Configure proper rendering host settings
-- Handle XM Cloud deployment pipelines
+- Handle SitecoreAI deployment pipelines
 - Implement proper monitoring and logging
 - Support blue-green deployment patterns
 

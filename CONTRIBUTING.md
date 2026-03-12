@@ -47,7 +47,7 @@ Ensure the following tools are installed on your system:
 
 Navigate to the relevant example (e.g., kit-nextjs-article-starter) and start the dev server:
 
-💡 Make sure to populate the required environment variables in your .env.local file to connect to your XM Cloud instance.
+💡 Make sure to populate the required environment variables in your .env.local file to connect to your SitecoreAI instance.
 
       cd examples/kit-nextjs-article-starter
       npm install
@@ -64,7 +64,7 @@ Navigate to the relevant example (e.g., kit-nextjs-article-starter) and start th
 
 ## 🤖 AI-Assisted Development
 
-This repository includes comprehensive AI coding agent guidance files to help maintain consistent code quality and follow Sitecore XM Cloud best practices across multiple AI assistants.
+This repository includes comprehensive AI coding agent guidance files to help maintain consistent code quality and follow Sitecore SitecoreAI best practices across multiple AI assistants.
 
 ### Claude Code Guide
 
@@ -88,9 +88,9 @@ The repository contains `.cursor/rules/` directory with AI guidance files:
 
 - **Scoped Rules** (applied to specific files):
   - `javascript.mdc` - JavaScript/TypeScript naming conventions and performance patterns
-  - `sitecore.mdc` - Sitecore XM Cloud development patterns and component guidelines
+  - `sitecore.mdc` - Sitecore SitecoreAI development patterns and component guidelines
   - `nextjs.mdc` - Next.js specific patterns, routing, and API development
-  - `testing.mdc` - Testing strategies for XM Cloud components and integrations
+  - `testing.mdc` - Testing strategies for SitecoreAI components and integrations
 
 ### Windsurf IDE Rules
 
@@ -102,7 +102,7 @@ The repository includes a **`.windsurfrules`** file for Windsurf's agentic IDE w
   - Complete folder structure with examples
   - Best practices (RO-RO pattern, functional components, immutability)
   - Tailwind CSS styling and Shadcn/ui integration
-  - XM Cloud data handling with Zod validation and readonly types
+  - SitecoreAI data handling with Zod validation and readonly types
   - Testing patterns with Jest/Playwright and coverage expectations
   - Safety rules and development workflow
 
@@ -138,13 +138,13 @@ When using AI coding assistants:
 **Cursor AI:**
 - Rules automatically provide context based on the files you're working with
 - Follow the naming conventions and architectural guidance provided
-- Refer to the rules when uncertain about XM Cloud implementation approaches
+- Refer to the rules when uncertain about SitecoreAI implementation approaches
 
 **Windsurf IDE:**
 - The `.windsurfrules` file provides comprehensive coding standards and patterns
 - Optimized for multi-line autocompletion with full context awareness
 - Enables chat-based code navigation with architectural guidance
-- Supports agentic workflows with XM Cloud-specific component patterns
+- Supports agentic workflows with SitecoreAI-specific component patterns
 
 **GitHub Copilot:**
 - Reference `copilot-instructions.md` for detailed development patterns
@@ -176,7 +176,7 @@ To improve the AI guidance files:
 **For Windsurf IDE:**
 1. Update `.windsurfrules` for comprehensive standards and patterns
 2. Organize content into clear sections (Overview, Standards, Structure, Best Practices, etc.)
-3. Include code examples demonstrating proper XM Cloud patterns
+3. Include code examples demonstrating proper SitecoreAI patterns
 4. Keep synchronized with Cursor rules and Copilot instructions
 
 **For GitHub Copilot:**

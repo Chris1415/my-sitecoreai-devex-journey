@@ -1,18 +1,18 @@
-# GitHub Copilot Instructions for XM Cloud Starter Applications
+# GitHub Copilot Instructions for SitecoreAI Starter Applications
 
 ## Project Overview
 
-This repository contains **XM Cloud Front End Application Starter Kits** - multiple Next.js starter applications and SPA examples for Sitecore XM Cloud development. Each starter demonstrates modern headless CMS patterns with Sitecore XM Cloud integration.
+This repository contains **SitecoreAI Front End Application Starter Kits** - multiple Next.js starter applications and SPA examples for Sitecore SitecoreAI development. Each starter demonstrates modern headless CMS patterns with Sitecore SitecoreAI integration.
 
 ### Repository Structure:
 - `/examples/` - Contains starter front-end applications (Next.js and SPA)
 - `/authoring/` - Sitecore content items, templates, and deployment configurations  
 - `/local-containers/` - Docker setup for local development environments
-- `xmcloud.build.json` - Primary configuration for XM Cloud deployment
+- `xmcloud.build.json` - Primary configuration for SitecoreAI deployment
 
 ### Available Starter Applications
 
-- **basic-nextjs** - Simple Next.js starter with basic XM Cloud integration
+- **basic-nextjs** - Simple Next.js starter with basic SitecoreAI integration
 - **kit-nextjs-article-starter** - **Solterra & Co.** - Editorial-style template for lifestyle brands
 - **kit-nextjs-location-finder** - **Alaris** - Car brand template with location finder functionality
 - **kit-nextjs-product-listing** - **SYNC** - Product-focused template for audio gear companies
@@ -30,8 +30,8 @@ This repository contains **XM Cloud Front End Application Starter Kits** - multi
 ### Core Technologies
 - **Next.js 14+** - React framework with App Router and Pages Router support
 - **TypeScript** - Strict type safety throughout all components
-- **Sitecore XM Cloud** - Headless content management and delivery
-- **Sitecore Content SDK** - Modern SDK for XM Cloud integration (`@sitecore-content-sdk/nextjs`)
+- **Sitecore SitecoreAI** - Headless content management and delivery
+- **Sitecore Content SDK** - Modern SDK for SitecoreAI integration (`@sitecore-content-sdk/nextjs`)
 - **Tailwind CSS** - Utility-first CSS with container queries (@container)
 - **Shadcn/ui** - Modern component library with accessibility features
 
@@ -62,7 +62,7 @@ This repository contains **XM Cloud Front End Application Starter Kits** - multi
 - Prefer explicit types over `any`
 - Use discriminated unions for complex state
 - Export types at module boundaries for reusability
-- Define proper interfaces for XM Cloud data structures
+- Define proper interfaces for SitecoreAI data structures
 
 ### Functional Programming:
 - Prefer pure functions where possible
@@ -341,7 +341,7 @@ cd examples/kit-nextjs-article-starter
 # Copy environment template
 cp .env.remote.example .env.local
 
-# Edit .env.local with your XM Cloud values
+# Edit .env.local with your SitecoreAI values
 # Install dependencies and start
 npm install
 npm run dev

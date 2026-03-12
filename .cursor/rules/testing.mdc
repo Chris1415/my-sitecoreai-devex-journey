@@ -1,5 +1,5 @@
 ---
-description: Testing strategies and patterns for XM Cloud starter applications
+description: Testing strategies and patterns for SitecoreAI starter applications
 alwaysApply: false
 globs:
   - "**/*.test.ts"
@@ -15,16 +15,16 @@ globs:
 ## Testing Strategy
 
 Component Testing:
-- Test component rendering with various XM Cloud field configurations
-- Mock XM Cloud services and API calls
+- Test component rendering with various SitecoreAI field configurations
+- Mock SitecoreAI services and API calls
 - Test error scenarios (missing fields, API failures)
 - Verify proper handling of editing vs. preview modes
 - Test responsive behavior and accessibility
 
 Integration Testing:
-- Test complete page rendering with XM Cloud data
+- Test complete page rendering with SitecoreAI data
 - Verify API route functionality
-- Test middleware behavior for XM Cloud integration
+- Test middleware behavior for SitecoreAI integration
 - Validate environment variable handling
 - Test deployment and build processes
 
@@ -37,14 +37,14 @@ Recommended Stack:
 - **Playwright** or **Cypress** for E2E testing
 - **Storybook** for component documentation and testing
 
-XM Cloud Mocking:
-- Create mock data that matches XM Cloud field structures
+SitecoreAI Mocking:
+- Create mock data that matches SitecoreAI field structures
 - Mock layout service responses
 - Simulate both connected and disconnected modes
 - Test with various content scenarios
 
 ```typescript
-// Mock XM Cloud field data
+// Mock SitecoreAI field data
 const mockHeroFields = {
   title: { value: 'Test Hero Title', editable: false },
   subtitle: { value: 'Test Hero Subtitle', editable: false },
@@ -89,7 +89,7 @@ describe('Hero Component', () => {
 
 ## API Testing
 
-XM Cloud API Mocking:
+SitecoreAI API Mocking:
 - Mock layout service responses
 - Test error handling for API failures
 - Verify proper caching behavior
@@ -118,7 +118,7 @@ describe('/api/robots', () => {
 
 Page Testing:
 - Test complete user journeys
-- Verify XM Cloud content rendering
+- Verify SitecoreAI content rendering
 - Test navigation and routing
 - Validate responsive design
 - Test accessibility compliance
@@ -134,7 +134,7 @@ Performance Testing:
 test('homepage loads and displays content', async ({ page }) => {
   await page.goto('/');
   
-  // Wait for XM Cloud content to load
+  // Wait for SitecoreAI content to load
   await page.waitForSelector('[data-testid="hero-component"]');
   
   // Verify content is displayed
@@ -145,11 +145,11 @@ test('homepage loads and displays content', async ({ page }) => {
 
 ## Test Data Management
 
-XM Cloud Test Data:
-- Create realistic test data that matches XM Cloud structures
+SitecoreAI Test Data:
+- Create realistic test data that matches SitecoreAI structures
 - Use factories for generating test data
 - Maintain test data consistency across tests
-- Update test data when XM Cloud schemas change
+- Update test data when SitecoreAI schemas change
 
 ```typescript
 // Test data factory

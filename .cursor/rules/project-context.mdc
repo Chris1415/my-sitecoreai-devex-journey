@@ -1,5 +1,5 @@
 ---
-description: XM Cloud Starter repository context and constraints
+description: SitecoreAI Starter repository context and constraints
 alwaysApply: true
 globs: []
 ---
@@ -8,18 +8,18 @@ globs: []
 
 ## Repository Overview
 
-This is the **XM Cloud Front End Application Starter Kits** repository containing multiple Next.js starter applications and SPA examples for Sitecore XM Cloud development.
+This is the **SitecoreAI Front End Application Starter Kits** repository containing multiple Next.js starter applications and SPA examples for Sitecore SitecoreAI development.
 
 Repository Structure:
 - `/examples/` - Contains starter front-end applications (Next.js and SPA)
 - `/authoring/` - Sitecore content items, templates, and deployment configurations  
 - `/local-containers/` - Docker setup for local development environments
-- `xmcloud.build.json` - Primary configuration for XM Cloud deployment
+- `xmcloud.build.json` - Primary configuration for SitecoreAI deployment
 
 ## Starter Applications
 
 Available Examples:
-- `basic-nextjs` - Simple Next.js starter with basic XM Cloud integration
+- `basic-nextjs` - Simple Next.js starter with basic SitecoreAI integration
 - `kit-nextjs-article-starter` - **Solterra & Co.** - Editorial-style template for lifestyle brands
 - `kit-nextjs-location-finder` - **Alaris** - Car brand template with location finder functionality
 - `kit-nextjs-product-listing` - **SYNC** - Product-focused template for audio gear companies
@@ -37,8 +37,8 @@ Each starter demonstrates:
 Core Technologies:
 - **Next.js 14+** - React framework with App Router and Pages Router support
 - **TypeScript** - Strict type safety throughout all components
-- **Sitecore XM Cloud** - Headless content management and delivery
-- **Sitecore Content SDK** - Modern SDK for XM Cloud integration
+- **Sitecore SitecoreAI** - Headless content management and delivery
+- **Sitecore Content SDK** - Modern SDK for SitecoreAI integration
 - **Tailwind CSS** - Utility-first CSS with container queries (@container)
 - **Shadcn/ui** - Modern component library with accessibility features
 
@@ -59,7 +59,7 @@ Multi-Starter Architecture:
 - Each example is a standalone application
 - Shared patterns and conventions across all starters
 - Independent deployment and development workflows
-- Common XM Cloud integration patterns
+- Common SitecoreAI integration patterns
 
 Content-First Development:
 - Components are designed around Sitecore data structures
@@ -103,7 +103,7 @@ cd examples/kit-nextjs-article-starter
 # Copy environment template
 cp .env.remote.example .env.local
 
-# Edit .env.local with your XM Cloud values
+# Edit .env.local with your SitecoreAI values
 # Install dependencies and start
 npm install
 npm run dev
@@ -114,7 +114,7 @@ Deployment:
 - Each starter can be enabled/disabled for deployment via `enabled` flag
 - Supports multiple rendering hosts in single repository
 - Automatic editing host creation when split deployment is disabled
-- Environment-specific configuration through XM Cloud Deploy Portal
+- Environment-specific configuration through SitecoreAI Deploy Portal
 
 Referenced:
 @examples/

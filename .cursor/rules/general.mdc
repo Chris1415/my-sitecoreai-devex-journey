@@ -1,5 +1,5 @@
 ---
-description: Core coding principles and universal standards for XM Cloud starter applications
+description: Core coding principles and universal standards for SitecoreAI starter applications
 alwaysApply: true
 globs: []
 ---
@@ -31,7 +31,7 @@ Modular Design:
 - Organize code into focused, cohesive components
 - Minimize coupling between modules
 - Use clear interfaces between layers
-- Follow established Next.js and XM Cloud patterns consistently
+- Follow established Next.js and SitecoreAI patterns consistently
 
 Data Flow:
 - Prefer unidirectional data flow
@@ -42,7 +42,7 @@ Data Flow:
 Testing:
 - Write testable code with minimal dependencies
 - Use dependency injection for better testability
-- Mock external services and XM Cloud APIs
+- Mock external services and SitecoreAI APIs
 - Test behavior, not implementation details
 
 ## Development Standards

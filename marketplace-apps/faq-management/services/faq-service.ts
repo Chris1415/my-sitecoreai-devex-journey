@@ -15,28 +15,28 @@ const INITIAL_FAQ_DATA: FAQGroup[] = [
         id: "1-1",
         question: "What is this project about?",
         answer:
-          "This is a demonstration project showcasing modern Sitecore XM Cloud development practices, featuring headless architecture, AI integration, and best practices for building performant digital experiences.",
+          "This is a demonstration project showcasing modern Sitecore SitecoreAI development practices, featuring headless architecture, AI integration, and best practices for building performant digital experiences.",
         order: 0,
       },
       {
         id: "1-2",
         question: "Who is Christian Hahn?",
         answer:
-          "Christian Hahn is a Sitecore developer and content management specialist who created this demonstration project to showcase advanced Sitecore XM Cloud capabilities and modern development workflows.",
+          "Christian Hahn is a Sitecore developer and content management specialist who created this demonstration project to showcase advanced Sitecore SitecoreAI capabilities and modern development workflows.",
         order: 1,
       },
       {
         id: "1-3",
         question: "Why did Christian create this demonstration project?",
         answer:
-          "This project was created to demonstrate real-world implementation patterns for Sitecore XM Cloud, including integration with modern tools like V0, Cursor AI, and advanced Next.js features. It serves as a learning resource for developers looking to build high-performance Sitecore applications.",
+          "This project was created to demonstrate real-world implementation patterns for Sitecore SitecoreAI, including integration with modern tools like V0, Cursor AI, and advanced Next.js features. It serves as a learning resource for developers looking to build high-performance Sitecore applications.",
         order: 2,
       },
       {
         id: "1-4",
         question: "What can I learn from this project?",
         answer:
-          "You can learn about headless CMS architecture, Next.js App Router best practices, Sitecore XM Cloud integration patterns, AI-assisted development workflows, performance optimization techniques, and how to achieve perfect Lighthouse scores in production applications.",
+          "You can learn about headless CMS architecture, Next.js App Router best practices, Sitecore SitecoreAI integration patterns, AI-assisted development workflows, performance optimization techniques, and how to achieve perfect Lighthouse scores in production applications.",
         order: 3,
       },
     ],
@@ -50,7 +50,7 @@ const INITIAL_FAQ_DATA: FAQGroup[] = [
         id: "2-1",
         question: "What modern content management tools does Sitecore AI offer?",
         answer:
-          "Sitecore AI offers a comprehensive suite of tools including XM Cloud for headless content management, AI-powered content recommendations, intelligent personalization engines, and automated content optimization. These tools help content teams work more efficiently while delivering personalized experiences.",
+          "Sitecore AI offers a comprehensive suite of tools including SitecoreAI for headless content management, AI-powered content recommendations, intelligent personalization engines, and automated content optimization. These tools help content teams work more efficiently while delivering personalized experiences.",
         order: 0,
       },
       {
@@ -78,14 +78,14 @@ const INITIAL_FAQ_DATA: FAQGroup[] = [
         id: "3-1",
         question: "How does V0 fit into the brand and website creation process?",
         answer:
-          "V0 serves as an AI-powered design and development assistant that accelerates the initial creation of UI components and pages. It integrates into the workflow by generating React components based on design requirements, which can then be customized and integrated with Sitecore XM Cloud for content management.",
+          "V0 serves as an AI-powered design and development assistant that accelerates the initial creation of UI components and pages. It integrates into the workflow by generating React components based on design requirements, which can then be customized and integrated with Sitecore SitecoreAI for content management.",
         order: 0,
       },
       {
         id: "3-2",
         question: "What role does Content SDK play with V0 and Cursor?",
         answer:
-          "Content SDK provides a type-safe interface between your Next.js application and Sitecore XM Cloud. When used with V0 and Cursor AI, it enables rapid development with full TypeScript support, GraphQL query generation, and automatic content model synchronization, ensuring your components always match your content structure.",
+          "Content SDK provides a type-safe interface between your Next.js application and Sitecore SitecoreAI. When used with V0 and Cursor AI, it enables rapid development with full TypeScript support, GraphQL query generation, and automatic content model synchronization, ensuring your components always match your content structure.",
         order: 1,
       },
     ],
