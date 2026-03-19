@@ -1,7 +1,7 @@
 "use client";
 import { useCallback } from "react";
 import { useSitecore } from "@sitecore-content-sdk/nextjs";
-import { event } from "@sitecore-cloudsdk/events/browser";
+import { event } from "@sitecore-content-sdk/events";
 
 /**
  * This hook is used to send events to SitecoreCloud.

@@ -1,9 +1,9 @@
 'use client';
 
-import React, { JSX } from 'react';
+import { JSX } from 'react';
 import * as FEAAS from '@sitecore-feaas/clientside/react';
-import * as Events from '@sitecore-cloudsdk/events/browser';
-import { LayoutServicePageState, SitecoreProviderReactContext } from '@sitecore-content-sdk/nextjs';
+import * as Events from '@sitecore-content-sdk/events';
+import { useSitecore } from '@sitecore-content-sdk/nextjs';
 import '@sitecore/components/context';
 import dynamic from 'next/dynamic';
 import config from 'sitecore.config';
@@ -26,13 +26,13 @@ FEAAS.enableNextClientsideComponents(dynamic, ClientBundle);
 import './index.hybrid';
 
 const BYOCInit = (): JSX.Element | null => {
-  const { page } = React.useContext(SitecoreProviderReactContext);
-  const { pageState } = page.layout.sitecore.context;
+  const { page } = useSitecore();
+  const pageState = page.layout.sitecore.context.pageState;
   // Set context properties to be available within BYOC components
   FEAAS.setContextProperties({
     sitecoreEdgeUrl: config.api.edge?.edgeUrl,
     sitecoreEdgeContextId: config.api.edge?.contextId,
-    pageState: pageState || LayoutServicePageState.Normal,
+    pageState: pageState || 'normal',
     siteName: page.siteName || config.defaultSite,
     eventsSDK: Events,
   });
