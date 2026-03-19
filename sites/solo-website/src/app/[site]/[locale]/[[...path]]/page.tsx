@@ -1,7 +1,6 @@
 import { isDesignLibraryPreviewData } from "@sitecore-content-sdk/nextjs/editing";
 import { notFound } from "next/navigation";
 import { draftMode } from "next/headers";
-import { Suspense } from "react";
 import { SiteInfo } from "@sitecore-content-sdk/nextjs";
 import sites from ".sitecore/sites.json";
 import { routing } from "src/i18n/routing";
@@ -12,6 +11,7 @@ import components from "src/component-map";
 import Providers from "src/Providers";
 import { NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
+import { Suspense } from "react";
 
 type PageProps = {
   params: Promise<{
@@ -83,14 +83,14 @@ export default async function Page({ params, searchParams }: PageProps) {
   setRequestLocale(`${site}_${locale}`);
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    /*<Suspense fallback={<div></div>}>*/
       <DynamicPageContent
         site={site}
         locale={locale}
         path={path}
         searchParams={searchParams}
       />
-    </Suspense>
+    /*</Suspense>*/
   );
 }
 
