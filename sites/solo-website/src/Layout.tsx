@@ -1,4 +1,4 @@
-import React, { JSX } from "react";
+import React, { JSX, Suspense } from "react";
 import { AppPlaceholder, DesignLibraryApp, Field, Page } from "@sitecore-content-sdk/nextjs";
 import Scripts from "src/Scripts";
 import SitecoreStyles from "components/content-sdk/SitecoreStyles";
@@ -34,7 +34,7 @@ const Layout = ({ page }: LayoutProps): JSX.Element => {
             />
           )
         ) : (
-          <>
+          <Suspense fallback={<div />}>
             <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
               <div id="header">
                 {route && (
@@ -71,7 +71,7 @@ const Layout = ({ page }: LayoutProps): JSX.Element => {
                 )}
               </div>
             </footer>
-          </>
+          </Suspense>
         )}
       </div>
     </>

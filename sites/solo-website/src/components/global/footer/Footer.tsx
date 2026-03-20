@@ -93,7 +93,7 @@ export function Default() {
         <div className="mt-12 border-t border-border pt-8">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} Christian Hahn. All rights reserved.
+              © 2025 Christian Hahn. All rights reserved.
             </p>
             <div className="flex items-center gap-3">
               <Image

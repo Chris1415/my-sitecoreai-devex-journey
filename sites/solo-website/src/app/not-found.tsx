@@ -1,24 +1,31 @@
 import Link from 'next/link';
+import { Suspense } from 'react';
+import { connection } from 'next/server';
 import { ErrorPage } from '@sitecore-content-sdk/nextjs';
-import client from 'lib/sitecore-client';
+import { getErrorPage } from 'src/lib/cached-functions';
 import scConfig from 'sitecore.config';
 import Layout from 'src/Layout';
 import Providers from 'src/Providers';
 
-export default async function NotFound() {
-  if (scConfig.defaultSite) {
-    const page = await client.getErrorPage(ErrorPage.NotFound, {
-      site: scConfig.defaultSite,
-      locale: scConfig.defaultLanguage,
-    });
+async function NotFoundContent() {
+  await connection();
+  if (!scConfig.defaultSite) return null;
+  const page = await getErrorPage(ErrorPage.NotFound, {
+    site: scConfig.defaultSite,
+    locale: scConfig.defaultLanguage,
+  });
+  if (!page) return null;
+  return (
+    <Providers page={page}>
+      <Layout page={page} />
+    </Providers>
+  );
+}
 
-    if (page) {
-      return (
-        <Providers page={page}>
-          <Layout page={page} />
-        </Providers>
-      );
-    }
+export default async function NotFound() {
+  const content = await NotFoundContent();
+  if (content) {
+    return <Suspense fallback={<div />}>{content}</Suspense>;
   }
 
   return (

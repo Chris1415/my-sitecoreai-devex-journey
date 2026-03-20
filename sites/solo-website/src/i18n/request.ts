@@ -1,7 +1,7 @@
 import { getRequestConfig, GetRequestConfigParams } from 'next-intl/server';
 import { hasLocale } from 'next-intl';
 import { routing } from './routing';
-import client from 'src/lib/sitecore-client';
+import { getDictionary } from 'src/lib/cached-functions';
 
 export default getRequestConfig(async ({ requestLocale }: GetRequestConfigParams) => {
   // Provide a static locale, fetch a user setting,
@@ -15,9 +15,9 @@ export default getRequestConfig(async ({ requestLocale }: GetRequestConfigParams
   const locale = hasLocale(routing.locales, parsedLocale) ? parsedLocale : routing.defaultLocale;
 
   const messages: Record<string, object> = {};
-  messages[parsedSite] = await client.getDictionary({
-    locale,
+  messages[parsedSite] = await getDictionary({
     site: parsedSite,
+    locale,
   });
 
   return {
