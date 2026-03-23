@@ -12,6 +12,4 @@ import { createEditingRenderRouteHandlers } from '@sitecore-content-sdk/nextjs/r
  *  4. Return the rendered HTML for editing mode
  */
 
-export const dynamic = 'force-dynamic';
-
 export const { GET, POST, OPTIONS } = createEditingRenderRouteHandlers({});

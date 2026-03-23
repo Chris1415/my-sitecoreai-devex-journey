@@ -1,11 +1,13 @@
 import { isDesignLibraryPreviewData } from "@sitecore-content-sdk/nextjs/editing";
 import { notFound } from "next/navigation";
 import { draftMode } from "next/headers";
+import { connection } from "next/server";
 import { SiteInfo } from "@sitecore-content-sdk/nextjs";
 import sites from ".sitecore/sites.json";
 import { routing } from "src/i18n/routing";
 import scConfig from "sitecore.config";
 import client from "src/lib/sitecore-client";
+import { getPage } from "src/lib/cached-functions";
 import Layout, { RouteFields } from "src/Layout";
 import components from "src/component-map";
 import Providers from "src/Providers";
@@ -23,8 +25,6 @@ type PageProps = {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
-export const revalidate = 600;
-
 const LOG_PREFIX = "[page]";
 
 async function DynamicPageContent({
@@ -38,9 +38,10 @@ async function DynamicPageContent({
   path?: string[];
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
+  await connection();
   const draft = await draftMode();
   console.log(
-    `${LOG_PREFIX} Render | path: /${(path ?? []).join("/")} | site: ${site} | locale: ${locale} | draft: ${draft.isEnabled} | at: ${new Date().toISOString()}`,
+    `${LOG_PREFIX} Render | path: /${(path ?? []).join("/")} | site: ${site} | locale: ${locale} | draft: ${draft.isEnabled}`,
   );
 
   let page;
@@ -52,7 +53,7 @@ async function DynamicPageContent({
       page = await client.getPreview(editingParams);
     }
   } else {
-    page = await client.getPage(path ?? [], { site, locale });
+    page = await getPage(path ?? [], { site, locale });
   }
 
   // If the page is not found, return a 404
@@ -83,14 +84,14 @@ export default async function Page({ params, searchParams }: PageProps) {
   setRequestLocale(`${site}_${locale}`);
 
   return (
-    /*<Suspense fallback={<div></div>}>*/
+    <Suspense fallback={<div />}>
       <DynamicPageContent
         site={site}
         locale={locale}
         path={path}
         searchParams={searchParams}
       />
-    /*</Suspense>*/
+    </Suspense>
   );
 }
 
@@ -115,8 +116,7 @@ export const generateStaticParams = async () => {
 export const generateMetadata = async ({ params }: PageProps) => {
   const { path, site, locale } = await params;
 
-  // The same call as for rendering the page. Should be cached by default react behavior
-  const page = await client.getPage(path ?? [], { site, locale });
+  const page = await getPage(path ?? [], { site, locale });
   return {
     title:
       (

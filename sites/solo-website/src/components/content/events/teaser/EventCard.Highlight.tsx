@@ -1,13 +1,15 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Suspense } from "react";
+import { connection } from "next/server";
 import { Button } from "components/ui/button";
 import { Card, CardContent } from "components/ui/card";
 import { Badge } from "components/ui/badge";
 import { Calendar, MapPin, ArrowRight, ExternalLink } from "lucide-react";
-import { formatDateRange } from "lib/data";
-import { getNextUpcomingEvent } from "lib/data";
+import { formatDateRange, getNextUpcomingEvent } from "lib/data";
 
-export function Highlight() {
+async function HighlightContent() {
+  await connection();
   const event = getNextUpcomingEvent();
   if (!event) {
     return (
@@ -118,5 +120,13 @@ export function Highlight() {
         </Card>
       </div>
     </section>
+  );
+}
+
+export function Highlight() {
+  return (
+    <Suspense fallback={<div className="py-12 md:py-16" />}>
+      <HighlightContent />
+    </Suspense>
   );
 }
