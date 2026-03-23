@@ -11,6 +11,7 @@ import components from "src/component-map";
 import Providers from "src/Providers";
 import { NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
+import { Suspense } from "react";
 
 type PageProps = {
   params: Promise<{
@@ -26,18 +27,21 @@ export const revalidate = 600;
 
 const LOG_PREFIX = "[page]";
 
-export default async function Page({ params, searchParams }: PageProps) {
-  const { site, locale, path } = await params;
+async function DynamicPageContent({
+  site,
+  locale,
+  path,
+  searchParams,
+}: {
+  site: string;
+  locale: string;
+  path?: string[];
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
   const draft = await draftMode();
-
-  // SSG validation: log every time this component runs.
-  // - Build time: logs for each static path. Runtime: no log on repeat visits = SSG cache hit.
-  // - Runtime: log on every visit = dynamic rendering.
   console.log(
     `${LOG_PREFIX} Render | path: /${(path ?? []).join("/")} | site: ${site} | locale: ${locale} | draft: ${draft.isEnabled} | at: ${new Date().toISOString()}`,
   );
-
-  setRequestLocale(`${site}_${locale}`);
 
   let page;
   if (draft.isEnabled) {
@@ -73,8 +77,23 @@ export default async function Page({ params, searchParams }: PageProps) {
   );
 }
 
-// This function gets called at build and export time to determine
-// pages for SSG ("paths", as tokenized array).
+export default async function Page({ params, searchParams }: PageProps) {
+  const { site, locale, path } = await params;
+
+  setRequestLocale(`${site}_${locale}`);
+
+  return (
+    /*<Suspense fallback={<div></div>}>*/
+      <DynamicPageContent
+        site={site}
+        locale={locale}
+        path={path}
+        searchParams={searchParams}
+      />
+    /*</Suspense>*/
+  );
+}
+
 export const generateStaticParams = async () => {
   if (process.env.NODE_ENV !== "development" && scConfig.generateStaticPaths) {
     return await client.getAppRouterStaticParams(
@@ -82,7 +101,14 @@ export const generateStaticParams = async () => {
       routing.locales.slice(),
     );
   }
-  return [];
+
+  return [
+    {
+      site: sites[0]?.name || "default",
+      locale: routing.defaultLocale || scConfig.defaultLanguage,
+      path: [],
+    },
+  ];
 };
 
 // Metadata fields for the page.

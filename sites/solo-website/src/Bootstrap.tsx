@@ -1,7 +1,15 @@
 'use client';
 import { useEffect, JSX } from 'react';
-import { CloudSDK } from '@sitecore-cloudsdk/core/browser';
-import '@sitecore-cloudsdk/events/browser';
+import { initContentSdk } from '@sitecore-content-sdk/core';
+import {
+  analyticsBrowserAdapter,
+  analyticsPlugin,
+} from '@sitecore-content-sdk/analytics-core';
+import { eventsPlugin } from '@sitecore-content-sdk/events';
+import {
+  personalizeBrowserAdapter,
+  personalizeBrowserPlugin,
+} from '@sitecore-content-sdk/personalize';
 import config from 'sitecore.config';
 
 const Bootstrap = ({
@@ -12,26 +20,35 @@ const Bootstrap = ({
   isPreviewMode: boolean;
 }): JSX.Element | null => {
   useEffect(() => {
-    /*if (process.env.NODE_ENV === 'development') {
-      console.debug('Browser Events SDK is not initialized in development environment');
-      return;
-    }*/
-
     if (isPreviewMode) {
-      console.debug('Browser Events SDK is not initialized in edit and preview modes');
+      console.debug('Content SDK analytics are not initialized in edit and preview modes');
       return;
     }
 
     if (config.api.edge?.clientContextId) {
-      CloudSDK({
-        sitecoreEdgeUrl: config.api.edge.edgeUrl,
-        sitecoreEdgeContextId: config.api.edge.clientContextId,
-        siteName: siteName || config.defaultSite,
-        enableBrowserCookie: true,
-        cookieDomain: window.location.hostname.replace(/^www\./, ''),
-      })
-        .addEvents()
-        .initialize();
+      initContentSdk({
+        config: {
+          contextId: config.api.edge.clientContextId,
+          siteName: siteName || config.defaultSite,
+        },
+        plugins: [
+          analyticsPlugin({
+            options: {
+              enableCookie: true,
+              cookieDomain: window.location.hostname.replace(/^www\./, ''),
+            },
+            adapter: analyticsBrowserAdapter(),
+          }),
+          eventsPlugin(),
+          personalizeBrowserPlugin({
+            options: {
+              enablePersonalizeCookie: true,
+              webPersonalization: true,
+            },
+            adapter: personalizeBrowserAdapter(),
+          }),
+        ],
+      });
     } else {
       console.error('Client Edge API settings missing from configuration');
     }

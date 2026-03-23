@@ -1,5 +1,6 @@
 import { createEditingConfigRouteHandler } from '@sitecore-content-sdk/nextjs/route-handler';
 import components from 'src/component-map';
+import clientComponents from 'src/component-map.client';
 import metadata from '.sitecore/metadata.json';
 
 /**
@@ -7,7 +8,10 @@ import metadata from '.sitecore/metadata.json';
  * to determine feature compatibility and configuration.
  */
 
+export const dynamic = 'force-dynamic';
+
 export const { GET, OPTIONS } = createEditingConfigRouteHandler({
   components,
+  clientComponents,
   metadata,
 });

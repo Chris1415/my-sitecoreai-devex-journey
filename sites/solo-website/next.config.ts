@@ -4,13 +4,13 @@ import createNextIntlPlugin from 'next-intl/plugin';
 const nextConfig: NextConfig = {
   // Allow specifying a distinct distDir when concurrently running app in a container
   distDir: process.env.NEXTJS_DIST_DIR || '.next',
-  
+
   // Enable React Strict Mode
   reactStrictMode: true,
 
-  // Required for the "use cache" directive in Next.js 15.
+  // Enable Turbopack file system caching for faster dev startup.
   experimental: {
-    useCache: true,
+    turbopackFileSystemCacheForDev: true,
   },
 
   // Disable the X-Powered-By header. Follows security best practices.

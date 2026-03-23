@@ -1,9 +1,7 @@
 import React, { JSX } from "react";
-import { Field, Page } from "@sitecore-content-sdk/nextjs";
+import { AppPlaceholder, DesignLibraryApp, Field, Page } from "@sitecore-content-sdk/nextjs";
 import Scripts from "src/Scripts";
 import SitecoreStyles from "components/content-sdk/SitecoreStyles";
-import { DesignLibraryLayout } from "./DesignLibraryLayout";
-import { AppPlaceholder } from "@sitecore-content-sdk/nextjs";
 import componentMap from "src/component-map";
 
 interface LayoutProps {
@@ -27,7 +25,14 @@ const Layout = ({ page }: LayoutProps): JSX.Element => {
       {/* root placeholder for the app, which we add components to using route data */}
       <div className={mainClassPageEditing}>
         {mode.isDesignLibrary ? (
-          <DesignLibraryLayout />
+          route && (
+            <DesignLibraryApp
+              page={page}
+              rendering={route}
+              componentMap={componentMap}
+              loadServerImportMap={() => import(".sitecore/import-map.server")}
+            />
+          )
         ) : (
           <>
             <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
